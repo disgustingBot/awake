@@ -2,10 +2,36 @@
 
 require_once 'inc/custom_posts.php';
 require_once 'inc/form_handler.php';
+require_once 'inc/multi_cards.php';
+require_once 'inc/ajax.php';
+
+
 
 function lattte_setup(){
   wp_enqueue_style('style', get_stylesheet_uri(), NULL, microtime(), 'all');
-	wp_enqueue_script('modules', get_theme_file_uri('/js/modules.js'), NULL, microtime(), true);
+  wp_enqueue_script('modules', get_theme_file_uri('/js/modules.js'), NULL, microtime(), true);
+  
+  // TOOOODO ESTO ES PARA AJAX
+	global $wp_query;
+	// In most cases it is already included on the page and this line can be removed
+	wp_enqueue_script('jquery');
+	// register our main script but do not enqueue it yet
+	wp_register_script( 'my_loadmore', get_stylesheet_directory_uri() . '/js/myloadmore.js', array('jquery') );
+
+	// now the most interesting part
+	// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
+	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
+	wp_localize_script( 'my_loadmore', 'misha_loadmore_params', array(
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages,
+		'first_page' => get_pagenum_link(1) // here it is
+	) );
+
+	wp_enqueue_script( 'my_loadmore' );
+  // FIN DE PARA AJAX
+  
   wp_enqueue_script('main', get_theme_file_uri('/js/custom.js'), NULL, microtime(), true);
 }
 add_action('wp_enqueue_scripts', 'lattte_setup');
@@ -13,7 +39,7 @@ add_action('wp_enqueue_scripts', 'lattte_setup');
 // Adding Theme Support
 
 function gp_init() {
-  // add_theme_support('post-thumbnails');
+  add_theme_support('post-thumbnails');
   add_theme_support('title-tag');
   add_theme_support('html5',
     array('comment-list', 'comment-form', 'search-form')
@@ -54,12 +80,12 @@ add_filter('get_the_archive_title',function($title){
 
 
 function excerpt($charNumber){
-  if(!$charNumber){$charNumber=1000000;}
+  if(!$charNumber){$charNumber=100;}
   $excerpt = get_the_excerpt();
   if(strlen($excerpt)<=$charNumber){return $excerpt;}else{
     $excerpt = substr($excerpt, 0, $charNumber);
     $result  = substr($excerpt, 0, strrpos($excerpt, ' '));
-    // $result .= $result . '(...)';
+    $result  = $result . '...';
     // return var_dump($excerpt);
     return $result;
   }
@@ -74,7 +100,8 @@ function excerpt($charNumber){
 
 
  function register_menus() {
-   // register_nav_menu('navBar',__( 'Header' ));
+   register_nav_menu('header_left',__( 'Header Left' ));
+   register_nav_menu('header_right',__( 'Header Right' ));
    // register_nav_menu('navBarMobile',__( 'Header Mobile' ));
    // register_nav_menu('contactMenu',__( 'Contact Menu' ));
    // add_post_type_support( 'page', 'excerpt' );

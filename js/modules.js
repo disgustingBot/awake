@@ -195,41 +195,28 @@ class Obse {
 		// TODO: quitar la propiedad "values" y reemplazar por nueva implementacion
 		this.j = 1;
 		this.id = element.id;
-		this.observe = d.querySelector(element.dataset.observe);
+		this.observe = [...d.querySelectorAll(element.dataset.observe)];
 		this.unobserve = element.dataset.unobserve;
-		// console.log(this.observe);
-		// console.log(this.unobserve);
 
 		this.options = { root: null, threshold: 1, rootMargin: "0px 0px 0px 0px" };
-		this.observer = new IntersectionObserver(function(entries, observer){
+		this.observer = new IntersectionObserver((entries, observer)=>{
 			entries.forEach(entry => {
-				// const x = d.querySelector('#'+this.id);
 				if(entry.isIntersecting){
-					// if(!reverse){
 					element.classList.add('observed')
-					// } else {
-						// x.classList.remove('observed')
-						// }
 					if(this.unobserve=='true'){observer.unobserve(entry.target)}
 				} else {
-				// if(!reverse){
 					element.classList.remove('observed')
-					// } else {
-						// x.classList.add('observed')
-						// }
 				}
 			})
 		}, this.options);
 
 		this.activate();
-
 	}
 
 	activate(){
-		// console.log()
-		// d.querySelectorAll(observado).forEach(e => {
-			this.observer.observe(this.observe);
-		// })
+		this.observe.forEach((redDot)=>{
+			this.observer.observe(redDot);
+		})
 	}
 }
 
@@ -298,55 +285,4 @@ class Carousel {
     }
 
     plusDivs(n){this.showDivs(this.j+=n)}
-}
-
-
-
-
-
-cardSetupExecuter = {
-    cardSetup:() => {console.log('holaaa')
-        // d.querySelectorAll('.card').forEach((item, i) => {
-        d.querySelectorAll('[contenedor*="true"]').forEach((item, i) => {
-            let code = item.dataset.code,
-            size = item.dataset.size,
-            tip1 = item.dataset.tip1,
-            tip2 = item.dataset.tip2,
-            cond = item.dataset.cond,
-            butn = item.querySelector('.cardAdd');
-
-            butn.addEventListener('click',()=>{
-                cartController.add({
-                    code: code,
-                    size: size,
-                    qty: item.querySelector('.cuantosQantity').value,
-                    tipo_1: tip1,
-                    tipo_2: tip2,
-                    condicion: cond,
-                })
-            })
-        });
-    }
-}
-const cardSetup = () => {console.log('holaaa')
-	// d.querySelectorAll('.card').forEach((item, i) => {
-	d.querySelectorAll('[contenedor*="true"]').forEach((item, i) => {
-		let code = item.dataset.code,
-		size = item.dataset.size,
-		tip1 = item.dataset.tip1,
-		tip2 = item.dataset.tip2,
-		cond = item.dataset.cond,
-		butn = item.querySelector('.cardAdd');
-
-		butn.addEventListener('click',()=>{ console.log('holaaa')
-			cartController.add({
-				code: code,
-				size: size,
-				qty: item.querySelector('.cuantosQantity').value,
-				tipo_1: tip1,
-				tipo_2: tip2,
-				condicion: cond,
-			})
-		})
-	});
 }
