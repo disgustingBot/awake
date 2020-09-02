@@ -14,7 +14,7 @@
         </div>
     <?php } wp_reset_query(); ?>
 
-    <div class="redDot header_activator test"></div>
+    <div class="redDot header_activator"></div>
 
     <button class="prenex prenex_prev rowcol1" id="prevButton"></button>
     <button class="prenex prenex_next rowcol1" id="nextButton"></button>
@@ -48,8 +48,8 @@
 
 
 
-<section class="grid_1_2_4 lateral_m">
-    <h3 class="grid_title">¿En qué podemos ayudarte?</h3>
+<section class="showcase4">
+    <h3 class="showcase_title">¿En qué podemos ayudarte?</h3>
 
     <div class="simpla">
         <img class="simpla_img" loading="lazy" src="https://picsum.photos/200" alt="">
@@ -110,7 +110,7 @@
             </p>
         </div>
     <?php } wp_reset_query(); ?>
-    <div class="redDot header_activator test"></div>
+    <div class="redDot header_activator"></div>
 
     <button class="prenex prenex_prev rowcol1" id="prevButton"></button>
     <button class="prenex prenex_next rowcol1" id="nextButton"></button>

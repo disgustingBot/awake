@@ -31,8 +31,8 @@
                 $args = array(
                     'post_type'=>'empresa',
                 );
-                $testimonials=new WP_Query($args);
-                while($testimonials->have_posts()){$testimonials->the_post();?>
+                $empresas=new WP_Query($args);
+                while($empresas->have_posts()){$empresas->the_post();?>
                     <?php if ( ($i % 4 == 0) AND $i ) { ?>
                         </div>
                         <div class="mivi_slide Element rowcol1">
@@ -55,12 +55,9 @@
         );
         $miembros=new WP_Query($args);
         while($miembros->have_posts()){$miembros->the_post();?>
-            <div class="simpla">
-                <img class="simpla_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-                <h6 class="simpla_title row2col1"><?php the_title(); ?></h6>
-                <div class="simpla_deco row2col1"></div>
-                <div class="simpla_txt"><?php the_excerpt(); ?></div>
-            </div>
+
+            <?php simpla_card(); ?>
+            
         <?php } wp_reset_query(); ?>
         
     </section>
