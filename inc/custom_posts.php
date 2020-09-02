@@ -90,7 +90,9 @@ function lt_new_custom_post($name, $icon = '', $taxonomies = array() ){
 add_action( 'init', 'lt_custom_posts' );
 function lt_custom_posts() {
 	lt_new_custom_post( 'testimonial', 'dashicons-format-quote');
-	lt_new_custom_post( 'banner', 'dashicons-images-alt2');
-	lt_new_custom_post( 'miembro', 'dashicons-groups');
-	lt_new_custom_post( 'empresa', 'dashicons-admin-site-alt3');
+	lt_new_custom_post( 'banner',      'dashicons-images-alt2');
+	lt_new_custom_post( 'miembro',     'dashicons-groups');
+	lt_new_custom_post( 'empresa',     'dashicons-admin-site-alt3');
+	lt_new_custom_post( 'programa',    'dashicons-welcome-view-site');
+	
 }

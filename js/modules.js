@@ -184,6 +184,7 @@ obseController = {
 	setup:()=>{
 		if (d.querySelectorAll('.Obse')) {
 			var obses = d.querySelectorAll('.Obse');
+			console.log(obses)
 			obses.forEach( obse => {
 				obseController.obses.unshift(new Obse(obse))
 			});
@@ -192,22 +193,25 @@ obseController = {
 }
 class Obse {
 	constructor(element){
-		// TODO: quitar la propiedad "values" y reemplazar por nueva implementacion
 		this.j = 1;
 		this.id = element.id;
 		this.observe = [...d.querySelectorAll(element.dataset.observe)];
 		this.unobserve = element.dataset.unobserve;
+		this.first_time = true;
+		this.first_observation = false;
 
 		this.options = { root: null, threshold: 1, rootMargin: "0px 0px 0px 0px" };
 		this.observer = new IntersectionObserver((entries, observer)=>{
 			entries.forEach(entry => {
 				if(entry.isIntersecting){
 					element.classList.add('observed')
+					if(this.first_time){this.first_observation=true;this.first_time=false;}
 					if(this.unobserve=='true'){observer.unobserve(entry.target)}
 				} else {
 					element.classList.remove('observed')
 				}
 			})
+			if(this.first_observation){this.first_observation=false;element.classList.add('observed')}
 		}, this.options);
 
 		this.activate();

@@ -39,7 +39,9 @@ Version: 1.2
 6.4.3) =simpla:
 6.4.4) =barda:
 6.4.5) =sqare:
-6.5) =showcase5:
+6.5) =SHOWCASE:
+6.5.1) =showcase4:
+6.5.2) =showcase5:
 6.6) =BUTTONS:
 6.6.1) =prenex:
 6.6.2) =burger:
@@ -449,7 +451,7 @@ ul,ol{list-style:none}
   margin: .5rem;
 }
 .logo:hover .logo_img{filter: drop-shadow( 0 0 4px rgba(0, 0, 0, 1))}
-.logo.observed .logo_img{color:white}
+.observed .logo_img{color:white}
 .mobile_menu_active .logo_img{color:black}
 .logo_img{
   width: var(--logo_size);
@@ -504,7 +506,7 @@ ul,ol{list-style:none}
 .hero_title{
   font-size: 1.6rem;
   color:white;
-  padding:0 var(--lateral);
+  padding:0 calc(var(--lateral) + 3rem);
   font-family: 'Lora', serif;
 }
 .hero_link{
@@ -646,7 +648,38 @@ ul,ol{list-style:none}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          6.5) =showcase5:
+                          6.5) =SHOWCASE:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+
+.showcase_title{
+  grid-column:1/-1;
+  font-size:1.4rem;
+  font-family: 'Lora', serif;
+  text-align:center;
+}
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.5.1) =showcase4:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+/* 
+.showcase5 .simpla_img{
+  height:calc((100vw - 16px - var(--lateral) * 2 - 2rem - 4rem) / 5)
+} */
+.showcase4{
+  display:grid;
+  grid-gap:.5rem;
+  grid-row-gap:3rem;
+  padding:2rem calc(var(--lateral) + 1rem);
+  /* grid-template-columns:repeat(4,1fr); */
+  grid-template-columns:var(--grid_1_2_4_GTC);
+}
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.5.2) =showcase5:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
@@ -659,12 +692,6 @@ ul,ol{list-style:none}
   grid-row-gap:3rem;
   padding:2rem calc(var(--lateral) + 1rem);
   grid-template-columns:repeat(5,1fr);
-}
-.showcase_title{
-  grid-column:1/-1;
-  font-size:1.4rem;
-  font-family: 'Lora', serif;
-  text-align:center;
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -778,9 +805,11 @@ ul,ol{list-style:none}
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
+.observed .nav_menu{color:white}
 .nav_menu {
   background:transparent;
-  color:white;
+  /* color:white; */
+  color:black;
   clip-path: var(--nav_menu_clip_path);
   display: grid;
   grid-auto-flow: var(--row_768_column);
