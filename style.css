@@ -294,7 +294,7 @@ body{font-family: 'Lato', sans-serif;}
                            4) =ETIQUETAS GLOBALES:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-*{box-sizing:border-box;margin:0;padding:0;content-visibility: auto;}
+*{box-sizing:border-box;margin:0;padding:0}
 body{display:grid}
 img{object-fit:cover;width:100%}
 a{text-decoration:none;color:inherit}

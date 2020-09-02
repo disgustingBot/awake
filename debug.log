@@ -1,0 +1,9 @@
+[01-Sep-2020 06:36:15 UTC] PHP Notice:  Undefined index: page in C:\xampp\htdocs\awake\wp-content\themes\awake\inc\ajax.php on line 18
+[01-Sep-2020 06:36:15 UTC] PHP Notice:  Trying to get property 'comment_status' of non-object in C:\xampp\htdocs\awake\wp-includes\comment-template.php on line 1248
+[01-Sep-2020 06:36:15 UTC] PHP Notice:  Trying to get property 'ping_status' of non-object in C:\xampp\htdocs\awake\wp-includes\comment-template.php on line 1278
+[01-Sep-2020 06:36:15 UTC] PHP Notice:  Trying to get property 'comment_count' of non-object in C:\xampp\htdocs\awake\wp-includes\general-template.php on line 3121
+[01-Sep-2020 06:36:42 UTC] PHP Notice:  Undefined index: page in C:\xampp\htdocs\awake\wp-content\themes\awake\inc\ajax.php on line 18
+[01-Sep-2020 06:37:26 UTC] PHP Notice:  Undefined index: page in C:\xampp\htdocs\awake\wp-content\themes\awake\inc\ajax.php on line 18
+[01-Sep-2020 06:41:20 UTC] PHP Notice:  Undefined index: page in C:\xampp\htdocs\awake\wp-content\themes\awake\inc\ajax.php on line 264
+[01-Sep-2020 06:41:28 UTC] PHP Notice:  Undefined index: page in C:\xampp\htdocs\awake\wp-content\themes\awake\inc\ajax.php on line 264
+[01-Sep-2020 06:41:30 UTC] PHP Notice:  Undefined index: page in C:\xampp\htdocs\awake\wp-content\themes\awake\inc\ajax.php on line 264
