@@ -1,15 +1,19 @@
 <?php get_header(); ?>
 
-<h1>archive.php</h1>
-
-<?php while(have_posts()){the_post(); ?>
-
-  <a href="<?php the_permalink(); ?>">
-    <h3><?php the_title(); ?></h3>
-  </a>
-  <?php the_excerpt(); ?>
+<section class="phil">
+  <p class="phil_caption"><?php the_title(); ?></p>
+  <select class="phil_select" name="" id=""></select>
+  <p class="phil_search">Buscador</p>
+</section>
 
 
-<?php } ?>
+<section class="sqare_cont" id="ajax_archive">
+  <?php while(have_posts()){the_post(); ?>
+    <?php sqare_card(); ?>
+  <?php } ?>
+  <?php echo ajax_paginator(get_pagenum_link()); ?>
+</section>
+
+
 
 <?php get_footer(); ?>

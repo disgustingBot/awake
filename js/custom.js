@@ -11,6 +11,7 @@ w.onload=()=>{
   }
 
   // Modules setup
+  carouselController.setup()
 	growUpController.setup()
 	obseController.setup()
   d.getElementById("load").style.top="-100vh";
@@ -47,22 +48,25 @@ if(x.length>0){showDivs(j);setTimeout(carousel, 8000);}
 // alternates a class from a selector of choice, example:
 // <div class="someButton" onclick="altClassFromSelector('activ', '#navBar')"></div>
 const altClassFromSelector = ( clase, selector, mainClass = false )=>{
-  const x = d.querySelector(selector);
-  // if there is a main class removes all other classes
-  if(mainClass){
-    x.classList.forEach( item=>{
-      // TODO: testear si anda con el nuevo condicional
-      if( item!=mainClass && item!=clase ){
-        x.classList.remove(item);
-      }
-    });
-  }
+  const elementos = [...d.querySelectorAll(selector)];
+  elementos.forEach(elemento => {
 
-  if(x.classList.contains(clase)){
-    x.classList.remove(clase)
-  }else{
-    x.classList.add(clase)
-  }
+    // if there is a main class removes all other classes
+    // TODO: hacer que mainClass sea en realidad una lista de clases a ignorar
+    if(mainClass){
+      elemento.classList.forEach( item=>{
+        if( item!=mainClass && item!=clase ){
+          elemento.classList.remove(item);
+        }
+      });
+    }
+  
+    if(elemento.classList.contains(clase)){
+      elemento.classList.remove(clase)
+    }else{
+      elemento.classList.add(clase)
+    }
+  })
 }
 
 
