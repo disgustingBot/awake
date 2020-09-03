@@ -1,5 +1,31 @@
 
-
+<style>
+/* ---------------------------------------------------------------------------
+6.4.5) =sqare:
+--------------------------------------------------------------------------- */
+.sqare:hover .sqare_deco{width:100%;background:red}
+.sqare{
+  display:grid;
+  grid-gap:.5rem;
+}
+.sqare_amg{
+  display:flex;
+  height:calc((100vw - 16px - var(--lateral) * 2 - (var(--num_1_2_4) - 1) * .5rem) / var(--num_1_2_4));
+}
+.sqare_img{
+  display:flex;
+  height:inherit;
+}
+.sqare_deco{
+  width:1rem;
+  height:3px;
+  background:var(--grey6);
+  transition:.3s;
+}
+.sqare_date{
+  margin-top:auto;
+}
+</style>
 <?php function sqare_card () { ?>
 
   <div class="sqare">
@@ -21,6 +47,43 @@
 
 
 
+
+
+
+<style>
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.4.3) =simpla:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.simpla{
+  display: grid;
+  grid-gap:.75rem;
+  text-align: center;
+  margin-bottom:auto;
+}
+.simpla_img{
+  /* height:calc((100vw - 16px - var(--lateral) * 2 - 4rem) / 5); */
+  height:calc((100vw - 16px - var(--lateral) * 2 - (var(--num_1_2_4) - 1) * .5rem) / var(--num_1_2_4));
+}
+.simpla_title{
+  margin-top:1rem;
+  font-size:16px;
+  text-transform: uppercase;
+}
+.simpla_deco{
+  width:50%;
+  margin:auto;
+  margin-bottom:0;
+  position:relative;
+  bottom:-10px;
+  height:3px;
+  background:red;
+}
+.simpla_txt{
+  font-size:12px;
+}
+</style>
 <?php function simpla_card () { ?>
 
   <div class="simpla">

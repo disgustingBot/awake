@@ -555,32 +555,8 @@ ul,ol{list-style:none}
                           6.4.3) =simpla:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.simpla{
-  display: grid;
-  grid-gap:.75rem;
-  text-align: center;
-  margin-bottom:auto;
-}
-.simpla_img{
-  height:calc((100vw - 16px - var(--lateral) * 2 - 4rem) / 5)
-}
-.simpla_title{
-  margin-top:1rem;
-  font-size:16px;
-  text-transform: uppercase;
-}
-.simpla_deco{
-  width:50%;
-  margin:auto;
-  margin-bottom:0;
-  position:relative;
-  bottom:-10px;
-  height:3px;
-  background:red;
-}
-.simpla_txt{
-  font-size:12px;
-}
+
+/* !estilos de tarjeta en el archivo inc/multi_cards.php */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -621,30 +597,7 @@ ul,ol{list-style:none}
   grid-row-gap:2rem;
   margin:1rem var(--lateral);
 }
-
-.sqare:hover .sqare_deco{width:100%;background:red}
-.sqare{
-  display:grid;
-  grid-gap:.5rem;
-}
-.sqare_amg{
-  display:flex;
-  height:calc((100vw - 16px - var(--lateral) * 2 - 1.5rem) / var(--num_1_2_4));
-}
-.sqare_img{
-  display:flex;
-  height:inherit;
-}
-.sqare_deco{
-  width:1rem;
-  height:3px;
-  background:var(--grey6);
-  transition:.3s;
-}
-.sqare_date{
-  margin-top:auto;
-}
-
+/* !estilos de tarjeta en el archivo inc/multi_cards.php */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -664,15 +617,15 @@ ul,ol{list-style:none}
                           6.5.1) =showcase4:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-/* 
-.showcase5 .simpla_img{
-  height:calc((100vw - 16px - var(--lateral) * 2 - 2rem - 4rem) / 5)
-} */
+
+.showcase4.tall_img .simpla_img{
+  height:calc((100vw - 16px - var(--lateral) * 2 - (var(--num_1_2_4) - 1) * .5rem) * 1.5 / var(--num_1_2_4));
+}
 .showcase4{
   display:grid;
   grid-gap:.5rem;
   grid-row-gap:3rem;
-  padding:2rem calc(var(--lateral) + 1rem);
+  padding:2rem var(--lateral);
   /* grid-template-columns:repeat(4,1fr); */
   grid-template-columns:var(--grid_1_2_4_GTC);
 }
@@ -684,13 +637,13 @@ ul,ol{list-style:none}
 --------------------------------------------------------------------------- */
 
 .showcase5 .simpla_img{
-  height:calc((100vw - 16px - var(--lateral) * 2 - 2rem - 4rem) / 5)
+  height:calc((100vw - 16px - var(--lateral) * 2 - 4rem) / 5)
 }
 .showcase5{
   display:grid;
   grid-gap:.5rem;
   grid-row-gap:3rem;
-  padding:2rem calc(var(--lateral) + 1rem);
+  padding:2rem var(--lateral);
   grid-template-columns:repeat(5,1fr);
 }
 /* ---------------------------------------------------------------------------

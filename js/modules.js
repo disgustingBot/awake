@@ -256,7 +256,6 @@ carouselController = {
 
 class Carousel {
 	constructor(gallery){
-		// TODO: quitar la propiedad "values" y reemplazar por nueva implementacion
 		this.j = 1;
 		this.elements = gallery.querySelectorAll('.Element');
 		this.title = gallery.id;
