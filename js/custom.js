@@ -12,6 +12,7 @@ w.onload=()=>{
 
   // Modules setup
   carouselController.setup()
+  cuantosController.setup()
 	growUpController.setup()
 	obseController.setup()
   d.getElementById("load").style.top="-100vh";

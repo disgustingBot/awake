@@ -12,7 +12,8 @@
 
 
     <section class="flati">
-        <img class="flati_icon" src="" alt="">
+        <?php include 'assets/perceptive_brain.svg'; ?>
+        <!-- <img class="flati_icon" src="" alt=""> -->
         <div class="flati_deco"></div>
         <h5 class="flati_title">¡Aprende a cuidar de tu mente de una manera creativa, divertida y guiada!</h5>
         <p class="flati_txt">
@@ -35,10 +36,10 @@
 
 
     <section class="showcase4 tall_img">
-        <h3 class="showcase_title">Descubre nuestros Programas de Resiliencia</h3>
+        <h3 class="showcase_title simple_title">Descubre nuestros Programas de Resiliencia</h3>
 
         <?php
-        // $args = array('post_type'=>'programa');
+        // $args = array('post_type'=>'programa',);
         $programas=new WP_Query(array('post_type'=>'programa'));
         while($programas->have_posts()){$programas->the_post(); ?>
 
@@ -50,7 +51,73 @@
 
 
 
+    <section class="showcase3">
+        <h3 class="showcase_title simple_title" style="margin-bottom:2rem">Herramientas que te servirán para...</h3>
 
+
+        <div class="hosi">
+            <?php include 'assets/shield.svg'; ?>
+            <p class="hosi_txt">Reducir estrés y ansiedad.</p>
+        </div>
+
+        <div class="hosi">
+            <?php include 'assets/emotional_intelligence.svg'; ?>
+            <p class="hosi_txt">
+                Aumentar la inteligencia emocional.
+            </p>
+        </div>
+
+        <div class="hosi">
+            <?php include 'assets/sleepy_moon.svg'; ?>
+            <p class="hosi_txt">
+                Crear un sueño más profundo y reparador.
+            </p>
+        </div>
+
+        <div class="hosi">
+            <?php include 'assets/map_compose.svg'; ?>
+            <p class="hosi_txt">
+                Ver “the big picture” para poder apreciar mejor los detalles.
+            </p>
+        </div>
+
+        <div class="hosi">
+            <?php include 'assets/listening_ear.svg'; ?>
+            <p class="hosi_txt">
+                Mejorar la escucha activa, la concentración y creatividad.
+            </p>
+        </div>
+
+        <div class="hosi">
+            <?php include 'assets/perceptive_brain.svg'; ?>
+            <p class="hosi_txt">
+                Crear una percepción flexible para mejorar la respuesta ante diferentes situaciones.
+            </p>
+        </div>
+
+        <div class="hosi">
+            <?php include 'assets/opportunity.svg'; ?>
+            <p class="hosi_txt">
+                Afrontar el cambio y aprovechar las oportunidades que nos brinda.
+            </p>
+        </div>
+
+        <div class="hosi">
+            <?php include 'assets/relationship.svg'; ?>
+            <p class="hosi_txt">
+                Mejorar las relaciones interpersonales.
+            </p>
+        </div>
+
+        <div class="hosi">
+            <?php include 'assets/happy_brain.svg'; ?>
+            <p class="hosi_txt">
+                Hacernos más resistentes a la depresión.
+            </p>
+        </div>
+    </section>
+
+    
 
 
 
