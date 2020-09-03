@@ -103,7 +103,7 @@
                     <?php the_title(); ?>
                 </h1>
             </a>
-            <a class="hero_link" href="">Próximas fechas</a>
+            <a class="hero_link" href="<?php echo get_permalink(); ?>">Próximas fechas</a>
             <p class="hero_txt">
                 Resiliencia, meditación y mindfulness para redirigir tu vida<br>
                 retiro 3 dias + 8 semanas de formacion a distancia

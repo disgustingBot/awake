@@ -39,9 +39,12 @@ Version: 1.2
 6.4.3) =simpla:
 6.4.4) =barda:
 6.4.5) =sqare:
+6.4.6) =flati:
 6.5) =SHOWCASE:
-6.5.1) =showcase4:
-6.5.2) =showcase5:
+6.5.1) =showcase2:
+6.5.2) =showcase3:
+6.5.3) =showcase4:
+6.5.4) =showcase5:
 6.6) =BUTTONS:
 6.6.1) =prenex:
 6.6.2) =burger:
@@ -53,9 +56,16 @@ Version: 1.2
 
 6.15) =mivi:
 6.16) =tesim:
-6.17) =gala:
+6.17) =GALLERIES:
+6.17.1) =gala:
+6.17.2) =gali:
+6.18) =separanda:
+6.19) =pista:
+6.20) =copa:
 
 6.25) =pagination:
+
+6.36) =chiri:
 
 6.69) =redDot:
 6.98) =piqui:
@@ -88,6 +98,12 @@ FIN DE MAPA DE CONTENIDOS */
   /* COLORS */
   /* Al editar colores siempre usar HEX y nunca
   dejar espacio entre los dos puntos y el color */
+
+  --primaryColor:red;
+  --secondaryColor:#85AFCA;
+
+
+
   --color1:#000;
   --color2:#FFF;
   --color3:red;
@@ -113,16 +129,16 @@ FIN DE MAPA DE CONTENIDOS */
   --greyf:#FFFFFF;
 
 
-  --DP0:  0px 0px 0px  rgba(0, 0, 0, 0.0),  0px 0px 0px  rgba(0, 0, 0, 0.00), 0px 0px 0px   rgba(0, 0, 0, 0.00);
-  --DP1:  0px 1px 3px  rgba(0, 0, 0, 0.2),  0px 2px 2px  rgba(0, 0, 0, 0.12), 0px 0px 2px   rgba(0, 0, 0, 0.14);
-  --DP2:  0px 1px 5px  rgba(0, 0, 0, 0.2),  0px 3px 4px  rgba(0, 0, 0, 0.12), 0px 2px 4px   rgba(0, 0, 0, 0.14);
-  --DP3:  0px 1px 8px  rgba(0, 0, 0, 0.2),  0px 3px 4px  rgba(0, 0, 0, 0.12), 0px 3px 3px   rgba(0, 0, 0, 0.14);
-  --DP4:  0px 1px 10px rgba(0, 0, 0, 0.2),  0px 4px 5px  rgba(0, 0, 0, 0.12), 0px 2px 4px   rgba(0, 0, 0, 0.14);
-  --DP6:  0px 3px 5px  rgba(0, 0, 0, 0.2),  0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px  rgba(0, 0, 0, 0.14);
-  --DP8:  0px 4px 5px  rgba(0, 0, 0, 0.2),  0px 3px 14px rgba(0, 0, 0, 0.12), 0px 8px 10px  rgba(0, 0, 0, 0.14);
-  --DP9:  0px 5px 6px  rgba(0, 0, 0, 0.2),  0px 3px 16px rgba(0, 0, 0, 0.12), 0px 9px 12px  rgba(0, 0, 0, 0.14);
-  --DP12: 0px 7px 8px  rgba(0, 0, 0, 0.2),  0px 5px 22px rgba(0, 0, 0, 0.12), 0px 12px 17px rgba(0, 0, 0, 0.14);
-  --DP16: 0px 8px 10px rgba(0, 0, 0, 0.2),  0px 6px 30px rgba(0, 0, 0, 0.12), 0px 16px 24px rgba(0, 0, 0, 0.14);
+  --DP0:  0px  0px  0px rgba(0, 0, 0, 0.0), 0px 0px  0px rgba(0, 0, 0, 0.00), 0px  0px  0px rgba(0, 0, 0, 0.00);
+  --DP1:  0px  1px  3px rgba(0, 0, 0, 0.2), 0px 2px  2px rgba(0, 0, 0, 0.12), 0px  0px  2px rgba(0, 0, 0, 0.14);
+  --DP2:  0px  1px  5px rgba(0, 0, 0, 0.2), 0px 3px  4px rgba(0, 0, 0, 0.12), 0px  2px  4px rgba(0, 0, 0, 0.14);
+  --DP3:  0px  1px  8px rgba(0, 0, 0, 0.2), 0px 3px  4px rgba(0, 0, 0, 0.12), 0px  3px  3px rgba(0, 0, 0, 0.14);
+  --DP4:  0px  1px 10px rgba(0, 0, 0, 0.2), 0px 4px  5px rgba(0, 0, 0, 0.12), 0px  2px  4px rgba(0, 0, 0, 0.14);
+  --DP6:  0px  3px  5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px  6px 10px rgba(0, 0, 0, 0.14);
+  --DP8:  0px  4px  5px rgba(0, 0, 0, 0.2), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px  8px 10px rgba(0, 0, 0, 0.14);
+  --DP9:  0px  5px  6px rgba(0, 0, 0, 0.2), 0px 3px 16px rgba(0, 0, 0, 0.12), 0px  9px 12px rgba(0, 0, 0, 0.14);
+  --DP12: 0px  7px  8px rgba(0, 0, 0, 0.2), 0px 5px 22px rgba(0, 0, 0, 0.12), 0px 12px 17px rgba(0, 0, 0, 0.14);
+  --DP16: 0px  8px 10px rgba(0, 0, 0, 0.2), 0px 6px 30px rgba(0, 0, 0, 0.12), 0px 16px 24px rgba(0, 0, 0, 0.14);
   --DP24: 0px 11px 15px rgba(0, 0, 0, 0.2), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 24px 38px rgba(0, 0, 0, 0.14);
 
 
@@ -167,6 +183,10 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* ?gertha */
   --gertha_GTC:1fr;
+
+  /* ?chiri */
+  --chiri_GTC:1fr 1fr;
+  --chiri_cambia_columna:2;
 
   /* ?FOOTER */
 }
@@ -239,6 +259,10 @@ FIN DE MAPA DE CONTENIDOS */
   /* ?gertha */
   --gertha_GTC:.8fr 1.2fr;
 
+  /* ?chiri */
+  --chiri_GTC:repeat(5,1fr);
+  --chiri_cambia_columna:unset;
+
   /* ?FOOTER */
   }
 }
@@ -301,11 +325,32 @@ body{display:grid}
 img{object-fit:cover;width:100%}
 a{text-decoration:none;color:inherit}
 ul,ol{list-style:none}
+
+
+.single-product .main{
+  padding:2rem var(--lateral);
+}
+.single-product .main h1,
+.single-product .main h2,
+.single-product .main h3,
+.single-product .main h4,
+.single-product .main h5,
+.single-product .main h6{
+  color:var(--secondaryColor);
+  text-align:center;
+}
+.single-product .main h1{font-size:1.5rem;margin:1.5rem 0;letter-spacing:.1rem;}
+.single-product .main h2{font-size:1.4rem;margin:1.5rem 0;letter-spacing:.1rem;}
+.single-product .main h3{font-size:1.3rem;margin:1.5rem 0;letter-spacing:.1rem;}
+.single-product .main h4{font-size:1.2rem;margin:1.5rem 0;letter-spacing:.1rem;}
+.single-product .main h5{font-size:1.1rem;margin:1.5rem 0;letter-spacing:.1rem;}
+.single-product .main h6{font-size:1.0rem;margin:1.5rem 0;letter-spacing:.1rem;}
+.single-product .main  p{font-size:16px  ;margin:0.5rem 0;}
 .main {
   /* display: flex; */
   /* flex-direction: column; */
 }
-.main p,
+/* .main p,
 .main a,
 .main h1,
 .main h2,
@@ -315,7 +360,7 @@ ul,ol{list-style:none}
 .main h6,
 .main ul,
 .main ol,
-.main li{margin:unset;padding:unset}
+.main li{margin:unset;padding:unset} */
 .main ul,.main ol{list-style:unset}
 
 /* ---------------------------------------------------------------------------
@@ -474,6 +519,7 @@ ul,ol{list-style:none}
 --------------------------------------------------------------------------- */
 .hero.inactive{
   opacity:0;
+  pointer-events: none;
 }
 .hero{
   display:grid;
@@ -488,6 +534,7 @@ ul,ol{list-style:none}
   text-align: center;
   opacity:1;
   transition:.3s;
+  overflow-y: hidden;
 }
 .hero_icon{
   width:80px;
@@ -497,7 +544,7 @@ ul,ol{list-style:none}
 }
 .hero_img{
   position: absolute;
-  height: 100vh;
+  height: 100vh!important;
   z-index: -1;
   display: flex;
   width: 100%;
@@ -555,32 +602,8 @@ ul,ol{list-style:none}
                           6.4.3) =simpla:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.simpla{
-  display: grid;
-  grid-gap:.75rem;
-  text-align: center;
-  margin-bottom:auto;
-}
-.simpla_img{
-  height:calc((100vw - 16px - var(--lateral) * 2 - 4rem) / 5)
-}
-.simpla_title{
-  margin-top:1rem;
-  font-size:16px;
-  text-transform: uppercase;
-}
-.simpla_deco{
-  width:50%;
-  margin:auto;
-  margin-bottom:0;
-  position:relative;
-  bottom:-10px;
-  height:3px;
-  background:red;
-}
-.simpla_txt{
-  font-size:12px;
-}
+
+/* !estilos de tarjeta en el archivo inc/multi_cards.php */
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -621,30 +644,67 @@ ul,ol{list-style:none}
   grid-row-gap:2rem;
   margin:1rem var(--lateral);
 }
+/* !estilos de tarjeta en el archivo inc/multi_cards.php */
 
-.sqare:hover .sqare_deco{width:100%;background:red}
-.sqare{
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.4.6) =flati:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+section.flati{padding:4rem var(--lateral);}
+.flati{
   display:grid;
-  grid-gap:.5rem;
+  grid-template-columns:1fr 1fr;
+  grid-gap:1rem;
+  align-items: center;
+  justify-content: center;
 }
-.sqare_amg{
-  display:flex;
-  height:calc((100vw - 16px - var(--lateral) * 2 - 1.5rem) / var(--num_1_2_4));
+.flati svg{
+  color:var(--secondaryColor);
+  grid-column:1/-1;
+  height:var(--logo_size);
+  width: var(--logo_size);
+  margin:auto;
 }
-.sqare_img{
-  display:flex;
-  height:inherit;
-}
-.sqare_deco{
-  width:1rem;
+.flati_deco{
+  grid-column:1/-1;
+  width: 2rem;
   height:3px;
-  background:var(--grey6);
-  transition:.3s;
+  background: var(--secondaryColor);
+  margin:auto;
 }
-.sqare_date{
-  margin-top:auto;
+.flati_title{
+  color:var(--secondaryColor);
+  text-align:right;
+  font-size:1.2rem;
+}
+.flati_txt{
+  font-size:16px;
 }
 
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.4.7) =hosi:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+section.flati{padding:4rem var(--lateral);}
+.hosi{
+  display:grid;
+  grid-gap:1rem;
+  align-items: center;
+  justify-content: center;
+  padding:1.5rem;
+}
+.hosi svg{
+  color:var(--secondaryColor);
+  height:var(--logo_size);
+  width: var(--logo_size);
+  margin:auto;
+}
+.hosi_txt{
+  font-size:16px;
+  text-align: center;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -659,38 +719,69 @@ ul,ol{list-style:none}
   font-family: 'Lora', serif;
   text-align:center;
 }
+.showcase_title.simple_title{font-family:'Lato',sans-serif}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          6.5.1) =showcase4:
+                          6.5.1) =showcase2:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-/* 
-.showcase5 .simpla_img{
-  height:calc((100vw - 16px - var(--lateral) * 2 - 2rem - 4rem) / 5)
-} */
+
+.showcase2{
+  background:var(--greye);
+  display:grid;
+  grid-gap:1rem;
+  /* grid-row-gap:3rem; */
+  padding:2rem var(--lateral);
+  grid-template-columns:repeat(2,1fr);
+  /* grid-template-columns:var(--grid_1_2_4_GTC); */
+}
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.5.2) =showcase3:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.showcase3{
+  display:grid;
+  /* grid-gap:.5rem; */
+  /* grid-row-gap:3rem; */
+  /* padding:2rem var(--lateral); */
+  grid-template-columns:repeat(3,1fr);
+  /* grid-template-columns:var(--grid_1_2_4_GTC); */
+}
+.showcase3 > :nth-child(2n){background:var(--greye)}
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.5.3) =showcase4:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.showcase4.tall_img .simpla_img{
+  height:calc((100vw - 16px - var(--lateral) * 2 - (var(--num_1_2_4) - 1) * .5rem) * 1.5 / var(--num_1_2_4));
+}
 .showcase4{
   display:grid;
   grid-gap:.5rem;
   grid-row-gap:3rem;
-  padding:2rem calc(var(--lateral) + 1rem);
+  padding:2rem var(--lateral);
   /* grid-template-columns:repeat(4,1fr); */
   grid-template-columns:var(--grid_1_2_4_GTC);
 }
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          6.5.2) =showcase5:
+                          6.5.4) =showcase5:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
 .showcase5 .simpla_img{
-  height:calc((100vw - 16px - var(--lateral) * 2 - 2rem - 4rem) / 5)
+  height:calc((100vw - 16px - var(--lateral) * 2 - 4rem) / 5)
 }
 .showcase5{
   display:grid;
   grid-gap:.5rem;
   grid-row-gap:3rem;
-  padding:2rem calc(var(--lateral) + 1rem);
+  padding:2rem var(--lateral);
   grid-template-columns:repeat(5,1fr);
 }
 /* ---------------------------------------------------------------------------
@@ -1023,9 +1114,16 @@ ul,ol{list-style:none}
   width: 100%;
 }
 
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          6.17) =gala:
+                          6.17) =GALLERIES:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.17.1) =gala:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .gala{
@@ -1054,6 +1152,111 @@ ul,ol{list-style:none}
 .gala_img:nth-child(10){grid-column:1 / 4;grid-row:7;  height:var(--gala_row7);}
 .gala_img:nth-child(11){grid-column:4 / 6;grid-row:7;  height:var(--gala_row7);}
 
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.17.2) =gali:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.gali{
+  --gali_width:calc((100vw - 16px - var(--lateral) * 2 - 1rem - .5rem) / 2);
+  --gali_row1:calc(var(--gali_width) * 0.4229);
+  --gali_row2:calc(var(--gali_width) * 0.4229);
+  --gali_row3:calc(var(--gali_width) * 0.4506);
+  display:grid;
+  grid-gap:.5rem;
+  grid-template-rows:var(--gali_row1) var(--gali_row2) var(--gali_row3);
+  grid-template-columns:48.42fr 51.58fr;
+  margin:auto;
+}
+.gali_img:nth-child(1) {grid-column:1 / 2;grid-row:1;  height:var(--gali_row1);}
+.gali_img:nth-child(2) {grid-column:1 / 2;grid-row:2;  height:var(--gali_row1);}
+.gali_img:nth-child(3) {grid-column:2 / 3;grid-row:1/3;height:calc(var(--gali_row1) * 2 + .5rem);}
+.gali_img:nth-child(4) {grid-column:1 /-1;grid-row:3;  height:var(--gali_row3);}
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.18) =separanda:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.separanda > *{margin:auto}
+/* .separanda > :last-child{margin-right:0} */
+.separanda{
+  /* --separanda-gap:1rem; */
+  display:grid;
+grid-auto-flow: column;  
+  /* grid-gap:1rem; */
+
+  /* grid-template-columns:1fr 1fr 1.5fr 1fr 1fr; */
+  justify-content: space-around;
+  background:white;
+  padding:2rem var(--lateral);
+  margin:2rem auto;
+  width:100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.separanda_text{
+  color:var(--secondaryColor);
+}
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.19) =pista:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.pista{
+  display:grid;
+  grid-gap:.5rem;
+  margin:auto;
+}
+.pista_title{
+  font-size: 26px;
+}
+.pista_txt{
+  text-transform: uppercase;
+  font-size:16px;
+}
+.pista_deco{
+  width:2rem;
+  height:2px;
+  background:var(--grey6);
+}
+.pista_caption{
+  font-size:16px;
+}
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.20) =copa:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.copa{
+  display:grid;
+  grid-template-columns:3fr 1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr 1fr 1fr;
+  grid-auto-flow: dense;
+  padding:2rem var(--lateral);
+  grid-gap:1rem;
+}
+.copa_img{
+  grid-row: 1/5;
+}
+.copa_title{
+  grid-column:2/-1;
+  font-size: 24px;
+}
+.copa_select{
+  grid-column:3/5;
+}
+.copa_mas{
+  grid-column:2/-1;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.25) =pagination:
@@ -1075,6 +1278,34 @@ ul,ol{list-style:none}
   border-radius:4px;
 }
 .paginationCurrent{padding:.3rem .5rem}
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.36) =chiri:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.chiri{
+  display:grid;
+  /* grid-template-columns:repeat(5,1fr); */
+  grid-template-columns:var(--chiri_GTC);
+  grid-auto-flow: row dense;
+  align-items: center;
+  background:var(--greye);
+  text-align: center;
+  color:var(--secondaryColor);
+  font-size:18px;
+  text-transform:uppercase;
+  margin:1rem 0;
+}
+.chiri_img{
+  height:calc((100vw - 16px) / 5);
+}
+.chiri_txt{
+  padding:.5rem;
+}
+.chiri > :nth-child(3),
+.chiri > :nth-child(7){grid-column:var(--chiri_cambia_columna)}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
