@@ -93,14 +93,139 @@
         <img class="copa_img" src="https://picsum.photos/400" alt="">
         <h6 class="copa_title">Retiro en Cantabria 3 días<br><?php the_title(); ?></h6>
         <p class="copa_label">FECHAS</p>
-        <select class="copa_select" name="" id="">
+
+
+
+
+
+
+
+
+
+
+        <!-- <select class="copa_select" name="" id="">
             <option value="">Elige una opcion</option>
-        </select>
-        <p class="copa_price">475,00€</p>
+        </select> -->
+
+
+
+        <?php
+    			// $product = wc_get_product();
+    			if ( $product->is_type( 'variable' ) AND !$is_out_of_stock ) {
+            $variations = $product->get_available_variations();
+
+            // THIS BLOCK DEFINES THE ARRAY: "$myAttributes"
+            // WE WILL USE THIS ARRAY LATER
+            $myAttributes = array();
+            foreach ($variations as $key => $value) {
+              foreach ($value['attributes'] as $j => $var) {
+                if ( ! array_key_exists ( $j, $myAttributes ) ) {
+                  $myAttributes[$j] = array($var => array($value['variation_id']));
+                } else {
+                  $myAttributes[$j][$var][] = $value['variation_id'];
+                }
+              }
+            }
+            // var_dump($myAttributes);
+
+            $first = true;
+            foreach ($myAttributes as $key => $value) {
+              $slug = preg_replace("/attribute_/i", "", $key);
+              $name = ucfirst($slug);
+              ?>
+
+              <div class="SelectBox copa_select" tabindex="1" id="selectBox<?php echo $name; ?>">
+                <div class="selectBoxButton" onclick="altClassFromSelector('focus', '#selectBox<?php echo $slug; ?>')">
+                  <!-- <p class="selectBoxPlaceholder"><?php // _e('elige una opcion', 'lt_domain'); ?></p> -->
+                  <p class="selectBoxPlaceholder"><?php echo $name; ?></p>
+                  <p class="selectBoxCurrent" id="selectBoxCurrent<?php echo $name; ?>"></p>
+                </div>
+                <div class="selectBoxList">
+                  <label for="nul<?php echo $name; ?>" class="selectBoxOption">
+                    <input
+                      class="selectBoxInput"
+                      id="nul<?php echo $name; ?>"
+                      type="radio"
+                      data-ids=""
+                      name="filter_<?php echo $slug; ?>"
+                      onclick="selectBoxControler('','#selectBox<?php echo $name; ?>','#selectBoxCurrent<?php echo $name; ?>')"
+                      value="0"
+                      checked
+                    >
+                    <!-- <span class="checkmark"></span> -->
+                    <p class="colrOptP"></p>
+                  </label>
+                  <?php foreach ($value as $i => $var) { ?>
+                    <!-- <p class="colrOptP"><?php // var_dump($var['attributes']); ?></p> -->
+                  <?php // foreach ($value['options'] as $key => $var) { ?>
+                    <label for="<?php echo $i; ?>" class="selectBoxOption<?php if(!$first){echo ' hidden';} ?>">
+                      <input
+                        class="selectBoxInput"
+                        id="<?php echo $i; ?>"
+                        data-ids="<?php
+                          foreach ($var as $j => $x) {
+                            echo $x;
+                            if($j<count($var)-1){ echo ', '; }
+                          }
+                        ?>"
+                        type="radio"
+                        name="filter_<?php echo $slug; ?>"
+                        onclick="selectBoxControler('<?php echo $i; ?>', '#selectBox<?php echo $name; ?>', '#selectBoxCurrent<?php echo $name; ?>')"
+                        value="<?php echo $i; ?>"
+                        <?php // if($_GET['filter_'.$term->slug]==$var->slug){echo "selected";} ?>
+                      >
+                      <!-- <span class="checkmark"></span> -->
+                      <!-- <p class="colrOptP"><?php // var_dump($var[0]); ?></p> -->
+                      <p class="colrOptP"><?php echo $i; ?></p>
+                    </label>
+                  <?php } ?>
+                </div>
+              </div>
+            <?php $first = false; ?>
+            <?php } ?>
+
+
+
+
+
+          <?php } ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <p class="copa_price">475,00€</p> -->
+        <p class="copa_price" id="singleSidePrice"><?php echo $product->get_price_html(); ?></p>
         
         <div class="cuantos Cuantos">
-            <input class="cuantosQnt cuantosQantity" type="text" value="1" min="1">
             <button class="cuantosBtn cuantosMins">-</button>
+            <input class="cuantosQnt cuantosQantity" type="text" value="1" min="1">
             <button class="cuantosBtn cuantosPlus">+</button>
         </div>
         
@@ -118,14 +243,14 @@
                 data-preorder="false"
             <?php } ?>
             <?php if( $is_out_of_stock ){ echo 'disabled'; } ?>
-            >
-            <?php
-            if( $is_out_of_stock ){
-                echo 'OUT OF STOCK';
-            } else {
-                echo 'ADD TO CART';
-            }
-            ?>
+        >
+        <?php
+        if( $is_out_of_stock ){
+            echo 'Sin cupo';
+        } else {
+            echo 'Añadir a la cesta';
+        }
+        ?>
         </button>
 
         <p class="copa_mas">Más información CLICA AQUÍ</p>

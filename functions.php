@@ -4,6 +4,7 @@ require_once 'inc/custom_posts.php';
 require_once 'inc/form_handler.php';
 require_once 'inc/multi_cards.php';
 require_once 'inc/ajax.php';
+require_once 'inc/customize.php';
 
 
 
@@ -52,7 +53,13 @@ function gp_init() {
 add_action('after_setup_theme', 'gp_init');
 
 
-
+// function my_custom_css_output() {
+//   echo '<style type="text/css" id="custom-theme-css">' .
+//   get_theme_mod( 'custom_theme_css', '' ) . '</style>';
+//   echo '<style type="text/css" id="custom-plugin-css">' .
+//   get_option( 'custom_plugin_css', '' ) . '</style>';
+// }
+// add_action( 'wp_head', 'my_custom_css_output');
 
 
 

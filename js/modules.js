@@ -41,7 +41,7 @@ class SelectBox {
 		this.config = { attributes: true, childList: true, characterData: true }
 	}
 	select(a, selectBoxId, current){
-		// c.log(a)
+		c.log(a)
 		if(!!a){d.querySelector(selectBoxId).classList.add('alt')}
 		else   {d.querySelector(selectBoxId).classList.remove('alt')}
 
