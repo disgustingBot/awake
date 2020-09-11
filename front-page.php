@@ -18,6 +18,9 @@
 
     <button class="prenex prenex_prev rowcol1" id="prevButton"></button>
     <button class="prenex prenex_next rowcol1" id="nextButton"></button>
+    <svg class="mega_arrow_down rowcol1" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
+      <use xlink:href="#arrow_down"></use>
+    </svg>
 </section>
 
 
@@ -25,10 +28,10 @@
 
 <section class="gertha lateral_m">
     <div class="gertha_deco"></div>
-    <h3 class="gertha_title">
+    <h1 class="gertha_title font_size_1">
         Vivir despierto<br>
         es facil... si sabes cómo!
-    </h3>
+    </h1>
     <div class="gertha_caption">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.

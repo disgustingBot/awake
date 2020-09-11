@@ -131,6 +131,7 @@ FIN DE MAPA DE CONTENIDOS */
   --greyc:#CCCCCC;
   --greyd:#DDDDDD;
   --greye:#EEEEEE;
+  --greye6:#E6E6E6;
   --greyf:#FFFFFF;
 
 
@@ -167,7 +168,7 @@ FIN DE MAPA DE CONTENIDOS */
 
   --absolute_768_static:absolute;
   --row_768_column:row;
-  
+
   --num_1_2_4:1;
   --grid_1_2_4_GTC: 1fr;
   --grid_1_2_GTC:   1fr;
@@ -261,7 +262,7 @@ FIN DE MAPA DE CONTENIDOS */
     --nav_bar_justify_cont:space-between;
     --nav_bar_font_size:10px;
 
-    
+
   /* ?gertha */
   --gertha_GTC:.8fr 1.2fr;
 
@@ -322,6 +323,7 @@ FIN DE MAPA DE CONTENIDOS */
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 body{font-family: 'Lato', sans-serif;}
+h1, h2, h3, h4, h5 {font-family: 'Lora', serif;}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                            4) =ETIQUETAS GLOBALES:
@@ -357,6 +359,7 @@ ul,ol{list-style:none}
   /* display: flex; */
   /* flex-direction: column; */
 }
+
 /* .main p,
 .main a,
 .main h1,
@@ -369,6 +372,13 @@ ul,ol{list-style:none}
 .main ol,
 .main li{margin:unset;padding:unset} */
 .main ul,.main ol{list-style:unset}
+
+.font_size_1 {font-size: var(--font_size_1)}
+.font_size_2 {font-size: var(--font_size_2)}
+.font_size_3 {font-size: var(--font_size_3)}
+.font_size_4 {font-size: var(--font_size_4)}
+.font_size_5 {font-size: var(--font_size_5)}
+.font_size_6 {font-size: var(--font_size_6)}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -413,7 +423,7 @@ ul,ol{list-style:none}
 .dady_break {
   display: flex;
   flex-wrap: wrap;
-  /* NO USAR, gap es genial para grid pero aun no tiene mucho soporte */ 
+  /* NO USAR, gap es genial para grid pero aun no tiene mucho soporte */
   /* gap:.5rem; */
   /* --margin: 1rem; */
   --breakpoint: 768px;
@@ -486,6 +496,14 @@ ul,ol{list-style:none}
 .mega{
   display: grid;
   position: relative;
+  color: white;
+}
+
+.mega_arrow_down {
+  height: 100px;
+  margin: auto auto 1rem auto;
+  color: white;
+  z-index: 1;
 }
 
 
@@ -561,7 +579,6 @@ ul,ol{list-style:none}
   font-size: 1.6rem;
   color:white;
   padding:0 calc(var(--lateral) + 3rem);
-  font-family: 'Lora', serif;
 }
 .hero_link{
   text-transform: uppercase;
@@ -599,7 +616,7 @@ ul,ol{list-style:none}
   z-index: -1;
   margin:6rem;
   margin-top:0;
-  background: var(--greye);
+  background: var(--greye6);
   height: 500px;
   position: absolute;
 }
@@ -624,12 +641,11 @@ ul,ol{list-style:none}
   grid-template-columns:calc((100vw - 16px - var(--lateral) * 2) / 2) 1fr;
   padding:2rem var(--lateral);
   grid-gap:3rem;
-  background:var(--greye);
+  background:var(--greye6);
 }
 .barda_title{
   grid-column:1/-1;
   font-size:1.4rem;
-  font-family: 'Lora', serif;
   text-align:center;
 }
 .barda_quote{
@@ -723,7 +739,6 @@ section.flati{padding:4rem var(--lateral);}
 .showcase_title{
   grid-column:1/-1;
   font-size:1.4rem;
-  font-family: 'Lora', serif;
   text-align:center;
 }
 .showcase_title.simple_title{font-family:'Lato',sans-serif}
@@ -734,7 +749,7 @@ section.flati{padding:4rem var(--lateral);}
 --------------------------------------------------------------------------- */
 
 .showcase2{
-  background:var(--greye);
+  background:var(--greye6);
   display:grid;
   grid-gap:1rem;
   /* grid-row-gap:3rem; */
@@ -756,7 +771,7 @@ section.flati{padding:4rem var(--lateral);}
   grid-template-columns:repeat(3,1fr);
   /* grid-template-columns:var(--grid_1_2_4_GTC); */
 }
-.showcase3 > :nth-child(2n){background:var(--greye)}
+.showcase3 > :nth-child(2n){background:var(--greye6)}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.5.3) =showcase4:
@@ -1033,7 +1048,7 @@ section.flati{padding:4rem var(--lateral);}
 --------------------------------------------------------------------------- */
 .mivi .prenex{color:black}
 .mivi{
-  background:var(--greye);
+  background:var(--greye6);
   padding:2rem var(--lateral);
   display:grid;
   grid-gap:2rem;
@@ -1048,7 +1063,6 @@ section.flati{padding:4rem var(--lateral);}
 .mivi_title{
   grid-column:1/-1;
   text-align:center;
-  font-family: 'Lora', serif;
 }
 .mivi_excerpt{
   font-size:16px;
@@ -1214,7 +1228,7 @@ section.flati{padding:4rem var(--lateral);}
 .separanda{
   /* --separanda-gap:1rem; */
   display:grid;
-grid-auto-flow: column;  
+grid-auto-flow: column;
   /* grid-gap:1rem; */
 
   /* grid-template-columns:1fr 1fr 1.5fr 1fr 1fr; */
@@ -1366,7 +1380,7 @@ grid-auto-flow: column;
   grid-template-columns:var(--chiri_GTC);
   grid-auto-flow: row dense;
   align-items: center;
-  background:var(--greye);
+  background:var(--greye6);
   text-align: center;
   color:var(--secondary_color);
   font-size:18px;
@@ -1475,7 +1489,7 @@ grid-auto-flow: column;
 }
 
 .SelectBox.focus:focus .selectBoxList {
-  background:var(--greye);
+  background:var(--greye6);
   left: var(--selectBoxListLeft);
   opacity:1;
   pointer-events:unset;
@@ -1544,7 +1558,7 @@ grid-auto-flow: column;
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .footer{
-  background:var(--greye);
+  background:var(--greye6);
   display:grid;
   grid-template-columns: var(--grid_1_2_4_GTC);
   grid-gap:.5rem;
@@ -1569,7 +1583,7 @@ grid-auto-flow: column;
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .signature{
-  background:var(--greye);
+  background:var(--greye6);
   display: grid;
   padding:1rem;
   text-align: center;
