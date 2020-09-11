@@ -8,11 +8,20 @@
   <!-- TODO: hacer que estos 2 links sean 1 link -->
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <style>
+  :root{
+    --primary_color:<?php echo get_option( 'primary_color', '' ); ?>;
+    --secondary_color:<?php echo get_option( 'secondary_color', '' ); ?>;
+  }
+  
+  
+  </style>
+
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 	<view id="load" class="load"><div class="circle"></div></view>
-
   <?php include 'assets/all_icons.php'; ?>
   <header class="header Obse" data-observe=".header_activator" id="header">
     <!-- <a class="logo rowcol1 Obse" data-observe=".header_activator" href="<?php echo get_site_url(); ?>"> -->

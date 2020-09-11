@@ -46,6 +46,7 @@ Version: 1.2
 6.5.3) =showcase4:
 6.5.4) =showcase5:
 6.6) =BUTTONS:
+6.6.0) =btn:
 6.6.1) =prenex:
 6.6.2) =burger:
 
@@ -65,7 +66,11 @@ Version: 1.2
 
 6.25) =pagination:
 
+6.31) =cuantos:
+
 6.36) =chiri:
+
+6.58) =selectBox:
 
 6.69) =redDot:
 6.98) =piqui:
@@ -99,8 +104,8 @@ FIN DE MAPA DE CONTENIDOS */
   /* Al editar colores siempre usar HEX y nunca
   dejar espacio entre los dos puntos y el color */
 
-  --primaryColor:red;
-  --secondaryColor:#85AFCA;
+  /* --primary_color:red; */
+  /* --secondary_color:#85AFCA; */
 
 
 
@@ -235,6 +240,7 @@ FIN DE MAPA DE CONTENIDOS */
 @media screen and (min-width: 768px) {
   :root {
     --sizeR: calc(calc(var(--sizeRc) * 1px) + (var(--sizeRd) - var(--sizeRc)) * ((100vw - 768px) / (1200 - 768)));
+    --lateral:1.5rem;
     --onlyDesktopG:grid;
     --onlyDesktopF:flex;
     --onlyMobileF:none;
@@ -275,6 +281,7 @@ FIN DE MAPA DE CONTENIDOS */
 --------------------------------------------------------------------------- */
 @media screen and (min-width: 992px) {
   :root {
+    --lateral:2rem;
     --num_1_2_4:4;
     --grid_1_2_4_GTC:repeat(4,1fr);
     /* ?HEADER */
@@ -336,7 +343,7 @@ ul,ol{list-style:none}
 .single-product .main h4,
 .single-product .main h5,
 .single-product .main h6{
-  color:var(--secondaryColor);
+  color:var(--secondary_color);
   text-align:center;
 }
 .single-product .main h1{font-size:1.5rem;margin:1.5rem 0;letter-spacing:.1rem;}
@@ -660,7 +667,7 @@ section.flati{padding:4rem var(--lateral);}
   justify-content: center;
 }
 .flati svg{
-  color:var(--secondaryColor);
+  color:var(--secondary_color);
   grid-column:1/-1;
   height:var(--logo_size);
   width: var(--logo_size);
@@ -670,11 +677,11 @@ section.flati{padding:4rem var(--lateral);}
   grid-column:1/-1;
   width: 2rem;
   height:3px;
-  background: var(--secondaryColor);
+  background: var(--secondary_color);
   margin:auto;
 }
 .flati_title{
-  color:var(--secondaryColor);
+  color:var(--secondary_color);
   text-align:right;
   font-size:1.2rem;
 }
@@ -696,7 +703,7 @@ section.flati{padding:4rem var(--lateral);}
   padding:1.5rem;
 }
 .hosi svg{
-  color:var(--secondaryColor);
+  color:var(--secondary_color);
   height:var(--logo_size);
   width: var(--logo_size);
   margin:auto;
@@ -789,6 +796,28 @@ section.flati{padding:4rem var(--lateral);}
                           6.6) =BUTTONS:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.6.0) =btn:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.btn:hover{
+  outline:1px solid var(--secondary_color);
+  background:white;
+  color:var(--secondary_color)
+}
+.btn{
+  background:var(--secondary_color);
+  border:none;
+  text-transform: uppercase;
+  cursor:pointer;
+  margin:auto;
+  padding:.5rem 1rem;
+  color:white;
+  transition:.4s;
+}
+
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1198,7 +1227,7 @@ grid-auto-flow: column;
   align-items: center;
 }
 .separanda_text{
-  color:var(--secondaryColor);
+  color:var(--secondary_color);
 }
 
 
@@ -1238,7 +1267,7 @@ grid-auto-flow: column;
 --------------------------------------------------------------------------- */
 .copa{
   display:grid;
-  grid-template-columns:3fr 1fr 1fr 1fr;
+  grid-template-columns:2fr min-content min-content 1fr;
   grid-template-rows:1fr 1fr 1fr 1fr;
   grid-auto-flow: dense;
   padding:2rem var(--lateral);
@@ -1251,8 +1280,25 @@ grid-auto-flow: column;
   grid-column:2/-1;
   font-size: 24px;
 }
+.copa_label{
+  color:white;
+  font-size:16px;
+  padding:.5rem .9rem;
+  width: 100%;
+  background:var(--secondary_color);
+  text-align:center;
+  margin:auto 0;
+}
 .copa_select{
   grid-column:3/5;
+}
+.copa_price{
+  margin:auto 0;
+  text-align: center;
+  font-size:16px;
+  padding:.3rem;
+  border-top:2px solid var(--secondary_color);
+  border-bottom:2px solid var(--secondary_color);
 }
 .copa_mas{
   grid-column:2/-1;
@@ -1280,6 +1326,35 @@ grid-auto-flow: column;
 .paginationCurrent{padding:.3rem .5rem}
 
 
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.31) =cuantos:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.cuantos{
+  display:grid;
+  grid-template-columns:min-content 1fr min-content;
+  margin:auto;
+}
+
+.cuantosBtn:hover,
+.cuantosBtn:focus{background:black;color:white;border:1px solid black;}
+.cuantosBtn{
+  padding:.5rem .7rem;
+  background:white;
+  border-radius:0;
+  border:1px solid var(--grey6);
+  cursor:pointer;
+  transition:.3s;
+}
+.cuantosQnt{
+  text-align:center;
+  pointer-events: none;
+  /* padding:.5rem .7rem; */
+  width:2rem;
+}
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.36) =chiri:
@@ -1293,7 +1368,7 @@ grid-auto-flow: column;
   align-items: center;
   background:var(--greye);
   text-align: center;
-  color:var(--secondaryColor);
+  color:var(--secondary_color);
   font-size:18px;
   text-transform:uppercase;
   margin:1rem 0;
@@ -1306,6 +1381,129 @@ grid-auto-flow: column;
 }
 .chiri > :nth-child(3),
 .chiri > :nth-child(7){grid-column:var(--chiri_cambia_columna)}
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.58) =selectBox:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.SelectBox{
+  display: grid;
+  align-items: center;
+  width:100%;
+  position: relative;
+  --selectBoxHeight:40px;
+}
+.selectBoxButton{
+  color:#333;
+  cursor: pointer;
+  display:grid;
+  grid-row:1;
+  grid-column:1;
+  height: var(--selectBoxHeight);
+  position: relative;
+  transition:.4s;
+  width:100%;
+  height:40px;
+  z-index:4;
+}
+
+.selectBoxPlaceholder{
+  font-size: 16px!important;
+  height:1rem;
+  line-height:1rem;
+  left:16px;
+  position: absolute;
+  top:calc(50% - .5rem);
+  transition:.3s;
+  transform-origin:left;
+}
+
+.selectBoxCurrent{
+  border-bottom: 2px solid var(--grey6);
+  font-size: 14px!important;
+  padding:16px 10px 2px 16px;
+  position: relative;
+}
+
+.selectBoxCurrent::after{
+  content:'';
+  position:absolute;
+  bottom:-2px;
+  left:0;
+  width: 100%;
+  transform-origin: center;
+  transform: scaleX(0);
+  height: 2px;
+  transition:.2s;
+  background: var(--secondary_color);
+}
+.SelectBox:focus{
+  outline:none;
+}
+.SelectBox:focus .selectBoxCurrent::after,
+.SelectBox.alt .selectBoxCurrent::after{
+  transform:scaleX(1);
+}
+.SelectBox:focus .selectBoxPlaceholder,
+.SelectBox.alt .selectBoxPlaceholder{
+  transform:translateY(-50%) scale(.6);
+}
+
+.selectBoxList {
+  align-items: center;
+  background: #FFF;
+  border-radius:4px;
+  box-shadow:var(--DP4);
+  display: grid;
+  grid-gap: .3rem;
+  padding: .2rem;
+  left:0;
+  max-height: 300px;
+  position: absolute;
+  pointer-events: none;
+  opacity:0;
+  overflow-y: scroll;
+  top:0;
+  transition:.3s;
+  transition-delay:.2s;
+  width:100%;
+  z-index: 12;
+}
+
+.SelectBox.focus:focus .selectBoxList {
+  background:var(--greye);
+  left: var(--selectBoxListLeft);
+  opacity:1;
+  pointer-events:unset;
+}
+
+
+.selectBoxOption:first-child {
+  font-weight: bold;
+}
+
+.selectBoxOption {
+  cursor:pointer;
+  font-size: 15px;
+  transition:.3s;
+  padding:0 8px;
+}
+
+.selectBoxOption:hover {
+  background:#BBB;
+  z-index:1;
+}
+.hidden {display:none!important}
+
+.selectBoxInput {
+  display: none;
+}
+
+
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------

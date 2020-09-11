@@ -11,6 +11,7 @@ w.onload=()=>{
   }
 
   // Modules setup
+  selectBoxSpace.poblate()
   carouselController.setup()
   cuantosController.setup()
 	growUpController.setup()
@@ -74,6 +75,16 @@ const altClassFromSelector = ( clase, selector, mainClass = false )=>{
 
 
 
+// SELECT BOX CONTROLER
+// TODO: mejorar eso a clases y POO
+const selectBoxControler=(a, selectBoxId, current)=>{ //c.log(a)
+	if(!!a){d.querySelector(selectBoxId).classList.add('alt')}
+	else   {d.querySelector(selectBoxId).classList.remove('alt')}
+
+	d.querySelector(current).innerHTML=a;
+	d.querySelector(selectBoxId).classList.remove('focus')
+	d.activeElement.blur();
+}
 
 
 
