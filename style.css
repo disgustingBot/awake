@@ -49,6 +49,7 @@ Version: 1.2
 6.6.0) =btn:
 6.6.1) =prenex:
 6.6.2) =burger:
+6.7.0) =facebook_feeds:
 
 6.8) =MENUS:
 6.8.1) =nav_menu:
@@ -132,6 +133,7 @@ FIN DE MAPA DE CONTENIDOS */
   --greyd:#DDDDDD;
   --greye:#EEEEEE;
   --greye6:#E6E6E6;
+  --greyf5: #F5F5F5;
   --greyf:#FFFFFF;
 
 
@@ -323,7 +325,11 @@ FIN DE MAPA DE CONTENIDOS */
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 body{font-family: 'Lato', sans-serif;}
-h1, h2, h3, h4, h5 {font-family: 'Lora', serif;}
+h1, h2, h3, h4, h5 {
+  font-family: 'Lora', serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                            4) =ETIQUETAS GLOBALES:
@@ -482,6 +488,7 @@ ul,ol{list-style:none}
   width:100%;
   z-index:10;
   height:calc(var(--logo_size) + 1rem);
+  display: none;
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -560,12 +567,23 @@ ul,ol{list-style:none}
   opacity:1;
   transition:.3s;
   overflow-y: hidden;
+  position: relative;
 }
 .hero_icon{
   width:80px;
   margin:auto;
-
   border-radius:50%;
+}
+.hero_img_filter{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: brightness(70%);
+  z-index: -1;
 }
 .hero_img{
   position: absolute;
@@ -573,7 +591,7 @@ ul,ol{list-style:none}
   z-index: -1;
   display: flex;
   width: 100%;
-  filter:brightness(50%);
+  filter:brightness(70%);
 }
 .hero_title{
   font-size: 1.6rem;
@@ -601,26 +619,38 @@ ul,ol{list-style:none}
   display:grid;
   grid-template-columns:var(--gertha_GTC);
   grid-gap:1rem;
-  padding: 2rem 4rem;
+  padding: 3rem 3rem;
   position: relative;
+  color: var(--grey9);
 }
 .gertha_title{
   grid-column: 1/-1;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 .gertha_caption{
   font-size:16px;
 }
+.gertha_txt {
+  margin-bottom: 1rem;
+  font-size: 22px;
+  font-weight: 500;
+}
+.gertha_signature {
+  position: absolute;
+  width: 300px;
+  bottom: -1rem;
+}
 .gertha_deco{
-  width:calc(100% - 12rem);
+  width:calc(100% - 13rem);
   z-index: -1;
   margin:6rem;
   margin-top:0;
-  background: var(--greye6);
-  height: 500px;
+  background: var(--greyf5);
+  height: 100%;
   position: absolute;
 }
-.gertha_img{margin:auto}
+.gertha_img{margin:0 auto auto auto}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.4.3) =simpla:
@@ -740,6 +770,7 @@ section.flati{padding:4rem var(--lateral);}
   grid-column:1/-1;
   font-size:1.4rem;
   text-align:center;
+  color: var(--grey9);
 }
 .showcase_title.simple_title{font-family:'Lato',sans-serif}
 /* ---------------------------------------------------------------------------
@@ -783,11 +814,12 @@ section.flati{padding:4rem var(--lateral);}
 }
 .showcase4{
   display:grid;
-  grid-gap:.5rem;
+  grid-gap:1rem;
   grid-row-gap:3rem;
   padding:2rem var(--lateral);
   /* grid-template-columns:repeat(4,1fr); */
   grid-template-columns:var(--grid_1_2_4_GTC);
+  margin: 3rem 0;
 }
 
 /* ---------------------------------------------------------------------------
@@ -846,6 +878,7 @@ section.flati{padding:4rem var(--lateral);}
   border:none;
   color:white;
   transform-origin: center;
+  outline: none;
 }
 .prenex_prev{margin-right:auto}
 .prenex_next{margin-left:auto}
@@ -853,17 +886,17 @@ section.flati{padding:4rem var(--lateral);}
 
 .prenex::before,
 .prenex::after{
-  content:"";
+  content:" ";
   display:grid;
   width:25px;
   height:3px;
   top:-2px;
   border-radius: 2px;
-  background: currentColor;
+  background: var(--grey9);
   position:relative;
   transform:rotate(40deg);
   transform-origin: left center;
-  margin:auto var(--lateral);
+  margin:auto 2rem;
 }
 .prenex::before{
   transform:rotate(-40deg);
@@ -927,6 +960,16 @@ section.flati{padding:4rem var(--lateral);}
 .mobile_menu_active .burgerBar:nth-child(2){transform: scaleX(0)}
 .mobile_menu_active .burgerBar:nth-child(3){transform: rotate(-45deg)}
 
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.7.0) =facebook_feeds:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.fb_sells_personal_data {
+  padding: 2rem var(--lateral);
+  background: var(--greye6);
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1129,10 +1172,12 @@ section.flati{padding:4rem var(--lateral);}
 --------------------------------------------------------------------------- */
 .tesim_container .prenex{color:black}
 .tesim_container{
-  margin:2rem var(--lateral);
+  margin: 2rem 0;
   text-align: center;
   position: relative;
   display: grid;
+  color: var(--grey9);
+  height: 80vh;
 }
 .tesim_cont.inactive{opacity:0}
 .tesim_cont{
@@ -1143,21 +1188,40 @@ section.flati{padding:4rem var(--lateral);}
   grid-gap:1rem;
   opacity:1;
   transition:.3s;
+  padding: 0 2rem;
+}
+.tesim_container .tesim:nth-child(1) .tesim_icon, .tesim_container .tesim:nth-child(1) .tesim_author {color: #98C9AC}
+.tesim_container .tesim:nth-child(2) .tesim_icon, .tesim_container .tesim:nth-child(2) .tesim_author{color: #EDC06D}
+
+.testim_title {
+  font-size: 36px;
 }
 .tesim{
   display:grid;
   grid-gap:.5rem;
   text-align: center;
+  padding: 0 2rem;
 }
-.tesim_icon{font-size:3rem}
+.tesim_icon{
+  height: 35px;
+  margin: auto auto 1rem auto;
+}
 .tesim_txt{
   width: 100%;
+  font-family: 'lora', serif;
+  font-size: 20px;
+  font-style: italic;
 }
 .tesim_txt p{
   width: 100%;
 }
 
-
+.testim_link {
+  margin: auto;
+  color: var(--grey9);
+  font-size: 14px;
+  text-decoration: underline;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.17) =GALLERIES:
