@@ -10,7 +10,7 @@
   while($banners->have_posts()){$banners->the_post();?>
     <div class="hero Element">
       <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-      <h1 class="hero_title"><?php the_title(); ?></h1>
+      <h1 class="hero_title font_size_1"><?php the_title(); ?></h1>
     </div>
   <?php } wp_reset_query(); ?>
 
@@ -28,7 +28,7 @@
 
 <section class="gertha lateral_m">
   <div class="gertha_deco"></div>
-  <h1 class="gertha_title font_size_1">
+  <h1 class="gertha_title font_size_2">
     Vivir despierto<br>
     es facil... ¡si sabes cómo!
   </h1>
@@ -48,7 +48,7 @@
 
 
 <section class="showcase4">
-  <h3 class="showcase_title">¿En qué podemos ayudarte?</h3>
+  <h3 class="showcase_title font_size_3">¿En qué podemos ayudarte?</h3>
 
   <div class="simpla">
     <img class="simpla_img" loading="lazy" src="https://picsum.photos/200" alt="">
@@ -102,7 +102,7 @@
 
 
     <a href="<?php echo get_permalink(); ?>">
-      <h1 class="hero_title">
+      <h1 class="hero_title font_size_1">
         <?php the_title(); ?>
       </h1>
     </a>
@@ -119,7 +119,7 @@
 
 
 <section class="tesim_container Carousel">
-  <h3 class="testim_title">Testimonios</h3>
+  <h3 class="testim_title font_size_3">Testimonios</h3>
 
   <div class="tesim_cont Element row2col1">
     <?php
@@ -149,7 +149,11 @@
     <a href="" class="testim_link">VER MÁS TESTIMONIOS</a>
   </section>
 
-  <section class="fb_sells_personal_data">
+  <section class="facebook_sells_your_personal_data">
+    <hgroup class="feed_title">
+      <h3 class="font_size_3">Síguenos en Instagram</h3>
+      <h5 class="feed_link font_size_6"><a href="https://www.instagram.com/esfacilsisabescomo/?hl=es" target="_blank">@esfacilsisabescomo</a></h5>
+    </hgroup>
     <?php echo do_shortcode('[instagram-feed]') ?>
   </section>
 
