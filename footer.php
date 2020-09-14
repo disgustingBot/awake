@@ -2,8 +2,8 @@
 
   <footer class="footer" id="footer">
     <div class="piqui">
-      <h6 class="piqui_title">Contacto</h6>
-      <div class="piqui_deco"></div>
+      <h5 class="piqui_title font_size_6">Contacto</h5>
+      <p class="piqui_deco">-</p>
       <p class="piqui_item">Vivir Despierto</p>
       <p class="piqui_item">Finca Las Bardas s/n.</p>
       <p class="piqui_item">39408 Coo de Buelna (Cantabria)</p>
@@ -11,21 +11,22 @@
       <p class="piqui_item">902 102 810 - 655 882 160</p>
     </div>
     <div class="piqui">
-      <h6 class="piqui_title">Info</h6>
-      <div class="piqui_deco"></div>
+      <h5 class="piqui_title font_size_6">Info</h5>
+      <p class="piqui_deco">-</p>
       <p class="piqui_item">Términos y condiciones</p>
       <p class="piqui_item">Politica de Privacidad</p>
       <p class="piqui_item">Como llegar a la finca Las Bardas</p>
     </div>
+    <form class="piqui">
+      <h5 class="piqui_title font_size_6">Newsletter</h5>
+      <p class="piqui_deco">-</p>
+      <input class="piqui_input" type="text" value="" placeholder="Nombre">
+      <input class="piqui_input" type="text" value="" placeholder="Email">
+      <input class="piqui_send" type="submit" value="SEND">
+    </form>
     <div class="piqui">
-      <h6 class="piqui_title">Newsletter</h6>
-      <div class="piqui_deco"></div>
-      <p class="piqui_item">Send</p>
-
-    </div>
-    <div class="piqui">
-      <h6 class="piqui_title">Follow</h6>
-      <div class="piqui_deco"></div>
+      <h5 class="piqui_title font_size_6">Follow</h5>
+      <p class="piqui_deco">-</p>
       <p class="piqui_item">Instagram</p>
       <p class="piqui_item">Facebook</p>
       <p class="piqui_item">Linkedin</p>
