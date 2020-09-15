@@ -68,8 +68,8 @@
 }
 .simpla_title{
   margin-top:1rem;
-  font-size:16px;
   text-transform: uppercase;
+  color: var(--grey5);
 }
 .simpla_deco{
   width:50%;
@@ -81,16 +81,16 @@
   background:red;
 }
 .simpla_txt{
-  font-size:12px;
+  color: var(--grey7);
 }
 </style>
 <?php function simpla_card () { ?>
 
   <div class="simpla">
     <img class="simpla_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-    <h6 class="simpla_title row2col1"><?php the_title(); ?></h6>
+    <h6 class="simpla_title font_size_6 row2col1"><?php the_title(); ?></h6>
     <div class="simpla_deco row2col1"></div>
-    <div class="simpla_txt"><?php the_excerpt(); ?></div>
+    <div class="simpla_txt font_size_7"><?php the_excerpt(); ?></div>
   </div>
 
 <?php } ?>

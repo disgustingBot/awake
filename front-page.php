@@ -149,13 +149,6 @@
     <a href="" class="testim_link">VER MÁS TESTIMONIOS</a>
   </section>
 
-  <section class="facebook_sells_your_personal_data">
-    <hgroup class="feed_title">
-      <h3 class="font_size_3">Síguenos en Instagram</h3>
-      <h5 class="feed_link font_size_6"><a href="https://www.instagram.com/esfacilsisabescomo/?hl=es" target="_blank">@esfacilsisabescomo</a></h5>
-    </hgroup>
-    <?php echo do_shortcode('[instagram-feed]') ?>
-  </section>
 
 
 

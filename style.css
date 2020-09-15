@@ -519,7 +519,7 @@ ul,ol{list-style:none}
 }
 
 .mega_arrow_down {
-  height: 100px;
+  height: 30px;
   margin: auto auto 1rem auto;
   color: white;
   z-index: 1;
@@ -674,25 +674,29 @@ ul,ol{list-style:none}
                           6.4.4) =barda:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.barda{
+.barda {
   display:grid;
   grid-auto-flow:column;
   grid-template-rows: min-content min-content 1fr;
   grid-template-columns:calc((100vw - 16px - var(--lateral) * 2) / 2) 1fr;
-  padding:2rem var(--lateral);
+  padding:4rem var(--lateral);
   grid-gap:3rem;
   background:var(--greye6);
 }
 .barda_title{
   grid-column:1/-1;
-  font-size:1.4rem;
   text-align:center;
+  color: var(--grey6);
 }
 .barda_quote{
   text-align:right;
+  color: #87B0C9  ;
+  font-style: italic;
+  font-family: 'Lora', serif;
 }
 .barda_txt{
   grid-row:span 2;
+  color: var(--grey8);
 }
 
 /* ---------------------------------------------------------------------------
@@ -714,7 +718,12 @@ ul,ol{list-style:none}
                           6.4.6) =flati:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-section.flati{padding:4rem var(--lateral);}
+
+section.flati{
+  padding:4rem  var(--lateral);
+  font-family: 'Lato', sans-serif!important;
+  font-size: var(--font_size_5);
+}
 .flati{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -723,7 +732,7 @@ section.flati{padding:4rem var(--lateral);}
   justify-content: center;
 }
 .flati svg{
-  color:var(--secondary_color);
+  color:#85afca;
   grid-column:1/-1;
   height:var(--logo_size);
   width: var(--logo_size);
@@ -733,16 +742,21 @@ section.flati{padding:4rem var(--lateral);}
   grid-column:1/-1;
   width: 2rem;
   height:3px;
-  background: var(--secondary_color);
+  background: #85afca;
   margin:auto;
 }
 .flati_title{
   color:var(--secondary_color);
   text-align:right;
   font-size:1.2rem;
+  color:#85afca;
+  margin: 0 auto auto auto;
+  font-family: 'Lato', sans-serif!important;
+  font-weight: 500;
 }
 .flati_txt{
-  font-size:16px;
+  font-size: var(--font_size_4);
+  color: var(--grey9);
 }
 
 /* ---------------------------------------------------------------------------
@@ -750,7 +764,7 @@ section.flati{padding:4rem var(--lateral);}
                           6.4.7) =hosi:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-section.flati{padding:4rem var(--lateral);}
+
 .hosi{
   display:grid;
   grid-gap:1rem;
@@ -779,9 +793,12 @@ section.flati{padding:4rem var(--lateral);}
 .showcase_title{
   grid-column:1/-1;
   text-align:center;
-  color: var(--grey9);
+  color: var(--grey6);
+  margin-top: 2rem;
 }
-.showcase_title.simple_title{font-family:'Lato',sans-serif}
+.showcase_title.simple_title{
+  font-family:'Lato',sans-serif;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.5.1) =showcase2:
@@ -976,10 +993,11 @@ section.flati{padding:4rem var(--lateral);}
 --------------------------------------------------------------------------- */
 
 .facebook_sells_your_personal_data {
-  padding: 3rem var(--lateral);
+  padding: 1rem 0 3rem 0;
   background: var(--greye6);
   color: var(--grey9);
   text-align: center;
+  grid-column: 1/-1;
 }
 .feed_title {
 }
@@ -1125,15 +1143,19 @@ section.flati{padding:4rem var(--lateral);}
 .mivi_title{
   grid-column:1/-1;
   text-align:center;
+  color: var(--grey5);
 }
 .mivi_excerpt{
-  font-size:16px;
+  color: var(--grey7);
+}
+.mivi_excerpt strong {
+  color: var(--grey6);
 }
 .mivi_why{
   display:grid;
   grid-template-columns:1fr 1fr;
   padding:0 5rem;
-  --mivi_border_select:1px solid black;
+  --mivi_border_select:1px solid var(--grey9);
   --mivi_border_rested:1px solid transparent;
 }
 .mivi_select{
@@ -1142,6 +1164,8 @@ section.flati{padding:4rem var(--lateral);}
   font-size:18px;
   cursor:pointer;
   transition:.3s;
+  color: var(--grey5);
+  font-family: 'Lato', sans-serif;
 }
 .mivi_why.option2 .mivi_select.option2,
 .mivi_why:not(.option2) .mivi_select.option1{
@@ -1155,16 +1179,22 @@ section.flati{padding:4rem var(--lateral);}
   border-bottom:var(--mivi_border_select);
   background:var(--greyc);
 }
+
+.mivi_why.option2 .mivi_explain.option1,
+.mivi_why:not(.option2) .mivi_explain.option2{
+  display: none;
+}
+
 .mivi_explain{
   padding:2rem 3rem;
   background:white;
   grid-row:2;
-  font-size: 16px;
   grid-column:1/-1;
   border:var(--mivi_border_select);
   border-top:none;
   opacity:0;
   transition:.5s;
+  color: var(--grey7);
 }
 .mivi_why:not(.option2) .mivi_explain.option1,
 .mivi_why.option2 .mivi_explain.option2{
@@ -1172,6 +1202,12 @@ section.flati{padding:4rem var(--lateral);}
 }
 .mivi_icons{
   display:grid;
+}
+.mivi_icons .prenex::before,
+.mivi_icons .prenex::after {margin: 0;}
+.mivi_icon {
+  height: 45px;
+  width: auto;
 }
 .mivi_slide.inactive{opacity:0}
 .mivi_slide{
@@ -1261,7 +1297,7 @@ section.flati{padding:4rem var(--lateral);}
   grid-template-columns:31.06fr 14.02fr 23.67fr 2.84fr 28.41fr;
   grid-template-rows:var(--gala_row1) var(--gala_row2) var(--gala_row3) var(--gala_row4) var(--gala_row5) var(--gala_row6) var(--gala_row7);
   grid-gap:.5rem;
-  padding:2rem var(--lateral);
+  padding:6rem calc(var(--lateral) * 2);
 }
 .gala_img:nth-child(1) {grid-column:1 / 3;grid-row:1/3;height:calc(var(--gala_row1) + var(--gala_row2) + .5rem)}
 .gala_img:nth-child(2) {grid-column:3 / 6;grid-row:1;  height:var(--gala_row1);}
@@ -1655,6 +1691,8 @@ form.piqui {grid-gap: 5px}
   color: var(--grey9);
   margin-top: 10px;
   font-weight: bold;
+  letter-spacing: 3px;
+  color: var(--grey5);
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1666,7 +1704,7 @@ form.piqui {grid-gap: 5px}
   display:grid;
   grid-template-columns: var(--grid_1_2_4_GTC);
   grid-gap:.5rem;
-  padding:2rem calc(var(--lateral) + 1rem);
+  padding:2rem var(--lateral);
   text-align:center;
 }
 .footer .logo{
@@ -1676,16 +1714,12 @@ form.piqui {grid-gap: 5px}
   width:  calc(var(--logo_size) * 1.3);
   height: calc(var(--logo_size) * 1.3);
 }
-.footer .logo_img{
-  color:black;
-  width:  calc(var(--logo_size) * 1.3);
-  height: calc(var(--logo_size) * 1.3);
-}
 .footer .logo_img {
   filter: none!important;
-  color: var(--grey9);
-  height: 5rem;
+  color: var(--grey8);
+  height: 5.5rem;
   width: auto;
+  margin: 1rem auto;
 }
 
 /* ---------------------------------------------------------------------------
@@ -1697,6 +1731,7 @@ form.piqui {grid-gap: 5px}
   background:var(--greye6);
   display: grid;
   padding:1rem;
-  text-align: center;
-  font-size:16px;
+  text-align: right;
+  font-size:10px;
+  color: var(--grey9);
 }
