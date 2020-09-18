@@ -25,7 +25,7 @@
   <div class="simpla">
     <img class="simpla_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
     <h6 class="simpla_title font_size_6 row2col1"><?php the_title(); ?></h6>
-    <div class="simpla_deco row2col1"></div>
+    <div class="simpla_deco"></div>
     <div class="simpla_txt font_size_7"><?php the_excerpt(); ?></div>
   </div>
 

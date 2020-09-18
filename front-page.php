@@ -53,25 +53,25 @@
   <div class="simpla">
     <img class="simpla_img" loading="lazy" src="https://picsum.photos/200" alt="">
     <h6 class="simpla_title row2col1">Resiliencia</h6>
-    <div class="simpla_deco row2col1" style="background:#C0CED3"></div>
+    <div class="simpla_deco" style="background:#C0CED3"></div>
   </div>
 
   <div class="simpla">
     <img class="simpla_img" loading="lazy" src="https://picsum.photos/199" alt="">
     <h6 class="simpla_title row2col1">Libérate</h6>
-    <div class="simpla_deco row2col1"style="background:#E9AD94"></div>
+    <div class="simpla_deco"style="background:#E9AD94"></div>
   </div>
 
   <div class="simpla">
     <img class="simpla_img" loading="lazy" src="https://picsum.photos/201" alt="">
     <h6 class="simpla_title row2col1">Nutricion</h6>
-    <div class="simpla_deco row2col1" style="background:#EDC06D"></div>
+    <div class="simpla_deco" style="background:#EDC06D"></div>
   </div>
 
   <div class="simpla">
     <img class="simpla_img" loading="lazy" src="https://picsum.photos/202" alt="">
     <h6 class="simpla_title row2col1">Longevity</h6>
-    <div class="simpla_deco row2col1" style="background:#98C9AC"></div>
+    <div class="simpla_deco" style="background:#98C9AC"></div>
   </div>
 </section>
 

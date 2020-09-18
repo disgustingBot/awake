@@ -4,5 +4,6 @@
     include 'arrow_down.svg';
     include 'signature.svg';
     include 'quote_icon.svg';
+    include 'distance_training.svg';
     ?>
 </div>

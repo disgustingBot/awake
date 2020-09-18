@@ -5,8 +5,7 @@
 <?php while(have_posts()){the_post(); ?>
 
     <section class="hero">
-      <!-- <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt=""> -->
-      <img class="hero_img" loading="lazy" src="http://localhost/awake/wp-content/uploads/2020/09/Cabecera_about.png" alt="">
+      <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
       <h1 class="hero_title rowcol1"><?php echo get_post_meta(get_the_ID(), '1_titulo_principal', true)?></h1>
       <div class="redDot header_activator"></div>
       <svg class="mega_arrow_down rowcol1" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
@@ -54,7 +53,7 @@
 
 
     <section class="showcase3">
-        <h3 class="showcase_title simple_title" style="margin-bottom:2rem">Herramientas que te servirán para...</h3>
+        <h3 class="showcase_title simple_title">Herramientas que te servirán para...</h3>
 
 
         <div class="hosi">
@@ -126,33 +125,38 @@
 
 
 
-    <section class="tesim_container Carousel">
-        <h3 class="">¿En qué podemos ayudarte?</h3>
 
-        <div class="tesim_cont Element row2col1">
-            <?php
-            $i = 0;
-            $args = array(
-                'post_type'=>'testimonial',
-            );
-            $testimonials=new WP_Query($args);
-            while($testimonials->have_posts()){$testimonials->the_post();?>
-                <?php if ( !($i & 1) AND $i ) { ?>
-                    </div>
-                    <div class="tesim_cont Element row2col1">
-                <?php } ?>
-                <quote class="tesim">
-                    <p class="tesim_icon">"</p>
-                    <div class="tesim_txt"><?php the_content(); ?></div>
-                    <p class="tesim_author"><?php the_title(); ?></p>
-                </quote>
-            <?php $i=$i+1; } wp_reset_query(); ?>
+
+    <section class="tesim_container Carousel">
+      <h3 class="testim_title font_size_3">Testimonios</h3>
+
+      <div class="tesim_cont Element row2col1">
+        <?php
+        $i = 0;
+        $args = array(
+          'post_type'=>'testimonial',
+        );
+        $testimonials=new WP_Query($args);
+        while($testimonials->have_posts()){$testimonials->the_post();?>
+          <?php if ( !($i & 1) AND $i ) { ?>
+          </div>
+          <div class="tesim_cont Element row2col1">
+          <?php } ?>
+          <quote class="tesim">
+            <svg class="tesim_icon" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 38 34">
+              <use xlink:href="#quote_icon"></use>
+            </svg>
+            <div class="tesim_txt"><?php the_content(); ?></div>
+            <p class="tesim_author"><?php the_title(); ?></p>
+          </quote>
+          <?php $i=$i+1; } wp_reset_query(); ?>
         </div>
 
 
         <button class="prenex prenex_prev row2col1" id="prevButton"></button>
         <button class="prenex prenex_next row2col1" id="nextButton"></button>
-    </section>
+        <a href="" class="testim_link">VER MÁS TESTIMONIOS</a>
+      </section>
 
     <section class="main">
         <?php the_content(); ?>

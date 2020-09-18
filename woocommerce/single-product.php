@@ -13,39 +13,41 @@
     <section class="gertha lateral_m">
         <div class="gertha_deco"></div>
         <div class="gertha_caption">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Nunc hendrerit nibh id metus sagittis pharetra.
-                Aenean lacinia enim eu eros interdum, vel accumsan dolor lobortis.
-                Vestibulum lacus enim, sollicitudin in hendrerit eu, placerat ac nulla.
-                Fusce iaculis justo tristique sem porta suscipit.
-                Proin lobortis dictum luctus.
-                Suspendisse convallis id tortor id aliquet.
-                Donec congue laoreet venenatis.
-                In convallis magna tellus, nec sollicitudin nisl scelerisque ut.
-                Nulla semper, est ac egestas vestibulum, enim orci imperdiet turpis, ut dictum orci leo ac nisl.</p>
+            <p class="gertha_txt"> Te presentamos un programa experiencial para sobrevivir y prosperar en tiempos de cambio e incertidumbre. Diseñado especialmente para ayudarnos a desconectar de nuestras vidas llenas de distracciones y recargarnos de tiempo, espacio y de herramientas para cuidar y desarrollar nuestra resiliencia humana. </p>
+            <br>
+            <br>
+            <p class="gertha_txt">La Resiliencia aplicada a humanos se entiende como la capacidad para “rebotar” de experiencias difíciles y de salir fortalecidos, tras pasar por una experiencia traumática o un periodo de estrés y ansiedad, por ejemplo. Cuando incorporamos actitudes y prácticas de resiliencia en nuestras vidas, se nos abren las puertas para vivir el presente con una mente más sana y un corazón más feliz.</p>
+
         </div>
         <img class="gertha_img" loading="lazy" src="https://picsum.photos/400/280" alt="">
     </section>
 
 
-    
+
     <div class="separanda">
-        <?php include get_template_directory() . '/assets/retirement.svg'; ?>
-        <p class="separanda_text">Retiro<br>de 3 días</p>
-        <?php include get_template_directory() . '/assets/plus.svg'; ?>
-        <?php include get_template_directory() . '/assets/retirement.svg'; ?>
-        <p class="separanda_text">8 semanas de<br>formación a distancia</p>
+        <div class="separanda_item">
+          <?php include get_template_directory() . '/assets/retirement.svg'; ?>
+          <p class="separanda_text">Retiro<br>de 3 días</p>
+        </div>
+        <div class="separanda_item">
+          <?php include get_template_directory() . '/assets/plus.svg'; ?>
+        </div>
+        <div class="separanda_item">
+          <?php include get_template_directory() . '/assets/distance_training.svg'; ?>
+          <p class="separanda_text">8 semanas de<br>formación a distancia</p>
+        </div>
+
+
     </div>
 
 
 
     <section class="showcase2">
         <div class="gali">
-            <img class="gali_img" src="http://localhost/awake/wp-content/uploads/2020/09/DSCF5365-2.jpg" alt="">
-            <img class="gali_img" src="http://localhost/awake/wp-content/uploads/2020/09/retiro_dia1-12.jpg" alt="">
-            <img class="gali_img" src="http://localhost/awake/wp-content/uploads/2020/09/retiro_paseo-45.jpg" alt="">
-            <img class="gali_img" src="http://localhost/awake/wp-content/uploads/2020/09/retiro_dia1-5.jpg" alt="">
+            <img class="gali_img" src="https://picsum.photos/300" alt="">
+            <img class="gali_img" src="https://picsum.photos/301" alt="">
+            <img class="gali_img" src="https://picsum.photos/302" alt="">
+            <img class="gali_img" src="https://picsum.photos/303" alt="">
         </div>
         <div class="pista">
             <h5 class="pista_title">Programa Orientativo</h5>
@@ -54,8 +56,8 @@
             while(true){
                 if(get_post_meta(get_the_ID(), 'programa_'.$i.'_text', true)){ ?>
                     <div class="pista_group">
-                        <p class="pista_txt"><?php echo get_post_meta(get_the_ID(), 'programa_'.$i.'_time', true); ?></p>
-                        <p class="pista_txt"><?php echo get_post_meta(get_the_ID(), 'programa_'.$i.'_text', true); ?></p>
+                        <p class="pista_txt pista_time"><?php echo get_post_meta(get_the_ID(), 'programa_'.$i.'_time', true); ?></p>
+                        <p class="pista_txt pista_text"><?php echo get_post_meta(get_the_ID(), 'programa_'.$i.'_text', true); ?></p>
                     </div>
                     <?php
                     $i=$i+1;
@@ -63,10 +65,7 @@
             } ?>
 
             <div class="pista_deco"></div>
-            <p class="pista_caption">
-                El retiro consta de unas 20 horas formativas,
-                dejando el sábado por la tarde libre.
-                (No se sirve cena la noche del sábado).
+            <p class="pista_caption">El retiro consta de unas 20 horas formativas, dejando el sábado por la tarde libre. (No se sirve cena la noche del sábado).
             </p>
         </div>
     </section>
@@ -222,13 +221,13 @@
 
         <!-- <p class="copa_price">475,00€</p> -->
         <p class="copa_price" id="singleSidePrice"><?php echo $product->get_price_html(); ?></p>
-        
+
         <div class="cuantos Cuantos">
             <button class="cuantosBtn cuantosMins">-</button>
             <input class="cuantosQnt cuantosQantity" type="text" value="1" min="1">
             <button class="cuantosBtn cuantosPlus">+</button>
         </div>
-        
+
         <button
             class="btn"
             id="myAddToCart"
