@@ -45,6 +45,20 @@ function lt_customize_register( $wp_customize ) {
 
 
 
+
+    
+    //select sanitization function
+    function theme_slug_sanitize_select( $input, $setting ){
+        //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+        $input = sanitize_key($input);
+        //get the list of possible select options 
+        $choices = $setting->manager->get_control( $setting->id )->choices;
+        //return input if valid or return default option
+        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+    }
+
+
+
     
     $wp_customize->add_section( 'theme_font_settings', array(
         'title' => __( 'Theme Font Settings', 'awake' ),
@@ -52,65 +66,94 @@ function lt_customize_register( $wp_customize ) {
     ));
 
     $font_sizes = array();
-
-
-    
-    //add setting to your section
-    $wp_customize->add_setting( 
-        'font_size_1_number', 
-        array(
-            'sanitize_callback' => 'wp_filter_nohtml_kses' //removes all HTML from content
-        )
+    $font_sizes[] = array(
+        'slug'   => 'font_size_1',
+        'default_number' => 48,
+        // 'default_unit' => 'px',
+        'label_number' => __( 'Font Size 1 number', 'awake' ),
+        // 'label_unit'   => __( 'Font Size 1 units',  'awake' ),
     );
-    
-    $wp_customize->add_control( 
-        'font_size_1_number', 
-        array(
-            'label' => esc_html__( 'Font Size 1 number', 'awake' ),
-            'section' => 'theme_font_settings',
-            'type' => 'text'
-        )
+    $font_sizes[] = array(
+        'slug'   => 'font_size_2',
+        'default_number' => 42,
+        'label_number' => __( 'Font Size 2 number', 'awake' ),
+    );
+    $font_sizes[] = array(
+        'slug'   => 'font_size_3',
+        'default_number' => 36,
+        'label_number' => __( 'Font Size 3 number', 'awake' ),
+    );
+    $font_sizes[] = array(
+        'slug'   => 'font_size_4',
+        'default_number' => 21,
+        'label_number' => __( 'Font Size 4 number', 'awake' ),
+    );
+    $font_sizes[] = array(
+        'slug'   => 'font_size_5',
+        'default_number' => 18,
+        'label_number' => __( 'Font Size 5 number', 'awake' ),
+    );
+    $font_sizes[] = array(
+        'slug'   => 'font_size_6',
+        'default_number' => 16,
+        'label_number' => __( 'Font Size 6 number', 'awake' ),
+    );
+    $font_sizes[] = array(
+        'slug'   => 'font_size_7',
+        'default_number' => 14,
+        'label_number' => __( 'Font Size 7 number', 'awake' ),
+    );
+    $font_sizes[] = array(
+        'slug'   => 'font_size_8',
+        'default_number' => 10,
+        'label_number' => __( 'Font Size 8 number', 'awake' ),
     );
 
-
-    
-    //select sanitization function
-    function theme_slug_sanitize_select( $input, $setting ){
-          
-        //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
-        $input = sanitize_key($input);
-
-        //get the list of possible select options 
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-                          
-        //return input if valid or return default option
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
-          
-    }
-  
-  
-//add setting to your section
-    $wp_customize->add_setting( 
-        'theme_slug_customizer_select', 
-        array(
-            'sanitize_callback' => 'theme_slug_sanitize_select'
-        )
-    );
-      
-    $wp_customize->add_control( 
-        'theme_slug_customizer_select', 
-        array(
-            'label' => esc_html__( 'Your Setting with select', 'theme_slug' ),
-            'section' => 'theme_slug_customizer_your_section',
-            'type' => 'select',
-            'choices' => array(
-                '' => esc_html__('Please select','theme_slug'),
-                'one' => esc_html__('Choice One','theme_slug'),
-                'two' => esc_html__('Choice Two','theme_slug'),
-                'three' => esc_html__('Choice Three','theme_slug')               
+    foreach ( $font_sizes as $size ) {
+        
+        //add setting to your section
+        $wp_customize->add_setting(
+            $size['slug'].'_number',
+            array(
+                'default' => $size['default_number'],
+                'sanitize_callback' => 'wp_filter_nohtml_kses', //removes all HTML from content
+                'type' => 'option',
+                'capability' => 'edit_theme_options',
             )
-        )
-    );      
+        );
+        $wp_customize->add_control(
+            $size['slug'].'_number',
+            array(
+                'label' => $size['label_number'],
+                'section' => 'theme_font_settings',
+                'type' => 'number'
+            )
+        );
 
+        // TODO: hacer seleccionador de unidades mejorado
+        // //add setting to your section
+        // $wp_customize->add_setting(
+        //     $size['slug'].'_unit',
+        //     array(
+        //         'default' => $size['default_unit'],
+        //         'sanitize_callback' => 'theme_slug_sanitize_select',
+        //         'type' => 'option',
+        //         'capability' => 'edit_theme_options',
+        //     )
+        // );
+        // $wp_customize->add_control(
+        //     $size['slug'].'_unit',
+        //     array(
+        //         'label' => $size['label_unit'],
+        //         'section' => 'theme_font_settings',
+        //         'type' => 'select',
+        //         'choices' => array(
+        //             '' => esc_html__('Select Unit','awake'),
+        //             'rem' => esc_html__('rem','awake'),
+        //             'px'  => esc_html__('px','awake')
+        //         )
+        //     )
+        // );
+    }
 }
 add_action( 'customize_register', 'lt_customize_register' );

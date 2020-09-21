@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 
+
+<!-- <h1>Font Size 1: <?php //var_dump((int)get_option( 'font_size_1_number', '' )); ?></h1> -->
+<!-- <h1>Color 1: <?php echo get_option( 'primary_color', '' ); ?></h1> -->
+<!-- <h1>Font Size 2: <?php echo get_option( 'font_size_2_number', '' ); ?></h1> -->
+
 <section class="mega Carousel">
 
   <?php
