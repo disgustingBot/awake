@@ -11,6 +11,31 @@
   :root{
     --primary_color:<?php echo get_option( 'primary_color', '' ); ?>;
     --secondary_color:<?php echo get_option( 'secondary_color', '' ); ?>;
+
+    /* --font_size_1:<?php // echo get_option( 'font_size_1_number', '' ) . get_option( 'font_size_1_unit', '' ); ?>; */
+    --font_size_1_number:<?php echo get_option( 'font_size_1_number', '' ) * 0.8; ?>px;
+    --font_size_2_number:<?php echo get_option( 'font_size_2_number', '' ) * 0.8; ?>px;
+    --font_size_3_number:<?php echo get_option( 'font_size_3_number', '' ) * 0.8; ?>px;
+    --font_size_4_number:<?php echo get_option( 'font_size_4_number', '' ) * 0.8; ?>px;
+    --font_size_5_number:<?php echo get_option( 'font_size_5_number', '' ) * 0.8; ?>px;
+    --font_size_6_number:<?php echo get_option( 'font_size_6_number', '' ) * 0.8; ?>px;
+    --font_size_7_number:<?php echo get_option( 'font_size_7_number', '' ) * 0.8; ?>px;
+    --font_size_8_number:<?php echo get_option( 'font_size_8_number', '' ) * 0.8; ?>px;
+
+  }
+
+  @media screen and (min-width: 768px) {
+    :root {
+      --font_size_1_number:<?php echo get_option( 'font_size_1_number', '' ); ?>px;
+      --font_size_2_number:<?php echo get_option( 'font_size_2_number', '' ); ?>px;
+      --font_size_3_number:<?php echo get_option( 'font_size_3_number', '' ); ?>px;
+      --font_size_4_number:<?php echo get_option( 'font_size_4_number', '' ); ?>px;
+      --font_size_5_number:<?php echo get_option( 'font_size_5_number', '' ); ?>px;
+      --font_size_6_number:<?php echo get_option( 'font_size_6_number', '' ); ?>px;
+      --font_size_7_number:<?php echo get_option( 'font_size_7_number', '' ); ?>px;
+      --font_size_8_number:<?php echo get_option( 'font_size_8_number', '' ); ?>px;
+
+    }
   }
 
 
