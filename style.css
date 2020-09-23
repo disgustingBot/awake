@@ -403,7 +403,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 
     /* ?testim */
-    --testim_container_height: auto;
+    --testim_container_height: 100vh;
     --testim_padding: 0 2rem;
 
 
@@ -1417,7 +1417,6 @@ section.flati{
   display: grid;
   color: var(--grey9);
   height: var(--testim_container_height);
-  height: 100vh;
 }
 .tesim_cont.inactive{opacity:0}
 .tesim_cont{
