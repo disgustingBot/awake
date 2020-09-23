@@ -98,7 +98,7 @@ FIN DE MAPA DE CONTENIDOS */
   que hacer facilmente diferentes versiones de la pagina */
 
   --lateral:1rem;
-  --logo_size:80px;
+  --logo_size:100px;
 
 
   /* COLORS */
@@ -202,7 +202,6 @@ FIN DE MAPA DE CONTENIDOS */
   --nav_menu_padding: calc(50px + 2rem) 0 2rem 0;
   --nav_menu_clip_path:circle(20px at calc(100vw - 16px - 1.5rem) calc(15px + .5rem + 10px));
   --nav_menu_BG:white;
-  --nav_menu_text_shadow:none;
   /* --nav_menu_BG:linear-gradient(to right, rgba(0,0,0,0), white, rgba(0,0,0,0)); */
   --nav_bar_font_size:20px;
   --nav_bar_justify_cont:center;
@@ -228,6 +227,7 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* ?piqui */
   --piqui_input_width: 80%;
+  --piqui_margin: auto;
 
   /* ?flati */
   --flati_grid_template_columns: 1fr;
@@ -340,7 +340,6 @@ FIN DE MAPA DE CONTENIDOS */
     --nav_menu_padding: 0 calc(var(--lateral) + 2rem);
     --nav_menu_clip_path:unset;
     --nav_menu_BG:transparent;
-    --nav_menu_text_shadow:1px 1px 2px rgba(0, 0, 0, .7);
     --nav_bar_justify_cont:space-between;
     --nav_bar_font_size:10px;
 
@@ -359,6 +358,8 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* piqui */
   --piqui_input_width: unset;
+  --piqui_margin: unset;
+
 
   /* flati */
   --flati_grid_template_columns: 1fr 1fr;
@@ -412,12 +413,12 @@ FIN DE MAPA DE CONTENIDOS */
 
 
     /* ?nav_menu */
-    --nav_menu_padding: 0 calc(var(--lateral) + 4rem);
-    --nav_bar_font_size:12px;
+    --nav_menu_padding: 0 calc(var(--lateral) + 1.5rem);
+    --nav_bar_font_size:14px;
 
 
     /* ?gertha */
-    --gertha_padding: 3rem;
+    --gertha_padding: 3rem 1rem;
     --gertha_GTC:.8fr 1.2fr;
 
 
@@ -435,7 +436,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 
     /* ?FOOTER */
-    --footer_grid_gap: .5rem;
+    --footer_grid_gap: 1rem;
 
     /* ?separanda */
     --separanda_width: 90%;
@@ -494,7 +495,7 @@ h1, h2, h3, h4, h5 {
 --------------------------------------------------------------------------- */
 *{box-sizing:border-box;margin:0;padding:0}
 body{display:grid}
-img{object-fit:cover;width:100%}
+img, video, source{object-fit:cover;width:100%}
 a{text-decoration:none;color:inherit}
 ul,ol{list-style:none}
 
@@ -636,15 +637,14 @@ ul,ol{list-style:none}
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .header {
-  position:fixed;
-  /* display:grid; */
+  position:absolute;
   display:flex;
-  /* padding:0 var(--lateral); */
   align-items: center;
   justify-content: center;
   width:100%;
   z-index:10;
   height:calc(var(--logo_size) + 1rem);
+  padding-top: 3rem
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -689,9 +689,7 @@ ul,ol{list-style:none}
 .logo_img{
   width: var(--logo_size);
   height:var(--logo_size);
-  filter: drop-shadow( 0 0 2px rgba(0, 0, 0, .7));
-  color:black;
-  /* color:white; */
+  color:white;
   transition:.6s;
 }
 /* ---------------------------------------------------------------------------
@@ -726,7 +724,7 @@ ul,ol{list-style:none}
   position: relative;
 }
 .hero_icon{
-  width:80px;
+  width:70px;
   margin:auto;
   border-radius:50%;
 }
@@ -738,7 +736,7 @@ ul,ol{list-style:none}
   position: absolute;
   width: 100%;
   height: 100%;
-  filter: brightness(70%);
+  /* filter: brightness(90%); */
   z-index: -1;
 }
 .hero_img{
@@ -747,11 +745,12 @@ ul,ol{list-style:none}
   z-index: -1;
   display: flex;
   width: 100%;
-  filter:brightness(70%);
+  /* filter:brightness(90%); */
 }
 .hero_title{
   color:white;
   padding: var(--hero_title_padding);
+  font-size: var(--font_size_2);
 }
 .hero_link{
   text-transform: uppercase;
@@ -773,21 +772,21 @@ ul,ol{list-style:none}
 .gertha{
   display:grid;
   grid-template-columns:var(--gertha_GTC);
-  grid-gap:1rem;
+  grid-gap:2rem;
   padding: var(--gertha_padding);
   position: relative;
-  color: var(--grey9);
+  color: var(--grey8);
 }
 .gertha_title{
   grid-column: 1/-1;
-  margin-bottom: 1rem;
+  color: var(--grey9);
 }
 .gertha_caption{
   font-size: var(--font_size_6);
 }
 .gertha_txt {
   margin-bottom: 1rem;
-  font-size: var(--font_size_5);
+  font-size: var(--font_size_4);
   font-weight: 500;
 }
 .gertha_signature {
@@ -804,7 +803,8 @@ ul,ol{list-style:none}
   position: absolute;
   transform: var(--gertha_deco_transform);
 }
-.gertha_img{margin:0 auto auto auto}
+.gertha_img{margin: 0 auto auto auto}
+.gertha_img:focus {outline-color: var(--grey9)}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.4.3) =simpla:
@@ -823,13 +823,13 @@ ul,ol{list-style:none}
 .simpla_title{
   margin-top:1rem;
   text-transform: uppercase;
-  color: var(--grey5);
+  color: var(--grey7);
 }
 .simpla_deco{
   width:50%;
   margin: auto;
   position:relative;
-  bottom:-10px;
+  bottom:10px;
   height:3px;
   background:red;
 }
@@ -983,13 +983,18 @@ section.flati{
 .showcase_title{
   grid-column:1/-1;
   text-align:center;
-  color: var(--grey5);
-  margin-top: 2rem;
+  color: var(--grey9);
   font-size: var(--font_size_3);
 }
+.showcase_title_front_page {
+  margin-top: 3.5rem;
+}
+
 .showcase_title.simple_title{
   font-family:'Lato',sans-serif;
 }
+
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.5.1) =showcase2:
@@ -1197,7 +1202,6 @@ section.flati{
 
 .facebook_sells_your_personal_data {
   padding: 1rem 0 3rem 0;
-  background: var(--greye6);
   color: var(--grey9);
   text-align: center;
   grid-column: 1/-1;
@@ -1223,22 +1227,19 @@ section.flati{
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
-.observed .nav_menu{color:white}
 .nav_menu {
   background:transparent;
-  /* color:white; */
-  color:black;
+  color: white;
   clip-path: var(--nav_menu_clip_path);
   display: grid;
   grid-auto-flow: var(--row_768_column);
-  grid-column-gap: calc(50px + 3rem);
+  grid-column-gap: calc(50px + 7rem);
   grid-row-gap: .5rem;
   grid-template-columns: var(--nav_menu_GTC);
   height: var(--nav_menu_height);
   margin: auto;
   padding: var(--nav_menu_padding);
   position: var(--absolute_768_static);
-  text-shadow:var(--nav_menu_text_shadow);
   top:0;
   transition: background .3s .3s, clip-path .4s, color .5s;
   width: 100%;
@@ -1256,7 +1257,6 @@ section.flati{
   align-items: center;
   color:inherit;
   display:grid;
-  /* font-size:10px; */
   font-size:var(--nav_bar_font_size);
   grid-auto-flow: var(--row_768_column);
   grid-auto-columns: min-content;
@@ -1303,7 +1303,7 @@ section.flati{
 .under_soc_svg{
   height:20px;
   width:auto;
-  filter: drop-shadow( 0 0 2px rgba(0, 0, 0, .7));
+  /* filter: drop-shadow( 0 0 2px rgba(0, 0, 0, .7)); */
 }
 
 /* ---------------------------------------------------------------------------
@@ -1431,12 +1431,13 @@ section.flati{
 --------------------------------------------------------------------------- */
 .tesim_container .prenex{color:black}
 .tesim_container{
-  margin: 2rem 0;
+  padding: 3rem 0;
   text-align: center;
   position: relative;
   display: grid;
   color: var(--grey9);
   height: var(--testim_container_height);
+  height: 100vh;
 }
 .tesim_cont.inactive{opacity:0}
 .tesim_cont{
@@ -1890,22 +1891,44 @@ section.flati{
 }
 .piqui_deco{
   color: var(--grey7);
+  font-size: 12px;
   height: min-content;
   line-height: 12px;
 }
 .piqui_item{
-  font-size: 12px;
+  font-size: var(--font_size_7);
   color: var(--grey9);
 }
-form.piqui {grid-gap: 5px}
+form.piqui {grid-gap: 3px}
 .piqui_input{
   border:none;
-  background: var(--greyc);
-  color: var(--grey7);
-  padding: 8px;
+  background: var(--greyd);
+  color: var(--grey9);
+  padding: 6px;
   font-family: 'Lora', serif;
   width: var(--piqui_input_width);
-  margin: auto;
+  margin: var(--piqui_margin);
+  border-radius: 1px;
+}
+.piqui_acceptance {
+  display: flex;
+  align-items: center;
+  font-size: var(--font_size_8);
+  margin: 10px 0;
+}
+.piqui_acceptance_input {
+  background: var(--grey9);
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
+  border: none;
+}
+.piqui_acceptance_label{
+  color: var(--grey9);
+  display: flex;
+}
+.piqui_acceptance_link{
+  color: var(--grey9);
 }
 .piqui_send {
   background: none;
@@ -1922,12 +1945,13 @@ form.piqui {grid-gap: 5px}
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .footer{
-  background:var(--greye6);
+  background:var(--greyf5);
   display:grid;
   grid-template-columns: var(--grid_1_2_4_GTC);
   grid-gap: var(--footer_grid_gap);
   padding:2rem var(--lateral);
-  text-align:center;
+  text-align: center;
+  font-family: 'Lora', serif;
 }
 .footer .logo{
   grid-column:1/-1;
@@ -1950,7 +1974,7 @@ form.piqui {grid-gap: 5px}
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .signature{
-  background:var(--greye6);
+  background:var(--greyf5);
   display: grid;
   padding:1rem;
   text-align: right;

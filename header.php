@@ -46,7 +46,7 @@
 <body <?php body_class(); ?>>
 	<view id="load" class="load"><div class="circle"></div></view>
   <?php include 'assets/all_icons.php'; ?>
-  <header class="header Obse" data-observe=".header_activator" id="header">
+  <header class="header Obse" id="header">
     <!-- <a class="logo rowcol1 Obse" data-observe=".header_activator" href="<?php echo get_site_url(); ?>"> -->
     <a class="logo rowcol1" href="<?php echo get_site_url(); ?>">
       <svg class="logo_img" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 101 104">
