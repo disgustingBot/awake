@@ -158,23 +158,14 @@ FIN DE MAPA DE CONTENIDOS */
 
   --sizeR: calc(var(--sizeRa) * 1px);
 
-  /* --font_size_1: 48px; */
-  /* --font_size_2: 42px; */
-  /* --font_size_3: 36px; */
-  /* --font_size_4: 21px; */
-  /* --font_size_5: 18px; */
-  /* --font_size_6: 16px; */
-  /* --font_size_7: 14px; */
-  /* --font_size_8: 10px; */
-  
-  --font_size_1: var(--font_size_1_number);
-  --font_size_2: var(--font_size_2_number);
-  --font_size_3: var(--font_size_3_number);
-  --font_size_4: var(--font_size_4_number);
-  --font_size_5: var(--font_size_5_number);
-  --font_size_6: var(--font_size_6_number);
-  --font_size_7: var(--font_size_7_number);
-  --font_size_8: var(--font_size_8_number);
+  --font_size_1: 48px;
+  --font_size_2: 42px;
+  --font_size_3: 36px;
+  --font_size_4: 21px;
+  --font_size_5: 18px;
+  --font_size_6: 16px;
+  --font_size_7: 14px;
+  --font_size_8: 10px;
 
   /* ---------------------------------------------------------------------------
   ------------------------------------------------------------------------------
@@ -311,17 +302,6 @@ FIN DE MAPA DE CONTENIDOS */
 --------------------------------------------------------------------------- */
 @media screen and (min-width: 768px) {
   :root {
-    
-  /* --font_size_1: var(--font_size_1_number) * 0.8;
-  --font_size_2: var(--font_size_2_number) * 0.8;
-  --font_size_3: var(--font_size_3_number) * 0.8;
-  --font_size_4: var(--font_size_4_number) * 0.8;
-  --font_size_5: var(--font_size_5_number) * 0.8;
-  --font_size_6: var(--font_size_6_number) * 0.8;
-  --font_size_7: var(--font_size_7_number) * 0.8;
-  --font_size_8: var(--font_size_8_number) * 0.8; */
-
-
     --sizeR: calc(calc(var(--sizeRc) * 1px) + (var(--sizeRd) - var(--sizeRc)) * ((100vw - 768px) / (1200 - 768)));
     --onlyDesktopG:grid;
     --onlyDesktopF:flex;
@@ -541,7 +521,7 @@ ul,ol{list-style:none}
 .font_size_5 {font-size: var(--font_size_5)}
 .font_size_6 {font-size: var(--font_size_6)}
 .font_size_7 {font-size: var(--font_size_7)}
-.font-size_8 {font-size: var(--font_size_8)}
+.font_size_8 {font-size: var(--font_size_8)}
 
 
 /* ---------------------------------------------------------------------------
