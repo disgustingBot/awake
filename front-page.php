@@ -46,7 +46,7 @@
 
 
 <section class="showcase4">
-  <h3 class="showcase_title font_size_3">¿En qué podemos ayudarte?</h3>
+  <h3 class="showcase_title showcase_title_front_page font_size_3">¿En qué podemos ayudarte?</h3>
 
   <div class="simpla">
     <img class="simpla_img" loading="lazy" src="https://picsum.photos/200" alt="">
@@ -98,14 +98,15 @@
     </a> -->
     <img class="hero_icon" loading="lazy" src="<?php echo get_post_meta($post->ID, 'icono', true); ?>" alt="">
 
-
-    <a href="<?php echo get_permalink(); ?>">
-      <h1 class="hero_title font_size_1">
-        <?php the_title(); ?>
-      </h1>
-    </a>
-    <a class="hero_link" href="<?php echo get_permalink(); ?>">Próximas fechas</a>
-    <p class="hero_txt"><?php the_excerpt(); ?></p>
+    <div>
+      <a href="<?php echo get_permalink(); ?>">
+        <h1 class="hero_title font_size_1">
+          <?php the_title(); ?>
+        </h1>
+      </a>
+      <a class="hero_link" href="<?php echo get_permalink(); ?>">Próximas fechas</a>
+    </div>
+    <div class="hero_txt"><?php the_excerpt(); ?></div>
   </div>
 <?php } wp_reset_query(); ?>
 

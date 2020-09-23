@@ -218,6 +218,7 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* ?piqui */
   --piqui_input_width: 80%;
+  --piqui_margin: auto;
 
   /* ?flati */
   --flati_grid_template_columns: 1fr;
@@ -337,6 +338,8 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* piqui */
   --piqui_input_width: unset;
+  --piqui_margin: unset;
+
 
   /* flati */
   --flati_grid_template_columns: 1fr 1fr;
@@ -413,7 +416,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 
     /* ?FOOTER */
-    --footer_grid_gap: .5rem;
+    --footer_grid_gap: 1rem;
 
     /* ?separanda */
     --separanda_width: 90%;
@@ -701,7 +704,7 @@ ul,ol{list-style:none}
   position: relative;
 }
 .hero_icon{
-  width:80px;
+  width:70px;
   margin:auto;
   border-radius:50%;
 }
@@ -800,13 +803,13 @@ ul,ol{list-style:none}
 .simpla_title{
   margin-top:1rem;
   text-transform: uppercase;
-  color: var(--grey5);
+  color: var(--grey7);
 }
 .simpla_deco{
   width:50%;
   margin: auto;
   position:relative;
-  bottom:-10px;
+  bottom:10px;
   height:3px;
   background:red;
 }
@@ -960,13 +963,18 @@ section.flati{
 .showcase_title{
   grid-column:1/-1;
   text-align:center;
-  color: var(--grey5);
-  margin-top: 2rem;
+  color: var(--grey9);
   font-size: var(--font_size_3);
 }
+.showcase_title_front_page {
+  margin-top: 3.5rem;
+}
+
 .showcase_title.simple_title{
   font-family:'Lato',sans-serif;
 }
+
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.5.1) =showcase2:
@@ -1174,7 +1182,6 @@ section.flati{
 
 .facebook_sells_your_personal_data {
   padding: 1rem 0 3rem 0;
-  background: var(--greye6);
   color: var(--grey9);
   text-align: center;
   grid-column: 1/-1;
@@ -1404,12 +1411,13 @@ section.flati{
 --------------------------------------------------------------------------- */
 .tesim_container .prenex{color:black}
 .tesim_container{
-  margin: 2rem 0;
+  padding: 3rem 0;
   text-align: center;
   position: relative;
   display: grid;
   color: var(--grey9);
   height: var(--testim_container_height);
+  height: 100vh;
 }
 .tesim_cont.inactive{opacity:0}
 .tesim_cont{
@@ -1863,22 +1871,44 @@ section.flati{
 }
 .piqui_deco{
   color: var(--grey7);
+  font-size: 12px;
   height: min-content;
   line-height: 12px;
 }
 .piqui_item{
-  font-size: 12px;
+  font-size: var(--font_size_7);
   color: var(--grey9);
 }
-form.piqui {grid-gap: 5px}
+form.piqui {grid-gap: 3px}
 .piqui_input{
   border:none;
-  background: var(--greyc);
-  color: var(--grey7);
-  padding: 8px;
+  background: var(--greyd);
+  color: var(--grey9);
+  padding: 6px;
   font-family: 'Lora', serif;
   width: var(--piqui_input_width);
-  margin: auto;
+  margin: var(--piqui_margin);
+  border-radius: 1px;
+}
+.piqui_acceptance {
+  display: flex;
+  align-items: center;
+  font-size: var(--font_size_8);
+  margin: 10px 0;
+}
+.piqui_acceptance_input {
+  background: var(--grey9);
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
+  border: none;
+}
+.piqui_acceptance_label{
+  color: var(--grey9);
+  display: flex;
+}
+.piqui_acceptance_link{
+  color: var(--grey9);
 }
 .piqui_send {
   background: none;
@@ -1895,12 +1925,13 @@ form.piqui {grid-gap: 5px}
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .footer{
-  background:var(--greye6);
+  background:var(--greyf5);
   display:grid;
   grid-template-columns: var(--grid_1_2_4_GTC);
   grid-gap: var(--footer_grid_gap);
   padding:2rem var(--lateral);
-  text-align:center;
+  text-align: center;
+  font-family: 'Lora', serif;
 }
 .footer .logo{
   grid-column:1/-1;
@@ -1923,7 +1954,7 @@ form.piqui {grid-gap: 5px}
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .signature{
-  background:var(--greye6);
+  background:var(--greyf5);
   display: grid;
   padding:1rem;
   text-align: right;

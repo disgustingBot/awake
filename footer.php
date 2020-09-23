@@ -29,6 +29,12 @@
       <p class="piqui_deco">-</p>
       <input class="piqui_input" type="text" value="" placeholder="Nombre">
       <input class="piqui_input" type="text" value="" placeholder="Email">
+      <div class="piqui_acceptance">
+        <input class="piqui_acceptance_input" type="checkbox" name="acceptance">
+        <label class="piqui_acceptance_label" for="acceptance">He leido y acepto la
+          <a class="piqui_acceptance_link" href="<?php get_site_url('aviso-legal') ?>">Política de privacidad</a>
+        </label>
+      </div>
       <input class="piqui_send" type="submit" value="SEND">
     </form>
     <div class="piqui">
