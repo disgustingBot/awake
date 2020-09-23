@@ -10,11 +10,10 @@
   while($banners->have_posts()){$banners->the_post();?>
     <div class="hero Element">
       <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-      <h1 class="hero_title font_size_1"><?php the_title(); ?></h1>
+      <h1 class="hero_title"><?php the_title(); ?></h1>
     </div>
   <?php } wp_reset_query(); ?>
 
-  <div class="redDot header_activator"></div>
 
   <button class="prenex prenex_prev rowcol1" id="prevButton"></button>
   <button class="prenex prenex_next rowcol1" id="nextButton"></button>
@@ -28,20 +27,19 @@
 
 <section class="gertha lateral_m">
   <div class="gertha_deco"></div>
-  <h1 class="gertha_title font_size_2">
-    Vivir despierto<br>
-    es facil... ¡si sabes cómo!
-  </h1>
+  <h1 class="gertha_title font_size_2"><?php echo get_post_meta($post->ID, 'A_bloque_1_titulo', true); ?></h1>
   <div class="gertha_caption">
-    <p class="gertha_txt">Aquí encontrarás herramientas, prácticas y percepciones que te ayudarán fortalecer tus “sistemas inmunológicos” emocionales, mentales y fisiológicos de una manera clara, creativa y con un toque de humor.</p>
-    <p class="gertha_txt">Un espacio para desarrollar resiliencia humana, integrar prácticas de la redirigir tu vida, nutrirte desde la consciencia la creatividad y la sostenibilidad.</p>
-    <p class="gertha_txt">25 años ayudando a mejorar la vida de las personas.</p>
+    <p class="gertha_txt"><?php echo get_post_meta($post->ID, 'B_bloque_1_texto_1', true); ?></p>
+    <p class="gertha_txt"><?php echo get_post_meta($post->ID, 'C_bloque_1_texto_2', true); ?></p>
+    <p class="gertha_txt"><?php echo get_post_meta($post->ID, 'D_bloque_1_texto_3', true); ?></p>
 
     <svg class="gertha_signature" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 200">
       <use xlink:href="#signature"></use>
     </svg>
   </div>
-  <img class="gertha_img" loading="lazy" src="https://picsum.photos/400/280" alt="">
+  <video class="gertha_img" controls="true" alt="Thanks Taryn! Great video. This is your Instagram: https://www.instagram.com/peanutbuttervisuals/">
+    <source type="video/mp4" src="<?php echo get_post_meta($post->ID, 'E_bloque_1_video', true); ?>">
+  </video>
 </section>
 
 
@@ -110,7 +108,6 @@
     <p class="hero_txt"><?php the_excerpt(); ?></p>
   </div>
 <?php } wp_reset_query(); ?>
-<div class="redDot header_activator"></div>
 
 <button class="prenex prenex_prev rowcol1" id="prevButton"></button>
 <button class="prenex prenex_next rowcol1" id="nextButton"></button>
