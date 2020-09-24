@@ -6,7 +6,7 @@
 
     <section class="hero">
       <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-      <h1 class="hero_title rowcol1"><?php echo get_post_meta(get_the_ID(), '1_titulo_principal', true)?></h1>
+      <h1 class="hero_title rowcol1"><?php echo get_post_meta(get_the_ID(), 'A_titulo_principal', true)?></h1>
       <div class="redDot header_activator"></div>
       <svg class="mega_arrow_down rowcol1" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
         <use xlink:href="#arrow_down"></use>
@@ -18,17 +18,8 @@
         <?php include 'assets/perceptive_brain.svg'; ?>
         <!-- <img class="flati_icon" src="" alt=""> -->
         <div class="flati_deco"></div>
-        <h5 class="flati_title">¡Aprende a cuidar de tu mente de una manera creativa, divertida y guiada!</h5>
-        <p class="flati_txt">
-            La Resiliencia aplicada a humanos se entiende como la capacidad para “rebotar” de experiencias difíciles y de salir fortalecidos, tras pasar por una experiencia traumática o un periodo de estrés y ansiedad, por
-            ejemplo.
-            <br>
-            <br>
-            Cuando incorporamos actitudes y prácticas de resiliencia en nuestras vidas, se nos abren las puertas para vivir el presente con una mente más sana y un corazón más feliz.
-            <br>
-            <br>
-            Cualquier persona puede aprenderlas.
-        </p>
+        <h5 class="flati_title"><?php echo get_post_meta(get_the_ID(), 'B_texto_azul_seccion_2', true)?></h5>
+        <p class="flati_txt"><?php echo get_post_meta(get_the_ID(), 'C_texto_azul_seccion_2', true)?></p>
     </section>
 
 
