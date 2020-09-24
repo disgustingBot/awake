@@ -13,10 +13,10 @@
     <section class="gertha lateral_m">
         <div class="gertha_deco"></div>
         <div class="gertha_caption">
-            <p class="gertha_txt"> Te presentamos un programa experiencial para sobrevivir y prosperar en tiempos de cambio e incertidumbre. Diseñado especialmente para ayudarnos a desconectar de nuestras vidas llenas de distracciones y recargarnos de tiempo, espacio y de herramientas para cuidar y desarrollar nuestra resiliencia humana. </p>
+            <p class="gertha_txt"> Te presentamos un programa experiencial para sobrevivir y prosperar en tiempos de cambio e incertidumbre. Diseñado especialmente para ayudarnos a desconectar de nuestras vidas llenas de distracciones y recargarnos de tiempo, espacio y de herramientas para cuidar y desarrollar nuestra resiliencia humana.
             <br>
             <br>
-            <p class="gertha_txt">La Resiliencia aplicada a humanos se entiende como la capacidad para “rebotar” de experiencias difíciles y de salir fortalecidos, tras pasar por una experiencia traumática o un periodo de estrés y ansiedad, por ejemplo. Cuando incorporamos actitudes y prácticas de resiliencia en nuestras vidas, se nos abren las puertas para vivir el presente con una mente más sana y un corazón más feliz.</p>
+            La Resiliencia aplicada a humanos se entiende como la capacidad para “rebotar” de experiencias difíciles y de salir fortalecidos, tras pasar por una experiencia traumática o un periodo de estrés y ansiedad, por ejemplo. Cuando incorporamos actitudes y prácticas de resiliencia en nuestras vidas, se nos abren las puertas para vivir el presente con una mente más sana y un corazón más feliz.</p>
 
         </div>
         <img class="gertha_img" loading="lazy" src="https://picsum.photos/400/280" alt="">
