@@ -68,6 +68,9 @@
         <?php
         $args = array(
             'post_type'=>'miembro',
+            'orderby' => 'meta_value_num',
+            'meta_key'=> 'orden',
+            'order' => 'ASC'
         );
         $miembros=new WP_Query($args);
         while($miembros->have_posts()){$miembros->the_post();?>
