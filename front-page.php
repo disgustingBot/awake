@@ -53,29 +53,32 @@
 <section class="showcase4">
   <h3 class="showcase_title showcase_title_front_page font_size_3">¿En qué podemos ayudarte?</h3>
 
-  <div class="simpla">
-    <img class="simpla_img" loading="lazy" src="https://picsum.photos/200" alt="">
-    <h6 class="simpla_title row2col1">Resiliencia</h6>
-    <div class="simpla_deco" style="background:#C0CED3"></div>
-  </div>
 
-  <div class="simpla">
-    <img class="simpla_img" loading="lazy" src="https://picsum.photos/199" alt="">
-    <h6 class="simpla_title row2col1">Libérate</h6>
-    <div class="simpla_deco"style="background:#E9AD94"></div>
-  </div>
-
-  <div class="simpla">
-    <img class="simpla_img" loading="lazy" src="https://picsum.photos/201" alt="">
-    <h6 class="simpla_title row2col1">Nutricion</h6>
-    <div class="simpla_deco" style="background:#EDC06D"></div>
-  </div>
-
-  <div class="simpla">
-    <img class="simpla_img" loading="lazy" src="https://picsum.photos/202" alt="">
-    <h6 class="simpla_title row2col1">Longevity</h6>
-    <div class="simpla_deco" style="background:#98C9AC"></div>
-  </div>
+  <?php
+  $IDbyNAME = get_term_by('name', 'programas', 'product_cat');
+  $product_cat_ID = $IDbyNAME->term_id;
+  $args = array(
+    'hierarchical' => 1,
+    'show_option_none' => '',
+    'hide_empty' => 0,
+    'parent' => $product_cat_ID,
+    'taxonomy' => 'product_cat',
+    'orderby' => 'meta_value_num',
+    'meta_key'=> 'lt_meta_order',
+  );
+  $subcats = get_categories($args);
+  foreach ($subcats as $sc) {
+    $link = get_term_link( $sc->slug, $sc->taxonomy );
+    $thumbnail_id = get_term_meta( $sc->term_id, 'thumbnail_id', true );
+    $image = wp_get_attachment_url( $thumbnail_id );
+    ?>
+    
+    <a class="simpla" href="<?php echo $link; ?>">
+      <img class="simpla_img" loading="lazy" src="<?php echo $image; ?>" alt="">
+      <h6 class="simpla_title row2col1"><?php echo $sc->name; ?></h6>
+      <div class="simpla_deco" style="background:<?php echo get_term_meta( $sc->term_id, 'lt_meta_color', true ); ?>"></div>
+    </a>
+  <?php } ?>
 </section>
 
 

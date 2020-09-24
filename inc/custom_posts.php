@@ -44,7 +44,7 @@ function lt_new_custom_post($name, $icon = '', $taxonomies = array() ){
 		'taxonomies'         => $taxonomies,
 		'menu_icon'          => $icon,
 		'menu_position'      => 5,
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions' )
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions', 'custom-fields' )
 	);
 	register_post_type( $name, $args );
 
@@ -87,6 +87,48 @@ function lt_new_custom_post($name, $icon = '', $taxonomies = array() ){
 	}
 }
 
+// custom metadata for custom taxonomies
+function lt_add_meta_fields_to_taxonomy( $taxonomy_slug , $meta_fields = array() ){
+	// Edit taxonomy page extra fields
+	add_action( $taxonomy_slug . '_edit_form_fields', function ($term) use( $taxonomy_slug, $meta_fields ) {
+		//getting term ID
+		$term_id = $term->term_id;
+		foreach ( $meta_fields as $name => $labels ) { ?>
+			<tr class="form-field">
+				<th scope="row" valign="top"><label for="<?php echo $name ?>"><?php echo $labels['label']; ?></label></th>
+				<td>
+				<input type="text" name="<?php echo $name ?>" id="<?php echo $name ?>" value="<?php echo get_term_meta($term_id, $name, true); ?>">
+					<p class="description"><?php echo $labels['description']; ?></p>
+				</td>
+			</tr>
+		<?php }
+	} );
+
+	// Add new taxonomy page extra fields
+	add_action( $taxonomy_slug . '_add_form_fields' , function () use($taxonomy_slug, $meta_fields) {
+		// var_dump($meta_fields);
+		foreach ( $meta_fields as $name => $labels ) { ?>
+			<div class="form-field">
+				<label for="<?php echo $name ?>"><?php echo _e($labels['label'], 'lt'); ?></label>
+				<input type="text" name="<?php echo $name ?>" id="<?php echo $name ?>">
+				<p class="description"><?php echo _e($labels['description'], 'lt'); ?></p>
+			</div>
+		<?php }
+	} );
+
+	// Save extra taxonomy fields callback function.
+	add_action('edited_' . $taxonomy_slug , function ($term_id) use($meta_fields) {
+		foreach ( $meta_fields as $name => $labels ) {
+			update_term_meta($term_id, $name, filter_input(INPUT_POST, $name));
+		}
+	}, 10, 1);
+	add_action('create_' . $taxonomy_slug , function ($term_id) use($meta_fields) {
+		foreach ( $meta_fields as $name => $labels ) {
+			update_term_meta($term_id, $name, filter_input(INPUT_POST, $name));
+		}
+	}, 10, 1);
+}
+
 add_action( 'init', 'lt_custom_posts' );
 function lt_custom_posts() {
 	lt_new_custom_post( 'testimonial', 'dashicons-format-quote');
@@ -95,4 +137,17 @@ function lt_custom_posts() {
 	lt_new_custom_post( 'empresa',     'dashicons-admin-site-alt3');
 	lt_new_custom_post( 'programa',    'dashicons-welcome-view-site');
 	
+
+	$lt_meta_order = array(
+		'label'       => 'Orden',
+		'description' => 'Orden de aparicion',
+	);
+	$lt_meta_color = array(
+		'label'       => 'Color',
+		'description' => 'Color de decoracion en formato hexadecimal',
+	);
+	lt_add_meta_fields_to_taxonomy( $taxonomy_slug = 'product_cat', $meta_fields = array(
+		'lt_meta_order'    => $lt_meta_order,
+		'lt_meta_color'    => $lt_meta_color,
+	) );
 }

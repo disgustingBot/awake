@@ -812,6 +812,7 @@ ul,ol{list-style:none}
   bottom:10px;
   height:3px;
   background:red;
+  background:currentColor;
 }
 .simpla_txt{
   color: var(--grey7);
