@@ -19,7 +19,7 @@
         <!-- <img class="flati_icon" src="" alt=""> -->
         <div class="flati_deco"></div>
         <h5 class="flati_title"><?php echo get_post_meta(get_the_ID(), 'B_texto_azul_seccion_2', true)?></h5>
-        <p class="flati_txt"><?php echo get_post_meta(get_the_ID(), 'C_texto_azul_seccion_2', true)?></p>
+        <p class="flati_txt"><?php echo get_post_meta(get_the_ID(), 'C_texto_negro_seccion_2', true)?></p>
     </section>
 
 

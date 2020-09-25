@@ -71,6 +71,8 @@ Version: 1.2
 
 6.36) =chiri:
 
+6.47) =tory:
+
 6.58) =selectBox:
 
 6.69) =redDot:
@@ -1257,6 +1259,18 @@ section.flati{
   text-align: center;
   width:100%;
 }
+.nav_bar .menu-item{
+  position:relative;
+}
+.current-menu-item::after{
+  content:"";
+  position: absolute;
+  width:100%;
+  height:2px;
+  background:white;
+  bottom: -4px;
+  left:0;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1665,7 +1679,10 @@ section.flati{
   padding:.3rem .5rem;
   border-radius:4px;
 }
-.paginationCurrent{padding:.3rem .5rem}
+.paginationCurrent{
+  padding:.3rem .5rem;
+  color:var(--secondary_color);
+}
 
 
 
@@ -1726,6 +1743,53 @@ section.flati{
 .chiri > :nth-child(7){grid-column:var(--chiri_cambia_columna)}
 
 
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.47) =tory:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.tory{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-gap:.5rem;
+  grid-column-gap:3rem;
+  padding:2rem 0;
+  grid-auto-flow:dense;
+  color:var(--grey4);
+}
+.tory_title{
+  grid-column:1/-1;
+  margin:1rem 0;
+  text-align:center;
+}
+.tory_highlight{
+  grid-row:2/5;
+  padding-left:var(--lateral);
+  color:var(--secondary_color);
+  font-size: var(--font_size_5);
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+}
+.tory_root{
+  padding-right:var(--lateral);
+  font-size:var(--font_size_6);
+  font-weight: 800;
+}
+.tory_img_1{
+  grid-column:1;
+}
+.tory_subtitle{
+  padding-right:var(--lateral);
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+}
+.tory_text_1{
+  grid-row:4/6;
+  padding-right:var(--lateral);
+  font-size:var(--font_size_6);
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
