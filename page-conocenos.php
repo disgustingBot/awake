@@ -71,7 +71,7 @@
 
     <section class="barda">
         <h5 class="barda_title font_size_1"><?php echo get_post_meta(get_the_ID(), 'J_titulo_seccion_5', true)?></h5>
-        <img class="barda_media" src="https://picsum.photos/600/400" alt="">
+        <img class="barda_media" src="<?php echo get_post_meta(get_the_ID(), 'N_video_seccion_5', true)?>" alt="">
         <p class="barda_quote font_size_3"><?php echo get_post_meta(get_the_ID(), 'K_texto_azul_seccion_5', true)?></p>
         <p class="barda_txt font_size_4"><?php echo get_post_meta(get_the_ID(), 'L_texto_seccion_5', true)?></p>
     </section>
