@@ -127,7 +127,7 @@ function woocommerce_subcats_from_parentcat($category){
 
 
 // REMOVES WORDPRESS URL PAGINATION
-remove_action('template_redirect', 'redirect_canonical');
+// remove_action('template_redirect', 'redirect_canonical');
 // PAGINATION
 // bloque inspirado en el comienzo de este post:
 // https://rudrastyh.com/wordpress/load-more-and-pagination.html
