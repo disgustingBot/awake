@@ -8,6 +8,7 @@
 
 
 <section class="sqare_cont" id="ajax_archive">
+  <?php require_once 'inc/multi_cards.php'; ?>
   <?php while(have_posts()){the_post(); ?>
     <?php sqare_card(); ?>
   <?php } ?>

@@ -2,7 +2,6 @@
 
 require_once 'inc/custom_posts.php';
 require_once 'inc/form_handler.php';
-require_once 'inc/multi_cards.php';
 require_once 'inc/ajax.php';
 require_once 'inc/customize.php';
 
@@ -158,77 +157,74 @@ add_action( 'init', 'register_menus' );
 
 
 
-// FUCTION FOR USER GENERATION
-// https://tommcfarlin.com/create-a-user-in-wordpress/
-add_action( 'admin_post_nopriv_lt_login', 'lt_login');
-add_action(        'admin_post_lt_login', 'lt_login');
-function lt_login(){
-  $link=$_POST['link'];
-  $name=$_POST['name'];
-  $fono=$_POST['fono'];
-  $mail=$_POST['mail'];
-  $pass=$_POST['pass'];
+// // FUCTION FOR USER GENERATION
+// // https://tommcfarlin.com/create-a-user-in-wordpress/
+// add_action( 'admin_post_nopriv_lt_login', 'lt_login');
+// add_action(        'admin_post_lt_login', 'lt_login');
+// function lt_login(){
+//   $link=$_POST['link'];
+//   $name=$_POST['name'];
+//   $fono=$_POST['fono'];
+//   $mail=$_POST['mail'];
+//   $pass=$_POST['pass'];
 
 
-  if( null == username_exists( $mail ) ) {
+//   if( null == username_exists( $mail ) ) {
 
-    // Generate the password and create the user for security
-    // $password = wp_generate_password( 12, false );
-    // $user_id = wp_create_user( $mail, $password, $mail );
+//     // Generate the password and create the user for security
+//     // $password = wp_generate_password( 12, false );
+//     // $user_id = wp_create_user( $mail, $password, $mail );
 
-    // user generated pass for local testing
-    $user_id = wp_create_user( $mail, $pass, $mail );
-    // Set the nickname and display_name
-    wp_update_user(
-      array(
-        'ID'              =>    $user_id,
-        'display_name'    =>    $name,
-        'nickname'        =>    $name,
-      )
-    );
-    update_user_meta( $user_id, 'phone', $fono );
-
-
-    // Set the role
-    $user = new WP_User( $user_id );
-    $user->set_role( 'subscriber' );
-
-    // Email the user
-    wp_mail( $mail, 'Welcome '.$name.'!', 'Your Password: ' . $pass );
-  // end if
-  $action='register';
-  $creds = array(
-      'user_login'    => $mail,
-      'user_password' => $pass,
-      'remember'      => true
-  );
-
-  $status = wp_signon( $creds, false );
-} else {
-
-  $creds = array(
-      'user_login'    => $mail,
-      'user_password' => $pass,
-      'remember'      => true
-  );
-
-  $status = wp_signon( $creds, false );
-
-  // $status=wp_login($mail, $pass);
-
-  $action='login';
-}
-
-  $link = add_query_arg( array(
-    'action' => $action,
-    // 'status' => $status,
-    // 'resultado' => username_exists( $mail ),
-  ), $link );
-  wp_redirect($link);
-}
+//     // user generated pass for local testing
+//     $user_id = wp_create_user( $mail, $pass, $mail );
+//     // Set the nickname and display_name
+//     wp_update_user(
+//       array(
+//         'ID'              =>    $user_id,
+//         'display_name'    =>    $name,
+//         'nickname'        =>    $name,
+//       )
+//     );
+//     update_user_meta( $user_id, 'phone', $fono );
 
 
+//     // Set the role
+//     $user = new WP_User( $user_id );
+//     $user->set_role( 'subscriber' );
 
+//     // Email the user
+//     wp_mail( $mail, 'Welcome '.$name.'!', 'Your Password: ' . $pass );
+//   // end if
+//   $action='register';
+//   $creds = array(
+//       'user_login'    => $mail,
+//       'user_password' => $pass,
+//       'remember'      => true
+//   );
+
+//   $status = wp_signon( $creds, false );
+// } else {
+
+//   $creds = array(
+//       'user_login'    => $mail,
+//       'user_password' => $pass,
+//       'remember'      => true
+//   );
+
+//   $status = wp_signon( $creds, false );
+
+//   // $status=wp_login($mail, $pass);
+
+//   $action='login';
+// }
+
+//   $link = add_query_arg( array(
+//     'action' => $action,
+//     // 'status' => $status,
+//     // 'resultado' => username_exists( $mail ),
+//   ), $link );
+//   wp_redirect($link);
+// }
 
 
 
@@ -242,55 +238,58 @@ function lt_login(){
 
 
 
-add_action( 'admin_post_nopriv_lt_new_pass', 'lt_new_pass');
-add_action(        'admin_post_lt_new_pass', 'lt_new_pass');
-function lt_new_pass(){
-  $link=$_POST['link'];
-  $oldp=$_POST['oldp'];
-  $newp=$_POST['newp'];
-  $cnfp=$_POST['cnfp'];
 
 
 
-  // if(isset($_POST['current_password'])){
-  if(isset($_POST['oldp'])){
-    $_POST = array_map('stripslashes_deep', $_POST);
-    $current_password = sanitize_text_field($_POST['oldp']);
-    $new_password = sanitize_text_field($_POST['newp']);
-    $confirm_new_password = sanitize_text_field($_POST['cnfp']);
-    $user_id = get_current_user_id();
-    $errors = array();
-    $current_user = get_user_by('id', $user_id);
-  }
+// add_action( 'admin_post_nopriv_lt_new_pass', 'lt_new_pass');
+// add_action(        'admin_post_lt_new_pass', 'lt_new_pass');
+// function lt_new_pass(){
+//   $link=$_POST['link'];
+//   $oldp=$_POST['oldp'];
+//   $newp=$_POST['newp'];
+//   $cnfp=$_POST['cnfp'];
 
-  $link = add_query_arg( array(
-    'action' => $action,
-  ), $link );
-  // Check for errors
-  if($current_user && wp_check_password($current_password, $current_user->data->user_pass, $current_user->ID)){
-  //match
-  } else {
-    $errors[] = 'Password is incorrect';
 
-    $link = add_query_arg( array(
-      'pass'  => 'incorrect',
-    ), $link );
-  }
-  if($new_password != $confirm_new_password){
-    $errors[] = 'Password does not match';
 
-    $link = add_query_arg( array(
-      'match'  => 'no',
-    ), $link );
-  }
-  if(empty($errors)){
-      wp_set_password( $new_password, $current_user->ID );
-      $link = add_query_arg( array(
-        'success'  => true,
-      ), $link );
-  }
-  wp_redirect($link);
-}
+//   // if(isset($_POST['current_password'])){
+//   if(isset($_POST['oldp'])){
+//     $_POST = array_map('stripslashes_deep', $_POST);
+//     $current_password = sanitize_text_field($_POST['oldp']);
+//     $new_password = sanitize_text_field($_POST['newp']);
+//     $confirm_new_password = sanitize_text_field($_POST['cnfp']);
+//     $user_id = get_current_user_id();
+//     $errors = array();
+//     $current_user = get_user_by('id', $user_id);
+//   }
+
+//   $link = add_query_arg( array(
+//     'action' => $action,
+//   ), $link );
+//   // Check for errors
+//   if($current_user && wp_check_password($current_password, $current_user->data->user_pass, $current_user->ID)){
+//   //match
+//   } else {
+//     $errors[] = 'Password is incorrect';
+
+//     $link = add_query_arg( array(
+//       'pass'  => 'incorrect',
+//     ), $link );
+//   }
+//   if($new_password != $confirm_new_password){
+//     $errors[] = 'Password does not match';
+
+//     $link = add_query_arg( array(
+//       'match'  => 'no',
+//     ), $link );
+//   }
+//   if(empty($errors)){
+//       wp_set_password( $new_password, $current_user->ID );
+//       $link = add_query_arg( array(
+//         'success'  => true,
+//       ), $link );
+//   }
+//   wp_redirect($link);
+// }
 
 
 

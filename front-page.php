@@ -55,6 +55,7 @@
 
 
   <?php
+  require_once 'inc/multi_cards.php';
   $IDbyNAME = get_term_by('name', 'programas', 'product_cat');
   $product_cat_ID = $IDbyNAME->term_id;
   $args = array(
@@ -71,14 +72,16 @@
     $link = get_term_link( $sc->slug, $sc->taxonomy );
     $thumbnail_id = get_term_meta( $sc->term_id, 'thumbnail_id', true );
     $image = wp_get_attachment_url( $thumbnail_id );
-    ?>
-    
-    <a class="simpla" href="<?php echo $link; ?>">
-      <img class="simpla_img" loading="lazy" src="<?php echo $image; ?>" alt="">
-      <h6 class="simpla_title row2col1"><?php echo $sc->name; ?></h6>
-      <div class="simpla_deco" style="background:<?php echo get_term_meta( $sc->term_id, 'lt_meta_color', true ); ?>"></div>
-    </a>
-  <?php } ?>
+    $color = get_term_meta( $sc->term_id, 'lt_meta_color', true );
+    $arguments = array(
+      'title' => $sc->name,
+      'link'  => $link,
+      'image' => $image,
+      'color' => $color,
+      'excerpt' => false,
+    );
+    simpla_card($arguments);
+  } ?>
 </section>
 
 

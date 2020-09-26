@@ -53,6 +53,7 @@
         <h3 class="showcase_title font_size_2"><?php echo get_post_meta(get_the_ID(), 'I_titulo_seccion_4', true)?></h3>
 
         <?php
+        require_once 'inc/multi_cards.php';
         $args = array(
             'post_type'=>'miembro',
             'orderby' => 'meta_value_num',
