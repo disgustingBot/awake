@@ -450,6 +450,28 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?FOOTER */
   }
 }
+
+@media  screen and (min-width: 1600px) {
+  :root {
+    --lateral:8rem;
+
+
+    /* ?HEADER */
+
+    /* ?nav_menu */
+    --nav_menu_padding: 0 calc(var(--lateral) + 3rem);
+
+    /* ?mivi */
+    /* ?gertha */
+    --gertha_padding: 3rem 3rem;
+
+    /* ?testim */
+    --testim_container_height: 70vh;
+
+
+    /* ?FOOTER */
+  }
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1119,7 +1141,7 @@ section.flati{
   height:3px;
   top:-2px;
   border-radius: 2px;
-  background: var(--grey9);
+  background: white;
   position:relative;
   transform:rotate(40deg);
   transform-origin: left center;
