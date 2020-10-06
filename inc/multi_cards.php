@@ -1,12 +1,18 @@
 
 <?php function sqare_card () {
-
+    if(!isset($args['title']  )){ $args['title']   = get_the_title(); }
+    if(!isset($args['link']   )){ $args['link']    = get_the_permalink(); }
+    if(!isset($args['image']  )){ $args['image']   = get_the_post_thumbnail_url(); }
+    if(!isset($args['excerpt'])){ $args['excerpt'] = get_the_excerpt(); }
+    if(!isset($args['color']  )){ $args['color']   = get_post_meta(get_the_ID(), 'color', true); }
     ?>
 
     <div class="sqare">
-        <a class="sqare_amg" href="<?php the_permalink(); ?>">
-            <img class="sqare_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-        </a>
+        <?php if($args['image'] != false){ ?>
+            <a class="sqare_amg" href="<?php echo $args['link']; ?>">
+                <img class="sqare_img" loading="lazy" src="<?php echo $args['image']; ?>" alt="">
+            </a>
+        <?php } ?>
         <h4 class="sqare_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
         <p class="sqare_author">by <?php the_author(); ?></p>
         <div class="sqare_deco"></div>
