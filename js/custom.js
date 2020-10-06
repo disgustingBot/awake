@@ -17,7 +17,10 @@ w.onload=()=>{
 	growUpController.setup()
 	obseController.setup()
   d.getElementById("load").style.top="-100vh";
+
+  reportWindowSize();
 }
+w.onresize = ()=>{reportWindowSize()};
 
 
 // SLIDER:
@@ -124,4 +127,32 @@ for (i = 0; i < acc.length; i++) {
       panel.style.padding = "20px";
     }
   });
+}
+
+
+
+
+
+const adjust_tory_img_height = ()=>{
+  let torys = [...d.querySelectorAll('.tory')];
+  torys.forEach((tory)=>{
+    let tory_img              = tory.querySelector('.tory_img');
+    let tory_text_height      = tory.querySelector('.tory_text').clientHeight;
+    let tory_subtitle_height  = tory.querySelector('.tory_subtitle').clientHeight;
+    let tory_img_height;
+    if([...tory.classList].includes('tory_1')){
+      let tory_root_height      = tory.querySelector('.tory_root').clientHeight;
+      let tory_highlight_height = tory.querySelector('.tory_highlight').clientHeight;
+      tory_img_height = tory_root_height + tory_subtitle_height + tory_text_height - tory_highlight_height;
+    } else {
+      tory_img_height = tory_subtitle_height + tory_text_height;
+    }
+    tory_img.style.height = 'calc(' + tory_img_height + 'px + 1rem)';
+  })
+  
+}
+function reportWindowSize() {
+  if(d.querySelector('.tory')){
+    adjust_tory_img_height();
+  }
 }
