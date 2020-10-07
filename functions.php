@@ -5,12 +5,15 @@ require_once 'inc/form_handler.php';
 require_once 'inc/ajax.php';
 require_once 'inc/customize.php';
 
+if(!is_admin()){
+  require_once 'inc/multi_cards.php';
+}
 
 
 function lattte_setup(){
   wp_enqueue_style('style', get_stylesheet_uri(), NULL, microtime(), 'all');
   wp_enqueue_script('modules', get_theme_file_uri('/js/modules.js'), NULL, microtime(), true);
-  
+
   // TOOOODO ESTO ES PARA AJAX
 	global $wp_query;
 	// In most cases it is already included on the page and this line can be removed
@@ -31,7 +34,7 @@ function lattte_setup(){
 
 	wp_enqueue_script( 'my_loadmore' );
   // FIN DE PARA AJAX
-  
+
   wp_enqueue_script('main', get_theme_file_uri('/js/custom.js'), NULL, microtime(), true);
 }
 add_action('wp_enqueue_scripts', 'lattte_setup');
