@@ -55,7 +55,6 @@
 
 
   <?php
-  require_once 'inc/multi_cards.php';
   $IDbyNAME = get_term_by('name', 'programas', 'product_cat');
   $product_cat_ID = $IDbyNAME->term_id;
   $args = array(
