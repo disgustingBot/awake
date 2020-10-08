@@ -37,7 +37,6 @@
     <p class="gertha_txt"><?php echo get_post_meta($post->ID, 'B_bloque_1_texto_1', true); ?></p>
     <p class="gertha_txt"><?php echo get_post_meta($post->ID, 'C_bloque_1_texto_2', true); ?></p>
     <p class="gertha_txt"><?php echo get_post_meta($post->ID, 'D_bloque_1_texto_3', true); ?></p>
-
     <svg class="gertha_signature" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 200">
       <use xlink:href="#signature"></use>
     </svg>
