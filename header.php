@@ -19,8 +19,8 @@
     --font_size_4:<?php echo get_option( 'font_size_4_number', '' ) * 0.8; ?>px;
     --font_size_5:<?php echo get_option( 'font_size_5_number', '' ) * 0.8; ?>px;
     --font_size_6:<?php echo get_option( 'font_size_6_number', '' ) * 0.8; ?>px;
-    --font_size_7:<?php echo get_option( 'font_size_7_number', '' ) * 0.8; ?>px;
-    --font_size_8:<?php echo get_option( 'font_size_8_number', '' ) * 0.8; ?>px;
+    --font_size_7:<?php echo get_option( 'font_size_7_number', '' ) * 1.2; ?>px;
+    --font_size_8:<?php echo get_option( 'font_size_8_number', '' ) * 1.2; ?>px;
 
   }
 
