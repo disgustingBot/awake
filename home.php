@@ -2,13 +2,14 @@
 
 <section class="phil">
   <p class="phil_caption">Descubre nuestros posts semanales sobre resiliencia humana, meditacion y mindfulness, adiccion y trauma, nutricion y un estilo de vida saludable.</p>
-  <select class="phil_select" name="" id=""></select>
-  <p class="phil_search">Buscador</p>
+  <select class="phil_select" name="" id="">
+    <option value="">Categorias</option>
+  </select>
+  <input class="phil_search" type="text" placeholder="Buscador" name="" value="">
 </section>
 
 
 <section class="sqare_cont" id="ajax_archive">
-  <?php require_once 'inc/multi_cards.php'; ?>
   <?php while(have_posts()){the_post(); ?>
     <?php sqare_card(); ?>
   <?php } ?>

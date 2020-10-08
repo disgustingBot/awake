@@ -9,7 +9,7 @@ function lt_new_custom_post($name, $icon = '', $taxonomies = array() ){
 	}
 	$name_M     = ucfirst($name);
 	$name_M_pl  = ucfirst($name_pl);
-	
+
     /* Añado las etiquetas que aparecerán en el escritorio de WordPress */
 	$labels = array(
 		'name'               => _x( $name_M_pl, 'post type general name', 'lt-domain' ),
@@ -25,7 +25,7 @@ function lt_new_custom_post($name, $icon = '', $taxonomies = array() ){
 		'not_found'          => __( 'No hay ' . $name_pl, 'lt-domain' ),
 		'not_found_in_trash' => __( 'Ningun ' . $name . ' en la papelera.', 'lt-domain' )
 	);
-	
+
     /* Configuro el comportamiento y funcionalidades del nuevo custom post type */
 	$args = array(
 		'labels'             => $labels,
@@ -135,8 +135,8 @@ function lt_custom_posts() {
 	lt_new_custom_post( 'banner',      'dashicons-images-alt2');
 	lt_new_custom_post( 'miembro',     'dashicons-groups');
 	lt_new_custom_post( 'empresa',     'dashicons-admin-site-alt3');
-	lt_new_custom_post( 'programa',    'dashicons-welcome-view-site');
-	
+	// lt_new_custom_post( 'programa',    'dashicons-welcome-view-site');
+
 
 	$lt_meta_order = array(
 		'label'       => 'Orden',

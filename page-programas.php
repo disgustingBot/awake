@@ -144,8 +144,8 @@
         </div>
 
 
-        <button class="prenex prenex_prev row2col1" id="prevButton"></button>
-        <button class="prenex prenex_next row2col1" id="nextButton"></button>
+        <button class="prenex prenex_prev row2col1 dark" id="prevButton"></button>
+        <button class="prenex prenex_next row2col1 dark" id="nextButton"></button>
         <a href="" class="testim_link">VER MÁS TESTIMONIOS</a>
       </section>
 

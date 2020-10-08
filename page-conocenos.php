@@ -43,8 +43,8 @@
                     <img class="mivi_icon" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
                 <?php $i=$i+1; } wp_reset_query(); ?>
             </div>
-            <button class="prenex prenex_prev rowcol1" id="prevButton"></button>
-            <button class="prenex prenex_next rowcol1" id="nextButton"></button>
+            <button class="prenex prenex_prev rowcol1 dark" id="prevButton"></button>
+            <button class="prenex prenex_next rowcol1 dark" id="nextButton"></button>
         </div>
     </section>
 
