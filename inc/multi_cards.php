@@ -15,8 +15,8 @@
         <?php } ?>
         <h4 class="sqare_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
         <p class="sqare_author">by <?php the_author(); ?></p>
-        <div class="sqare_deco"></div>
-        <p class="sqare_date"><?php the_time( 'F Y' ); ?></p>
+        <div class="sqare_deco" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"></div>
+        <p class="sqare_date" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"><?php the_time( 'F Y' ); ?></p>
         <p class="sqare_exerpt"><?php echo excerpt(90); ?></p>
         <a class="sqare_link" href="<?php the_permalink(); ?>">Leer más</a>
     </div>
