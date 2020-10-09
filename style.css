@@ -464,7 +464,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 
     /* ?tory */
-    --tory_gap:1rem;
+    --tory_gap:3rem;
 
   }
 }
@@ -1856,7 +1856,9 @@ section.flati{
 }
 .tory_title{
   grid-column:1/-1;
-  padding:1rem 0;
+  padding:1.5rem 0;
+  margin-top:3rem;
+  font-size: var(--font_size_1);
   text-align:center;
 }
 .tory_col{
@@ -1868,17 +1870,17 @@ section.flati{
   grid-row:var(--tory_highlight_GR);
   padding-left:var(--lateral);
   color:var(--secondary_color);
-  font-size: var(--font_size_5);
+  font-size: var(--font_size_4);
   font-family: 'Lato', sans-serif;
   font-weight: 800;
   /* flex:0 1 auto; */
-    height: min-content;
+  height: min-content;
 }
 .tory_root{
   /* padding-left:0; */
   padding-left:var(--tory_root_padding_left);
   padding-right:var(--lateral);
-  font-size:var(--font_size_6);
+  font-size:var(--font_size_5);
   font-weight: 800;
   grid-column:var(--tory_text_GC);
 }
