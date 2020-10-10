@@ -482,7 +482,7 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?HEADER */
 
     /* ?gertha */
-    --gertha_padding: 3rem 4rem 2rem 4rem;
+    --gertha_padding: 3rem 1rem 2rem 1rem;
 
     /* ?mivi */
     --mivi_icon_height: 45px;
@@ -811,6 +811,8 @@ img, video, source{
   font-size:var(--font_size_6);
   margin:auto;
   padding:.5rem 1.3rem;
+  position: relative;
+  top: 1rem;
 }
 .hero_txt{
   padding:0 var(--lateral);
@@ -828,9 +830,7 @@ img, video, source{
   padding: var(--gertha_padding);
   position: relative;
   color: var(--grey8);
-}
-.gertha.lateral_m {
-  margin: 0 calc(var(--lateral) * .5);
+  margin: 0 var(--lateral);
 }
 .gertha_title{
   grid-column: 1/-1;
