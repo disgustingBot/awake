@@ -108,7 +108,7 @@ FIN DE MAPA DE CONTENIDOS */
   dejar espacio entre los dos puntos y el color */
 
   /* --primary_color:red; */
-  /* --secondary_color:#85AFCA; */
+  --secondary_color:#85AFCA;
 
 
 
@@ -185,6 +185,7 @@ FIN DE MAPA DE CONTENIDOS */
   --num_1_2_4:1;
   --grid_1_2_4_GTC: 1fr;
   --grid_1_2_GTC:   1fr;
+  --grid_2_4_GTC: 1fr 1fr;
 
   /* ?HEADER */
 
@@ -241,9 +242,9 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* ?mivi */
   --mivi_icon_height: 30px;
-  --mivi_slide_GTC: 1fr;
+  --mivi_slide_GTC: 1fr 1fr;
   --mivi_intro_GTC: 1fr;
-  --mivi_children_padding: 0 1rem;
+  --mivi_children_padding: 0;
 
   /* ?barda */
   --barda_display: flex;
@@ -377,7 +378,6 @@ FIN DE MAPA DE CONTENIDOS */
     --prenex_mega_top:-2px;
 
     /* ?mivi */
-    --mivi_slide_GTC: 1fr 1fr;
     --mivi_intro_GTC: 1fr 1fr;
     --mivi_children_padding: 0 1rem;
 
@@ -425,6 +425,8 @@ FIN DE MAPA DE CONTENIDOS */
     --lateral:3rem;
     --num_1_2_4:4;
     --grid_1_2_4_GTC:repeat(4,1fr);
+    --grid_2_4_GTC: repeat(4,1fr);
+
     --grid_1_2_GTC:   1fr 1fr;
 
 
@@ -449,7 +451,6 @@ FIN DE MAPA DE CONTENIDOS */
 
 
     /* ?mivi */
-    --mivi_slide_GTC: repeat(3, 1fr);
 
 
     /* ?showcase5 */
@@ -802,7 +803,7 @@ img, video, source{
 .hero_title{
   color:white;
   padding: var(--hero_title_padding) var(--lateral);
-  font-size: var(--font_size_2);
+  font-size: var(--font_size_3);
 }
 .hero_link{
   text-transform: uppercase;
@@ -816,7 +817,10 @@ img, video, source{
 }
 .hero_txt{
   padding:0 var(--lateral);
+  text-transform: uppercase;
+  font-size: var(--font_size_5);
 }
+
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -904,10 +908,11 @@ img, video, source{
   display:var(--barda_display);
   grid-auto-flow:column;
   grid-template-rows: min-content min-content 1fr;
-  grid-template-columns:calc((100vw - 16px - var(--lateral) * 2) / 2) 1fr;
-  padding:4rem var(--lateral);
-  grid-gap:3rem;
-  background:var(--greye6);
+  /* grid-template-columns:calc((100vw - 16px - var(--lateral) * 2) / 2) 1fr; */
+  grid-template-columns:5fr 4fr;
+  padding: 5rem calc(var(--lateral) * 0.6);
+  grid-gap:4rem;
+  background:var(--greyf5);
   flex-direction: column;
 }
 .barda_title{
@@ -1108,7 +1113,7 @@ section.flati{
   grid-row-gap:3rem;
   padding: 2rem calc(var(--lateral) * .5) 6rem calc(var(--lateral) * .5);
   /* grid-template-columns:repeat(4,1fr); */
-  grid-template-columns:var(--grid_1_2_4_GTC);
+  grid-template-columns:var(--grid_2_4_GTC);
   /* margin: 3rem 0; */
 }
 
@@ -1123,13 +1128,14 @@ section.flati{
 --------------------------------------------------------------------------- */
 
 .showcase5 .simpla_img{
-  height:calc((100vw - 16px - var(--lateral) * 2 - 4rem) / 5)
+  height:calc((100vw - 16px - var(--lateral) * 2 - 4rem) / 5);
+  min-height: 160px;
 }
 .showcase5{
   display:grid;
   grid-gap:.5rem;
   grid-row-gap:3rem;
-  padding:2rem var(--lateral);
+  padding:5rem calc(var(--lateral) * 0.5);
   grid-template-columns:var(--showcase5_GTC);
 }
 /* ---------------------------------------------------------------------------
@@ -1183,7 +1189,7 @@ section.flati{
 
 /* .mega .prenex{--prenex_top:80px;} */
 .mega .prenex{--prenex_top:var(--prenex_mega_top);}
-.prenex.dark::before,.prenex.dark::after{background:var(--grey4)}
+.prenex.dark::before,.prenex.dark::after{background:var(--grey5)}
 .prenex::before,
 .prenex::after{
   grid-row:1;
@@ -1191,7 +1197,8 @@ section.flati{
   content:" ";
   display:grid;
   width:25px;
-  height:3px;
+  height:5px;
+  border-radius: 2px;
   top:var(--prenex_top);
   border-radius: 2px;
   background: white;
@@ -1454,7 +1461,7 @@ section.flati{
   display:grid;
   grid-template-columns:1fr 1fr;
   padding: var(--mivi_children_padding);
-  --mivi_border_select:1px solid var(--grey9);
+  --mivi_border_select:1px solid var(--greyb);
   --mivi_border_rested:1px solid transparent;
 }
 .mivi_select{
@@ -1486,7 +1493,7 @@ section.flati{
 }
 
 .mivi_explain{
-  padding:2rem 3rem;
+  padding:3rem;
   background:white;
   grid-row:2;
   grid-column:1/-1;
@@ -1545,6 +1552,9 @@ section.flati{
   opacity:1;
   transition:.3s;
   padding: 0 2rem;
+}
+.tesim_author {
+  text-transform: uppercase;
 }
 .tesim_container .tesim:nth-child(1) .tesim_icon, .tesim_container .tesim:nth-child(1) .tesim_author {color: #98C9AC}
 .tesim_container .tesim:nth-child(2) .tesim_icon, .tesim_container .tesim:nth-child(2) .tesim_author{color: #EDC06D}
@@ -1713,41 +1723,82 @@ section.flati{
 --------------------------------------------------------------------------- */
 .copa{
   display:grid;
-  grid-template-columns:2fr min-content min-content 1fr;
-  grid-template-rows:1fr 1fr 1fr 1fr;
+  grid-template-columns:1fr 1fr;
   grid-auto-flow: dense;
-  padding:2rem var(--lateral);
-  grid-gap:1rem;
+  padding:2rem calc(var(--lateral) * .7);
+  grid-gap:2.5rem;
 }
 .copa_img{
   grid-row: 1/5;
+  max-height: 360px;
+}
+.copa_interaction_container {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  grid-template-rows: repeat(4, min-content);
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 1rem;
+}
+.copa_interaction_container >* {
+  height: 2rem;
+  color: var(--grey7);
+}
+.copa_interaction_container .btn, .copa_interaction_container .cuantos  {
+  margin: unset;
+}
+.copa_interaction_container .btn {
+  color: white;
 }
 .copa_title{
-  grid-column:2/-1;
-  font-size: 24px;
+  grid-column:1/-1;
+  font-size: var(--font_size_4);
+  color: var(--grey7);
+  margin-bottom: 1.6rem;
 }
 .copa_label{
+  background: #86B0C9;
   color:white;
   font-size:16px;
   padding:.5rem .9rem;
   width: 100%;
   background:var(--secondary_color);
   text-align:center;
-  margin:auto 0;
+}
+.copa_select_container {
+  grid-column: span 2;
+  position: relative;
 }
 .copa_select{
-  grid-column:3/5;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border: 1px solid var(--grey7);
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.copa_select_arrow {
+  position: absolute;
+  color: var(--grey7);
+  width: 50px;
+  height: 90%;
+  top: 0;
+  right: 0;
+  margin-top: 2px;
 }
 .copa_price{
-  margin:auto 0;
   text-align: center;
   font-size:16px;
   padding:.3rem;
-  border-top:2px solid var(--secondary_color);
-  border-bottom:2px solid var(--secondary_color);
+  border-top:4px solid var(--secondary_color);
+  border-bottom:4px solid var(--secondary_color);
 }
 .copa_mas{
-  grid-column:2/-1;
+  grid-column: 1/-1;
+  margin-top: 1.6rem;
+}
+.copa_mas_link {
+  color: var(--secondary_color);
+  text-decoration: underline;
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -2138,10 +2189,16 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   background: none;
   border: none;
   color: var(--grey9);
-  margin-top: 10px;
   font-weight: bold;
   letter-spacing: 3px;
   color: var(--grey5);
+  margin: auto;
+  padding: 10px;
+  transition: .25s;
+}
+.piqui_send:hover {
+  color: var(--grey1);
+  text-decoration: underline;
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
