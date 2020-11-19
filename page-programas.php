@@ -6,7 +6,7 @@
 
     <section class="hero">
       <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-      <h1 class="hero_title rowcol1"><?php echo get_post_meta(get_the_ID(), 'A_titulo_principal', true)?></h1>
+      <h1 class="hero_title rowcol1 font_size_2"><?php echo get_post_meta(get_the_ID(), 'A_titulo_principal', true)?></h1>
       <div class="redDot header_activator"></div>
       <svg class="mega_arrow_down rowcol1" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
         <use xlink:href="#arrow_down"></use>
@@ -18,8 +18,8 @@
         <?php include 'assets/perceptive_brain.svg'; ?>
         <!-- <img class="flati_icon" src="" alt=""> -->
         <div class="flati_deco"></div>
-        <h5 class="flati_title"><?php echo get_post_meta(get_the_ID(), 'B_texto_azul_seccion_2', true)?></h5>
-        <p class="flati_txt"><?php echo get_post_meta(get_the_ID(), 'C_texto_negro_seccion_2', true)?></p>
+        <h5 class="flati_title font_size_4"><?php echo get_post_meta(get_the_ID(), 'B_texto_azul_seccion_2', true)?></h5>
+        <p class="flati_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'C_texto_negro_seccion_2', true)?></p>
     </section>
 
 
@@ -28,7 +28,7 @@
 
 
     <section class="showcase4 tall_img">
-        <h3 class="showcase_title simple_title">Descubre nuestros Programas de Resiliencia</h3>
+        <h3 class="showcase_title font_size_3 simple_title">Descubre nuestros Programas de Resiliencia</h3>
 
         <?php
         // $args = array('post_type'=>'programa',);
@@ -44,66 +44,66 @@
 
 
     <section class="showcase3">
-        <h3 class="showcase_title simple_title">Herramientas que te servirán para...</h3>
+        <h3 class="showcase_title font_size_3 simple_title">Herramientas que te servirán para...</h3>
 
 
         <div class="hosi">
             <?php include 'assets/shield.svg'; ?>
-            <p class="hosi_txt">Reducir estrés y ansiedad.</p>
+            <p class="hosi_txt font_size_5">Reducir estrés y ansiedad.</p>
         </div>
 
         <div class="hosi">
             <?php include 'assets/emotional_intelligence.svg'; ?>
-            <p class="hosi_txt">
+            <p class="hosi_txt font_size_5">
                 Aumentar la inteligencia emocional.
             </p>
         </div>
 
         <div class="hosi">
             <?php include 'assets/sleepy_moon.svg'; ?>
-            <p class="hosi_txt">
+            <p class="hosi_txt font_size_5">
                 Crear un sueño más profundo y reparador.
             </p>
         </div>
 
         <div class="hosi">
             <?php include 'assets/map_compose.svg'; ?>
-            <p class="hosi_txt">
+            <p class="hosi_txt font_size_5">
                 Ver “the big picture” para poder apreciar mejor los detalles.
             </p>
         </div>
 
         <div class="hosi">
             <?php include 'assets/listening_ear.svg'; ?>
-            <p class="hosi_txt">
+            <p class="hosi_txt font_size_5">
                 Mejorar la escucha activa, la concentración y creatividad.
             </p>
         </div>
 
         <div class="hosi">
             <?php include 'assets/perceptive_brain.svg'; ?>
-            <p class="hosi_txt">
+            <p class="hosi_txt font_size_5">
                 Crear una percepción flexible para mejorar la respuesta ante diferentes situaciones.
             </p>
         </div>
 
         <div class="hosi">
             <?php include 'assets/opportunity.svg'; ?>
-            <p class="hosi_txt">
+            <p class="hosi_txt font_size_5">
                 Afrontar el cambio y aprovechar las oportunidades que nos brinda.
             </p>
         </div>
 
         <div class="hosi">
             <?php include 'assets/relationship.svg'; ?>
-            <p class="hosi_txt">
+            <p class="hosi_txt font_size_5">
                 Mejorar las relaciones interpersonales.
             </p>
         </div>
 
         <div class="hosi">
             <?php include 'assets/happy_brain.svg'; ?>
-            <p class="hosi_txt">
+            <p class="hosi_txt font_size_5">
                 Hacernos más resistentes a la depresión.
             </p>
         </div>

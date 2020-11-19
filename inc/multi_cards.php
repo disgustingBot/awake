@@ -13,12 +13,12 @@
                 <img class="sqare_img" loading="lazy" src="<?php echo $args['image']; ?>" alt="">
             </a>
         <?php } ?>
-        <h4 class="sqare_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-        <p class="sqare_author">by <?php the_author(); ?></p>
+        <h4 class="sqare_title font_size_4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+        <p class="sqare_author font_size_6">by <?php the_author(); ?></p>
         <div class="sqare_deco" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"></div>
-        <p class="sqare_date" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"><?php the_time( 'F Y' ); ?></p>
-        <p class="sqare_exerpt"><?php echo excerpt(90); ?></p>
-        <a class="sqare_link" href="<?php the_permalink(); ?>">Leer más</a>
+        <p class="sqare_date font_size_6" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"><?php the_time( 'F Y' ); ?></p>
+        <p class="sqare_exerpt font_size_6"><?php echo excerpt(200); ?></p>
+        <a class="sqare_link font_size_5" href="<?php the_permalink(); ?>">&mdash; Leer más</a>
     </div>
 
 <?php } ?>

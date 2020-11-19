@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section class="phil">
-  <p class="phil_caption"><?php the_title(); ?></p>
+  <p class="phil_caption font_size_6"><?php the_title(); ?></p>
   <select class="phil_select" name="" id=""></select>
   <p class="phil_search">Buscador</p>
 </section>
