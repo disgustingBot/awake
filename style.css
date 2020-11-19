@@ -267,9 +267,14 @@ FIN DE MAPA DE CONTENIDOS */
   --tory_root_padding_left:var(--lateral);
 
 
+  /* ?phil */
+  --phil_GTC: 1fr;
+
 
   /* ?FOOTER */
   --footer_grid_gap: 2rem 1rem;
+
+
 
 }
 /* ---------------------------------------------------------------------------
@@ -402,6 +407,10 @@ FIN DE MAPA DE CONTENIDOS */
     --tory_img_position:sticky;
     --tory_img_GC:2 / span 2;
     --tory_root_padding_left:0;
+
+
+    /* ?phil */
+    --phil_GTC: repeat(4,1fr);
 
 
 
@@ -803,13 +812,11 @@ img, video, source{
 .hero_title{
   color:white;
   padding: var(--hero_title_padding) var(--lateral);
-  font-size: var(--font_size_3);
 }
 .hero_link{
-  text-transform: uppercase;
+  text-transform: testim_titleppercase;
   border: 1px solid white;
   color:white;
-  font-size:var(--font_size_6);
   margin:auto;
   padding:.5rem 1.3rem;
   position: relative;
@@ -818,7 +825,6 @@ img, video, source{
 .hero_txt{
   padding:0 var(--lateral);
   text-transform: uppercase;
-  font-size: var(--font_size_5);
 }
 
 
@@ -846,7 +852,6 @@ img, video, source{
   grid-gap: 1rem;
 }
 .gertha_txt {
-  font-size: var(--font_size_4);
   font-weight: 500;
 }
 .gertha_signature {
@@ -882,10 +887,14 @@ img, video, source{
   /* height:calc((100vw - 16px - var(--lateral) * 2 - 4rem) / 5); */
   height:calc((100vw - 16px - var(--lateral) * 2 - (var(--num_1_2_4) - 1) * .5rem) / var(--num_1_2_4));
 }
-.simpla_title{
+.simpla_title {
   margin-top:1rem;
   text-transform: uppercase;
   color: var(--grey7);
+}
+.conocenos_team_cards .simpla_title {
+  font-size: var(--font_size_6);
+  font-weight: normal;
 }
 .simpla_deco{
   width:40%;
@@ -915,21 +924,22 @@ img, video, source{
   background:var(--greyf5);
   flex-direction: column;
 }
-.barda_title{
+.barda_title {
   grid-column:1/-1;
   text-align:center;
   color: var(--grey6);
 }
-.barda_quote{
+.barda_quote {
   text-align: var(--barda_quote_text_align);
   color: #87B0C9  ;
   font-style: italic;
   font-family: 'Lora', serif;
   margin: auto auto 0 auto;
 }
-.barda_txt{
+.barda_txt {
   grid-row:span 2;
   color: var(--grey8);
+  font-weight: lighter;
 }
 
 /* ---------------------------------------------------------------------------
@@ -937,35 +947,41 @@ img, video, source{
                           6.4.5) =sqare:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.sqare_cont{
+.sqare_cont {
   display:grid;
   grid-template-columns: var(--grid_1_2_4_GTC);
-  grid-gap:.5rem;
-  grid-row-gap:2rem;
+  grid-gap: 1.5rem;
+  grid-row-gap:4rem;
   margin:1rem var(--lateral);
 }
 .sqare:hover .sqare_deco{width:100%;background:currentColor}
-.sqare{
+.sqare {
   display:grid;
   grid-gap:.5rem;
 }
-.sqare_amg{
+.sqare_amg {
   display:flex;
   height:calc((100vw - 16px - var(--lateral) * 2 - (var(--num_1_2_4) - 1) * .5rem) / var(--num_1_2_4));
 }
-.sqare_img{
+.sqare_img {
   display:flex;
   height:inherit;
 }
-.sqare_deco{
+.sqare_deco {
   width:1rem;
   height:3px;
   background:var(--grey6);
   transition:.3s;
 }
-.sqare_date{
+.sqare_date {
   margin-top:auto;
+  text-transform: uppercase;
+  color: var(--grey7)
 }
+.sqare_title, .sqare_link, .sqare_author, .sqare_exerpt {
+  color: var(--grey6);
+}
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.4.6) =flati:
@@ -1004,7 +1020,6 @@ section.flati{
 .flati_title{
   color:var(--secondary_color);
   text-align: var(--flati_title_text_align);
-  font-size:1.2rem;
   color:#85afca;
   margin: 0 auto auto auto;
   font-family: 'Lato', sans-serif!important;
@@ -1034,10 +1049,8 @@ section.flati{
   margin:auto;
 }
 .hosi_txt{
-  font-size: var(--font_size_5);
   text-align: center;
   color: var(--grey7);
-  font-weight: bold;
 }
 
 /* ---------------------------------------------------------------------------
@@ -1051,7 +1064,6 @@ section.flati{
   grid-column:1/-1;
   text-align:center;
   color: var(--grey9);
-  font-size: var(--font_size_3);
 }
 .showcase_title.simple_title{
   font-family:'Lato',sans-serif;
@@ -1344,6 +1356,7 @@ section.flati{
 }
 .nav_bar .menu-item{
   position:relative;
+  color: var(--grey6);
 }
 .current-menu-item::after{
   content:"";
@@ -1400,30 +1413,31 @@ section.flati{
                           6.8.3) =phil:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.phil{
+.phil {
   display:grid;
-  grid-gap:.5rem;
-  grid-template-columns:repeat(4,1fr);
-  margin-top:calc(120px + 3rem);
+  grid-gap: 1.5rem;
+  grid-template-columns: var(--phil_GTC);
+  margin-top:calc(120px + 4rem);
   padding:2rem var(--lateral);
   align-items: center;
 }
-.phil_caption{
-  font-size:16px;
+.phil_caption {
   grid-column:span 2;
+  color: var(--grey6);
 }
-.phil_select{
-  border:1px solid var(--grey6);
+.phil_select {
   background: transparent;
   padding:.5rem;
-  font-size:var(--font_size_5);
   color:var(--grey5);
 }
-.phil_search{
-  border:1px solid var(--grey6);
+.phil_search {
   background: transparent;
   padding:.5rem;
-  font-size:var(--font_size_5);
+}
+.phil_input {
+  max-height: 45px;
+  margin: auto 0;
+  border: 1px solid var(--grey8);
 }
 
 /* ---------------------------------------------------------------------------
@@ -1449,7 +1463,6 @@ section.flati{
   grid-column:1/-1;
   text-align:center;
   color: var(--grey7);
-  font-size: var(--font_size_1);
 }
 .mivi_excerpt{
   color: var(--grey9);
@@ -1465,14 +1478,14 @@ section.flati{
   --mivi_border_rested:1px solid transparent;
 }
 .mivi_select{
-  padding:1rem 1.5rem;
+  padding: 1rem 2rem;
   text-transform: uppercase;
-  font-size:var(--font_size_4);
   font-weight: 500;
-  cursor:pointer;
-  transition:.3s;
+  cursor: pointer;
+  transition: .3s;
   color: var(--grey9);
   font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
 }
 .mivi_why.option2 .mivi_select.option2,
 .mivi_why:not(.option2) .mivi_select.option1{
@@ -1558,7 +1571,6 @@ section.flati{
 }
 .tesim_container .tesim:nth-child(1) .tesim_icon, .tesim_container .tesim:nth-child(1) .tesim_author {color: #98C9AC}
 .tesim_container .tesim:nth-child(2) .tesim_icon, .tesim_container .tesim:nth-child(2) .tesim_author{color: #EDC06D}
-.testim_title {}
 .tesim{
   display:grid;
   grid-gap:.5rem;
@@ -1572,7 +1584,6 @@ section.flati{
 .tesim_txt{
   width: 100%;
   font-family: 'lora', serif;
-  font-size: 20px;
   font-style: italic;
 }
 .tesim_txt p{
@@ -2170,6 +2181,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   align-items: center;
   font-size: var(--font_size_8);
   margin: var(--piqui_input_margin);
+  margin-top: 5px;
 }
 .piqui_acceptance_input {
   background: var(--grey9);
@@ -2210,7 +2222,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   display:grid;
   grid-template-columns: var(--grid_1_2_4_GTC);
   grid-gap: var(--footer_grid_gap);
-  padding:2rem var(--lateral);
+  padding:2rem var(--lateral) 3rem var(--lateral);
   text-align: center;
   font-family: 'Lora', serif;
 }
@@ -2241,4 +2253,5 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   text-align: right;
   font-size:10px;
   color: var(--grey9);
+  display: none;
 }
