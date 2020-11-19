@@ -36,11 +36,11 @@
     if(!isset($args['color']  )){ $args['color']   = get_post_meta(get_the_ID(), 'color', true); }
     ?>
 
-    <div class="simpla">
+    <a class="simpla" href="<?php echo $args['link']; ?>">
         <?php if($args['image'] != false){ ?>
-            <a class="simpla_amg" href="<?php echo $args['link']; ?>">
+            <div class="simpla_amg">
                 <img class="simpla_img" loading="lazy" src="<?php echo $args['image']; ?>" alt="">
-            </a>
+            </div>
         <?php } ?>
         <?php if($args['title'] != false){ ?>
             <h6 class="simpla_title font_size_6 row2col1"><?php echo $args['title']; ?></h6>
@@ -51,6 +51,6 @@
         <?php if($args['excerpt'] != false){ ?>
             <div class="simpla_txt font_size_7"><?php echo $args['excerpt']; ?></div>
         <?php } ?>
-    </div>
+    </a>
 
 <?php } ?>

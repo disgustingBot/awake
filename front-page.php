@@ -98,7 +98,7 @@
   <?php while($blogPosts->have_posts()){$blogPosts->the_post(); ?>
     <?php global $product; ?>
     <div class="hero Element">
-    <div class="hero_img_filter" style="background-image:url('<?php the_post_thumbnail_url(); ?>');">
+    <div class="hero_img_filter" style="background-image:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('<?php the_post_thumbnail_url(); ?>');">
 
     </div>
 

@@ -785,6 +785,9 @@ img, video, source{
   overflow-y: hidden;
   position: relative;
 }
+.hero_opaque {
+  background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4));
+}
 .hero_icon{
   width:70px;
   margin:auto;
@@ -1356,7 +1359,6 @@ section.flati{
 }
 .nav_bar .menu-item{
   position:relative;
-  color: var(--grey6);
 }
 .current-menu-item::after{
   content:"";

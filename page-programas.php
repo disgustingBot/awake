@@ -4,7 +4,7 @@
 
 <?php while(have_posts()){the_post(); ?>
 
-    <section class="hero">
+    <section class="hero hero_opaque">
       <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
       <h1 class="hero_title rowcol1 font_size_2"><?php echo get_post_meta(get_the_ID(), 'A_titulo_principal', true)?></h1>
       <div class="redDot header_activator"></div>
