@@ -1120,7 +1120,8 @@ section.flati{
 --------------------------------------------------------------------------- */
 
 .showcase4.tall_img .simpla_img{
-  height:calc((100vw - 16px - var(--lateral) * 2 - (var(--num_1_2_4) - 1) * .5rem) * 1.5 / var(--num_1_2_4));
+  /* height:calc((100vw - 16px - var(--lateral) * 2 - (var(--num_1_2_4) - 1) * .5rem) * 1.5 / var(--num_1_2_4)); */
+  height: 80vh;
 }
 .showcase4{
   display:grid;
