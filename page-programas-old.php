@@ -35,7 +35,7 @@
         $programas=new WP_Query(array('post_type'=>'programa'));
         while($programas->have_posts()){$programas->the_post(); ?>
 
-            <?php simpla_card(); ?>
+            <?php simpla_card_tall(); ?>
 
         <?php } wp_reset_query(); ?>
 
