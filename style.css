@@ -884,7 +884,8 @@ img, video, source{
   display: grid;
   grid-gap:.75rem;
   text-align: center;
-  margin-bottom:auto;
+  /* margin-bottom:auto; */
+  position: relative;
 }
 .simpla_img{
   /* height:calc((100vw - 16px - var(--lateral) * 2 - 4rem) / 5); */
@@ -902,8 +903,10 @@ img, video, source{
 .simpla_deco{
   width:40%;
   margin: auto;
-  position:relative;
-  bottom:10px;
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
   height:3px;
   background:red;
   background:currentColor;
@@ -1004,13 +1007,17 @@ section.flati{
   align-items: center;
   justify-content: center;
 }
-.flati svg{
+.flati svg, .flati_icon{
   color:#85afca;
   grid-column:1/-1;
   height:var(--logo_size);
   width: var(--logo_size);
   margin:auto;
   height: 80px;
+}
+.flati_icon {
+  width: 80px!important;
+  height: 80px!important;
 }
 .flati_deco{
   grid-column:1/-1;
@@ -1025,11 +1032,9 @@ section.flati{
   text-align: var(--flati_title_text_align);
   color:#85afca;
   margin: 0 auto auto auto;
-  font-family: 'Lato', sans-serif!important;
   font-weight: 500;
 }
 .flati_txt{
-  font-size: var(--font_size_4);
   color: var(--grey9);
 }
 
@@ -1047,7 +1052,6 @@ section.flati{
   padding:3rem 1.5rem;
 }
 .hosi svg{
-  color:var(--secondary_color);
   height:60px;
   margin:auto;
 }
@@ -1110,7 +1114,7 @@ section.flati{
 }
 
 .showcase3 svg {
-  color: #85afca;
+  /* color: #85afca; */
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1131,7 +1135,6 @@ section.flati{
 .showcase4.tall_img .showcase_title {
   width: 100%;
   margin: 1.5rem auto 3rem auto;
-  font-weight: bold;
 }
 .showcase4.tall_img .simpla_img{
   height: 90vh;

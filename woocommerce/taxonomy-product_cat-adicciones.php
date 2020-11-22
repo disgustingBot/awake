@@ -2,7 +2,7 @@
 
 
 <section class="hero hero_opaque">
-  <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
+  <img class="hero_img" loading="lazy" src="<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_image_atf', true ); ?>" alt="">
   <h1 class="hero_title rowcol1 font_size_2"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_title', true ); ?></h1>
 
   <div class="redDot header_activator"></div>
@@ -12,12 +12,12 @@
 </section>
 
 <section class="flati">
-    <!-- ACA ABAJO VA EL ICONO DE LA CATEGORÍA -->
-    <?php //* include 'assets/perceptive_brain.svg'; ?>
+      <img class="flati_icon" loading="lazy" src="<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_icon', true ); ?>" alt="">
+
     <!-- <img class="flati_icon" src="" alt=""> -->
-    <div class="flati_deco"></div>
-    <h5 class="flati_title font_size_4"></h5>
-    <p class="flati_txt font_size_5"></p>
+    <div class="flati_deco" style="background:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>"></div>
+    <h5 class="flati_title font_size_3" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_description_title', true ); ?></h5>
+    <p class="flati_txt font_size_5"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_description', true ); ?></p>
 </section>
 
 
@@ -25,11 +25,11 @@
 
     <section class="showcase4 tall_img">
 
-        <h3 class="showcase_title alt simple_title">Descubre nuestros Programas de Resiliencia</h3>
+        <h3 class="showcase_title alt simple_title font_size_3">Descubre nuestros programas<br>para liberarte de las adicciones </h3>
 
         <?php while (have_posts()){the_post(); ?>
 
-            <?php simpla_card_tall(); ?>
+            <?php simpla_card(); ?>
 
         <?php } wp_reset_query(); ?>
 
@@ -38,67 +38,83 @@
 
 
         <section class="showcase3">
-            <h3 class="showcase_title font_size_3 simple_title">Herramientas que te servirán para...</h3>
+            <h3 class="showcase_title font_size_3 simple_title" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">Enseñanzas que te permitirán...</h3>
 
 
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/shield.svg'; ?>
-                <p class="hosi_txt font_size_5">Reducir estrés y ansiedad.</p>
-            </div>
-
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/emotional_intelligence.svg'; ?>
+            <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
+                <?php include get_template_directory().'/assets/adiction_free.svg'; ?>
                 <p class="hosi_txt font_size_5">
-                    Aumentar la inteligencia emocional.
+                  Liberarte de tu adicción.
                 </p>
             </div>
 
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/sleepy_moon.svg'; ?>
+            <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
+                <?php include get_template_directory().'/assets/incorporate_perceptions.svg'; ?>
                 <p class="hosi_txt font_size_5">
-                    Crear un sueño más profundo y reparador.
+                  Incorporar las percepciones
+                  <br>
+                  adecuadas para liberarte sin sufrir.
                 </p>
             </div>
 
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/map_compose.svg'; ?>
+            <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
+                <?php include get_template_directory().'/assets/empower_yourself.svg'; ?>
                 <p class="hosi_txt font_size_5">
-                    Ver “the big picture” para poder apreciar mejor los detalles.
+                    Empoderarte.
                 </p>
             </div>
 
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/listening_ear.svg'; ?>
+            <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
+                <?php include get_template_directory().'/assets/develop_thoughts.svg'; ?>
                 <p class="hosi_txt font_size_5">
-                    Mejorar la escucha activa, la concentración y creatividad.
+                  Desarrollar una relación
+                  <br>
+                  más sana con tus pensamientos.
                 </p>
             </div>
 
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/perceptive_brain.svg'; ?>
+            <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
+                <?php include get_template_directory().'/assets/reconnect_yourself.svg'; ?>
                 <p class="hosi_txt font_size_5">
-                    Crear una percepción flexible para mejorar la respuesta ante diferentes situaciones.
+                  Re-conectar contigo mismo,
+                  <br>
+                  con tu familia y el entorno que te rodea.
                 </p>
             </div>
 
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/opportunity.svg'; ?>
+            <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
+                <?php include get_template_directory().'/assets/manage_stress.svg'; ?>
                 <p class="hosi_txt font_size_5">
-                    Afrontar el cambio y aprovechar las oportunidades que nos brinda.
+                  Aprender a gestionar mejor
+                  <br>
+                  el estrés y la ansiedad.
                 </p>
             </div>
 
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/relationship.svg'; ?>
+            <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
+                <?php include get_template_directory().'/assets/healthy_feelings.svg'; ?>
                 <p class="hosi_txt font_size_5">
-                    Mejorar las relaciones interpersonales.
+                  Tener una relación
+                  <br>
+                  más sana con tus sentimientos.
                 </p>
             </div>
 
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/happy_brain.svg'; ?>
+            <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
+                <?php include get_template_directory().'/assets/redirect_life.svg'; ?>
                 <p class="hosi_txt font_size_5">
-                    Hacernos más resistentes a la depresión.
+                  Te permite redirigir tu vida
+                  <br>
+                  y sentirte libre y feliz.
+                </p>
+            </div>
+
+            <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
+                <?php include get_template_directory().'/assets/key_attitude.svg'; ?>
+                <p class="hosi_txt font_size_5">
+                  Incorporar las actitudes adecuadas
+                  <br>
+                  para liberarte sin echarlo de menos.
                 </p>
             </div>
         </section>
