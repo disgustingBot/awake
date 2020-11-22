@@ -141,17 +141,37 @@ function lt_custom_posts() {
 		'label'       => 'Titulo',
 		'description' => 'Título de la portada de la categoría',
 	);
+	$lt_meta_image_atf = array(
+		'label'       => 'IMG portada',
+		'description' => 'Imagen de la portada de la categoría',
+	);
+	$lt_meta_icon = array(
+		'label'       => 'Icono',
+		'description' => 'Icono de la categoría',
+	);
+	$lt_meta_description_title = array(
+		'label'       => 'Título descripción',
+		'description' => 'Tíulo de la descripción',
+	);
+	$lt_meta_description = array(
+		'label'       => 'Descripción',
+		'description' => 'Descripción inicial de la categoría',
+	);
 	$lt_meta_order = array(
 		'label'       => 'Orden',
 		'description' => 'Orden de aparicion',
 	);
 	$lt_meta_color = array(
 		'label'       => 'Color',
-		'description' => 'Color de decoracion en formato hexadecimal',
+		'description' => 'Color de decoracion en formato hexadecimal Ejemplo: #FAFAFA"',
 	);
 	lt_add_meta_fields_to_taxonomy( $taxonomy_slug = 'product_cat', $meta_fields = array(
-		'lt_meta_title'    => $lt_meta_title,
-		'lt_meta_order'    => $lt_meta_order,
-		'lt_meta_color'    => $lt_meta_color,
+		'lt_meta_title'             => $lt_meta_title,
+		'lt_meta_image_atf'         => $lt_meta_image_atf,
+		'lt_meta_icon'              => $lt_meta_icon,
+		'lt_meta_description_title' => $lt_meta_description_title,
+		'lt_meta_description'       => $lt_meta_description,
+		'lt_meta_order'             => $lt_meta_order,
+		'lt_meta_color'             => $lt_meta_color,
 	) );
 }
