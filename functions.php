@@ -343,4 +343,36 @@ function load_admin_styles() {
   // wp_enqueue_style( 'admin_css_foo', get_template_directory_uri() . '/css/backoffice.css', false, '1.0.0' );
 }
 
+
+
+add_filter( 'template_include', 'custom_single_product_template_include', 50, 1 );
+function custom_single_product_template_include( $template ) {
+  $slug = 'dejar-de-fumar';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
+  $slug = 'hola';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
+  $slug = 'hola';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
+  $slug = 'hola';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
+  $slug = 'hola';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
+  $slug = 'hola';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
+  return $template;
+}
+
+
 ?>

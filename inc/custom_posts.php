@@ -137,7 +137,10 @@ function lt_custom_posts() {
 	lt_new_custom_post( 'empresa',     'dashicons-admin-site-alt3');
 	// lt_new_custom_post( 'programa',    'dashicons-welcome-view-site');
 
-
+	$lt_meta_title = array(
+		'label'       => 'Titulo',
+		'description' => 'Título de la portada de la categoría',
+	);
 	$lt_meta_order = array(
 		'label'       => 'Orden',
 		'description' => 'Orden de aparicion',
@@ -147,6 +150,7 @@ function lt_custom_posts() {
 		'description' => 'Color de decoracion en formato hexadecimal',
 	);
 	lt_add_meta_fields_to_taxonomy( $taxonomy_slug = 'product_cat', $meta_fields = array(
+		'lt_meta_title'    => $lt_meta_title,
 		'lt_meta_order'    => $lt_meta_order,
 		'lt_meta_color'    => $lt_meta_color,
 	) );
