@@ -29,7 +29,7 @@
 
         <?php while (have_posts()){the_post(); ?>
 
-            <?php simpla_card_tall(); ?>
+            <?php simpla_card(); ?>
 
         <?php } wp_reset_query(); ?>
 
