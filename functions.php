@@ -347,27 +347,35 @@ function load_admin_styles() {
 
 add_filter( 'template_include', 'custom_single_product_template_include', 50, 1 );
 function custom_single_product_template_include( $template ) {
+  $slug = 'parar-de-pensar';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
+  $slug = 'clases-meditacion-online';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
+  $slug = 'resilient-tools';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
+  $slug = 'mentoria-resiliencia-humana';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
+  $slug = 'liberate-y-redirige-tu-vida';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
+  $slug = 'vivir-sin-alcohol';
+  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
+       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
+  }
   $slug = 'dejar-de-fumar';
   if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
        $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
   }
-  $slug = 'hola';
-  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
-       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
-  }
-  $slug = 'hola';
-  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
-       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
-  }
-  $slug = 'hola';
-  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
-       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
-  }
-  $slug = 'hola';
-  if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
-       $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
-  }
-  $slug = 'hola';
+  $slug = 'food-reset';
   if ( is_singular('product')  && (get_post(get_the_ID())->post_name==$slug)) {
        $template = get_stylesheet_directory() . "/woocommerce/single-product-$slug.php";
   }

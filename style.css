@@ -74,6 +74,7 @@ Version: 1.2
 6.47) =tory:
 
 6.58) =selectBox:
+6.60) =col_2_block:
 
 6.69) =redDot:
 6.98) =piqui:
@@ -203,7 +204,9 @@ FIN DE MAPA DE CONTENIDOS */
   /* ?gertha */
   --gertha_GTC:1fr;
   --gertha_padding: 3rem 0;
+  --gertha_padding_alt: var(--gertha_padding);
   --gertha_deco_width: 90%;
+  --gertha_deco_width_alt: 95%;
   --gertha_deco_margin: auto auto auto 50%;
   --gertha_deco_transform: translateX(-50%);
 
@@ -352,6 +355,7 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?gertha */
     --gertha_deco_width: calc(100% - 13rem);
+    --gertha_deco_width_alt: calc(100% - 8rem);
     --gertha_deco_margin: 0 6rem 6rem 6rem;
     --gertha_deco_transform: unset;
 
@@ -451,6 +455,7 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?gertha */
     --gertha_padding: 3rem 1rem;
+    --gertha_padding_alt: 2rem;
     --gertha_GTC:.8fr 1.2fr;
 
 
@@ -493,6 +498,7 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?gertha */
     --gertha_padding: 3rem 1rem 2rem 1rem;
+    --gertha_padding_alt: 4rem 0;
 
     /* ?mivi */
     --mivi_icon_height: 45px;
@@ -816,6 +822,9 @@ img, video, source{
   color:white;
   padding: var(--hero_title_padding) var(--lateral);
 }
+.hero_title.alt {
+  margin: auto auto 0 auto;
+}
 .hero_link{
   text-transform: testim_titleppercase;
   border: 1px solid white;
@@ -828,6 +837,15 @@ img, video, source{
 .hero_txt{
   padding:0 var(--lateral);
   text-transform: uppercase;
+}
+.hero_arrow_down {
+  height: 30px;
+  position: absolute;
+  bottom: 1rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  z-index: 1;
 }
 
 
@@ -844,6 +862,9 @@ img, video, source{
   position: relative;
   color: var(--grey8);
   margin: 0 var(--lateral);
+}
+.gertha.alt {
+  padding: var(--gertha_padding_alt);
 }
 .gertha_title{
   grid-column: 1/-1;
@@ -869,6 +890,15 @@ img, video, source{
   height: 90%;
   position: absolute;
   transform: var(--gertha_deco_transform);
+}
+.gertha_deco.alt {
+  height: 100%;
+  width: var(--gertha_deco_width_alt);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.gertha_txt.alt {
+  font-weight: lighter;
 }
 .gertha_img{
   margin: 0 auto auto auto;
@@ -1008,7 +1038,7 @@ section.flati{
   justify-content: center;
 }
 .flati svg, .flati_icon{
-  color:#85afca;
+  color:var(--secondary_color);
   grid-column:1/-1;
   height:var(--logo_size);
   width: var(--logo_size);
@@ -1023,14 +1053,14 @@ section.flati{
   grid-column:1/-1;
   width: 3.5rem;
   height:3px;
-  background: #85afca;
+  background: var(--secondary_color);
   margin:auto;
   margin-bottom: 1rem;
 }
 .flati_title{
   color:var(--secondary_color);
   text-align: var(--flati_title_text_align);
-  color:#85afca;
+  color: var(--secondary_color);
   margin: 0 auto auto auto;
   font-weight: 500;
 }
@@ -1109,12 +1139,12 @@ section.flati{
 
 .showcase3 .showcase_title {
   margin-bottom:2rem;
-  color: #85afca;
+  color: var(--secondary_color);
   font-size: var(--font_size_3);
 }
 
 .showcase3 svg {
-  /* color: #85afca; */
+  /* color: var(--secondary_color); */
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1714,7 +1744,7 @@ section.flati{
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  color: #85afca;
+  color: var(--secondary_color);
   font-size: var(--font_size_3);
 }
 .separanda_item svg{
@@ -1740,7 +1770,6 @@ section.flati{
 }
 .pista_title{
   font-size: var(--font_size_3);
-  font-family: 'Lato', sans-serif;
   font-weight: bold;
 }
 .pista_txt{
@@ -1919,7 +1948,7 @@ section.flati{
   font-size:18px;
   text-transform:uppercase;
   margin:1rem 0;
-  color: #85afca;
+  color: var(--secondary_color);
 }
 .chiri_img{
   height:calc((100vw - 16px) / 5);
@@ -2157,7 +2186,32 @@ section.flati{
 }
 
 
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.60) =col_2_block:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
 
+.col_2_block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3.5rem var(--lateral);
+  grid-gap: 2rem;
+}
+.col_2_block_title {
+  grid-column: 1/-1;
+  color: var(--secondary_color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.col_2_bloct_txt {
+  margin-bottom: 1rem;
+  color: var(--grey7);
+}
+.content_link {
+  color: var(--secondary_color);
+  text-decoration: underline;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.69) =redDot:
