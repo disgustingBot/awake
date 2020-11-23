@@ -112,10 +112,10 @@
         </div>
     </section>
     <section class="col_2_block">
-      <h3 class="col_2_block_title font_size_3">Enseñanzas para una vida más resiliente</h3>
+      <h3 class="col_2_block_title font_size_3"><?php echo get_post_meta(get_the_ID(), 'H_segunda_descripcion_titulo', true); ?></h3>
       <div class="col_2_block_col">
-        <p class="col_2_bloct_txt font_size_5">En este programa, entre otras cosas, aprenderás cómo poner tu atención plenamente en el presente - <strong>mindfulness</strong>. <br>También experimentarás su práctica formal - <strong>la meditación.</strong> Y aprenderás cómo incorporarlo en tu vida.</p>
-        <p class="col_2_bloct_txt font_size_5">Los talleres y prácticas te dejarán mejor preparado/a para enfrentarte al día a día, vivir la incertidumbre y el cambio con más ecuanimidad, perdonar, pasar página, mejorar el sentido de conexión contigo, con la gente y el entorno que te rodea. <strong>En otras palabras, volverte más resiliente.</strong> </p>
+        <p class="col_2_bloct_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'I_segunda_descripcion_texto_1', true); ?></p>
+        <p class="col_2_bloct_txt font_size_5"></p>
       </div>
       <div class="col_2_block_col">
         <p class="col_2_bloct_txt font_size_5"><strong>¿Qué incluye?</strong> <br> Retiro, 3 noches de alojamiento, comidas y cenas durante la estancia excepto la cena después de la tarde libre, formación a distancia de 8 semanas, servicio de búsqueda al aeropuerto de Santander o estación de autobuses/ tren en Cantabria. No incluye transporte a Cantabria. </p>
