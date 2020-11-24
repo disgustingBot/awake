@@ -289,8 +289,7 @@
 
 
 
-          <!-- <p class="copa_price">475,00€</p> -->
-          <p class="copa_price" id="singleSidePrice"><?php echo $product->get_price_html(); ?></p>
+          <p class="copa_price font_size_5" id="singleSidePrice"><?php echo $product->get_price_html(); ?></p>
 
           <div class="cuantos Cuantos">
             <button class="cuantosBtn cuantosMins">-</button>
@@ -305,28 +304,30 @@
           data-product-type="<?php echo $product->get_type(); ?>"
           data-quantity="1"
           data-variation-description=""
-          data-buy="later"
-          <?php if($product->is_on_backorder()){ ?>
-            data-preorder="true"
-          <?php } else { ?>
-            data-preorder="false"
-          <?php } ?>
-          <?php if( $is_out_of_stock ){ echo 'disabled'; } ?>
-          >
-          <?php
-          if( $is_out_of_stock ){
-            echo 'Sin cupo';
-          } else {
-            echo 'Añadir a la cesta';
-          }
-          ?>
+          data-buy="later">
+          Añadir a la cesta
         </button>
 
         <p class="copa_mas">Más información <a class="copa_mas_link" href="#">CLICA AQUÍ</a></p>
       </div>
     </section>
 
-
-
   <?php } ?>
+    <section class="col_4_block">
+      <?php
+      $posts = new WP_Query( array(
+        'post_type' => 'post',
+        'posts_per_page' => 4
+      )
+    );
+    ?>
+    <?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
+
+      <?php sqare_card(); ?>
+
+    <?php endwhile; wp_reset_query(); ?>
+  </section>
+
+
+
   <?php get_footer(); ?>

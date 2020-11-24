@@ -74,9 +74,10 @@ Version: 1.2
 6.47) =tory:
 
 6.58) =selectBox:
-6.60) =col_2_block:
 
 6.69) =redDot:
+6.70) =col_2_block:
+6.75) =col_4_block:
 6.98) =piqui:
 6.99) =footer:
 6.XX) =signature:
@@ -877,6 +878,7 @@ img, video, source{
 }
 .gertha_txt {
   font-weight: 500;
+  color: var(--grey5);
 }
 .gertha_signature {
   width: 300px;
@@ -1852,6 +1854,7 @@ section.flati{
   width: 100%;
   height: 100%;
   display: flex;
+  color: var(--grey6);
 }
 .copa_select_arrow {
   position: absolute;
@@ -1861,13 +1864,14 @@ section.flati{
   top: 0;
   right: 0;
   margin-top: 2px;
+  pointer-events: none;
 }
 .copa_price{
   text-align: center;
-  font-size:16px;
   padding:.3rem;
   border-top:4px solid var(--secondary_color);
   border-bottom:4px solid var(--secondary_color);
+  color: var(--grey5);
 }
 .copa_mas{
   grid-column: 1/-1;
@@ -2189,7 +2193,26 @@ section.flati{
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          6.60) =col_2_block:
+                          6.69) =redDot:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.header_activator{bottom:2rem}
+.redDot {
+  border-radius: 50%;
+  height: 3rem;
+  position: absolute;
+  right: 10vw;
+  width: 3rem!important;
+  z-index:12;
+}
+.redDot.test{background:red}
+
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.70) =col_2_block:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
@@ -2207,7 +2230,7 @@ section.flati{
 }
 .col_2_bloct_txt {
   margin-bottom: 1rem;
-  color: var(--grey7);
+  color: var(--grey6);
 }
 .content_link {
   color: var(--secondary_color);
@@ -2215,19 +2238,16 @@ section.flati{
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          6.69) =redDot:
+                          6.75) =col_4_block:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.header_activator{bottom:2rem}
-.redDot {
-  border-radius: 50%;
-  height: 3rem;
-  position: absolute;
-  right: 10vw;
-  width: 3rem!important;
-  z-index:12;
+
+.col_4_block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 2rem var(--lateral);
+  grid-gap: 1rem;
 }
-.redDot.test{background:red}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
