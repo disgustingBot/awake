@@ -1081,6 +1081,9 @@ section.flati{
   justify-content: center;
   padding:3rem 1.5rem;
 }
+.hosi_color_85AFCA {
+  color: #85AFCA;
+}
 .hosi svg{
   height:60px;
   margin:auto;
@@ -1715,6 +1718,7 @@ section.flati{
   grid-template-rows:var(--gali_row1) var(--gali_row2) var(--gali_row3);
   grid-template-columns:48.42fr 51.58fr;
   margin:auto;
+  margin-top: 0;
 }
 .gali_img:nth-child(1) {grid-column:1 / 2;grid-row:1;  height:var(--gali_row1);}
 .gali_img:nth-child(2) {grid-column:1 / 2;grid-row:2;  height:var(--gali_row1);}
@@ -1770,16 +1774,13 @@ section.flati{
 }
 .pista_title{
   font-size: var(--font_size_3);
-  font-weight: bold;
 }
 .pista_txt{
   text-transform: uppercase;
-  font-size:var(--font_size_5);
   font-weight: bold;
 }
 .pista_time{
   font-weight: normal;
-  margin-bottom: 8px;
 }
 .pista_deco{
   width:2rem;
