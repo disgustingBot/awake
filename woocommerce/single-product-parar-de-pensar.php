@@ -77,64 +77,64 @@
 
 
     <section class="showcase3">
-      <h3 class="showcase_title font_size_3 simple_title hosi_color_85AFCA">Herramientas que te servirán para...</h3>
+      <h3 class="showcase_title font_size_3 simple_title hosi_secondary_color">Herramientas que te servirán para...</h3>
 
 
-      <div class="hosi hosi_color_85AFCA">
+      <div class="hosi hosi_secondary_color">
         <?php include get_template_directory().'/assets/shield.svg'; ?>
         <p class="hosi_txt font_size_5">Reducir estrés y ansiedad.</p>
       </div>
 
-      <div class="hosi hosi_color_85AFCA">
+      <div class="hosi hosi_secondary_color">
         <?php include get_template_directory().'/assets/emotional_intelligence.svg'; ?>
         <p class="hosi_txt font_size_5">
           Aumentar la inteligencia emocional.
         </p>
       </div>
 
-      <div class="hosi hosi_color_85AFCA">
+      <div class="hosi hosi_secondary_color">
         <?php include get_template_directory().'/assets/sleepy_moon.svg'; ?>
         <p class="hosi_txt font_size_5">
           Crear un sueño más profundo y reparador.
         </p>
       </div>
 
-      <div class="hosi hosi_color_85AFCA">
+      <div class="hosi hosi_secondary_color">
         <?php include get_template_directory().'/assets/map_compose.svg'; ?>
         <p class="hosi_txt font_size_5">
           Ver “the big picture” para poder apreciar mejor los detalles.
         </p>
       </div>
 
-      <div class="hosi hosi_color_85AFCA">
+      <div class="hosi hosi_secondary_color">
         <?php include get_template_directory().'/assets/listening_ear.svg'; ?>
         <p class="hosi_txt font_size_5">
           Mejorar la escucha activa, la concentración y creatividad.
         </p>
       </div>
 
-      <div class="hosi hosi_color_85AFCA">
+      <div class="hosi hosi_secondary_color">
         <?php include get_template_directory().'/assets/perceptive_brain.svg'; ?>
         <p class="hosi_txt font_size_5">
           Crear una percepción flexible para mejorar la respuesta ante diferentes situaciones.
         </p>
       </div>
 
-      <div class="hosi hosi_color_85AFCA">
+      <div class="hosi hosi_secondary_color">
         <?php include get_template_directory().'/assets/opportunity.svg'; ?>
         <p class="hosi_txt font_size_5">
           Afrontar el cambio y aprovechar las oportunidades que nos brinda.
         </p>
       </div>
 
-      <div class="hosi hosi_color_85AFCA">
+      <div class="hosi hosi_secondary_color">
         <?php include get_template_directory().'/assets/relationship.svg'; ?>
         <p class="hosi_txt font_size_5">
           Mejorar las relaciones interpersonales.
         </p>
       </div>
 
-      <div class="hosi hosi_color_85AFCA">
+      <div class="hosi hosi_secondary_color">
         <?php include get_template_directory().'/assets/happy_brain.svg'; ?>
         <p class="hosi_txt font_size_5">
           Hacernos más resistentes a la depresión.
