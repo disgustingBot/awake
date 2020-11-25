@@ -45,6 +45,7 @@ Version: 1.2
 6.5.2) =showcase3:
 6.5.3) =showcase4:
 6.5.4) =showcase5:
+6-5-5) =showcase6:
 6.6) =BUTTONS:
 6.6.0) =btn:
 6.6.1) =prenex:
@@ -139,7 +140,10 @@ FIN DE MAPA DE CONTENIDOS */
   --greye:#EEEEEE;
   --greye6:#E6E6E6;
   --greyf5: #F5F5F5;
+  --greyf4: #F4F4F4;
   --greyf:#FFFFFF;
+  --bluegrey:#C0CED3;
+
 
 
   --DP0:  0px  0px  0px rgba(0, 0, 0, 0.0), 0px 0px  0px rgba(0, 0, 0, 0.00), 0px  0px  0px rgba(0, 0, 0, 0.00);
@@ -1093,8 +1097,8 @@ section.flati{
   justify-content: center;
   padding:3rem 1.5rem;
 }
-.hosi_color_85AFCA {
-  color: #85AFCA;
+.hosi_secondary_color {
+  color: var(--secondary_color);
 }
 .hosi svg{
   height:60px;
@@ -1217,6 +1221,50 @@ section.flati{
   padding:5rem calc(var(--lateral) * 0.5);
   grid-template-columns:var(--showcase5_GTC);
 }
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6-5-5) =showcase6:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.showcase6 {
+  padding: 2rem 0;
+  display: grid;
+}
+
+.showcase6_container {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: repeat(5, 1fr);
+  margin: auto var(--lateral);
+}
+
+
+.showcase6_container > :nth-child(2n) {background:var(--greyf4)}
+.showcase6_container > :nth-child(2n) svg {color:var(--secondary_color)}
+.showcase6_container > :nth-child(2n) p {color:var(--secondary_color)}
+.showcase6_container > :nth-child(2n + 1) {background:var(--bluegrey)}
+.showcase6_container > :nth-child(2n + 1) svg {color: var(--greyf)}
+.showcase6_container > :nth-child(2n + 1) p {color: var(--greyf)}
+.showcase6 .showcase_title {
+  background: none;
+  margin-bottom: 3rem;
+  color: var(--secondary_color);
+}
+.showcase6 .hosi {
+  padding: 1.5rem 1rem!important;
+  grid-gap: 16px;
+}
+.showcase6 .hosi svg {
+  height: 60px;
+  width: auto;
+}
+
+
+
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.6) =BUTTONS:
