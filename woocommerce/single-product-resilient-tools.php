@@ -25,6 +25,7 @@
     </div>
     <p class="block_title font_size_3"><?php echo get_post_meta(get_the_ID(), 'A_descripcion_titulo_inferior', true); ?></p>
   </section>
+
   <section class="col_1_block">
     <h4 class="block_title font_size_3"><?php echo get_post_meta(get_the_ID(), 'B_segunda_descripcion_titulo', true); ?></h4>
     <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'B_segunda_descripcion_texto_1', true); ?></p>
