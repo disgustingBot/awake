@@ -879,6 +879,7 @@ img, video, source{
 .gertha_title{
   grid-column: 1/-1;
   color: var(--grey9);
+  margin: auto;
 }
 .gertha_caption{
   font-size: var(--font_size_6);
@@ -918,7 +919,7 @@ img, video, source{
 }
 .gertha_img{
   margin: 0 auto auto auto;
-  min-height: 350px;
+  min-height: 400px;
 }
 .gertha_img:focus {outline-color: var(--grey9)}
 /* ---------------------------------------------------------------------------
@@ -1090,7 +1091,7 @@ section.flati{
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
-.hosi{
+.hosi {
   display:grid;
   grid-gap:1rem;
   align-items: center;
@@ -1100,15 +1101,17 @@ section.flati{
 .hosi_secondary_color {
   color: var(--secondary_color);
 }
-.hosi svg{
+.hosi svg {
   height:60px;
   margin:auto;
 }
-.hosi_txt{
+.hosi_txt {
   text-align: center;
   color: var(--grey7);
 }
+.hosi_title {
 
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.5) =SHOWCASE:
@@ -1230,7 +1233,7 @@ section.flati{
 --------------------------------------------------------------------------- */
 
 .showcase6 {
-  padding: 2rem 0;
+  padding: 3rem 0;
   display: grid;
 }
 
@@ -1250,7 +1253,7 @@ section.flati{
 .showcase6_container > :nth-child(2n + 1) p {color: var(--greyf)}
 .showcase6 .showcase_title {
   background: none;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: var(--secondary_color);
 }
 .showcase6 .hosi {
@@ -1818,12 +1821,13 @@ section.flati{
   align-items: center;
   color: var(--secondary_color);
   font-size: var(--font_size_3);
+  margin-left: 0;
 }
 .separanda_plus svg {margin-right: auto!important;}
 .separanda_hidden_plus {display: var(--hidden_plus_display)}
 .separanda_item svg {
   margin-right: 1rem;
-  height: 70px;
+  height: 50px;
   width: auto;
 }
 .separanda.alt {
@@ -1848,7 +1852,7 @@ section.flati{
 .pista{
   display:grid;
   grid-gap:.8rem;
-  margin:0 auto auto auto;
+  margin:0 auto auto 0;
   color: var(--grey6);
   text-align: var(--pista_text_align);
 }
