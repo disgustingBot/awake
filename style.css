@@ -50,6 +50,7 @@ Version: 1.2
 6.6.0) =btn:
 6.6.1) =prenex:
 6.6.2) =burger:
+6.6.3) =white_btn:
 6.7.0) =facebook_feeds:
 
 6.8) =MENUS:
@@ -83,6 +84,9 @@ Version: 1.2
 6.98) =piqui:
 6.99) =footer:
 6.XX) =signature:
+
+7.00) =BANNERS:
+7.10) =banner_1
 
 FIN DE MAPA DE CONTENIDOS */
 
@@ -386,7 +390,7 @@ FIN DE MAPA DE CONTENIDOS */
     --flati_title_text_align: right;
 
     /* ?showcase2 */
-    --showcase2_GTC: 1fr 1fr;
+    --showcase2_GTC: 4fr 3fr;
 
     /* ?showcase5 */
     --showcase5_GTC: repeat(3,1fr);
@@ -1098,19 +1102,14 @@ section.flati{
   justify-content: center;
   padding:3rem 1.5rem;
 }
-.hosi_secondary_color {
-  color: var(--secondary_color);
-}
 .hosi svg {
-  height:60px;
+  height:80px;
+  width: auto;
   margin:auto;
 }
 .hosi_txt {
   text-align: center;
   color: var(--grey7);
-}
-.hosi_title {
-
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1244,13 +1243,13 @@ section.flati{
   margin: auto var(--lateral);
 }
 
-
+/*
 .showcase6_container > :nth-child(2n) {background:var(--greyf4)}
 .showcase6_container > :nth-child(2n) svg {color:var(--secondary_color)}
 .showcase6_container > :nth-child(2n) p {color:var(--secondary_color)}
 .showcase6_container > :nth-child(2n + 1) {background:var(--bluegrey)}
 .showcase6_container > :nth-child(2n + 1) svg {color: var(--greyf)}
-.showcase6_container > :nth-child(2n + 1) p {color: var(--greyf)}
+.showcase6_container > :nth-child(2n + 1) p {color: var(--greyf)} */
 .showcase6 .showcase_title {
   background: none;
   margin-bottom: 2rem;
@@ -1399,6 +1398,24 @@ section.flati{
 .mobile_menu_active .burgerBar:nth-child(1){transform: rotate( 45deg)}
 .mobile_menu_active .burgerBar:nth-child(2){transform: scaleX(0)}
 .mobile_menu_active .burgerBar:nth-child(3){transform: rotate(-45deg)}
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.6.3) =white_btn:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.white_btn {
+  border: 1px solid white;
+  /* font-weight: lighter; */
+  word-spacing: 4px;
+}
+.white_btn:hover {
+  border: 1px solid black;
+  color: black;
+  outline: none;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1806,6 +1823,7 @@ section.flati{
   grid-gap: 2rem;
   flex-wrap: wrap;
 }
+.separanda_backgrounded {display: grid; background: var(--greyf5)}
 .separanda.alt {
   grid-template-columns: var(--separanda_alt_GTC);
 }
@@ -1829,6 +1847,9 @@ section.flati{
   margin-right: 1rem;
   height: 50px;
   width: auto;
+}
+.separanda_item.separanda_big svg {
+  height: 70px!important;
 }
 .separanda.alt {
   grid-gap: 1rem;
@@ -1916,7 +1937,6 @@ section.flati{
   margin-bottom: 1.6rem;
 }
 .copa_label{
-  background: #86B0C9;
   color:white;
   font-size:16px;
   padding:.5rem .9rem;
@@ -1950,8 +1970,6 @@ section.flati{
 .copa_price{
   text-align: center;
   padding:.3rem;
-  border-top:4px solid var(--secondary_color);
-  border-bottom:4px solid var(--secondary_color);
   color: var(--grey5);
 }
 .copa_mas{
@@ -2471,7 +2489,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
                           6.XX) =signature:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.signature{
+.signature {
   background:var(--greyf5);
   display: grid;
   padding:1rem;
@@ -2479,4 +2497,21 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   font-size:10px;
   color: var(--grey9);
   display: none;
+}
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          7.10) =banner_1
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.banner_1 {
+  padding: 5rem var(--lateral);
+  display: flex;
+  flex-direction: column;
+  grid-gap: 2rem;
+}
+.banner_title {
+  text-align: center;
+  color: white;
 }

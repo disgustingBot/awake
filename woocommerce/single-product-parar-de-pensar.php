@@ -2,6 +2,11 @@
 
 <?php while(have_posts()){the_post(); ?>
 
+  <?php
+  $product_category = get_the_terms( $post->ID, 'product_cat' )[0];
+  $category_color = get_term_meta( $product_category->term_id, 'lt_meta_color', true );
+  ?>
+
   <section class="hero hero_opaque">
     <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
     <h1 class="hero_title alt"><?php the_title(); ?></h1>
@@ -24,16 +29,16 @@
     </section>
 
     <section class="separanda">
-      <div class="separanda_item">
+      <div class="separanda_item separanda_big" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/retirement.svg'; ?>
         <p class="separanda_text font_size_4">Retiro de <br> <?php echo get_post_meta($post->ID, 'F_días_de_retiro', true); ?></p>
       </div>
-      <div class="separanda_item separanda_plus">
+      <div class="separanda_item separanda_big separanda_plus" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/plus.svg'; ?>
       </div>
-      <div class="separanda_item">
+      <div class="separanda_item separanda_big" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/distance_training.svg'; ?>
-        <p class="separanda_text font_size_4"><strong>8 semanas de</strong><br>formación a distancia</p>
+        <p class="separanda_text separanda_big font_size_4"><strong>8 semanas de</strong><br>formación a distancia</p>
       </div>
     </section>
     <section class="showcase2">
@@ -63,7 +68,7 @@
       </div>
     </section>
     <section class="col_2_block">
-      <h3 class="block_title font_size_3"><?php echo get_post_meta(get_the_ID(), 'H_segunda_descripcion_titulo', true); ?></h3>
+      <h3 class="block_title font_size_3" style=" color: <?php echo $category_color; ?> "><?php echo get_post_meta(get_the_ID(), 'H_segunda_descripcion_titulo', true); ?></h3>
       <div class="col_2_block_col">
         <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'I_segunda_descripcion_texto_1', true); ?></p>
         <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'I_segunda_descripcion_texto_2', true); ?></p>
@@ -77,64 +82,64 @@
 
 
     <section class="showcase3">
-      <h3 class="showcase_title font_size_3 simple_title hosi_secondary_color">Herramientas que te servirán para...</h3>
+      <h3 class="showcase_title font_size_3 simple_title" style=" color: <?php echo $category_color; ?> ">Herramientas que te servirán para...</h3>
 
 
-      <div class="hosi hosi_secondary_color">
+      <div class="hosi hosi_secondary_color" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/shield.svg'; ?>
         <p class="hosi_txt font_size_5">Reducir estrés y ansiedad.</p>
       </div>
 
-      <div class="hosi hosi_secondary_color">
+      <div class="hosi hosi_secondary_color" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/emotional_intelligence.svg'; ?>
         <p class="hosi_txt font_size_5">
           Aumentar la inteligencia emocional.
         </p>
       </div>
 
-      <div class="hosi hosi_secondary_color">
+      <div class="hosi hosi_secondary_color" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/sleepy_moon.svg'; ?>
         <p class="hosi_txt font_size_5">
           Crear un sueño más profundo y reparador.
         </p>
       </div>
 
-      <div class="hosi hosi_secondary_color">
+      <div class="hosi hosi_secondary_color" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/map_compose.svg'; ?>
         <p class="hosi_txt font_size_5">
           Ver “the big picture” para poder apreciar mejor los detalles.
         </p>
       </div>
 
-      <div class="hosi hosi_secondary_color">
+      <div class="hosi hosi_secondary_color" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/listening_ear.svg'; ?>
         <p class="hosi_txt font_size_5">
           Mejorar la escucha activa, la concentración y creatividad.
         </p>
       </div>
 
-      <div class="hosi hosi_secondary_color">
+      <div class="hosi" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/perceptive_brain.svg'; ?>
         <p class="hosi_txt font_size_5">
           Crear una percepción flexible para mejorar la respuesta ante diferentes situaciones.
         </p>
       </div>
 
-      <div class="hosi hosi_secondary_color">
+      <div class="hosi" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/opportunity.svg'; ?>
         <p class="hosi_txt font_size_5">
           Afrontar el cambio y aprovechar las oportunidades que nos brinda.
         </p>
       </div>
 
-      <div class="hosi hosi_secondary_color">
+      <div class="hosi" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/relationship.svg'; ?>
         <p class="hosi_txt font_size_5">
           Mejorar las relaciones interpersonales.
         </p>
       </div>
 
-      <div class="hosi hosi_secondary_color">
+      <div class="hosi" style=" color: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/happy_brain.svg'; ?>
         <p class="hosi_txt font_size_5">
           Hacernos más resistentes a la depresión.
@@ -148,7 +153,7 @@
       <img class="copa_img" src="https://picsum.photos/400" alt="">
       <div class="copa_interaction_container">
         <h5 class="copa_title">Retiro en Cantabria 3 días<br><?php the_title(); ?></h5>
-        <p class="copa_label">FECHAS</p>
+        <p class="copa_label" style=" background: <?php echo $category_color; ?> ">FECHAS</p>
 
         <div class="copa_select_container">
           <select class="copa_select" name="" id="">
@@ -240,7 +245,7 @@
 
 
 
-          <p class="copa_price font_size_5" id="singleSidePrice"><?php echo $product->get_price_html(); ?></p>
+          <p class="copa_price font_size_5" id="singleSidePrice" style=" border-top: <?php echo $category_color; ?> solid 3px; border-bottom: <?php echo $category_color; ?>  solid 3px"><?php echo $product->get_price_html(); ?></p>
 
           <div class="cuantos Cuantos">
             <button class="cuantosBtn cuantosMins">-</button>
@@ -255,33 +260,34 @@
           data-product-type="<?php echo $product->get_type(); ?>"
           data-quantity="1"
           data-variation-description=""
-          data-buy="later">
+          data-buy="later"
+          style=" background: <?php echo $category_color; ?> ">
           Añadir a la cesta
         </button>
 
-        <p class="copa_mas">Más información <a class="copa_mas_link" href="#">CLICA AQUÍ</a></p>
+        <p class="copa_mas">Más información <a class="copa_mas_link" href="#"  style="color: <?php echo $category_color; ?>">CLICA AQUÍ</a></p>
       </div>
     </section>
 
   <?php } ?>
-    <section class="col_4_block">
-      <h4 class="block_title font_size_3">Puede interesarte</h4>
-      <?php
-      $posts = new WP_Query( array(
-        'post_type' => 'post',
-        'posts_per_page' => 4
-      )
-    );
-    ?>
-    <?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
+  <section class="col_4_block">
+    <h4 class="block_title font_size_3" style="color: <?php echo $category_color; ?>">Puede interesarte</h4>
+    <?php
+    $posts = new WP_Query( array(
+      'post_type' => 'post',
+      'posts_per_page' => 4
+    )
+  );
+  ?>
+  <?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
 
-      <?php sqare_card(); ?>
+    <?php sqare_card(); ?>
 
-    <?php endwhile; wp_reset_query(); ?>
+  <?php endwhile; wp_reset_query(); ?>
 
-    <a  class="block_link font_size_7" href="<?php echo get_site_url() ?>/blog">VER MÁS NOTICIAS</a>
-  </section>
+  <a  class="block_link font_size_7" href="<?php echo get_site_url() ?>/blog">VER MÁS NOTICIAS</a>
+</section>
 
 
 
-  <?php get_footer(); ?>
+<?php get_footer(); ?>
