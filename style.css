@@ -50,6 +50,7 @@ Version: 1.2
 6.6.0) =btn:
 6.6.1) =prenex:
 6.6.2) =burger:
+6.6.3) =white_btn:
 6.7.0) =facebook_feeds:
 
 6.8) =MENUS:
@@ -83,6 +84,9 @@ Version: 1.2
 6.98) =piqui:
 6.99) =footer:
 6.XX) =signature:
+
+7.00) =BANNERS:
+7.10) =banner_1
 
 FIN DE MAPA DE CONTENIDOS */
 
@@ -262,7 +266,10 @@ FIN DE MAPA DE CONTENIDOS */
   /* ?separanda */
   --separanda_flex_dir: column;
   --separanda_GTC:  1fr;
+  --separanda_subtitle_container: unset;
   --separanda_alt_GTC: 1fr;
+  --separanda_alt_GG: 2rem;
+  --separanda_item_margin: auto;
   --hidden_plus_display: flex;
 
   /* ?pista */
@@ -386,7 +393,7 @@ FIN DE MAPA DE CONTENIDOS */
     --flati_title_text_align: right;
 
     /* ?showcase2 */
-    --showcase2_GTC: 1fr 1fr;
+    --showcase2_GTC: 4fr 3fr;
 
     /* ?showcase5 */
     --showcase5_GTC: repeat(3,1fr);
@@ -484,7 +491,12 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?separanda */
       --separanda_GTC:  max-content min-content max-content;
-      --separanda_alt_GTC: 1fr min-content 1fr min-content 1fr;
+      --separanda_subtitle_container: 100%;
+      /* --separanda_alt_GTC: 1fr min-content 1fr min-content 1fr; */
+      --separanda_alt_GTC: 1fr 1fr 1fr 1fr 1fr;
+      --separanda_alt_GG: 1rem;
+      /* --separanda_item_margin: auto auto auto 0; */
+      --separanda_item_margin: auto;
       --hidden_plus_display: none;
 
 
@@ -881,6 +893,12 @@ img, video, source{
   color: var(--grey9);
   margin: auto;
 }
+.gertha_link {
+  grid-column: 1/-1;
+  margin: auto;
+  text-decoration: underline;
+  line-height: calc(var(--font_size_3) * 2);
+}
 .gertha_caption{
   font-size: var(--font_size_6);
   display: grid;
@@ -1098,19 +1116,21 @@ section.flati{
   justify-content: center;
   padding:3rem 1.5rem;
 }
-.hosi_secondary_color {
-  color: var(--secondary_color);
+.wide_hosi svg {
+  width: 80px!important;
 }
 .hosi svg {
-  height:60px;
+  height:80px;
+  width: auto;
   margin:auto;
+}
+.hosi_title {
+  text-align: center;
+  font-size: 35px;
 }
 .hosi_txt {
   text-align: center;
   color: var(--grey7);
-}
-.hosi_title {
-
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1244,13 +1264,13 @@ section.flati{
   margin: auto var(--lateral);
 }
 
-
+/*
 .showcase6_container > :nth-child(2n) {background:var(--greyf4)}
 .showcase6_container > :nth-child(2n) svg {color:var(--secondary_color)}
 .showcase6_container > :nth-child(2n) p {color:var(--secondary_color)}
 .showcase6_container > :nth-child(2n + 1) {background:var(--bluegrey)}
 .showcase6_container > :nth-child(2n + 1) svg {color: var(--greyf)}
-.showcase6_container > :nth-child(2n + 1) p {color: var(--greyf)}
+.showcase6_container > :nth-child(2n + 1) p {color: var(--greyf)} */
 .showcase6 .showcase_title {
   background: none;
   margin-bottom: 2rem;
@@ -1399,6 +1419,24 @@ section.flati{
 .mobile_menu_active .burgerBar:nth-child(1){transform: rotate( 45deg)}
 .mobile_menu_active .burgerBar:nth-child(2){transform: scaleX(0)}
 .mobile_menu_active .burgerBar:nth-child(3){transform: rotate(-45deg)}
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.6.3) =white_btn:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.white_btn {
+  border: 1px solid white;
+  /* font-weight: lighter; */
+  word-spacing: 4px;
+}
+.white_btn:hover {
+  border: 1px solid black;
+  color: black;
+  outline: none;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1806,14 +1844,29 @@ section.flati{
   grid-gap: 2rem;
   flex-wrap: wrap;
 }
-.separanda.alt {
-  grid-template-columns: var(--separanda_alt_GTC);
-}
+.separanda_backgrounded {display: grid; background: var(--greyf5)}
 .separanda_title {
   color: var(--secondary_color);
   grid-column: 1/-1;
   text-align: center;
   margin-bottom: 2rem;
+}
+.separanda_title.alt {
+  margin-bottom: 0;
+}
+.separanda_subtitle_container {
+  grid-column: 1/-1;
+  width: var(--separanda_subtitle_container);
+  margin-top: 2rem;
+}
+.separanda_subtitle {
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+.separanda_deco {
+  width: 100%;
+  height: 1px;
+  margin-bottom: 1rem;
 }
 .separanda_item {
   display: flex;
@@ -1821,7 +1874,7 @@ section.flati{
   align-items: center;
   color: var(--secondary_color);
   font-size: var(--font_size_3);
-  margin-left: 0;
+  margin: var(--separanda_item_margin);
 }
 .separanda_plus svg {margin-right: auto!important;}
 .separanda_hidden_plus {display: var(--hidden_plus_display)}
@@ -1830,18 +1883,19 @@ section.flati{
   height: 50px;
   width: auto;
 }
+.separanda_item.separanda_big svg {
+  height: 70px!important;
+}
 .separanda.alt {
-  grid-gap: 1rem;
+  grid-gap: var(--separanda_alt_GG);
   margin: auto 0;
   padding:2rem calc(var(--lateral) / 2);
-
+  grid-template-columns: var(--separanda_alt_GTC);
 }
 .separanda.alt svg {
   height: 50px;
   width: auto;
 }
-
-
 
 
 /* ---------------------------------------------------------------------------
@@ -1859,9 +1913,15 @@ section.flati{
 .pista_title{
   font-size: var(--font_size_3);
 }
+.pista_title.alt {
+  margin-bottom: 1rem;
+}
 .pista_txt{
   text-transform: uppercase;
   font-weight: bold;
+}
+.pista_txt.alt{
+  font-weight: normal;
 }
 .pista_time{
   font-weight: normal;
@@ -1916,7 +1976,6 @@ section.flati{
   margin-bottom: 1.6rem;
 }
 .copa_label{
-  background: #86B0C9;
   color:white;
   font-size:16px;
   padding:.5rem .9rem;
@@ -1950,8 +2009,6 @@ section.flati{
 .copa_price{
   text-align: center;
   padding:.3rem;
-  border-top:4px solid var(--secondary_color);
-  border-bottom:4px solid var(--secondary_color);
   color: var(--grey5);
 }
 .copa_mas{
@@ -2471,7 +2528,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
                           6.XX) =signature:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.signature{
+.signature {
   background:var(--greyf5);
   display: grid;
   padding:1rem;
@@ -2479,4 +2536,21 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   font-size:10px;
   color: var(--grey9);
   display: none;
+}
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          7.10) =banner_1
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.banner_1 {
+  padding: 5rem var(--lateral);
+  display: flex;
+  flex-direction: column;
+  grid-gap: 2rem;
+}
+.banner_title {
+  text-align: center;
+  color: white;
 }
