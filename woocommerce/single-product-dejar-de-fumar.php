@@ -52,7 +52,7 @@
           </p>
         </div>
 
-        <div class="hosi" style=" background: <?php echo $category_color; ?>; color: white;">
+        <div class="hosi wide_hosi" style=" background: <?php echo $category_color; ?>; color: white;">
           <?php include get_template_directory().'/assets/side_effect.svg'; ?>
           <p class="hosi_txt font_size_6" style="color:white">
             SIN EFECTOS<br>
