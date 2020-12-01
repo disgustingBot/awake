@@ -102,7 +102,6 @@
 
     </div>
 
-    </a> -->
     <img class="hero_icon" loading="lazy" src="<?php echo get_post_meta($post->ID, 'icono', true); ?>" alt="">
 
     <div>
