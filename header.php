@@ -51,7 +51,6 @@
   <!-- <h1><?php echo get_option( 'font_size_1_number', '' ) * 0.8; ?></h1>
   <h1><?php echo get_option( 'font_size_2_number', '' ) * 0.8; ?></h1> -->
   <header class="header Obse" id="header">
-    <!-- <a class="logo rowcol1 Obse" data-observe=".header_activator" href="<?php echo get_site_url(); ?>"> -->
     <a class="logo rowcol1" href="<?php echo get_site_url(); ?>">
       <svg class="logo_img" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 101 104">
         <use xlink:href="#logo"></use>
