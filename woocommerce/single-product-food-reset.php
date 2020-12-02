@@ -96,7 +96,7 @@
       while(true){
         if(get_post_meta(get_the_ID(), 'B_programa_texto_'.$i, true)){ ?>
           <div class="pista_group">
-            <p class="pista_txt pista_text alt font_size_6"><?php echo get_post_meta(get_the_ID(), 'B_programa_texto_'.$i, true); ?></p>
+            <p class="pista_txt alt font_size_5"><?php echo get_post_meta(get_the_ID(), 'B_programa_texto_'.$i, true); ?></p>
           </div>
           <?php
           $i=$i+1;
@@ -150,7 +150,7 @@
   <section class="copa">
     <img class="copa_img" src="https://picsum.photos/400" alt="">
     <div class="copa_interaction_container">
-      <h5 class="copa_title">Retiro en Cantabria 3 días<br><?php the_title(); ?></h5>
+      <h5 class="copa_title"><?php echo get_post_meta($post->ID, 'D_titulo_modulo_compra', true); ?></h5>
       <p class="copa_label" style=" background: <?php echo $category_color; ?> ">FECHAS</p>
 
       <div class="copa_select_container">

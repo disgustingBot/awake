@@ -1145,7 +1145,6 @@ section.flati{
 }
 .hosi_txt {
   text-align: center;
-  color: var(--grey7);
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1446,6 +1445,8 @@ section.flati{
   border: 1px solid white;
   /* font-weight: lighter; */
   word-spacing: 4px;
+  padding: 15px 40px;
+  letter-spacing: 2px;
 }
 .white_btn:hover {
   border: 1px solid black;
@@ -1930,7 +1931,7 @@ section.flati{
 
 .separanda_hidden_plus {display: var(--hidden_plus_display)}
 .separanda_item svg {
-  margin-right: 2rem;
+  margin-right: 1rem;
   height: 70px;
   width: auto;
 }
@@ -1947,27 +1948,27 @@ section.flati{
                           6.19) =pista:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.pista{
+.pista {
   display:grid;
   grid-gap:.8rem;
   margin:0 auto auto 0;
   color: var(--grey6);
   text-align: var(--pista_text_align);
 }
-.pista_title{
+.pista_title {
   font-size: var(--font_size_3);
 }
 .pista_title.alt {
   margin-bottom: 1rem;
 }
-.pista_txt{
+.pista_txt {
   text-transform: uppercase;
-  font-weight: bold;
-}
-.pista_txt.alt{
   font-weight: normal;
 }
-.pista_time{
+.pista_txt.alt {
+  text-transform: none;
+}
+.pista_time {
   font-weight: normal;
 }
 .pista_deco{
@@ -1986,14 +1987,14 @@ section.flati{
                           6.20) =copa:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.copa{
+.copa {
   display:grid;
   grid-template-columns:1fr 1fr;
   grid-auto-flow: dense;
-  padding:2rem calc(var(--lateral) * .7);
+  padding: 4rem calc(var(--lateral) * .7);
   grid-gap:2.5rem;
 }
-.copa_img{
+.copa_img {
   max-height: 360px;
 }
 .copa_interaction_container {
@@ -2034,7 +2035,7 @@ section.flati{
 .copa_select{
   text-transform: uppercase;
   padding: 5px 10px;
-  border: 1px solid var(--grey7);
+  border: 1px solid var(--grey8);
   width: 100%;
   height: 100%;
   display: flex;
@@ -2107,7 +2108,7 @@ section.flati{
   padding:.5rem .7rem;
   background:white;
   border-radius:0;
-  border:1px solid var(--grey6);
+  border:1px solid var(--grey8);
   cursor:pointer;
   transition:.3s;
 }
@@ -2430,11 +2431,6 @@ section.flati{
   grid-template-columns: repeat(4, 1fr);
   padding: 2rem var(--lateral);
   grid-gap: 1.75rem;
-}
-.col_4_block_title {
-  color: var(--secondary_color);
-  grid-column: 1/-1;
-  text-align: center;
 }
 .col_4_block .sqare .sqare_title{font-size: var(--font_size_6)!important}
 .col_4_block .sqare .sqare_deco{display: none;}
