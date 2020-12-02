@@ -28,7 +28,7 @@
     <video class="gertha_img" controls="true" alt="">
       <source type="video/mp4" src="<?php echo get_post_meta($post->ID, 'A_descripcion_url_video', true); ?>">
       </video>
-      <h3 class="gertha_title font_size_4" style=" color: <?php echo $category_color; ?> "><?php echo get_post_meta($post->ID, 'A_descripcion_titulo', true); ?></h3>
+      <h3 class="gertha_title font_size_3" style=" color: <?php echo $category_color; ?> "><?php echo get_post_meta($post->ID, 'A_descripcion_titulo', true); ?></h3>
     </section>
 
     <section class="showcase6">
@@ -114,7 +114,6 @@
     </section>
 
     <section class="col_2_block">
-
       <div class="col_2_block_col">
         <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'B_segunda_descripcion_texto_1', true); ?></p>
         <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'B_segunda_descripcion_texto_2', true); ?></p>
