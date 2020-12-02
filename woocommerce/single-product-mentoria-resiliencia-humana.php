@@ -35,69 +35,69 @@
   <section class="showcase6">
     <h3 class="showcase_title font_size_3 simple_title" style="color: <?php echo $category_color; ?>">Dirigido a cualquier persona que quiera cuidar<br>de su mente, desarrollar habilidades, actitudes y<br>percepciones individuales para lidiar con:</h3>
     <div class="showcase6_container">
-      <div class="hosi" style="color:#C0CED3">
+      <div class="hosi" style="color: white; background: #C0CED3;">
         <?php include get_template_directory().'/assets/destructive_guy.svg'; ?>
         <p class="hosi_txt font_size_6">
           CONDUCTAS<br>DESTRUCTIVAS
         </p>
       </div>
-      <div class="hosi" style="color:#C0CED3">
+      <div class="hosi" style="color: <?php echo $category_color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/hard_emotions.svg'; ?>
         <p class="hosi_txt font_size_6">
           EMOCIONES<br>DIFÍCILES
         </p>
       </div>
 
-      <div class="hosi" style="color:#C0CED3">
+      <div class="hosi" style="color: white; background: #C0CED3;">
         <?php include get_template_directory().'/assets/learn_forgiveness.svg'; ?>
         <p class="hosi_txt font_size_6">
           APRENDER<br>A PERDONAR
         </p>
       </div>
 
-      <div class="hosi" style="color:#C0CED3">
+      <div class="hosi" style="color: <?php echo $category_color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/trauma.svg'; ?>
         <p class="hosi_txt font_size_6">
           TRAUMAS Y<br>ABUSO
         </p>
       </div>
 
-      <div class="hosi" style="color:#C0CED3">
+      <div class="hosi" style="color: white; background: #C0CED3;">
         <?php include get_template_directory().'/assets/negative_stress.svg'; ?>
         <p class="hosi_txt font_size_6">
           ESTRÉS<br>NEGATIVO
         </p>
       </div>
 
-      <div class="hosi" style="color:#C0CED3">
+      <div class="hosi" style="color: <?php echo $category_color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/couple_problems.svg'; ?>
         <p class="hosi_txt font_size_6">
           DIFICULTADES<br>DE PAREJA
         </p>
       </div>
 
-      <div class="hosi" style="color:#C0CED3">
+      <div class="hosi" style="color: white; background: #C0CED3;">
         <?php include get_template_directory().'/assets/panic_attack.svg'; ?>
         <p class="hosi_txt font_size_6">
           ATAQUES<br>DE PÁNICO
         </p>
       </div>
 
-      <div class="hosi" style="color:#C0CED3">
+      <div class="hosi" style="color: <?php echo $category_color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/adictions.svg'; ?>
         <p class="hosi_txt font_size_6">
           ADICCIONES<br>ALCOHOL, DROGAS
         </p>
       </div>
 
-      <div class="hosi" style="color:#C0CED3">
+      <div class="hosi" style="color: white; background: #C0CED3;">
         <?php include get_template_directory().'/assets/insomnio.svg'; ?>
         <p class="hosi_txt font_size_6">
           INSOMNIO
         </p>
       </div>
 
-      <div class="hosi" style="color:#C0CED3">
+      <div class="hosi" style="color: <?php echo $category_color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/anxiety.svg'; ?>
         <p class="hosi_txt font_size_6">
           DEPRESIÓN<br>ANSIEDAD
@@ -118,33 +118,35 @@
     </div>
   </section>
 
-  <section class="separanda">
-    <h4 class="separanda_title font_size_3" style="color: <?php echo $category_color; ?>">¿Que incluye el programa?</h4>
-    <div class="separanda_item" style="color: <?php echo $category_color; ?>">
-      <?php include get_template_directory().'/assets/distance_training.svg'; ?>
-      <p class="separanda_text font_size_4">5 sesiones por<br>video-llamada</p>
-    </div>
-    <div class="separanda_item alt separanda_plus" style="color: <?php echo $category_color; ?>">
-      <?php include get_template_directory().'/assets/plus.svg'; ?>
-    </div>
-    <div class="separanda_item" style="color: <?php echo $category_color; ?>">
-      <?php include get_template_directory().'/assets/meditate.svg'; ?>
-      <p class="separanda_text font_size_4">Material<br>didáctico</p>
-    </div>
-    <div class="separanda_item alt separanda_plus separanda_hidden_plus" style="color: <?php echo $category_color; ?>">
-      <?php include get_template_directory().'/assets/plus.svg'; ?>
-    </div>
-    <div class="separanda_item" style="color: <?php echo $category_color; ?>">
-      <?php include get_template_directory().'/assets/screen_people.svg'; ?>
-      <p class="separanda_text font_size_4">Video<br>y audio</p>
-    </div>
-    <div class="separanda_item alt separanda_plus" style="color: <?php echo $category_color; ?>">
-      <?php include get_template_directory().'/assets/plus.svg'; ?>
-    </div>
-    <div class="separanda_item" style="color: <?php echo $category_color; ?>">
-      <?php include get_template_directory().'/assets/screen_tools.svg'; ?>
-      <p class="separanda_text font_size_4">Bibliografía
-      </p>
+  <section class="separanda_backgrounded">
+    <div class="separanda separanda_backgrounded">
+      <h4 class="separanda_title font_size_3" style="color: <?php echo $category_color; ?>">¿Que incluye el programa?</h4>
+      <div class="separanda_item" style="color: <?php echo $category_color; ?>">
+        <?php include get_template_directory().'/assets/distance_training.svg'; ?>
+        <p class="separanda_text font_size_4">5 sesiones por<br>video-llamada</p>
+      </div>
+      <div class="separanda_item alt separanda_plus" style="color: <?php echo $category_color; ?>">
+        <?php include get_template_directory().'/assets/plus.svg'; ?>
+      </div>
+      <div class="separanda_item" style="color: <?php echo $category_color; ?>">
+        <?php include get_template_directory().'/assets/meditate.svg'; ?>
+        <p class="separanda_text font_size_4">Material<br>didáctico</p>
+      </div>
+      <div class="separanda_item alt separanda_plus separanda_hidden_plus" style="color: <?php echo $category_color; ?>">
+        <?php include get_template_directory().'/assets/plus.svg'; ?>
+      </div>
+      <div class="separanda_item" style="color: <?php echo $category_color; ?>">
+        <?php include get_template_directory().'/assets/screen_people.svg'; ?>
+        <p class="separanda_text font_size_4">Video<br>y audio</p>
+      </div>
+      <div class="separanda_item alt separanda_plus" style="color: <?php echo $category_color; ?>">
+        <?php include get_template_directory().'/assets/plus.svg'; ?>
+      </div>
+      <div class="separanda_item" style="color: <?php echo $category_color; ?>">
+        <?php include get_template_directory().'/assets/screen_tools.svg'; ?>
+        <p class="separanda_text font_size_4">Bibliografía
+        </p>
+      </div>
     </div>
   </section>
 
@@ -153,7 +155,7 @@
   <section class="copa">
     <img class="copa_img" src="https://picsum.photos/400" alt="">
     <div class="copa_interaction_container">
-      <h5 class="copa_title">Retiro en Cantabria 3 días<br><?php the_title(); ?></h5>
+      <h5 class="copa_title"><?php echo get_post_meta(get_the_ID(), 'C_titulo_modulo_compra', true); ?></h5>
       <p class="copa_label" style=" background: <?php echo $category_color; ?> ">FECHAS</p>
 
       <div class="copa_select_container">

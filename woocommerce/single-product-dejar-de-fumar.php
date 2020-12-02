@@ -194,7 +194,7 @@
     <section class="copa">
       <img class="copa_img" src="https://picsum.photos/400" alt="">
       <div class="copa_interaction_container">
-        <h5 class="copa_title">Retiro en Cantabria 3 días<br><?php the_title(); ?></h5>
+        <h5 class="copa_title"><?php echo get_post_meta(get_the_ID(), 'C_titulo_modulo_compra', true); ?></h5>
         <p class="copa_label" style=" background: <?php echo $category_color; ?> ">FECHAS</p>
 
         <div class="copa_select_container">
@@ -314,8 +314,8 @@
   <?php } ?>
 
   <banner class="banner_1" style=" background: <?php echo $category_color; ?> ">
-    <h4 class="banner_title font_size_3">Más de 700 empresas tienen<br>confianza en nuestra experiencia </h4>
-    <a href="#" class="btn white_btn font_size_6" style=" background: <?php echo $category_color; ?> ">VER PROGRAMA EMPRESAS</a>
+    <h4 class="banner_title font_size_3"><?php echo get_post_meta(get_the_ID(), 'D_titulo_banner', true); ?></h4>
+    <a href="<?php echo get_post_meta(get_the_ID(), 'D_link_boton_banner', true); ?>" class="btn white_btn font_size_6" style=" background: <?php echo $category_color; ?> "><?php echo get_post_meta(get_the_ID(), 'D_texto_boton_banner', true); ?></a>
   </banner>
 
 

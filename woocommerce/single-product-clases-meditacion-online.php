@@ -86,7 +86,7 @@
   <section class="copa">
     <img class="copa_img" src="https://picsum.photos/400" alt="">
     <div class="copa_interaction_container">
-      <h5 class="copa_title">Retiro en Cantabria 3 días<br><?php the_title(); ?></h5>
+      <h5 class="copa_title"><?php echo get_post_meta(get_the_ID(), 'D_titulo_modulo_compra', true); ?></h5>
       <p class="copa_label" style=" background: <?php echo $category_color; ?> ">FECHAS</p>
 
       <div class="copa_select_container">
