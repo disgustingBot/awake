@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- TODO: hacer que estos 2 links sean 1 link -->
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+  
   <style>
   :root{
     --primary_color:<?php echo get_option( 'primary_color', '' ); ?>;

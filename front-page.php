@@ -89,18 +89,21 @@
 <section class="mega Carousel">
 
   <?php
+
   $args = array(
     'post_type'=>'product',
     'posts_per_page'=>4,
+    'product_tag' => 'banner',
   );
   $blogPosts=new WP_Query($args); ?>
 
   <?php while($blogPosts->have_posts()){$blogPosts->the_post(); ?>
     <?php global $product; ?>
     <div class="hero Element">
-    <div class="hero_img_filter" style="background-image:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('<?php the_post_thumbnail_url(); ?>');">
+    <div class="hero_img_filter" style="background-image:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('<?php echo get_post_meta($post->ID, 'imagen_portada', true); ?>');">
 
     </div>
+
 
     <img class="hero_icon" loading="lazy" src="<?php echo get_post_meta($post->ID, 'icono', true); ?>" alt="">
 
