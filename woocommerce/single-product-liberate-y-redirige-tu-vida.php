@@ -88,7 +88,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/videoconference.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         Orientación<br>
         presencial o<br>
         videoconferencia
@@ -99,7 +99,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/eye.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         Deberes:<br>
         Una/dos<br>
         semanas
@@ -110,7 +110,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/old_clock.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         Jornada<br>
         “Libérate”<br>
         6-7 horas
@@ -122,7 +122,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/farm.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         Curso<br>
         Residencial<br>
         3 días
@@ -133,7 +133,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/calendar.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         formación<br>
         a distancia<br>
         8 semanas
@@ -144,7 +144,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/magazine.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         Documentación<br>
         de apoyo
       </p>
@@ -165,7 +165,7 @@
 
 
       <section class="copa">
-        <img class="copa_img" src="https://picsum.photos/400" alt="">
+        <img class="copa_img" src="<?php echo get_post_meta($post->ID, 'C_imagen_modulo_compra', true); ?>" alt="">
         <div class="copa_interaction_container">
           <h5 class="copa_title"><?php echo get_post_meta($post->ID, 'C_titulo_modulo_compra', true); ?></h5>
           <p class="copa_label" style=" background: <?php echo $category_color; ?> ">FECHAS</p>

@@ -64,35 +64,35 @@
     <h4 class="separanda_title font_size_3" style="color: <?php echo $category_color; ?>">¿Que incluye el programa?</h4>
     <div class="separanda_item" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/distance_training.svg'; ?>
-      <p class="separanda_text font_size_4">2 clases lectivas<br>durante 12 semanas</p>
+      <p class="separanda_text font_size_5">2 clases lectivas<br>durante 12 semanas</p>
     </div>
     <div class="separanda_item alt separanda_plus" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/plus.svg'; ?>
     </div>
     <div class="separanda_item" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/meditate.svg'; ?>
-      <p class="separanda_text font_size_4">Meditaciones guiadas<br>(video – audio)</p>
+      <p class="separanda_text font_size_5">Meditaciones guiadas<br>(video – audio)</p>
     </div>
     <div class="separanda_item alt separanda_plus separanda_hidden_plus" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/plus.svg'; ?>
     </div>
     <div class="separanda_item" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/screen_people.svg'; ?>
-      <p class="separanda_text font_size_4">40 horas lectivas por<br>videoconferencia en grupo</p>
+      <p class="separanda_text font_size_5">40 horas lectivas por<br>videoconferencia en grupo</p>
     </div>
     <div class="separanda_item alt separanda_plus" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/plus.svg'; ?>
     </div>
     <div class="separanda_item" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/screen_tools.svg'; ?>
-      <p class="separanda_text font_size_4">Reflexiones, escritos<br>y Bibliografía
+      <p class="separanda_text font_size_5">Reflexiones, escritos<br>y Bibliografía
       </p>
     </div>
   </section>
 
 
   <section class="copa">
-    <img class="copa_img" src="https://picsum.photos/400" alt="">
+    <img class="copa_img" src="<?php echo get_post_meta($post->ID, 'D_imagen_modulo_compra', true); ?>" alt="">
     <div class="copa_interaction_container">
       <h5 class="copa_title"><?php echo get_post_meta($post->ID, 'D_titulo_modulo_compra', true); ?></h5>
       <p class="copa_label" style=" background: <?php echo $category_color; ?> ">FECHAS</p>
