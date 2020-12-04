@@ -224,7 +224,7 @@ FIN DE MAPA DE CONTENIDOS */
   --gertha_deco_width_alt: 95%;
   --gertha_deco_margin: auto auto auto 50%;
   --gertha_deco_transform: translateX(-50%);
-
+  --gertha_link_line_height: calc( var(--font_size_3) + 5px );
 
   /* ?chiri */
   --chiri_GTC:1fr 1fr;
@@ -248,6 +248,7 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* ?showcase2 */
   --showcase2_GTC: 1fr;
+  --sowcase2_GG: 1rem;
 
   /* ?showcase3 */
   --showcase3_GTC: 1fr;
@@ -276,9 +277,13 @@ FIN DE MAPA DE CONTENIDOS */
   --separanda_alt_GG: 2rem;
   --separanda_item_margin: auto;
   --hidden_plus_display: flex;
+  --separanda_GCG: unset;
+  --separanda_item_svg_height: 70px;
 
   /* ?pista */
   --pista_text_align: center;
+  --pista_margin: 0 auto;
+  --pista_deco_margin: auto;
 
   /* ?tory */
   --tory_GTC:1fr;
@@ -289,15 +294,31 @@ FIN DE MAPA DE CONTENIDOS */
   --tory_img_GC:unset;
   --tory_root_padding_left:var(--lateral);
 
-
   /* ?phil */
   --phil_GTC: 1fr;
-
 
   /* ?FOOTER */
   --footer_grid_gap: 2rem 1rem;
 
+  /* ?showcase6 */
+  --showcase6_container_GTC: 1fr;
 
+/* ?col_2_block */
+  --col_2_block_GTC: 1fr;
+
+  /* ?copa */
+  --copa_GTC: 1fr;
+  --copa_interaction_container_GTC: 1fr 1fr;
+  --copa_interaction_container_GTR: auto;
+  --copa_label_GC: 1/-1;
+  --copa_label_margin_bottom: -1.5rem;
+  --copa_select_arrow_right: -5px;
+  --copa_cuantos_btn_margin: auto;
+  --addtocart_GC: 1/-1;
+  --addtocart_width: 100%;
+
+  /* ?col_4_block */
+  --col_4_block_GTC: 1fr;
 
 }
 /* ---------------------------------------------------------------------------
@@ -339,6 +360,18 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?prenex */
     --prenex_mega_top:100px;
+
+    /* ?showcase6 */
+    --showcase6_container_GTC: 1fr 1fr 1fr;
+
+    /* ?col_2_block */
+      --col_2_block_GTC: 1fr 1fr;
+
+    /* ?copa */
+    --copa_GTC: 1fr 1fr;
+
+    /* ?col_4_block */
+    --col_4_block_GTC: 1fr 1fr;
 
     /* ?FOOTER */
   }
@@ -387,6 +420,7 @@ FIN DE MAPA DE CONTENIDOS */
     --gertha_deco_width_alt: calc(100% - 8rem);
     --gertha_deco_margin: 0 6rem 6rem 6rem;
     --gertha_deco_transform: unset;
+    --gertha_link_line_height: calc(var(--font_size_3) * 2);
 
 
     /* ?chiri */
@@ -408,6 +442,7 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?showcase2 */
     --showcase2_GTC: 4fr 3fr;
+    --sowcase2_GG: 2rem;
 
     /* ?showcase5 */
     --showcase5_GTC: repeat(3,1fr);
@@ -429,6 +464,7 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?pista */
     --pista_text_align: left;
+    --pista_deco_margin: ;
 
 
     /* ?tory */
@@ -441,15 +477,27 @@ FIN DE MAPA DE CONTENIDOS */
     --tory_img_GC:2 / span 2;
     --tory_root_padding_left:0;
 
-
     /* ?phil */
     --phil_GTC: repeat(4,1fr);
 
+    /* ?showcase6 */
+    --showcase6_container_GTC: repeat(5, 1fr);
+
+    /* ?copa */
+    --copa_interaction_container_GTC: 1fr min-content 1fr;
+    --copa_interaction_container_GTR: repeat(4, min-content);
+    --copa_label_GC: ;
+    --copa_label_margin_bottom: ;
+    --copa_select_arrow_right: 0;
+    --copa_cuantos_btn_margin: unset;
+    --addtocart_GC: 1/-1;
+    --addtocart_width: ;
 
 
 
 
-
+    /* ?pista */
+    --pista_margin: 0 auto auto 0;
 
 
     /* ?FOOTER */
@@ -499,6 +547,9 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?showcase5 */
     --showcase5_GTC: repeat(5,1fr);
 
+    /* ?col_4_block */
+    --col_4_block_GTC: repeat(4, 1fr);
+
 
     /* ?FOOTER */
     --footer_grid_gap: 1rem;
@@ -512,10 +563,17 @@ FIN DE MAPA DE CONTENIDOS */
       --separanda_item_margin: auto auto auto 0;
       /* --separanda_item_margin: auto; */
       --hidden_plus_display: none;
+      --separanda_GCG: 3rem;
+      --separanda_item_svg_height: 50px;
 
+      /* ?copa */
+      --addtocart_GC: ;
 
-    /* ?tory */
-    --tory_gap:3rem;
+      /* ?tory */
+      --tory_gap:3rem;
+
+      /* ?showcase2 */
+      --sowcase2_GG: 3rem;
 
   }
 }
@@ -539,6 +597,13 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?mivi */
     --mivi_icon_height: 45px;
     --mivi_slide_GTC: repeat(4, 1fr);
+
+    /* ?Separanda */
+    --separanda_GCG: 3rem;
+    --separanda_item_svg_height: 70px;
+
+    /* ?showcase2 */
+    --sowcase2_GG: 4.5rem;
 
 
     /* ?FOOTER */
@@ -912,7 +977,7 @@ img, video, source{
   grid-column: 1/-1;
   margin: auto;
   text-decoration: underline;
-  line-height: calc(var(--font_size_3) * 2);
+  line-height: var(--gertha_link_line_height);
 }
 .gertha_caption{
   font-size: var(--font_size_6);
@@ -1172,7 +1237,7 @@ section.flati{
 .showcase2{
   background:var(--greyf5);
   display:grid;
-  grid-gap:4.5rem;
+  grid-gap:var(--sowcase2_GG);
   padding:2rem var(--lateral);
   grid-template-columns: var(--showcase2_GTC);
 }
@@ -1274,7 +1339,7 @@ section.flati{
 .showcase6_container {
   display: grid;
   grid-template-rows: repeat(2, min-content);
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: var(--showcase6_container_GTC);
   margin: auto var(--lateral);
 }
 
@@ -1447,6 +1512,7 @@ section.flati{
   word-spacing: 4px;
   padding: 15px 40px;
   letter-spacing: 2px;
+  text-align: center;
 }
 .white_btn:hover {
   border: 1px solid black;
@@ -1884,7 +1950,7 @@ section.flati{
 --------------------------------------------------------------------------- */
 .separanda > *{margin:auto}
 /* .separanda > :last-child{margin-right:0} */
-.separanda{
+.separanda {
   display: grid;
   grid-template-columns: var(--separanda_GTC);
   background: white;
@@ -1892,7 +1958,7 @@ section.flati{
   margin: 2rem auto;
   justify-content: space-around;
   grid-row-gap: 3rem;
-  grid-column-gap: 5rem;
+  grid-column-gap: var(--separanda_GCG);
   flex-wrap: wrap;
 }
 .separanda_backgrounded {display: grid; background: var(--greyf5)}
@@ -1932,7 +1998,7 @@ section.flati{
 .separanda_hidden_plus {display: var(--hidden_plus_display)}
 .separanda_item svg {
   margin-right: 1rem;
-  height: 70px;
+  height: var(--separanda_item_svg_height);
   width: auto;
 }
 .separanda.alt {
@@ -1951,7 +2017,7 @@ section.flati{
 .pista {
   display:grid;
   grid-gap:.8rem;
-  margin:0 auto auto 0;
+  margin: var(--pista_margin);
   color: var(--grey6);
   text-align: var(--pista_text_align);
 }
@@ -1975,6 +2041,7 @@ section.flati{
   width:2rem;
   height:2px;
   background:var(--grey6);
+  margin: var(--pista_deco_margin);
 }
 .pista_caption{
   font-size:16px;
@@ -1989,7 +2056,7 @@ section.flati{
 --------------------------------------------------------------------------- */
 .copa {
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns: var(--copa_GTC);
   grid-auto-flow: dense;
   padding: 4rem calc(var(--lateral) * .7);
   grid-gap:2.5rem;
@@ -1999,8 +2066,8 @@ section.flati{
 }
 .copa_interaction_container {
   display: grid;
-  grid-template-columns: 1fr min-content 1fr;
-  grid-template-rows: repeat(4, min-content);
+  grid-template-columns: var(--copa_interaction_container_GTC);
+  grid-template-rows: var(--copa_interaction_container_GTR);
   grid-row-gap: 1.5rem;
   grid-column-gap: 1rem;
 }
@@ -2009,10 +2076,12 @@ section.flati{
   color: var(--grey7);
 }
 .copa_interaction_container .btn, .copa_interaction_container .cuantos  {
-  margin: unset;
+  margin: var(--copa_cuantos_btn_margin);
 }
 .copa_interaction_container .btn {
   color: white;
+  grid-column: var(--addtocart_GC);
+  width: var(--addtocart_width);
 }
 .copa_title{
   grid-column:1/-1;
@@ -2027,6 +2096,8 @@ section.flati{
   width: 100%;
   background:var(--secondary_color);
   text-align:center;
+  grid-column: var(--copa_label_GC);
+  margin-bottom: var(--copa_label_margin_bottom);
 }
 .copa_select_container {
   grid-column: span 2;
@@ -2047,7 +2118,7 @@ section.flati{
   width: 50px;
   height: 90%;
   top: 0;
-  right: 0;
+  right: var(--copa_select_arrow_right);
   margin-top: 2px;
   pointer-events: none;
 }
@@ -2401,7 +2472,7 @@ section.flati{
 
 .col_2_block {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: var(--col_2_block_GTC);
   padding: 3.5rem var(--lateral);
   grid-gap: 2rem;
   position: relative;
@@ -2428,7 +2499,7 @@ section.flati{
 
 .col_4_block {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: var(--col_4_block_GTC);
   padding: 2rem var(--lateral);
   grid-gap: 1.75rem;
 }

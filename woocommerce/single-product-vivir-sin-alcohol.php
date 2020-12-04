@@ -92,7 +92,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/videoconference.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         Orientación<br>
         presencial o<br>
         videoconferencia
@@ -103,7 +103,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/eye.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         Deberes:<br>
         Una/dos<br>
         semanas
@@ -114,7 +114,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/old_clock.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         Jornada<br>
         “Vive sin alcohol”<br>
         6-7 horas
@@ -126,7 +126,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/farm.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         Curso<br>
         Residencial<br>
         3 días
@@ -137,7 +137,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/calendar.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         formación<br>
         a distancia<br>
         8 semanas
@@ -148,7 +148,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/magazine.svg'; ?>
-      <p class="separanda_text font_size_4"  style="color: #706862">
+      <p class="separanda_text font_size_5"  style="color: #706862">
         Documentación<br>
         de apoyo y libro
       </p>
