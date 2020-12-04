@@ -28,10 +28,10 @@
   </section>
 
   <section class="showcase2">
-    <div class="gali">
-      <img class="gali_img" src="https://picsum.photos/300" alt="">
-      <img class="gali_img" src="https://picsum.photos/301" alt="">
-      <img class="gali_img" src="https://picsum.photos/302" alt="">
+    <div class="gali_2">
+      <img class="gali_2_img" src="https://picsum.photos/300" alt="">
+      <img class="gali_2_img" src="https://picsum.photos/301" alt="">
+      <!-- <img class="gali_img" src="https://picsum.photos/302" alt=""> -->
     </div>
     <div class="pista">
       <h5 class="pista_title">Programa Orientativo</h5>
