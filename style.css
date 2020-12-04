@@ -252,6 +252,7 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* ?showcase2 */
   --showcase2_GTC: 1fr;
+  --programa_galeria_width:calc(100vw - var(--lateral) * 2);
 
   /* ?showcase3 */
   --showcase3_GTC: 1fr;
@@ -412,6 +413,7 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?showcase2 */
     --showcase2_GTC: 4fr 3fr;
+    --programa_galeria_width:calc((100vw - 16px - var(--lateral) * 2 - 1rem - .5rem) / 2);
 
     /* ?showcase5 */
     --showcase5_GTC: repeat(3,1fr);
@@ -1864,8 +1866,9 @@ section.flati{
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .gali_2{
-  --gali_2_width:calc((100vw - 16px - var(--lateral) * 2 - 1rem - .5rem) / 2);
-  --gali_2_row1:calc(var(--gali_2_width) * 1.3745);
+  --gali_2_width:var(--programa_galeria_width);
+
+  --gali_2_row1:calc(var(--gali_2_width) * 0.7275);
   /* --gali_2_row2:calc(var(--gali_2_width) * 0.4229); */
   /* --gali_2_row3:calc(var(--gali_2_width) * 0.4506); */
   display:grid;
@@ -1886,7 +1889,8 @@ section.flati{
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .gali{
-  --gali_width:calc((100vw - 16px - var(--lateral) * 2 - 1rem - .5rem) / 2);
+  /* --gali_width:calc((100vw - 16px - var(--lateral) * 2 - 1rem - .5rem) / 2); */
+  --gali_width:var(--programa_galeria_width);
   --gali_row1:calc(var(--gali_width) * 0.4229);
   --gali_row2:calc(var(--gali_width) * 0.4229);
   --gali_row3:calc(var(--gali_width) * 0.4506);
@@ -1908,7 +1912,8 @@ section.flati{
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .gale{
-  --gale_width:calc((100vw - 16px - var(--lateral) * 2 - 1rem - .5rem) / 2);
+  /* --gale_width:calc((100vw - 16px - var(--lateral) * 2 - 1rem - .5rem) / 2); */
+  --gale_width:var(--programa_galeria_width);
   --gale_row1:calc(var(--gale_width) * 0.7427);
   --gale_row2:calc(var(--gale_width) * 0.4728);
   /* --gale_row3:calc(var(--gale_width) * 0.4506); */
@@ -1931,7 +1936,8 @@ section.flati{
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .galo{
-  --galo_width:calc((100vw - 16px - var(--lateral) * 2 - 1rem - .5rem) / 2);
+  /* --galo_width:calc((100vw - 16px - var(--lateral) * 2 - 1rem - .5rem) / 2); */
+  --galo_width:var(--programa_galeria_width);
   --galo_row1:calc(var(--galo_width) * 0.4928);
   --galo_row2:calc(var(--galo_width) * 0.1027);
   --galo_row3:calc(var(--galo_width) * 0.3226);
@@ -1954,7 +1960,8 @@ section.flati{
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .galu{
-  --galu_width:calc((100vw - 16px - var(--lateral) * 2 - 1rem - .5rem) / 2);
+  /* --galu_width:calc((100vw - 16px - var(--lateral) * 2 - 1rem - .5rem) / 2); */
+  --galu_width:var(--programa_galeria_width);
   --galu_row1:calc(var(--galu_width) * 0.3085);
   --galu_row2:calc(var(--galu_width) * 0.3044);
   --galu_row3:calc(var(--galu_width) * 0.3427);
