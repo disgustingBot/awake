@@ -2061,9 +2061,6 @@ section.flati{
   padding: 4rem calc(var(--lateral) * .7);
   grid-gap:2.5rem;
 }
-.copa_img {
-  max-height: 360px;
-}
 .copa_interaction_container {
   display: grid;
   grid-template-columns: var(--copa_interaction_container_GTC);
