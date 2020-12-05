@@ -26,6 +26,7 @@ Version: 1.2
 4) =ETIQUETAS GLOBALES:
 
 5) =ESTRUCTURA:
+5.0 =container_1366:
 
 6) =COMPONENTES:
 6.0) =load:
@@ -85,12 +86,16 @@ Version: 1.2
 6.70) =col_2_block:
 6.75) =col_4_block:
 6.76) =col_1_block:
+6.77) =col_2_media:
 6.98) =piqui:
 6.99) =footer:
 6.XX) =signature:
 
 7.00) =BANNERS:
 7.10) =banner_1
+
+8.00) =FORMS
+8.01) =main_form
 
 FIN DE MAPA DE CONTENIDOS */
 
@@ -151,6 +156,7 @@ FIN DE MAPA DE CONTENIDOS */
   --greyf4: #F4F4F4;
   --greyf:#FFFFFF;
   --bluegrey:#C0CED3;
+  --brownblack: #706862;
 
 
 
@@ -328,6 +334,11 @@ FIN DE MAPA DE CONTENIDOS */
   /* ?col_4_block */
   --col_4_block_GTC: 1fr;
 
+
+  /* =col_2_media */
+  --main_form_GTC: 1fr;
+  --col_2_media_GTC: 1fr;
+
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -380,6 +391,9 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?col_4_block */
     --col_4_block_GTC: 1fr 1fr;
+
+    /* =col_2_media */
+    --main_form_GTC: 1fr 1fr;
 
     /* ?FOOTER */
   }
@@ -511,6 +525,9 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?pista */
     --pista_margin: 0 auto auto 0;
 
+    /* ?col_2_media */
+      --col_2_media_GTC: 5fr 7fr;
+
 
     /* ?FOOTER */
   }
@@ -567,25 +584,28 @@ FIN DE MAPA DE CONTENIDOS */
     --footer_grid_gap: 1rem;
 
     /* ?separanda */
-      --separanda_GTC:  max-content min-content max-content;
-      --separanda_subtitle_container: 100%;
-      /* --separanda_alt_GTC: 1fr min-content 1fr min-content 1fr; */
-      --separanda_alt_GTC: 1fr 1fr 1fr 1fr 1fr;
-      --separanda_alt_GG: 1rem;
-      --separanda_item_margin: auto auto auto 0;
-      /* --separanda_item_margin: auto; */
-      --hidden_plus_display: none;
-      --separanda_GCG: 3rem;
-      --separanda_item_svg_height: 50px;
+    --separanda_GTC:  max-content min-content max-content;
+    --separanda_subtitle_container: 100%;
+    /* --separanda_alt_GTC: 1fr min-content 1fr min-content 1fr; */
+    --separanda_alt_GTC: 1fr 1fr 1fr 1fr 1fr;
+    --separanda_alt_GG: 1rem;
+    --separanda_item_margin: auto auto auto 0;
+    /* --separanda_item_margin: auto; */
+    --hidden_plus_display: none;
+    --separanda_GCG: 3rem;
+    --separanda_item_svg_height: 50px;
 
-      /* ?copa */
-      --addtocart_GC: ;
+    /* ?copa */
+    --addtocart_GC: ;
 
-      /* ?tory */
-      --tory_gap:3rem;
+    /* ?tory */
+    --tory_gap:3rem;
 
-      /* ?showcase2 */
-      --sowcase2_GG: 3rem;
+    /* ?showcase2 */
+    --sowcase2_GG: 3rem;
+
+    /* =col_2_media */
+    --main_form_GTC: repeat(4, 1fr);
 
   }
 }
@@ -723,7 +743,8 @@ img, video, source{
 .font_size_7 {font-size: var(--font_size_7)}
 .font_size_8 {font-size: var(--font_size_8)}
 
-
+.brownblack_txt {color: var(--brownblack)!important;}
+.greyscale_filter {filter: grayscale(100%);}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                               5) =ESTRUCTURA:
@@ -762,8 +783,6 @@ img, video, source{
 .flex3>*{flex:3 1 calc(33% - 1rem)}
 .flex4>*{flex:4 1 calc(25% - 1rem)}
 
-
-
 .dady_break {
   display: flex;
   flex-wrap: wrap;
@@ -777,6 +796,22 @@ img, video, source{
   flex-basis: calc( (var(--breakpoint) - 100%) * 999);
   flex-grow: 1;
   /* margin: var(--margin); */
+}
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                              5.0 =container_1366:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.container_1366 {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-top: 7rem;
+
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -827,6 +862,8 @@ img, video, source{
   height:calc(var(--logo_size) + var(--header_padding_top));
   padding-top:var(--header_padding_top);
 }
+
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                             6.2) =ATFs:
@@ -2586,6 +2623,12 @@ section.flati{
   grid-gap: 2rem;
   position: relative;
 }
+.block_title_container {
+  padding: 3rem 0;
+}
+.block_title_container .block_title {
+  margin-bottom: 0;
+}
 .block_title {
   grid-column: 1/-1;
   color: var(--secondary_color);
@@ -2639,6 +2682,34 @@ section.flati{
 .col_1_block .block_title {
   margin-bottom: 2rem;
 }
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.77) =col_2_media:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.col_2_media {
+  display: grid;
+  grid-template-columns: var(--col_2_media_GTC);
+  grid-auto-rows: 1fr;
+  grid-gap: 3rem;
+  margin: 3rem var(--lateral);
+}
+.col_2_media_caption {
+  border-top: solid 2px var(--grey9);
+  border-bottom: solid 2px var(--grey9);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.col_2_media_txt {
+  color: var(--grey9);
+  font-size: 18px;
+  margin-bottom: 4px;
+  letter-spacing: 2px;
+}
+
+
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -2774,3 +2845,40 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   text-align: center;
   color: white;
 }
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          8.00) =FORMS
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.main_form {
+  display: grid;
+  grid-template-columns: var(--main_form_GTC);
+  grid-gap: 1.3rem;
+  margin: 0 var(--lateral);
+}
+.main_form_input {
+  border: 2px solid #B5B4B2;
+  height: 37px;
+  padding: 10px;
+  border-radius: 1px;
+}
+.main_textarea {
+  grid-column: 1/-1;
+  height: 380px;
+}
+.main_form_btn {
+  grid-column: 1/-1;
+}
+.main_form_btn.btn {
+  width: 100%;
+  background: var(--brownblack);
+  text-transform: capitalize;
+}
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          8.01) =main_form
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
