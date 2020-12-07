@@ -89,6 +89,7 @@ Version: 1.2
 6.75) =col_4_block:
 6.76) =col_1_block:
 6.77) =col_2_media:
+6.78) =full_page_media:
 6.98) =piqui:
 6.99) =footer:
 6.XX) =signature:
@@ -2365,7 +2366,7 @@ section.flati{
   justify-content: center;
   position: relative;
   color: var(--grey5);
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 .pagination_2::before {
   content: ' ';
@@ -2777,6 +2778,7 @@ section.flati{
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
+
 .col_2_media {
   display: grid;
   grid-template-columns: var(--col_2_media_GTC);
@@ -2797,6 +2799,19 @@ section.flati{
   letter-spacing: 2px;
 }
 
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.78) =full_page_media:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.full_page_media_container {
+  padding: 4rem var(--lateral);
+}
+.full_page_media {
+  width: 100%;
+  height: 550px;
+}
 
 
 /* ---------------------------------------------------------------------------
@@ -2972,6 +2987,14 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   background: var(--brownblack);
   text-transform: capitalize;
 }
+.form_acceptance_container {
+  color: var(--grey6);
+  display: flex;
+  align-items: center;
+}
+.form_acceptance_container input {
+  margin-right: 5px;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -2983,4 +3006,13 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
+  padding: 1rem var(--lateral);
+}
+.comment_form .main_textarea {
+  height: 200px;
+}
+.comment_form .main_form_btn {
+  width: 50%;
+  grid-column: unset;
+  margin-right: 0;
 }
