@@ -61,6 +61,7 @@ Version: 1.2
 
 6.15) =mivi:
 6.16) =tesim:
+6.16.1) =col_testimonials:
 6.17) =GALLERIES:
 6.17.1) =gala:
 6.17.2) =gali_2:
@@ -73,6 +74,7 @@ Version: 1.2
 6.20) =copa:
 
 6.25) =pagination:
+6.26) =pagination_2:
 
 6.31) =cuantos:
 
@@ -94,8 +96,9 @@ Version: 1.2
 7.00) =BANNERS:
 7.10) =banner_1
 
-8.00) =FORMS
-8.01) =main_form
+8.00) =FORMS:
+8.01) =main_form:
+8.02) =comment_form:
 
 FIN DE MAPA DE CONTENIDOS */
 
@@ -152,9 +155,10 @@ FIN DE MAPA DE CONTENIDOS */
   --greyd:#DDDDDD;
   --greye:#EEEEEE;
   --greye6:#E6E6E6;
-  --greyf5: #F5F5F5;
-  --greyf4: #F4F4F4;
+  --greyf5:#F5F5F5;
+  --greyf4:#F4F4F4;
   --greyf:#FFFFFF;
+  --greyf6:#F6F6F6;
   --bluegrey:#C0CED3;
   --brownblack: #706862;
 
@@ -339,6 +343,9 @@ FIN DE MAPA DE CONTENIDOS */
   --main_form_GTC: 1fr;
   --col_2_media_GTC: 1fr;
 
+  /* ?pagination_2 */
+  --pagination_2_deco_width: 20%;
+
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -394,6 +401,9 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* =col_2_media */
     --main_form_GTC: 1fr 1fr;
+
+    /* ?pagination_2 */
+    --pagination_2_deco_width: 30%;
 
     /* ?FOOTER */
   }
@@ -967,6 +977,7 @@ img, video, source{
   display: flex;
   width: 100%;
   background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4));
+  object-position: top;
 }
 .hero_title{
   color:white;
@@ -1890,6 +1901,9 @@ section.flati{
   color: var(--grey9);
   height: var(--testim_container_height);
 }
+.tesim_container.backgrounded {
+  background: var(--greyf6);
+}
 .tesim_cont.inactive{opacity:0}
 .tesim_cont{
   width: calc(100% - 5rem);
@@ -1931,6 +1945,36 @@ section.flati{
   font-size: 14px;
   text-decoration: underline;
 }
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.16.1) =col_testimonials:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+
+.col_testimonials_container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem var(--lateral);
+}
+.col_testimonial.noborder {
+  border: none;
+}
+.col_testimonial {
+  border-bottom: solid 2px var(--grey9);
+  padding: 2rem 0;
+}
+.col_testimonial_title {
+  color: var(--secondary_color);
+  margin-bottom: 1rem;
+}
+.col_testimonial_content {
+  color: var(--grey5);
+}
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.17) =GALLERIES:
@@ -2308,6 +2352,41 @@ section.flati{
 
 
 
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.26) =pagination_2:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+
+.pagination_2 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  color: var(--grey5);
+  margin: 2rem 0;
+}
+.pagination_2::before {
+  content: ' ';
+  width: var(--pagination_2_deco_width);
+  height: 2px;
+  background: var(--grey9);
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+}
+.pagination_2::after {
+  content: ' ';
+  width: var(--pagination_2_deco_width);
+  height: 2px;
+  background: var(--grey9);
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+}
+
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.31) =cuantos:
@@ -2678,11 +2757,20 @@ section.flati{
 .col_1_block {
   padding: 2rem var(--lateral);
 }
-
+.col_1_block.alt {
+  margin-top: 3rem;
+  text-align: center;
+}
 .col_1_block .block_title {
   margin-bottom: 2rem;
 }
-
+.col_1_block.alt .block_title {
+    color: var(--grey8);
+}
+.col_1_img {
+  width: 250px;
+  margin: 2rem auto auto auto;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.77) =col_2_media:
@@ -2852,6 +2940,14 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          8.01) =main_form
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
 .main_form {
   display: grid;
   grid-template-columns: var(--main_form_GTC);
@@ -2879,6 +2975,12 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
-                          8.01) =main_form
+                          8.02) =comment_form:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
+
+.comment_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
