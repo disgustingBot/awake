@@ -40,6 +40,9 @@ Version: 1.2
 6.4.4) =barda:
 6.4.5) =sqare:
 6.4.6) =flati:
+6.4.7) =hosi:
+6.4.8) =hedi:
+
 6.5) =SHOWCASE:
 6.5.1) =showcase2:
 6.5.2) =showcase3:
@@ -51,6 +54,7 @@ Version: 1.2
 6.6.1) =prenex:
 6.6.2) =burger:
 6.6.3) =white_btn:
+6.6.4) =cart_butt:
 6.7.0) =facebook_feeds:
 
 6.8) =MENUS:
@@ -198,6 +202,7 @@ FIN DE MAPA DE CONTENIDOS */
   --row_768_column:row;
 
   --num_1_2_4:1;
+  --num_1_2_3:1;
   --grid_1_2_4_GTC: 1fr;
   --grid_1_2_GTC:   1fr;
   --grid_2_4_GTC: 1fr 1fr;
@@ -359,6 +364,7 @@ FIN DE MAPA DE CONTENIDOS */
 @media screen and (min-width: 576px) {
   :root {
     --num_1_2_4:2;
+    --num_1_2_3:2;
     --grid_1_2_4_GTC: 1fr 1fr;
     /* ?HEADER */
 
@@ -526,6 +532,7 @@ FIN DE MAPA DE CONTENIDOS */
   :root {
     --lateral:3rem;
     --num_1_2_4:4;
+    --num_1_2_3:3;
     --grid_1_2_4_GTC:repeat(4,1fr);
     --grid_2_4_GTC: repeat(4,1fr);
 
@@ -679,7 +686,11 @@ img, video, source{
   width:100%;
 }
 
-
+.woocommerce-cart .woocommerce{
+  padding:0 var(--lateral);
+  padding-top:calc(var(--logo_size) + var(--header_padding_top) + 2rem);
+  padding-bottom: 3rem;
+}
 .single-product .main{
   padding:2rem var(--lateral);
 }
@@ -856,6 +867,10 @@ img, video, source{
                           6.3) =logo:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
+/* .blog .logo_img, */
+:not(.observed) > .logo_img,
+.mobile_menu_active .logo_img{color:black}
+
 .logo{
   width:  var(--logo_size);
   height: var(--logo_size);
@@ -866,8 +881,6 @@ img, video, source{
 }
 .logo:hover .logo_img{filter: drop-shadow( 0 0 4px rgba(0, 0, 0, 1))}
 .observed .logo_img{color:white}
-.blog .logo_img,
-.mobile_menu_active .logo_img{color:black}
 .logo_img{
   width: var(--logo_size);
   height:var(--logo_size);
@@ -1223,6 +1236,95 @@ section.flati{
 .hosi_txt {
   text-align: center;
 }
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.4.8) =hedi:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+/* "hedi" por hedionda */
+
+.hedi_container{
+  display:grid;
+  --hedi_cont_padding:2rem;
+  grid-gap:var(--hedi_cont_padding);
+  /* grid-template-columns:1fr 1fr 1fr; */
+  grid-template-columns:repeat(var(--num_1_2_3), 1fr);
+  padding: 1rem var(--lateral);
+}
+.hedi{
+  --hedi_padding:1.5rem;
+  padding:var(--hedi_padding);
+  display:grid;
+  border:1px solid var(--greya);
+  grid-gap:1rem;
+}
+.hedi_amg,
+.hedi_img{
+  display:block;
+  height:calc(0.85 * (100vw - 16px - var(--lateral) * 2 - (var(--num_1_2_3) - 1) * var(--hedi_cont_padding) - var(--num_1_2_3) * var(--hedi_padding) * 2) / var(--num_1_2_3))!important;
+}
+.hedi_title{
+  color:white;
+  margin:auto;
+  text-align: center;
+  padding:0 1rem;
+}
+.hedi_txt{
+  text-transform:uppercase;
+  text-align: center;
+}
+.hedi_enlace{
+  text-transform:uppercase;
+  text-align: center;
+  color:lightblue;
+  text-decoration: underline;
+}
+.hedi_interaction_container{
+  display:grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap:.3rem;
+}
+.hedi_label{
+  color: white;
+  /* font-size: 16px; */
+  display: grid;
+  align-items:center;
+  padding: .5rem .9rem;
+  width: 100%;
+  background: var(--secondary_color);
+  text-align: center;
+  grid-column: var(--copa_label_GC);
+  margin-bottom: var(--copa_label_margin_bottom);
+}
+.hedi_select_container{
+  position: relative;
+}
+.hedi_select{
+  /* text-transform: uppercase; */
+  /* padding: 5px 10px; */
+  border: 1px solid var(--grey8);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: var(--grey6);
+  /* font-size: 10px; */
+}
+.hedi_price{
+  display: grid;
+  align-items: center;
+  border-top:2px solid var(--greyb);
+  border-bottom:2px solid var(--greyb);
+  text-align: center;
+}
+.hedi .cuantosQnt{width:100%;}
+.hedi .btn{
+  grid-column: span 2;
+  width:100%;
+}
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.5) =SHOWCASE:
@@ -1532,6 +1634,37 @@ section.flati{
   outline: none;
 }
 
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.6.4) =cart_butt:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.cart_butt{
+  display:grid;
+  grid-auto-flow: column;
+  margin:auto;
+  grid-gap:.5rem;
+}
+.cart_butt_icon{
+  /* width: 100%; */
+  height: 100%;
+}
+.cart_butt_number{
+  --cart_butt_number_size:1.5rem;
+  height:var(--cart_butt_number_size);
+  width: var(--cart_butt_number_size);
+  border-radius:50%;
+  background:var(--grey9);
+  color:white;
+  /* padding:.3rem; */
+  display:grid;
+  justify-content: center;
+  align-items: center;
+}
+
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.7.0) =facebook_feeds:
@@ -1564,7 +1697,8 @@ section.flati{
                           6.8.1) =nav_menu:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.blog .nav_menu{color:black}
+:not(.observed) > .nav_menu{color:black}
+/* .blog .nav_menu */
 .nav_menu {
   background:transparent;
   color: white;
@@ -1671,7 +1805,8 @@ section.flati{
                           6.8.2) =under_soc:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.blog .under_soc{display:none}
+:not(.observed) > .under_soc{display:none}
+/* .blog .under_soc{display:none} */
 .under_soc{
   position: absolute;
   top:calc(100vh - 3rem);
@@ -2462,7 +2597,8 @@ section.flati{
 }
 
 .selectBoxPlaceholder{
-  font-size: 16px!important;
+  /* font-size: 16px!important; */
+  text-transform: uppercase;
   height:1rem;
   line-height:1rem;
   left:16px;
@@ -2473,13 +2609,13 @@ section.flati{
 }
 
 .selectBoxCurrent{
-  border-bottom: 2px solid var(--grey6);
-  font-size: 14px!important;
+  /* border-bottom: 2px solid var(--grey6); */
+  /* font-size: 14px!important; */
   padding:16px 10px 2px 16px;
   position: relative;
 }
 
-.selectBoxCurrent::after{
+/* .selectBoxCurrent::after{
   content:'';
   position:absolute;
   bottom:-2px;
@@ -2490,14 +2626,14 @@ section.flati{
   height: 2px;
   transition:.2s;
   background: var(--secondary_color);
-}
+} */
 .SelectBox:focus{
   outline:none;
 }
-.SelectBox:focus .selectBoxCurrent::after,
+/* .SelectBox:focus .selectBoxCurrent::after,
 .SelectBox.alt .selectBoxCurrent::after{
   transform:scaleX(1);
-}
+} */
 .SelectBox:focus .selectBoxPlaceholder,
 .SelectBox.alt .selectBoxPlaceholder{
   transform:translateY(-50%) scale(.6);

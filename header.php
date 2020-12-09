@@ -8,7 +8,7 @@
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
-  
+
   <style>
   :root{
     --primary_color:<?php echo get_option( 'primary_color', '' ); ?>;
@@ -50,7 +50,7 @@
   <?php include 'assets/all_icons.php'; ?>
   <!-- <h1><?php echo get_option( 'font_size_1_number', '' ) * 0.8; ?></h1>
   <h1><?php echo get_option( 'font_size_2_number', '' ) * 0.8; ?></h1> -->
-  <header class="header Obse" id="header">
+  <header class="header Obse" id="header" data-observe=".hero">
     <a class="logo rowcol1" href="<?php echo get_site_url(); ?>">
       <svg class="logo_img" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 101 104">
         <use xlink:href="#logo"></use>
