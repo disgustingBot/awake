@@ -82,10 +82,18 @@
   <section class="comment_form">
     <input class="main_form_input" type="text" placeholder="Nombre">
     <input class="main_form_input" type="email" placeholder="E-mail">
-    <textarea class="main_textarea" placeholder="Escríbenos tu testimonio"></textarea>
-    <input id="terms_acceptance" type="checkbox">
-    <label for="terms_acceptance">He leído y acepto la política de privacidad.</label>
-    <input type="submit" class="btn">
+    <textarea class="main_form_input main_textarea" placeholder="Escríbenos tu testimonio"></textarea>
+    <div class="form_acceptance_container font_size_8">
+      <input id="terms_acceptance" type="checkbox">
+      <label for="terms_acceptance">He leído y acepto la política de privacidad.</label>
+    </div>
+    <input class="btn main_form_btn" type="submit" value="Enviar testimonio">
+  </section>
+
+  <section class="full_page_media_container">
+    <video class="full_page_media" controls="true" alt="Video explicativo">
+      <source type="video/mp4" src="<?php echo get_post_meta($post->ID, 'E_bloque_1_video', true); ?>">
+    </video>
   </section>
 
 

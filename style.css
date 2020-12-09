@@ -89,6 +89,7 @@ Version: 1.2
 6.75) =col_4_block:
 6.76) =col_1_block:
 6.77) =col_2_media:
+6.78) =full_page_media:
 6.98) =piqui:
 6.99) =footer:
 6.XX) =signature:
@@ -346,6 +347,13 @@ FIN DE MAPA DE CONTENIDOS */
   /* ?pagination_2 */
   --pagination_2_deco_width: 20%;
 
+  /* ?comment_form: */
+  --comment_form_btn_width: 100%;
+  --comment_form_GTC: 1fr;
+
+  /* ?full_width_media */
+  --full_page_media_height: 300px;
+
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -404,6 +412,10 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?pagination_2 */
     --pagination_2_deco_width: 30%;
+
+    /* ?comment_form: */
+    --comment_form_GTC: 1fr 1fr;
+
 
     /* ?FOOTER */
   }
@@ -536,7 +548,13 @@ FIN DE MAPA DE CONTENIDOS */
     --pista_margin: 0 auto auto 0;
 
     /* ?col_2_media */
-      --col_2_media_GTC: 5fr 7fr;
+    --col_2_media_GTC: 5fr 7fr;
+
+    /* ?comment_form: */
+    --comment_form_btn_width: 50%;
+
+    /* ?full_width_media */
+    --full_page_media_height: 450px;
 
 
     /* ?FOOTER */
@@ -646,6 +664,9 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?showcase2 */
     --sowcase2_GG: 4.5rem;
+
+    /* ?full_width_media */
+    --full_page_media_height: 550px;
 
 
     /* ?FOOTER */
@@ -2365,7 +2386,7 @@ section.flati{
   justify-content: center;
   position: relative;
   color: var(--grey5);
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 .pagination_2::before {
   content: ' ';
@@ -2777,6 +2798,7 @@ section.flati{
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
+
 .col_2_media {
   display: grid;
   grid-template-columns: var(--col_2_media_GTC);
@@ -2797,6 +2819,19 @@ section.flati{
   letter-spacing: 2px;
 }
 
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.78) =full_page_media:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.full_page_media_container {
+  padding: 4rem var(--lateral);
+}
+.full_page_media {
+  width: 100%;
+  height: var(--full_page_media_height);
+}
 
 
 /* ---------------------------------------------------------------------------
@@ -2972,6 +3007,14 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   background: var(--brownblack);
   text-transform: capitalize;
 }
+.form_acceptance_container {
+  color: var(--grey6);
+  display: flex;
+  align-items: center;
+}
+.form_acceptance_container input {
+  margin-right: 5px;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -2981,6 +3024,15 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 
 .comment_form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: var(--comment_form_GTC);
   grid-gap: 10px;
+  padding: 1rem var(--lateral);
+}
+.comment_form .main_textarea {
+  height: 200px;
+}
+.comment_form .main_form_btn {
+  width: var(--comment_form_btn_width);
+  grid-column: unset;
+  margin-right: 0;
 }
