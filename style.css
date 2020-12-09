@@ -347,6 +347,13 @@ FIN DE MAPA DE CONTENIDOS */
   /* ?pagination_2 */
   --pagination_2_deco_width: 20%;
 
+  /* ?comment_form: */
+  --comment_form_btn_width: 100%;
+  --comment_form_GTC: 1fr;
+
+  /* ?full_width_media */
+  --full_page_media_height: 300px;
+
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -405,6 +412,10 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?pagination_2 */
     --pagination_2_deco_width: 30%;
+
+    /* ?comment_form: */
+    --comment_form_GTC: 1fr 1fr;
+
 
     /* ?FOOTER */
   }
@@ -537,7 +548,13 @@ FIN DE MAPA DE CONTENIDOS */
     --pista_margin: 0 auto auto 0;
 
     /* ?col_2_media */
-      --col_2_media_GTC: 5fr 7fr;
+    --col_2_media_GTC: 5fr 7fr;
+
+    /* ?comment_form: */
+    --comment_form_btn_width: 50%;
+
+    /* ?full_width_media */
+    --full_page_media_height: 450px;
 
 
     /* ?FOOTER */
@@ -647,6 +664,9 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?showcase2 */
     --sowcase2_GG: 4.5rem;
+
+    /* ?full_width_media */
+    --full_page_media_height: 550px;
 
 
     /* ?FOOTER */
@@ -2810,7 +2830,7 @@ section.flati{
 }
 .full_page_media {
   width: 100%;
-  height: 550px;
+  height: var(--full_page_media_height);
 }
 
 
@@ -3004,7 +3024,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 
 .comment_form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: var(--comment_form_GTC);
   grid-gap: 10px;
   padding: 1rem var(--lateral);
 }
@@ -3012,7 +3032,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   height: 200px;
 }
 .comment_form .main_form_btn {
-  width: 50%;
+  width: var(--comment_form_btn_width);
   grid-column: unset;
   margin-right: 0;
 }
