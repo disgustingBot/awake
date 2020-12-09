@@ -280,7 +280,7 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* ?mivi */
   --mivi_icon_height: 30px;
-  --mivi_slide_GTC: 1fr 1fr;
+  --mivi_slide_GTC: 1fr;
   --mivi_intro_GTC: 1fr;
   --mivi_children_padding: 0;
 
@@ -499,6 +499,7 @@ FIN DE MAPA DE CONTENIDOS */
     --prenex_mega_top:-2px;
 
     /* ?mivi */
+    --mivi_slide_GTC: 1fr 1fr;
     --mivi_intro_GTC: 1fr 1fr;
     --mivi_children_padding: 0 1rem;
 
@@ -1895,6 +1896,7 @@ section.flati{
 .mivi_icon {
   height: var(--mivi_icon_height);
   width: auto;
+  max-width: 100%;
   margin: auto;
 }
 .mivi_slide.inactive{opacity:0}

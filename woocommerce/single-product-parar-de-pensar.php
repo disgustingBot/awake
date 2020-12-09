@@ -43,14 +43,14 @@
     </section>
     <section class="showcase2">
       <div class="galu">
-          <img class="galu_img" src="https://picsum.photos/300" alt="">
-          <img class="galu_img" src="https://picsum.photos/301" alt="">
-          <img class="galu_img" src="https://picsum.photos/302" alt="">
-          <img class="galu_img" src="https://picsum.photos/303" alt="">
-          <img class="galu_img" src="https://picsum.photos/304" alt="">
-          <img class="galu_img" src="https://picsum.photos/305" alt="">
-          <img class="galu_img" src="https://picsum.photos/306" alt="">
-          <img class="galu_img" src="https://picsum.photos/307" alt="">
+          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_1', true); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_2', true); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_3', true); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_4', true); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_5', true); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_6', true); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_7', true); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_8', true); ?>" alt="">
       </div>
       <div class="pista">
         <h5 class="pista_title">Programa Orientativo</h5>
