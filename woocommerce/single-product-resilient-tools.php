@@ -40,9 +40,9 @@
 
   <section class="showcase2">
     <div class="gale">
-      <img class="gale_img" src="https://picsum.photos/300" alt="">
-      <img class="gale_img" src="https://picsum.photos/301" alt="">
-      <img class="gale_img" src="https://picsum.photos/302" alt="">
+      <img class="gale_img" src="<?php echo get_post_meta(get_the_ID(), 'C_imagen_galeria_1', true); ?>" alt="">
+      <img class="gale_img" src="<?php echo get_post_meta(get_the_ID(), 'C_imagen_galeria_2', true); ?>" alt="">
+      <img class="gale_img" src="<?php echo get_post_meta(get_the_ID(), 'C_imagen_galeria_3', true); ?>" alt="">
     </div>
     <div class="pista">
       <h5 class="pista_title font_size_2">Programa</h5>
@@ -51,8 +51,8 @@
       while(true){
         if(get_post_meta(get_the_ID(), 'C_programa_'.$i.'_text', true)){ ?>
           <div class="pista_group">
-            <p class="pista_txt pista_time font_size_5"><?php echo get_post_meta(get_the_ID(), 'C_programa_'.$i.'_text', true); ?></p>
-            <p class="pista_txt pista_text font_size_5"><?php echo get_post_meta(get_the_ID(), 'C_programa_'.$i.'_title', true); ?></p>
+            <p class="pista_txt pista_time font_size_6"><?php echo get_post_meta(get_the_ID(), 'C_programa_'.$i.'_text', true); ?></p>
+            <p class="pista_txt pista_text font_size_6"><strong><?php echo get_post_meta(get_the_ID(), 'C_programa_'.$i.'_title', true); ?></strong></p>
           </div>
           <?php
           $i=$i+1;

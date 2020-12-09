@@ -85,11 +85,11 @@
 
   <section class="showcase2">
     <div class="galo">
-      <img class="galo_img" src="https://picsum.photos/300" alt="">
-      <img class="galo_img" src="https://picsum.photos/301" alt="">
-      <img class="galo_img" src="https://picsum.photos/302" alt="">
-      <img class="galo_img" src="https://picsum.photos/303" alt="">
-      <img class="galo_img" src="https://picsum.photos/304" alt="">
+      <img class="galo_img" src="<?php echo get_post_meta(get_the_ID(), 'B_imagen_galeria_1', true); ?>" alt="">
+      <img class="galo_img" src="<?php echo get_post_meta(get_the_ID(), 'B_imagen_galeria_2', true); ?>" alt="">
+      <img class="galo_img" src="<?php echo get_post_meta(get_the_ID(), 'B_imagen_galeria_3', true); ?>" alt="">
+      <img class="galo_img" src="<?php echo get_post_meta(get_the_ID(), 'B_imagen_galeria_4', true); ?>" alt="">
+      <img class="galo_img" src="<?php echo get_post_meta(get_the_ID(), 'B_imagen_galeria_5', true); ?>" alt="">
     </div>
     <div class="pista">
       <h5 class="pista_title alt">¿Qué aprenderás?</h5>
