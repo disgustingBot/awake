@@ -23,6 +23,16 @@ w.onload=()=>{
 w.onresize = ()=>{reportWindowSize()};
 
 
+
+
+
+
+
+
+
+
+
+
 // SLIDER:
 // TODO: mejorar modulo para poder reutilizarlo sin duplicar codigo
 var j=1,x=d.getElementsByClassName("carouselItem");
@@ -65,7 +75,7 @@ const altClassFromSelector = ( clase, selector, mainClass = false )=>{
         }
       });
     }
-  
+
     if(elemento.classList.contains(clase)){
       elemento.classList.remove(clase)
     }else{
@@ -96,6 +106,7 @@ const selectBoxControler=(a, selectBoxId, current)=>{ //c.log(a)
 
 // GO BACK BUTTONS
 function goBack(){w.history.back()}
+
 
 
 
@@ -149,10 +160,95 @@ const adjust_tory_img_height = ()=>{
     }
     tory_img.style.height = 'calc(' + tory_img_height + 'px + 1rem)';
   })
-  
+
 }
 function reportWindowSize() {
   if(d.querySelector('.tory')){
     adjust_tory_img_height();
   }
+}
+
+
+
+
+
+
+
+
+const hedis = [...d.querySelectorAll('.hedi')]
+// c.log(hedis)
+// const attributes = [...d.querySelectorAll('.single-product .selectBoxInput')]
+hedis.forEach( (hedi, i) =>{
+  // c.log('hedi')
+  hedi.querySelectorAll('.selectBoxInput').forEach( y =>{
+    y.addEventListener('change', z => {
+
+      let ids = z.target.dataset.ids;
+      // c.log(ids)
+      // c.log(z.target.value != 0)
+
+      if(z.target.value!=0){
+        hedi.querySelector('.My_add_to_cart_button').dataset.variationId = ids
+        hedi.querySelector('.My_add_to_cart_button').dataset.variation = z.target.value
+        hedi.querySelector('.My_add_to_cart_button').innerText = "Añadir a la cesta";
+      } else {
+        hedi.querySelector('.My_add_to_cart_button').dataset.variationId = ''
+        hedi.querySelector('.My_add_to_cart_button').dataset.variation = ''
+        hedi.querySelector('.My_add_to_cart_button').innerText = "Selecciona una Fecha";
+      }
+    })
+  })
+})
+
+
+
+
+
+const my_add_to_cart_function = (button)=>{
+  let parent       = button.parentElement;
+  let product_id   = button.dataset.productId;
+  let variation_id = button.dataset.variationId;
+  let variation    = button.dataset.variation;
+  let quantity     = parent.querySelector('.cuantosQantity').value
+
+  if(!variation_id){
+    alert('selecciona una Fecha')
+    return;
+  }
+
+  // c.log(button.parentElement)
+  // c.log('product id: ', product_id)
+  // c.log('variation id: ', variation_id)
+  // c.log('variation: ', variation)
+  // c.log('quantity: ', quantity);
+
+  var formData = new FormData();
+  formData.append( 'action', 'woocommerce_add_variation_to_cart' );
+  formData.append( 'product_id', product_id );
+  formData.append( 'variation_id', variation_id );
+  formData.append( 'quantity', quantity );
+  formData.append( 'variation', {
+    "Fecha" : variation,
+  });
+
+  ajax2(formData).then( respuesta => {
+    // c.log(respuesta.count);
+    d.querySelector('.cart_butt_number').innerText = respuesta.count;
+  });
+
+}
+
+
+async function ajax2(formData, url = lt_data.ajaxurl) {
+	try{
+		let response = await fetch(url, { method: 'POST', body: formData, });
+		return await response.json();
+	} catch ( err ) { console.error(err); }
+}
+
+async function ajax3(formData, url = lt_data.ajaxurl) {
+	try{
+		let response = await fetch(url, { method: 'POST', body: formData, });
+		return await response.text();
+	} catch ( err ) { console.error(err); }
 }

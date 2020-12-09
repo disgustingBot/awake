@@ -35,7 +35,22 @@ function lattte_setup(){
 	wp_enqueue_script( 'my_loadmore' );
   // FIN DE PARA AJAX
 
-  wp_enqueue_script('main', get_theme_file_uri('/js/custom.js'), NULL, microtime(), true);
+
+
+
+
+  // register our main script but do not enqueue it yet
+  wp_register_script( 'main', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), 1.0, true );
+  // now the most interesting part
+  // we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
+  // you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
+  wp_localize_script( 'main', 'lt_data', array(
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+    'homeurl' => site_url(),
+    'front_page' => is_front_page(),
+  ) );
+
+  wp_enqueue_script( 'main' );
 }
 add_action('wp_enqueue_scripts', 'lattte_setup');
 
@@ -160,139 +175,56 @@ add_action( 'init', 'register_menus' );
 
 
 
-// // FUCTION FOR USER GENERATION
-// // https://tommcfarlin.com/create-a-user-in-wordpress/
-// add_action( 'admin_post_nopriv_lt_login', 'lt_login');
-// add_action(        'admin_post_lt_login', 'lt_login');
-// function lt_login(){
-//   $link=$_POST['link'];
-//   $name=$_POST['name'];
-//   $fono=$_POST['fono'];
-//   $mail=$_POST['mail'];
-//   $pass=$_POST['pass'];
+add_action( 'wp_ajax_nopriv_woocommerce_add_variation_to_cart', 'woocommerce_add_variation_to_cart' );
+add_action( 'wp_ajax_woocommerce_add_variation_to_cart', 'woocommerce_add_variation_to_cart' );
 
+function woocommerce_add_variation_to_cart() {
+	$respuesta = array();
+	// echo WC()->cart->get_cart_contents_count();
 
-//   if( null == username_exists( $mail ) ) {
+  // ob_start();
 
-//     // Generate the password and create the user for security
-//     // $password = wp_generate_password( 12, false );
-//     // $user_id = wp_create_user( $mail, $password, $mail );
+  $product_id        = apply_filters( 'woocommerce_add_to_cart_product_id', absint( $_POST['product_id'] ) );
+  $quantity          = empty( $_POST['quantity'] ) ? 1 : wc_stock_amount( $_POST['quantity'] );
+  $variation_id      = isset( $_POST['variation_id'] ) ? absint( $_POST['variation_id'] ) : '';
+  $variations        =  ! empty( $_POST['variation'] ) ? (array) $_POST['variation'] : '';
 
-//     // user generated pass for local testing
-//     $user_id = wp_create_user( $mail, $pass, $mail );
-//     // Set the nickname and display_name
-//     wp_update_user(
-//       array(
-//         'ID'              =>    $user_id,
-//         'display_name'    =>    $name,
-//         'nickname'        =>    $name,
-//       )
-//     );
-//     update_user_meta( $user_id, 'phone', $fono );
+  $passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variations, $cart_item_data );
+	// echo WC()->cart->get_cart_contents_count();
 
+	$respuesta['variations'] = $variations;
 
-//     // Set the role
-//     $user = new WP_User( $user_id );
-//     $user->set_role( 'subscriber' );
+    if ( $passed_validation && WC()->cart->add_to_cart( $product_id, $quantity, $variation_id, $variations ) ) {
 
-//     // Email the user
-//     wp_mail( $mail, 'Welcome '.$name.'!', 'Your Password: ' . $pass );
-//   // end if
-//   $action='register';
-//   $creds = array(
-//       'user_login'    => $mail,
-//       'user_password' => $pass,
-//       'remember'      => true
-//   );
+        do_action( 'woocommerce_ajax_added_to_cart', $product_id );
 
-//   $status = wp_signon( $creds, false );
-// } else {
+        if ( get_option( 'woocommerce_cart_redirect_after_add' ) == 'yes' ) {
+            wc_add_to_cart_message( $product_id );
+        }
 
-//   $creds = array(
-//       'user_login'    => $mail,
-//       'user_password' => $pass,
-//       'remember'      => true
-//   );
+        // Return fragments
+        // WC_AJAX::get_refreshed_fragments();
+				// echo WC()->cart->get_cart_contents_count();
 
-//   $status = wp_signon( $creds, false );
+    } else {
 
-//   // $status=wp_login($mail, $pass);
+        // If there was an error adding to the cart, redirect to the product page to show any errors
+        // $data = array(
+        //     'error' => true,
+        //     'product_url' => apply_filters( 'woocommerce_cart_redirect_after_error', get_permalink( $product_id ), $product_id )
+        // );
+				//
+        // wp_send_json( $data );
 
-//   $action='login';
-// }
+	}
 
-//   $link = add_query_arg( array(
-//     'action' => $action,
-//     // 'status' => $status,
-//     // 'resultado' => username_exists( $mail ),
-//   ), $link );
-//   wp_redirect($link);
-// }
+	// echo WC()->cart->get_cart_contents_count();
+	$respuesta['count'] = WC()->cart->get_cart_contents_count();
 
+	echo wp_json_encode($respuesta);
+	exit();
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// add_action( 'admin_post_nopriv_lt_new_pass', 'lt_new_pass');
-// add_action(        'admin_post_lt_new_pass', 'lt_new_pass');
-// function lt_new_pass(){
-//   $link=$_POST['link'];
-//   $oldp=$_POST['oldp'];
-//   $newp=$_POST['newp'];
-//   $cnfp=$_POST['cnfp'];
-
-
-
-//   // if(isset($_POST['current_password'])){
-//   if(isset($_POST['oldp'])){
-//     $_POST = array_map('stripslashes_deep', $_POST);
-//     $current_password = sanitize_text_field($_POST['oldp']);
-//     $new_password = sanitize_text_field($_POST['newp']);
-//     $confirm_new_password = sanitize_text_field($_POST['cnfp']);
-//     $user_id = get_current_user_id();
-//     $errors = array();
-//     $current_user = get_user_by('id', $user_id);
-//   }
-
-//   $link = add_query_arg( array(
-//     'action' => $action,
-//   ), $link );
-//   // Check for errors
-//   if($current_user && wp_check_password($current_password, $current_user->data->user_pass, $current_user->ID)){
-//   //match
-//   } else {
-//     $errors[] = 'Password is incorrect';
-
-//     $link = add_query_arg( array(
-//       'pass'  => 'incorrect',
-//     ), $link );
-//   }
-//   if($new_password != $confirm_new_password){
-//     $errors[] = 'Password does not match';
-
-//     $link = add_query_arg( array(
-//       'match'  => 'no',
-//     ), $link );
-//   }
-//   if(empty($errors)){
-//       wp_set_password( $new_password, $current_user->ID );
-//       $link = add_query_arg( array(
-//         'success'  => true,
-//       ), $link );
-//   }
-//   wp_redirect($link);
-// }
 
 
 

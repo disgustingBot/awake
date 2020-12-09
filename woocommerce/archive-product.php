@@ -1,145 +1,32 @@
 <?php get_header(); ?>
 
 
-<section class="hero hero_opaque">
-  <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-  <h1 class="hero_title rowcol1 font_size_2"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_title', true ); ?></h1>
+<section class="phil">
+  <select class="phil_select phil_input font_size_7" name="" id="">
+    <option value="">Categorias</option>
+  </select>
+  <input class="phil_search phil_input font_size_7" type="text" placeholder="Buscador" name="" value="">
 
-  <div class="redDot header_activator"></div>
-  <svg class="mega_arrow_down rowcol1" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
-    <use xlink:href="#arrow_down"></use>
-  </svg>
+  <a class="cart_butt" href="<?php echo get_site_url() . '/cart'; ?>">
+    <span class="cart_butt_number"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+    <svg class="cart_butt_icon" viewBox="0 0 80 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="cart">
+        <path d="M2.01898 4.05195H16.4797L23.0544 39.7749C23.2614 40.987 23.8654 42.1126 24.6764 42.9264C25.7808 44.0346 27.2994 44.658 28.9215 44.658H70.8024C72.6316 44.658 73.736 42.8225 73.8395 41.4026L79.9137 15.4286C79.9137 15.3247 80.0172 15.1169 80.0172 14.9264C80.0172 13.6104 79.1027 12.0866 76.9801 12.0866H31.5617C30.4573 12.0866 29.5427 13.0043 29.5427 14.1126C29.5427 15.2208 30.4573 16.1385 31.5617 16.1385H75.5651L69.8878 40.5022H28.9215C28.4211 40.5022 27.9034 40.2944 27.61 39.8961C27.2994 39.5844 27.1096 39.29 27.1096 38.8745L20.2243 1.62771C20.0345 0.709957 19.2235 0 18.2053 0H2.01898C0.914581 0 0 0.917749 0 2.02597C0 3.1342 0.914581 4.05195 2.01898 4.05195Z" fill="currentColor"/>
+        <path d="M64.0207 50.7532C59.3615 50.7532 55.6342 54.6147 55.6342 59.3766C55.6342 64.1385 59.3788 68 64.0207 68C68.6626 68 72.4072 64.1385 72.4072 59.3766C72.4072 54.6147 68.6799 50.7532 64.0207 50.7532ZM64.0207 63.948C61.6911 63.948 59.6721 61.9221 59.6721 59.3766C59.6721 56.8312 61.6911 54.8052 64.0207 54.8052C66.3503 54.8052 68.3693 56.8312 68.3693 59.3766C68.3693 61.9221 66.4538 63.948 64.0207 63.948Z" fill="currentColor"/>
+        <path d="M24.3831 59.3766C24.3831 64.1385 28.1277 68 32.7696 68C37.4115 68 41.1561 64.1385 41.1561 59.3766C41.1561 54.6147 37.308 50.7532 32.6661 50.7532C28.0241 50.7532 24.3831 54.5974 24.3831 59.3766ZM37.0146 59.3766C37.0146 61.9221 35.0992 63.948 32.6661 63.948C30.2329 63.948 28.3175 61.9221 28.3175 59.3766C28.3175 56.8312 30.3365 54.8052 32.6661 54.8052C34.9957 54.8052 37.0146 56.8312 37.0146 59.3766Z" fill="currentColor"/>
+      </g>
+    </svg>
+  </a>
 </section>
 
-<section class="flati">
-    <!-- ACA ABAJO VA EL ICONO DE LA CATEGORÍA -->
-    <?php //* include 'assets/perceptive_brain.svg'; ?>
-    <!-- <img class="flati_icon" src="" alt=""> -->
-    <div class="flati_deco"></div>
-    <h5 class="flati_title font_size_4"></h5>
-    <p class="flati_txt font_size_5"></p>
+
+
+<section class="hedi_container" data-card="hedi_card">
+  <?php while(have_posts()){the_post(); ?>
+    <?php hedi_card(); ?>
+  <?php } ?>
 </section>
 
-
-
-
-    <section class="showcase4 tall_img">
-
-        <h3 class="showcase_title alt simple_title">Descubre nuestros Programas de Resiliencia</h3>
-
-        <?php while (have_posts()){the_post(); ?>
-
-            <?php simpla_card(); ?>
-
-        <?php } wp_reset_query(); ?>
-
-    </section>
-
-
-
-        <section class="showcase3">
-            <h3 class="showcase_title font_size_3 simple_title">Herramientas que te servirán para...</h3>
-
-
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/shield.svg'; ?>
-                <p class="hosi_txt font_size_5">Reducir estrés y ansiedad.</p>
-            </div>
-
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/emotional_intelligence.svg'; ?>
-                <p class="hosi_txt font_size_5">
-                    Aumentar la inteligencia emocional.
-                </p>
-            </div>
-
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/sleepy_moon.svg'; ?>
-                <p class="hosi_txt font_size_5">
-                    Crear un sueño más profundo y reparador.
-                </p>
-            </div>
-
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/map_compose.svg'; ?>
-                <p class="hosi_txt font_size_5">
-                    Ver “the big picture” para poder apreciar mejor los detalles.
-                </p>
-            </div>
-
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/listening_ear.svg'; ?>
-                <p class="hosi_txt font_size_5">
-                    Mejorar la escucha activa, la concentración y creatividad.
-                </p>
-            </div>
-
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/perceptive_brain.svg'; ?>
-                <p class="hosi_txt font_size_5">
-                    Crear una percepción flexible para mejorar la respuesta ante diferentes situaciones.
-                </p>
-            </div>
-
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/opportunity.svg'; ?>
-                <p class="hosi_txt font_size_5">
-                    Afrontar el cambio y aprovechar las oportunidades que nos brinda.
-                </p>
-            </div>
-
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/relationship.svg'; ?>
-                <p class="hosi_txt font_size_5">
-                    Mejorar las relaciones interpersonales.
-                </p>
-            </div>
-
-            <div class="hosi">
-                <?php include get_template_directory().'/assets/happy_brain.svg'; ?>
-                <p class="hosi_txt font_size_5">
-                    Hacernos más resistentes a la depresión.
-                </p>
-            </div>
-        </section>
-
-
-
-
-    <section class="tesim_container Carousel">
-      <h3 class="testim_title font_size_3">Testimonios</h3>
-
-      <div class="tesim_cont Element row2col1">
-        <?php
-        $i = 0;
-        $args = array(
-          'post_type'=>'testimonial',
-        );
-        $testimonials=new WP_Query($args);
-        while($testimonials->have_posts()){$testimonials->the_post();?>
-          <?php if ( !($i & 1) AND $i ) { ?>
-          </div>
-          <div class="tesim_cont Element row2col1">
-          <?php } ?>
-          <quote class="tesim">
-            <svg class="tesim_icon" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 38 34">
-              <use xlink:href="#quote_icon"></use>
-            </svg>
-            <div class="tesim_txt"><?php the_content(); ?></div>
-            <p class="tesim_author"><?php the_title(); ?></p>
-          </quote>
-          <?php $i=$i+1; } wp_reset_query(); ?>
-        </div>
-
-
-        <button class="prenex prenex_prev row2col1 dark" id="prevButton"></button>
-        <button class="prenex prenex_next row2col1 dark" id="nextButton"></button>
-        <a href="" class="testim_link">VER MÁS TESTIMONIOS</a>
-      </section>
-
-    <section class="main">
-        <?php the_content(); ?>
-    </section>
 
 
 <?php get_footer(); ?>
