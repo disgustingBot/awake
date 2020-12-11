@@ -101,6 +101,8 @@ Version: 1.2
 8.01) =main_form:
 8.02) =comment_form:
 
+9.00) =404:
+
 FIN DE MAPA DE CONTENIDOS */
 
 
@@ -354,6 +356,9 @@ FIN DE MAPA DE CONTENIDOS */
   /* ?full_width_media */
   --full_page_media_height: 300px;
 
+  /* ?report_404 */
+  --report_404_GTC: 1fr;
+
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -415,6 +420,9 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?comment_form: */
     --comment_form_GTC: 1fr 1fr;
+
+    /* ?report_404 */
+    --report_404_GTC: 1fr 1fr;
 
 
     /* ?FOOTER */
@@ -3037,4 +3045,22 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   width: var(--comment_form_btn_width);
   grid-column: unset;
   margin-right: 0;
+}
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          9.00) =404:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.report_404 {
+  display: grid;
+  height: 90vh;
+  width: 100%;
+}
+.report_404_options {
+  display: grid;
+  margin: auto;
+  grid-template-columns: var(--report_404_GTC);
+  grid-gap: 2rem;
 }
