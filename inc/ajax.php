@@ -7,12 +7,12 @@ function alter_query($query) {
 		global $wp_query;
 		$max_page = $query->max_num_pages;
 		// var_dump($max_page);
-		
+
 		//gets the front page id set in options
 		$front_page_id = get_option('page_on_front');
-		
+
 		if ( !$query->is_main_query() ) return;
-		
+
 		// echo '<h1>TEST</h1>';
 		// echo get_query_var( 'paged' );
 
@@ -50,14 +50,14 @@ function woocommerce_subcats_from_parentcat($category){
 
 
     if (isset($_GET[$category])) {
-      // var_dump($_GET[$category]);
-      $parentArray = $_GET[$category];
+      // var_dump($_GET);
+			// $parentArray = $_GET[$category];
       // foreach ($parentArray as $key => $value) {
-      $wp_query['query']['tax_query'][$key] = array(
-        'taxonomy' => 'product_cat',
-        'field'    => 'slug',
-        'terms'    => $parentArray,
-      );
+	      $wp_query['query']['tax_query'][$category] = array(
+	        'taxonomy' => 'product_cat',
+	        'field'    => 'slug',
+	        'terms'    => $_GET[$category],
+	      );
       // }
     }
 

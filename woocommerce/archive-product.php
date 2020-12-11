@@ -1,11 +1,27 @@
 <?php get_header(); ?>
 
 
-<section class="phil">
-  <select class="phil_select phil_input font_size_7" name="" id="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="phil phil_2">
+  <!-- <select class="phil_select phil_input font_size_7" name="" id="">
     <option value="">Categorias</option>
-  </select>
-  <input class="phil_search phil_input font_size_7" type="text" placeholder="Buscador" name="" value="">
+  </select> -->
+  <?php woocommerce_subcats_from_parentcat('programas'); ?>
+  <input class="phil_search phil_input" type="text" placeholder="Buscador" name="" value="">
 
   <a class="cart_butt" href="<?php echo get_site_url() . '/cart'; ?>">
     <span class="cart_butt_number"><?php echo WC()->cart->get_cart_contents_count(); ?></span>

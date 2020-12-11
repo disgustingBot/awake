@@ -17,6 +17,9 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
     var query = JSON.parse(misha_loadmore_params.posts);
     var filterQueries = new Array();
 
+    c.log(parent)
+    c.log(category)
+
 
 
     // URL HANDLING
@@ -35,7 +38,6 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
     // END OF URL HANDLING
 
 
-
 		// PREPARE DATA TO BE SENT
     var categoriesArray = filterQueries.map ( item => item.split('=')[1] );
     var parentsArray = filterQueries.map ( item => item.split('=')[0] );
@@ -43,14 +45,15 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
 			categoriesArray.splice(parentsArray.findIndex(x=>x=='pag'), 1);
 			parentsArray.splice(parentsArray.findIndex(x=>x=='pag'), 1);
 		}
+    c.log(categoriesArray)
     query.tax_query = {}
     query.tax_query['relation'] = 'AND';
-    query.tax_query[0] = {
-      'taxonomy' : 'product_visibility',
-      'field'    : 'term_taxonomy_id',
-      'terms'    : [7],
-      'operator' : 'NOT IN',
-    }
+    // query.tax_query[0] = {
+    //   'taxonomy' : 'product_visibility',
+    //   'field'    : 'term_taxonomy_id',
+    //   'terms'    : [7],
+    //   'operator' : 'NOT IN',
+    // }
     if (!!parentsArray[0]) {
       parentsArray.forEach((item, i) => {
         Object.defineProperty(query.tax_query,item,{enumerable: true,value:{
@@ -60,13 +63,14 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
           }
         })
       });
+      c.log(query.tax_query);
 
       // query.tax_query.tipo = 0;
     }
     // c.log(query.tax_query)
     // c.log(JSON.stringify(query), 'hello world')
 		// the value in 'action' is the key that will be identified by the 'wp_ajax_' hook
-    // c.log(query);
+    c.log(query);
 		var data = {
 			'action'   : 'latte_pagination',
 			'query'    : JSON.stringify(query), // that's how we get params from wp_localize_script() function
@@ -85,7 +89,7 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
     } else {
       data['type'] = "product";
     }
-    // c.log(data['type'])
+    // c.log(data)
 
     // Send the data
     $.ajax({
@@ -119,12 +123,12 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
     page = this.dataset.pagination;
     filterPagination(false, false, page);
   });
-	// $('.selectBoxOption').change(function(){
-  //   var button = $(this),
-  //       parent = button[0].querySelector('input').dataset.parent,
-  //       category = button[0].querySelector('input').dataset.slug;
-	// 	filterPagination(parent, category, false);
-	// });
+	$('.selectBoxOption').change(function(){
+    var button = $(this),
+        parent = button[0].querySelector('input').dataset.parent,
+        category = button[0].querySelector('input').dataset.slug;
+		filterPagination(parent, category, false);
+	});
 	// END OF PAGINATION CONTROLLER
 	// END OF FILTER BAR CONTROLLER
 

@@ -321,7 +321,8 @@ FIN DE MAPA DE CONTENIDOS */
   --tory_root_padding_left:var(--lateral);
 
   /* ?phil */
-  --phil_GTC: 1fr;
+  --phil_GTC:  1fr;
+  --phil_2_GTC:1fr;
 
   /* ?FOOTER */
   --footer_grid_gap: 2rem 1rem;
@@ -542,6 +543,7 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?phil */
     --phil_GTC: repeat(4,1fr);
+    --phil_2_GTC:1fr 1fr 1fr;
 
     /* ?showcase6 */
     --showcase6_container_GTC: repeat(5, 1fr);
@@ -1720,26 +1722,30 @@ section.flati{
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 .cart_butt{
+  align-items: center;
   display:grid;
   grid-auto-flow: column;
-  margin:auto;
   grid-gap:.5rem;
+  justify-content: center;
+  margin:auto;
+  margin-right:0;
 }
 .cart_butt_icon{
-  /* width: 100%; */
-  height: 100%;
+  --cart_butt_icon_size:2rem;
+  color:#9A9591;
+  height:var(--cart_butt_icon_size);
+  width: var(--cart_butt_icon_size);
 }
 .cart_butt_number{
   --cart_butt_number_size:1.5rem;
-  height:var(--cart_butt_number_size);
-  width: var(--cart_butt_number_size);
-  border-radius:50%;
-  background:var(--grey9);
-  color:white;
-  /* padding:.3rem; */
-  display:grid;
-  justify-content: center;
   align-items: center;
+  background:var(--grey9);
+  border-radius:50%;
+  color:white;
+  display:grid;
+  height:var(--cart_butt_number_size);
+  justify-content: center;
+  width: var(--cart_butt_number_size);
 }
 
 
@@ -1924,6 +1930,8 @@ section.flati{
                           6.8.3) =phil:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
+
+.phil.phil_2{grid-template-columns: var(--phil_2_GTC);}
 .phil {
   display:grid;
   grid-gap: 1.5rem;
@@ -1945,7 +1953,9 @@ section.flati{
   background: transparent;
   padding:.5rem;
 }
+.phil .SelectBox,
 .phil_input {
+  font-size: var(--font_size_7);
   max-height: 45px;
   margin: auto 0;
   border: 1px solid var(--grey8);
