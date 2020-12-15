@@ -161,13 +161,14 @@ FIN DE MAPA DE CONTENIDOS */
   --greyc:#CCCCCC;
   --greyd:#DDDDDD;
   --greye:#EEEEEE;
+  --greyf:#FFFFFF;
   --greye6:#E6E6E6;
   --greyf5:#F5F5F5;
   --greyf4:#F4F4F4;
-  --greyf:#FFFFFF;
   --greyf6:#F6F6F6;
+  --brownblack:#706862;
   --bluegrey:#C0CED3;
-  --brownblack: #706862;
+  --brown9A:#9A9591;
 
 
 
@@ -730,7 +731,6 @@ FIN DE MAPA DE CONTENIDOS */
 body{font-family: 'Lato', sans-serif;}
 h1, h2, h3, h4, h5 {
   font-family: 'Lora', serif;
-  font-weight: 300;
   letter-spacing: 1px;
 }
 /* ---------------------------------------------------------------------------
@@ -1733,6 +1733,7 @@ section.flati{
 .cart_butt_icon{
   --cart_butt_icon_size:2rem;
   color:#9A9591;
+  color: var(--brown9A);
   height:var(--cart_butt_icon_size);
   width: var(--cart_butt_icon_size);
 }
@@ -2636,9 +2637,9 @@ section.flati{
   grid-auto-flow:dense;
   color:var(--grey6);
   align-items:flex-start;
+  background: var(--greyf6);
 }
 .tory_1{
-  padding-top:2rem 0;
   grid-template-rows:repeat(4, min-content) 1fr;
 }
 .tory_title{
@@ -2647,29 +2648,26 @@ section.flati{
   margin-top:3rem;
   font-size: var(--font_size_1);
   text-align:center;
+  color: var(--brown9A);
 }
 .tory_col{
   display:flex;
   flex-direction: column;
 }
 .tory_highlight{
-  /* grid-row:2/5; */
   grid-row:var(--tory_highlight_GR);
   padding-left:var(--lateral);
-  color:var(--secondary_color);
-  font-size: var(--font_size_4);
   font-family: 'Lato', sans-serif;
-  font-weight: 800;
-  /* flex:0 1 auto; */
+  font-weight: normal;
   height: min-content;
+  font-size: calc(var(--font_size_5) * 1.2);
 }
 .tory_root{
-  /* padding-left:0; */
   padding-left:var(--tory_root_padding_left);
   padding-right:var(--lateral);
   font-size:var(--font_size_5);
-  font-weight: 800;
   grid-column:var(--tory_text_GC);
+  font-weight: bold;
 }
 .tory_img_lonely{
   grid-column:1/-1!important;
@@ -2697,7 +2695,6 @@ section.flati{
   text-transform: uppercase;
   font-family: 'Lato', sans-serif;
   padding-bottom:0;
-  font-weight: 800;
 }
 .tory_1 .tory_subtitle{padding-top:0}
 .tory:nth-child(2n + 1) .tory_subtitle{
@@ -2710,7 +2707,6 @@ section.flati{
   padding:2rem 1rem;
   padding-top:0;
   padding-left:var(--lateral);
-  font-size:var(--font_size_6);
 }
 .tory_1 .tory_text{
   /* grid-row:4/6; */
@@ -2725,6 +2721,10 @@ section.flati{
   padding-right:var(--lateral);
 }
 
+.tory_big_img {
+  width: 100%;
+  height: auto;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
