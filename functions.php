@@ -3,6 +3,7 @@
 require_once 'inc/custom_posts.php';
 require_once 'inc/form_handler.php';
 require_once 'inc/ajax.php';
+require_once 'inc/new_ajax.php';
 require_once 'inc/customize.php';
 
 if(!is_admin()){
@@ -46,8 +47,12 @@ function lattte_setup(){
   // you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
   wp_localize_script( 'main', 'lt_data', array(
     'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+    // 'query' => json_encode( $wp_query->query_vars ), // everything about your loop is here
     'homeurl' => site_url(),
     'front_page' => is_front_page(),
+  ) );
+  wp_localize_script( 'main', 'filters', array(
+    'query' => json_encode( $wp_query->query_vars ), // everything about your loop is here
   ) );
 
   wp_enqueue_script( 'main' );

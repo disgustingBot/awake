@@ -1,44 +1,44 @@
 <?php
-add_action('pre_get_posts','alter_query');
-
-function alter_query($query) {
-	if(!is_admin()){
-		//gets the global query var object
-		global $wp_query;
-		$max_page = $query->max_num_pages;
-		// var_dump($max_page);
-
-		//gets the front page id set in options
-		$front_page_id = get_option('page_on_front');
-
-		if ( !$query->is_main_query() ) return;
-
-		// echo '<h1>TEST</h1>';
-		// echo get_query_var( 'paged' );
-
-			// $args['paged'] = $page;
-			// if (isset($_GET['page']) AND $_GET['page'] <= $max_page ) {
-		if (isset($_GET['pag'])) {
-			$query-> set('paged' , $_GET['pag']);
-		} else {
-			$query-> set('paged' , 1);
-		}
-
-		// $filters = array('dry', 'reefer', 'special', 'condition', 'size');
-		// foreach ($filters as $key => $value) {
-		// 	if (isset($_GET[$value])) {
-		// 		$query->query_vars['tax_query'][$value] = array(
-		// 			'taxonomy' => 'product_cat',
-		// 			'field'    => 'slug',
-		// 			'terms'    => $_GET[$value],
-		// 		);
-		// 	}
-		// }
-
-		//we remove the actions hooked on the '__after_loop' (post navigation)
-		remove_all_actions ( '__after_loop');
-	}
-}
+// add_action('pre_get_posts','alter_query');
+//
+// function alter_query($query) {
+// 	if(!is_admin()){
+// 		//gets the global query var object
+// 		global $wp_query;
+// 		$max_page = $query->max_num_pages;
+// 		// var_dump($max_page);
+//
+// 		//gets the front page id set in options
+// 		$front_page_id = get_option('page_on_front');
+//
+// 		if ( !$query->is_main_query() ) return;
+//
+// 		// echo '<h1>TEST</h1>';
+// 		// echo get_query_var( 'paged' );
+//
+// 			// $args['paged'] = $page;
+// 			// if (isset($_GET['page']) AND $_GET['page'] <= $max_page ) {
+// 		if (isset($_GET['pag'])) {
+// 			$query-> set('paged' , $_GET['pag']);
+// 		} else {
+// 			$query-> set('paged' , 1);
+// 		}
+//
+// 		$filters = array('programas', 'reefer', 'special', 'condition', 'size');
+// 		foreach ($filters as $key => $value) {
+// 			if (isset($_GET[$value])) {
+// 				$query->query_vars['tax_query'][$value] = array(
+// 					'taxonomy' => 'product_cat',
+// 					'field'    => 'slug',
+// 					'terms'    => $_GET[$value],
+// 				);
+// 			}
+// 		}
+//
+// 		//we remove the actions hooked on the '__after_loop' (post navigation)
+// 		remove_all_actions ( '__after_loop');
+// 	}
+// }
 
 
 
@@ -120,6 +120,152 @@ function woocommerce_subcats_from_parentcat($category){
       </div>
     </div>
 <?php }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function subterms_from_parent_term($parent, $taxonomy, $cycle){
+    if (is_numeric($parent)) {$term = get_term(           $parent, $taxonomy);}
+    else                     {$term = get_term_by('slug', $parent, $taxonomy);}
+
+		// var_dump($term);
+
+    $filtered = false;
+
+    if (isset($_GET[$cycle])) {
+
+      $fil_pa_sea = json_decode( stripslashes($_GET[$cycle]), true );
+      if(isset($fil_pa_sea['tax'])){
+        foreach ($fil_pa_sea['tax'] as $key => $value) {
+          if(isset($value['taxonomy']) and isset($value['parent']) and isset($value['terms'])){
+            if($value['parent']==$parent and $value['taxonomy']==$taxonomy){
+              $filtered = true;
+              $filter_value = $value['terms'];
+            }
+          }
+        }
+      }
+    }
+
+
+    $args = array(
+      'hierarchical' => 1,
+      'show_option_none' => '',
+      'hide_empty' => 0,
+      'parent' => $term->term_id,
+      'taxonomy' => $taxonomy,
+    );
+    $subcats = get_categories($args);
+
+		?>
+
+
+    <div class="SelectBox<?php if($filtered){ echo ' alt'; } ?>" tabindex="1" id="selectBox<?php echo $term->term_id; ?>">
+      <div class="selectBoxButton" onclick="altClassFromSelector('focus', '#selectBox<?php echo $term->term_id; ?>')">
+      <!-- <div class="selectBoxButton"> -->
+        <p class="selectBoxPlaceholder"><?php echo $term->name; ?></p>
+        <p class="selectBoxCurrent" id="selectBoxCurrent<?php echo $term->term_id; ?>">
+          <?php if($filtered){ echo $filter_value; } ?>
+        </p>
+      </div>
+      <div class="selectBoxList">
+        <label for="nul<?php echo $term->term_id; ?>" class="selectBoxOption">
+          <input
+            class="selectBoxInput"
+            id="nul<?php echo $term->term_id; ?>"
+            type="radio"
+            data-slug="0"
+            data-parent="<?php echo $term->slug; ?>"
+						data-taxonomy="<?php echo $taxonomy; ?>"
+            name="filter_<?php echo $term->slug; ?>"
+            onclick="selectBoxControler('','#selectBox<?php echo $term->term_id; ?>','#selectBoxCurrent<?php echo $term->term_id; ?>')"
+            value="0"
+            <?php if(!$filtered){ ?>
+              checked
+            <?php } ?>
+          >
+          <!-- <span class="checkmark"></span> -->
+          <p class="colrOptP">Quitar filtro</p>
+        </label>
+        <?php foreach ($subcats as $sc) { ?>
+          <label for="filter_<?php echo $sc->slug; ?>" class="selectBoxOption">
+            <input
+              class="selectBoxInput"
+              id="filter_<?php echo $sc->slug; ?>"
+              data-slug="<?php echo $sc->slug; ?>"
+							data-parent="<?php echo $term->slug; ?>"
+              data-taxonomy="<?php echo $taxonomy; ?>"
+              type="radio"
+              name="filter_<?php echo $term->slug; ?>"
+              onclick="selectBoxControler('<?php echo $sc->name ?>', '#selectBox<?php echo $term->term_id; ?>', '#selectBoxCurrent<?php echo $term->term_id; ?>')"
+              value="<?php echo $sc->slug; ?>"
+              <?php if($filtered && $filter_value == $sc->slug){ ?>
+                checked
+              <?php } ?>
+            >
+            <!-- <span class="checkmark"></span> -->
+            <p class="colrOptP"><?php echo $sc->name ?></p>
+          </label>
+        <?php } ?>
+      </div>
+    </div>
+<?php }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -250,6 +396,10 @@ function latte_pagination() {
 	// var_dump($args['term']);
 	unset($args->term);
 	$args['term'] = null;
+
+	// aqui tendria que revisar que ese nombre de tarjeta no sea una funcion cualquiera
+	// jajajajajjajajajajaaj
+	$card = $_POST['card'];
 	// foreach ($args as $key => $value) {
 	// 	// code...
 	// 	echo $key;
@@ -267,11 +417,13 @@ function latte_pagination() {
 
 
 	query_posts( $args );
+	include 'multi_cards.php';
 
 	if( have_posts() ){
 		// run the loop
 		while( have_posts() ){ the_post();
-			sqare_card();
+			call_user_func($card);
+			// sqare_card();
 		}
 	}
 

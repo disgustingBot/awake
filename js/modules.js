@@ -184,7 +184,7 @@ obseController = {
 	setup:()=>{
 		if (d.querySelectorAll('.Obse')) {
 			var obses = d.querySelectorAll('.Obse');
-			console.log(obses)
+			// console.log(obses)
 			obses.forEach( obse => {
 				obseController.obses.unshift(new Obse(obse))
 			});

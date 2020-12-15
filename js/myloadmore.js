@@ -13,7 +13,7 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
 
   // TODO: re - hacer con rewrite API
   // AND ALSO PAGINATION CONTROLLER
-  function filterPagination(parent, category, page){
+  function filterPagination(parent, category, term, page){
     var query = JSON.parse(misha_loadmore_params.posts);
     var filterQueries = new Array();
 
@@ -45,7 +45,7 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
 			categoriesArray.splice(parentsArray.findIndex(x=>x=='pag'), 1);
 			parentsArray.splice(parentsArray.findIndex(x=>x=='pag'), 1);
 		}
-    c.log(categoriesArray)
+    // c.log(categoriesArray)
     query.tax_query = {}
     query.tax_query['relation'] = 'AND';
     // query.tax_query[0] = {
@@ -57,16 +57,17 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
     if (!!parentsArray[0]) {
       parentsArray.forEach((item, i) => {
         Object.defineProperty(query.tax_query,item,{enumerable: true,value:{
-            'taxonomy' : 'product_cat',
+            'taxonomy' : term,
             'field'    : 'slug',
             'terms'    : categoriesArray[i],
           }
         })
       });
-      c.log(query.tax_query);
+      // c.log(query.tax_query);
 
       // query.tax_query.tipo = 0;
     }
+    card_name = d.querySelector('#ajax_archive').dataset.card;
     // c.log(query.tax_query)
     // c.log(JSON.stringify(query), 'hello world')
 		// the value in 'action' is the key that will be identified by the 'wp_ajax_' hook
@@ -74,7 +75,8 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
 		var data = {
 			'action'   : 'latte_pagination',
 			'query'    : JSON.stringify(query), // that's how we get params from wp_localize_script() function
-			'pag'     : page,
+			'pag'      : page,
+      'card'     : card_name,
 		};
 		// DATA READY
         // c.log(query.tax_query.tipo);
@@ -121,14 +123,15 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
   // });
   $('.paginationLink').click(function(){
     page = this.dataset.pagination;
-    filterPagination(false, false, page);
+    filterPagination(false, false, false, page);
   });
-	$('.selectBoxOption').change(function(){
-    var button = $(this),
-        parent = button[0].querySelector('input').dataset.parent,
-        category = button[0].querySelector('input').dataset.slug;
-		filterPagination(parent, category, false);
-	});
+	// $('.selectBoxOption').change(function(){
+  //   var button = $(this),
+  //       parent = button[0].querySelector('input').dataset.parent,
+  //       category = button[0].querySelector('input').dataset.slug,
+  //       term = button[0].querySelector('input').dataset.term;
+	// 	filterPagination(parent, category, term, false);
+	// });
 	// END OF PAGINATION CONTROLLER
 	// END OF FILTER BAR CONTROLLER
 

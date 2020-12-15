@@ -2,7 +2,7 @@
 
 
 
-<?php while(have_posts()){the_post(); ?>
+<?php // while(have_posts()){the_post(); ?>
 
     <section class="hero hero_opaque">
         <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
@@ -49,22 +49,38 @@
     </section>
 
 
-    <section class="showcase5 conocenos_team_cards">
+    <section class="conocenos_team_cards">
         <h3 class="showcase_title font_size_2"><?php echo get_post_meta(get_the_ID(), 'I_titulo_seccion_4', true)?></h3>
 
-        <?php
-        $args = array(
+        <!-- para hacer un cyclo paginable filtrable y/o buscable -->
+        <!-- el cyclo debe estar contenido en una etiqueta que SOLO contenga el cyclo -->
+        <!-- colocal en esa etiqueta data-card y data-cycle -->
+        <!-- en los argumentos del cyclo va 'cycle' => lo mismo que el cycle de la etiqueta -->
+        <!-- agregar la variable a JS con localyze script con el mismo nombre -->
+        <!-- colocar la tarjeta en multicards y llamarla con una funcion -->
+        <div class="showcase5" data-card="simpla_card" data-cycle="miembros">
+          <!-- // cycle($args); -->
+
+          <?php
+          $args = array(
             'post_type'=>'miembro',
             'orderby' => 'meta_value_num',
             'meta_key'=> 'orden',
-            'order' => 'ASC'
-        );
-        $miembros=new WP_Query($args);
-        while($miembros->have_posts()){$miembros->the_post();?>
+            'order' => 'ASC',
+            'posts_per_page' => 1,
+            'cycle' => 'miembros',
+          );
+          $miembros=new WP_Query($args);
+          wp_localize_script( 'main', 'miembros', array(
+            'query'=>json_encode($miembros->query_vars),
+          ) );
+          while($miembros->have_posts()){$miembros->the_post();?>
 
             <?php simpla_card(); ?>
 
-        <?php } wp_reset_query(); ?>
+          <?php } wp_reset_query(); ?>
+          <?php echo ajax_paginator_2($miembros); ?>
+        </div>
 
     </section>
 
@@ -91,7 +107,7 @@
     <section class="main">
         <?php the_content(); ?>
     </section>
-<?php } ?>
+<?php // } ?>
 
 
 <?php get_footer(); ?>

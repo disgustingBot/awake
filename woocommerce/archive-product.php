@@ -16,11 +16,12 @@
 
 
 
-<section class="phil phil_2">
+<section class="phil phil_2" data-cycle-container="filters">
   <!-- <select class="phil_select phil_input font_size_7" name="" id="">
     <option value="">Categorias</option>
   </select> -->
-  <?php woocommerce_subcats_from_parentcat('programas'); ?>
+  <?php subterms_from_parent_term('programas', 'product_cat', 'filters'); ?>
+  <?php // woocommerce_subcats_from_parentcat('programas'); ?>
   <input class="phil_search phil_input" type="text" placeholder="Buscador" name="" value="">
 
   <a class="cart_butt" href="<?php echo get_site_url() . '/cart'; ?>">
@@ -36,11 +37,11 @@
 </section>
 
 
-
-<section class="hedi_container" data-card="hedi_card">
+<section class="hedi_container" data-card="hedi_card" data-cycle="filters">
   <?php while(have_posts()){the_post(); ?>
     <?php hedi_card(); ?>
   <?php } ?>
+  <?php echo ajax_paginator_2($wp_query); ?>
 </section>
 
 

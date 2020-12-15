@@ -77,7 +77,9 @@
             </a>
         <?php } ?>
         <?php if($args['title'] != false){ ?>
-            <h6 class="hedi_title font_size_5 rowcol1"><?php echo $args['title']; ?></h6>
+            <h6 class="hedi_title font_size_5 rowcol1">
+              <a href="<?php echo $args['link']; ?>"><?php echo $args['title']; ?></a>
+            </h6>
         <?php } ?>
         <?php if($args['color'] != false){ ?>
             <!-- <div class="hedi_deco" style="color:<?php echo $args['color']; ?>"></div> -->
