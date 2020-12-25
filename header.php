@@ -46,7 +46,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<view id="load" class="load"><div class="circle"></div></view>
+	<!-- <view id="load" class="load"><div class="circle"></div></view> -->
   <?php include 'assets/all_icons.php'; ?>
   <!-- <h1><?php echo get_option( 'font_size_1_number', '' ) * 0.8; ?></h1>
   <h1><?php echo get_option( 'font_size_2_number', '' ) * 0.8; ?></h1> -->

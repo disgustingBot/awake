@@ -57,6 +57,26 @@
 
 
 
+<?php function col_testimonial_card ($args = array()) {
+    if(!isset($args['title']  )){ $args['title']   = get_the_title(); }
+    if(!isset($args['content'])){ $args['content'] = get_the_content(); }
+    ?>
+
+
+          <div class="col_testimonial">
+            <p class="col_testimonial_title font_size_5"><?php echo $args['title']; ?></p>
+            <div class="col_testimonial_content font_size_5">
+              <?php echo $args['content']; ?>
+            </div>
+          </div>
+
+<?php } ?>
+
+
+
+
+
+
 
 
 
@@ -95,7 +115,7 @@
 
 
 
-        <div class="hedi_interaction_container">
+        <div class="hedi_interaction_container Variable_product_interaction">
           <p class="hedi_label font_size_8">FECHAS</p>
           <!-- <div class="hedi_select_container">
             <select class="hedi_select font_size_8" name="" id="">
@@ -192,8 +212,8 @@
 
 
 
-          <p class="hedi_price font_size_7">475,00€</p>
-          <!-- <p class="hedi_price" id="singleSidePrice"><?php echo $product->get_price_html(); ?></p> -->
+          <!-- <p class="hedi_price font_size_7">475,00€</p> -->
+          <p class="hedi_price"><?php echo $product->get_price_html(); ?></p>
 
           <div class="cuantos Cuantos">
               <button class="cuantosBtn cuantosMins">-</button>

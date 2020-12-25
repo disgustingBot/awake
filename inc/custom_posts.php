@@ -165,6 +165,10 @@ function lt_custom_posts() {
 		'label'       => 'Color',
 		'description' => 'Color de decoracion en formato hexadecimal Ejemplo: #FAFAFA"',
 	);
+	$lt_meta_link = array(
+		'label'       => 'Link',
+		'description' => 'Link a donde lleva al clickar su tarjeta (dejar en blanco para comportamiento normal)',
+	);
 	lt_add_meta_fields_to_taxonomy( $taxonomy_slug = 'product_cat', $meta_fields = array(
 		'lt_meta_title'             => $lt_meta_title,
 		'lt_meta_image_atf'         => $lt_meta_image_atf,
@@ -173,5 +177,6 @@ function lt_custom_posts() {
 		'lt_meta_description'       => $lt_meta_description,
 		'lt_meta_order'             => $lt_meta_order,
 		'lt_meta_color'             => $lt_meta_color,
+		'lt_meta_link'              => $lt_meta_link,
 	) );
 }

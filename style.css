@@ -225,7 +225,7 @@ FIN DE MAPA DE CONTENIDOS */
   --header_padding_top:10px;
 
   /* ?nav_menu */
-  --nav_menu_height:100vh;
+  --nav_menu_height: calc(var(--vh, 1vh) * 100);
   --nav_menu_transform_x: translateX(100%);
   --nav_menu_GTC:1fr;
   --nav_menu_padding: calc(var(--logo_size) + var(--header_padding_top)) 0 2rem 0;
@@ -613,7 +613,7 @@ FIN DE MAPA DE CONTENIDOS */
 
 
     /* ?testim */
-    --testim_container_height: 100vh;
+    --testim_container_height: calc(var(--vh, 1vh) * 100);
     --testim_padding: 0 2rem;
 
 
@@ -858,7 +858,7 @@ img, video, source{
                               5.0 =container_1366:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-
+.margin_top_header{margin-top: calc(120px + 4rem)}
 .container_1366 {
   width: 100%;
   max-width: 1366px;
@@ -881,7 +881,7 @@ img, video, source{
 .load{
   background: var(--color2);
   display: grid;
-  height: 100vh;
+  height:  calc(var(--vh, 1vh) * 100);
   width:  100vw;
   position: fixed;
   top:0;
@@ -947,8 +947,9 @@ img, video, source{
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 /* .blog .logo_img, */
-:not(.observed) > .logo_img,
-.mobile_menu_active .logo_img{color:black}
+:not(.observed) > .logo > .logo_img,
+.mobile_menu_active .logo .logo_img{color:black}
+.mobile_menu_active .logo .logo_img{transition:.4s}
 
 .logo{
   width:  var(--logo_size);
@@ -964,7 +965,7 @@ img, video, source{
   width: var(--logo_size);
   height:var(--logo_size);
   color:white;
-  transition:.6s;
+  transition:.1s;
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -983,7 +984,8 @@ img, video, source{
 }
 .hero{
   display:grid;
-  height:100vh;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
   width:100%;
   color:white;
   justify-content: center;
@@ -1018,6 +1020,7 @@ img, video, source{
 .hero_img{
   position: absolute;
   height: 100vh!important;
+  height: calc(var(--vh, 1vh) * 100)!important;
   z-index: -1;
   display: flex;
   width: 100%;
@@ -1794,11 +1797,13 @@ section.flati{
   /* grid-row-gap: .5rem; */
   grid-template-columns: var(--nav_menu_GTC);
   height: var(--nav_menu_height);
+  /* height: 100vh; /* Fallback for browsers that do not support Custom Properties */ */
+  /* height: calc(var(--vh, 1vh) * 100); */
   margin: auto;
   padding: var(--nav_menu_padding);
   position: var(--absolute_768_static);
   top:0;
-  transition: background .3s .3s, clip-path .4s, color .5s;
+  transition: background .3s .3s, clip-path .4s, color 0s;
   width: 100%;
   z-index:1;
 }
@@ -1894,7 +1899,7 @@ section.flati{
 /* .blog .under_soc{display:none} */
 .under_soc{
   position: absolute;
-  top:calc(100vh - 3rem);
+  top:calc(var(--vh, 1vh) * 100 - 3rem);
   left:0;
   display:grid;
   grid-template-columns: min-content min-content 1fr min-content min-content;
@@ -2678,6 +2683,7 @@ section.flati{
   grid-column:var(--tory_img_GC);
   height:var(--tory_img_height);
   max-height: 100vh;
+  max-height:  calc(var(--vh, 1vh) * 100);
   position:var(--tory_img_position);
   top:0;
 }
