@@ -68,6 +68,11 @@
   $subcats = get_categories($args);
   foreach ($subcats as $sc) {
     $link = get_term_link( $sc->slug, $sc->taxonomy );
+    // if($sc->slug == 'longevity'){$link = '#';}
+    if(get_term_meta( $sc->term_id, 'lt_meta_link', true )){
+      // echo 'LOUDLY TEST YOUR THINGS';
+      $link = get_term_meta( $sc->term_id, 'lt_meta_link', true );
+    }
     $thumbnail_id = get_term_meta( $sc->term_id, 'thumbnail_id', true );
     $image = wp_get_attachment_url( $thumbnail_id );
     $color = get_term_meta( $sc->term_id, 'lt_meta_color', true );

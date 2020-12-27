@@ -23,7 +23,10 @@ w.onload=()=>{
 w.onresize = ()=>{reportWindowSize()};
 
 
-
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
 
@@ -166,39 +169,46 @@ function reportWindowSize() {
   if(d.querySelector('.tory')){
     adjust_tory_img_height();
   }
+
+  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+  let vh = w.innerHeight * 0.01;
+  // Then we set the value in the --vh custom property to the root of the document
+  d.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
 
 
 
 
+const activate_variable_product_interactions = ()=>{
 
+  const vpis = [...d.querySelectorAll('.Variable_product_interaction')]
+  // c.log(vpis)
+  // const attributes = [...d.querySelectorAll('.single-product .selectBoxInput')]
+  vpis.forEach( (vpi, i) =>{
+    // c.log('vpi')
+    vpi.querySelectorAll('.selectBoxInput').forEach( y =>{
+      y.addEventListener('change', z => {
 
+        let ids = z.target.dataset.ids;
+        // c.log(ids)
+        // c.log(z.target.value != 0)
 
-const hedis = [...d.querySelectorAll('.hedi')]
-// c.log(hedis)
-// const attributes = [...d.querySelectorAll('.single-product .selectBoxInput')]
-hedis.forEach( (hedi, i) =>{
-  // c.log('hedi')
-  hedi.querySelectorAll('.selectBoxInput').forEach( y =>{
-    y.addEventListener('change', z => {
-
-      let ids = z.target.dataset.ids;
-      // c.log(ids)
-      // c.log(z.target.value != 0)
-
-      if(z.target.value!=0){
-        hedi.querySelector('.My_add_to_cart_button').dataset.variationId = ids
-        hedi.querySelector('.My_add_to_cart_button').dataset.variation = z.target.value
-        hedi.querySelector('.My_add_to_cart_button').innerText = "Añadir a la cesta";
-      } else {
-        hedi.querySelector('.My_add_to_cart_button').dataset.variationId = ''
-        hedi.querySelector('.My_add_to_cart_button').dataset.variation = ''
-        hedi.querySelector('.My_add_to_cart_button').innerText = "Selecciona una Fecha";
-      }
+        if(z.target.value!=0){
+          vpi.querySelector('.My_add_to_cart_button').dataset.variationId = ids
+          vpi.querySelector('.My_add_to_cart_button').dataset.variation = z.target.value
+          vpi.querySelector('.My_add_to_cart_button').innerText = "Añadir a la cesta";
+        } else {
+          vpi.querySelector('.My_add_to_cart_button').dataset.variationId = ''
+          vpi.querySelector('.My_add_to_cart_button').dataset.variation = ''
+          vpi.querySelector('.My_add_to_cart_button').innerText = "Selecciona una Fecha";
+        }
+      })
     })
   })
-})
+}
+activate_variable_product_interactions();
+
 
 
 

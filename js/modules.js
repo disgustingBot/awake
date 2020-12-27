@@ -200,7 +200,7 @@ class Obse {
 		this.first_time = true;
 		this.first_observation = false;
 
-		this.options = { root: null, threshold: 1, rootMargin: "0px 0px 0px 0px" };
+		this.options = { root: null, threshold: .1, rootMargin: "0px 0px 0px 0px" };
 		this.observer = new IntersectionObserver((entries, observer)=>{
 			entries.forEach(entry => {
 				if(entry.isIntersecting){
