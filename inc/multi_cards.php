@@ -116,7 +116,6 @@
 
 
         <div class="hedi_interaction_container Variable_product_interaction">
-          <p class="hedi_label font_size_8">FECHAS</p>
           <!-- <div class="hedi_select_container">
             <select class="hedi_select font_size_8" name="" id="">
               <option value="">Elige una opcion</option>
@@ -131,7 +130,10 @@
 
           <?php
       			// $product = wc_get_product();
-      			if ( $product->is_type( 'variable' ) AND !$is_out_of_stock ) {
+      			if ( $product->is_type( 'variable' ) AND !$is_out_of_stock ) { ?>
+              <p class="hedi_label font_size_8">FECHAS</p>
+
+              <?php
               $variations = $product->get_available_variations();
               // var_dump($variations);
 
@@ -161,7 +163,7 @@
 
                 <div class="SelectBox hedi_select" tabindex="1" id="selectBox<?php echo $slug; ?>">
                   <div class="selectBoxButton" onclick="altClassFromSelector('focus', '#selectBox<?php echo $slug; ?>')">
-                    <p class="selectBoxPlaceholder font_size_8"><?php _e('elige una opcion', 'lt_domain'); ?></p>
+                    <p class="selectBoxPlaceholder font_size_8"><?php _e('elige la fecha', 'lt_domain'); ?></p>
                     <!-- <p class="selectBoxPlaceholder"><?php echo $name; ?></p> -->
                     <p class="selectBoxCurrent font_size_7" id="selectBoxCurrent<?php echo $name; ?>"></p>
                   </div>
@@ -213,7 +215,15 @@
 
 
           <!-- <p class="hedi_price font_size_7">475,00€</p> -->
-          <p class="hedi_price"><?php echo $product->get_price_html(); ?></p>
+          <p class="hedi_price font_size_7">
+            <?php
+            if ($product->get_price_html()) {
+              echo $product->get_price_html();
+            } else {
+              _e('noy tiene precio', 'awake');
+            }
+            ?>
+          </p>
 
           <div class="cuantos Cuantos">
               <button class="cuantosBtn cuantosMins">-</button>
@@ -223,10 +233,13 @@
 
           <!-- id="myAddToCart" -->
           <button
-              class="btn font_size_8 My_add_to_cart_button"
+              class="btn hedi_btn font_size_8 My_add_to_cart_button"
               onclick="my_add_to_cart_function(this)"
               data-product-id="<?php echo get_the_id(); ?>"
               data-product-type="<?php echo $product->get_type(); ?>"
+              <?php if ( !$product->is_type( 'variable' ) ) { ?>
+                data-variation-id="<?php echo get_the_id(); ?>"
+              <?php } ?>
               data-quantity="1"
               data-variation-description=""
               data-buy="later"
@@ -237,11 +250,20 @@
               <?php } ?>
               <?php if( $is_out_of_stock ){ echo 'disabled'; } ?>
           >
+
           <?php
-          if( $is_out_of_stock ){
-              echo 'Sin cupo';
+          if ( $product->is_type( 'variable' ) ) {
+            if( $is_out_of_stock ){
+              _e('Sin cupo', 'awake');
+            } else {
+              _e('Selecciona una Fecha', 'awake');
+            }
           } else {
-              echo 'Selecciona una Fecha';
+            if( $is_out_of_stock ){
+              _e('sin stock', 'awake');
+            } else {
+              _e('Añadir al carrito', 'awake');
+            }
           }
           ?>
           </button>

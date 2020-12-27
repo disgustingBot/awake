@@ -296,6 +296,9 @@ FIN DE MAPA DE CONTENIDOS */
   --barda_display: flex;
   --barda_quote_text_align: center;
 
+  /* ?hedi */
+  --hedi_interaction_container_GTC:1fr;
+
   /* ?separanda */
   --separanda_flex_dir: column;
   --separanda_GTC:  1fr;
@@ -523,6 +526,9 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?barda */
     --barda_display: grid;
     --barda_quote_text_align: right;
+
+    /* ?hedi */
+    --hedi_interaction_container_GTC:2fr 3fr;
 
     /* ?separanda */
     --separanda_flex_dir: row;
@@ -1367,7 +1373,8 @@ section.flati{
 }
 .hedi_interaction_container{
   display:grid;
-  grid-template-columns: 2fr 3fr;
+  /* grid-template-columns: 2fr 3fr; */
+  grid-template-columns: var(--hedi_interaction_container_GTC);
   grid-gap:.3rem;
 }
 .hedi_label{
@@ -1379,8 +1386,11 @@ section.flati{
   width: 100%;
   background: var(--secondary_color);
   text-align: center;
-  grid-column: var(--copa_label_GC);
-  margin-bottom: var(--copa_label_margin_bottom);
+  /* grid-column: var(--copa_label_GC); */
+  /* margin-bottom: var(--copa_label_margin_bottom); */
+}
+.hedi_btn{
+  grid-column: 1/-1!important;
 }
 .hedi_select_container{
   position: relative;
@@ -1396,7 +1406,9 @@ section.flati{
   /* font-size: 10px; */
 }
 .hedi_price{
-  display: grid;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: center;
   border-top:2px solid var(--greyb);
   border-bottom:2px solid var(--greyb);
@@ -1834,7 +1846,7 @@ section.flati{
 .nav_bar .menu-item::before {
   position: absolute;
   content:'';
-  background: white;
+  background: currentColor;
   width: 100%;
   height: 2px;
   bottom: -4px;
@@ -1851,7 +1863,8 @@ section.flati{
   position: absolute;
   width:100%;
   height:2px;
-  background:white;
+  /* background:white; */
+  background:currentColor;
   bottom: -4px;
   left:0;
 }

@@ -2,20 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section class="phil phil_2" data-cycle-container="filters">
   <!-- <select class="phil_select phil_input font_size_7" name="" id="">
     <option value="">Categorias</option>

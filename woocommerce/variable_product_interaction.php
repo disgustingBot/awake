@@ -1,9 +1,8 @@
 
 <div class="copa_interaction_container Variable_product_interaction">
   <h6 class="copa_title">Retiro en Cantabria 3 días<br><?php the_title(); ?></h6>
-  <p class="copa_label">FECHAS</p>
 
-      <?php 
+      <?php
       $is_out_of_stock = false;
       if( !$product->is_on_backorder() AND !$product->is_in_stock() ){ $is_out_of_stock = true; }
       ?>
@@ -21,7 +20,10 @@
 
   <?php
     // $product = wc_get_product();
-    if ( $product->is_type( 'variable' ) AND !$is_out_of_stock ) {
+    if ( $product->is_type( 'variable' ) AND !$is_out_of_stock ) { ?>
+      <p class="hedi_label font_size_8">FECHAS</p>
+
+      <?php
       $variations = $product->get_available_variations();
       // echo count($variations);
       // var_dump($variations);
@@ -119,6 +121,9 @@
       id="myAddToCart"
       data-product-id="<?php echo get_the_id(); ?>"
       data-product-type="<?php echo $product->get_type(); ?>"
+      <?php if ( !$product->is_type( 'variable' ) ) { ?>
+        data-variation-id="<?php echo get_the_id(); ?>"
+      <?php } ?>
       data-quantity="1"
       data-variation-description=""
       data-buy="later"
@@ -130,10 +135,18 @@
       <?php if( $is_out_of_stock ){ echo 'disabled'; } ?>
   >
   <?php
-  if( $is_out_of_stock ){
-      echo 'Sin cupo';
+  if ( $product->is_type( 'variable' ) ) {
+    if( $is_out_of_stock ){
+      _e('Sin cupo', 'awake');
+    } else {
+      _e('Selecciona una Fecha', 'awake');
+    }
   } else {
-      echo 'Selecciona una Fecha';
+    if( $is_out_of_stock ){
+      _e('sin stock', 'awake');
+    } else {
+      _e('Añadir al carrito', 'awake');
+    }
   }
   ?>
   </button>
