@@ -95,17 +95,24 @@
         <?php include 'variable_product_interaction.php'; ?>
     </section>
 
-    <?php if (get_post_meta(get_the_ID(), 'related_posts_tag', true)) { ?>
       <section class="col_4_block">
-        <h4 class="block_title font_size_3" style="color: <?php echo $category_color; ?>">Puede interesarte</h4>
-        <?php // echo get_post_meta(get_the_ID(), 'related_posts_tag', true); ?>
         <?php
-        $related = new WP_Query( array(
+        $args = array(
           'post_type' => 'post',
           'posts_per_page' => 4,
-          'tag' => get_post_meta(get_the_ID(), 'related_posts_tag', true),
-        )
-      );
+        );
+        $tag = get_post_meta(get_the_ID(), 'related_posts_tag', true);
+        if ( $tag ) {
+          $my_title = 'Puede interesarte';
+          $args['tag'] = $tag;
+        } else {
+          $my_title = 'Últimas entradas';
+        }
+        ?>
+        <h4 class="block_title font_size_3" style="color: <?php echo $category_color; ?>"><?php _e($my_title, 'awake') ?></h4>
+        <?php // echo get_post_meta(get_the_ID(), 'related_posts_tag', true); ?>
+        <?php
+        $related = new WP_Query( $args );
       ?>
       <?php while ( $related->have_posts() ) : $related->the_post(); ?>
 
@@ -116,8 +123,6 @@
       <a  class="block_link font_size_7" href="<?php echo get_site_url() ?>/blog">VER MÁS NOTICIAS</a>
     </section>
 
-    <?php } ?>
-GAstro7
 
 <?php } ?>
 
