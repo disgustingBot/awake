@@ -44,6 +44,7 @@ Version: 1.2
 6.4.7) =hosi:
 6.4.8) =hedi:
 6.4.9) =main_title:
+6.4.10) =post_comments:
 
 6.5) =SHOWCASE:
 6.5.1) =showcase2:
@@ -59,6 +60,7 @@ Version: 1.2
 6.6.3) =white_btn:
 6.6.4) =cart_butt:
 6.7.0) =facebook_feeds:
+6.8.0) =share_content_links:
 
 6.8) =MENUS:
 6.8.1) =nav_menu:
@@ -1439,6 +1441,45 @@ section.flati{
   font-weight: normal;
 }
 
+
+
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.4.10) =post_comments:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.post_comments {
+  padding: 2rem var(--lateral);
+  color: var(--grey6);
+}
+.post_comments_title {
+}
+.post_comments .aditional_info_deco {margin-left: 0;}
+.comment_block {
+  padding: 1rem 1rem 1rem 0;
+  border-bottom: 1px solid var(--grey9);
+}
+.comment_author {
+  margin-bottom: 15px;
+  font-family: 'Lora', serif;
+  font-size: var(--font_size_5);
+}
+.comment_content {
+  margin-bottom: 15px;
+  color: var(--grey7);
+  font-size: var(--font_size_6);
+}
+.logged-in-as {
+  font-size: var(--font_size_6);
+  padding: 1rem 0;
+}
+.comment-form {
+  padding: 2rem 0;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.5) =SHOWCASE:
@@ -1803,6 +1844,41 @@ section.flati{
   letter-spacing: 0;
   font-weight: 500;
   font-family: 'lato', sans-serif;
+}
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.8.0) =share_content_links:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.share_content_links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: calc(var(--font_size_5) * 0.8);
+}
+
+.share_content_links_title {
+  color: var(--grey6)!important;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5px!important;
+  font-weight: bold!important;
+}
+.share_content_list {
+  list-style: none;
+  padding: 0!important;
+  font-weight: lighter;
+  color: var(--grey7)!important;
+}
+.share_content_bullet {
+  font-size: 5px;
+  color: var(--grey5)!important;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
 }
 
 /* ---------------------------------------------------------------------------

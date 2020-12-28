@@ -58,44 +58,38 @@
     $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$sb_url;
     $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$sb_url.'&amp;title='.$sb_title;
     ?>
-    <ul id="share_content_links">
-      <h4>Compartir</h4>
-      <li>
-        <a href="<?php echo $twitterURL; ?>" target="blank" rel="noopener noreferrer" id="shareTwitter">Twitter</a>
-      </li>
-      <li>
+    <ul class="share_content_links">
+      <p class="share_content_links_title">Compartir</p>
+      <li class="share_content_list">
         <a href="<?php echo $facebookURL; ?>" target="blank" rel="noopener noreferrer" id="shareFacebook">Facebook</a>
       </li>
-      <li>
+      <span class="share_content_bullet">•</span>
+      <li class="share_content_list">
+        <a href="<?php echo $twitterURL; ?>" target="blank" rel="noopener noreferrer" id="shareTwitter">Twitter</a>
+      </li>
+      <span class="share_content_bullet">•</span>
+      <li class="share_content_list">
         <a href="<?php echo $linkedInURL; ?>" target="blank" rel="noopener noreferrer" id="shareLinkedIn">Linkedin</a>
       </li>
     </ul>
   </section>
 
   <section class="post_comments">
-
-
-
+    <h4 class="post_comments_title">Comentarios de la comunidad</h4>
+    <div class="aditional_info_deco"></div>
       <div style=""><?php comments_template(); ?></div>
-
-
-
-
-
       <?php
-
       $fields   = array(
         'author' => '<p class="comment-form-author"><label for="author">' . __( 'Tu nombre' ) . ' <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required /></p>',
         'email'  => '<p class="comment-form-email" ><label for="email" >' . __( 'Tu mail  ' ) . ' <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required /></p>',
       );
-
       $args = array(
         'id_form'           => 'commentform',
         'class_form'        => 'comment-form',
         'id_submit'         => 'submit',
         'class_submit'      => 'submit',
         'name_submit'       => 'submit',
-        'title_reply'       => __( 'deja tu comentario' ),
+        'title_reply'       => __( '' ),
         'title_reply_to'    => __( 'respondele a %s' ),
         'cancel_reply_link' => __( 'Cancelar respuesta' ),
         'label_submit'      => __( 'Enviar' ),
@@ -113,7 +107,7 @@
 
         'logged_in_as' => '<p class="logged-in-as">' .
         sprintf(
-          __( 'Has iniciado sesion como: <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Cerrar la sesion?</a>' ),
+          __( 'Estás comentando como: %2$s. <a href="%3$s" title="Cerrar sesion">Cerrar la sesion?</a>' ),
           admin_url( 'profile.php' ),
           $user_identity,
           wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
@@ -130,8 +124,6 @@
       );
       comment_form($args);
       ?>
-
-
 
   </section>
 
