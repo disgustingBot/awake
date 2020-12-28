@@ -1,14 +1,53 @@
 <?php get_header(); ?>
 
-
-<!-- colocar aqui el bloque del encabezado -->
-<h1>single.php</h1>
-
-
 <?php while(have_posts()){the_post(); ?>
-    <section class="main">
-        <?php the_content(); ?>
-    </section>
+
+  <!-- colocar aqui el bloque del encabezado -->
+  <h1 class="main_title font_size_1"><?php the_title() ?></h1>
+  <figure class="captioned_figure">
+    <img class="captioned_figure_img" src="<?php echo get_the_post_thumbnail_url() ?>" alt="Foto destacada de la publicación" class="captioned_figure_img">
+    <figcaption class="captioned_figure_capt">
+      <div class="captioned_figure_title_container">
+        <p class="captioned_figure_title font_size_6">
+          <?php echo get_the_author_meta('display_name'); ?>
+        </p>
+        <div class="captioned_figure_deco"></div>
+      </div>
+      <p class="captioned_figure_txt"><?php echo get_the_excerpt() ?></p>
+    </figcaption>
+  </figure>
+  <div class="aditional_info">
+    <div class="aditional_info_item">
+      <svg class="aditional_info_icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path fill="currentColor" d="M400 64h-48V12c0-6.6-5.4-12-12-12h-8c-6.6 0-12 5.4-12 12v52H128V12c0-6.6-5.4-12-12-12h-8c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM48 96h352c8.8 0 16 7.2 16 16v48H32v-48c0-8.8 7.2-16 16-16zm352 384H48c-8.8 0-16-7.2-16-16V192h384v272c0 8.8-7.2 16-16 16zM148 320h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm96 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm96 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm-96 96h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm-96 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm192 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12z" ></path>
+      </svg>
+      <p class="aditional_info_txt"><?php echo get_the_date() ?></p>
+    </div>
+    <div class="aditional_info_item">
+      <svg class="aditional_info_icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+        <path fill="currentColor" d="M527.95 224H480v-48c0-26.51-21.49-48-48-48H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h385.057c28.068 0 54.135-14.733 68.599-38.84l67.453-112.464C588.24 264.812 565.285 224 527.95 224zM48 96h146.745l64 64H432c8.837 0 16 7.163 16 16v48H171.177c-28.068 0-54.135 14.733-68.599 38.84L32 380.47V112c0-8.837 7.163-16 16-16zm493.695 184.232l-67.479 112.464A47.997 47.997 0 0 1 433.057 416H44.823l82.017-136.696A48 48 0 0 1 168 256h359.975c12.437 0 20.119 13.568 13.72 24.232z"></path>
+      </svg>
+      <p class="aditional_info_txt">
+        <?php
+        $categories = get_the_category();
+        foreach($categories as $category) {
+          echo '<span>'. $category->cat_name .'</span>' . '<span class="category_comma">' . ',&nbsp;' . '</span>';
+        }
+        ?>
+      </p>
+    </div>
+    <div class="aditional_info_item">
+      <p class="aditional_info_txt"><?php echo get_comments_number() ?> comments</p>
+    </div>
+  </div>
+  <div class="aditional_info_deco"></div>
+
+
+
+  <section class="post_main">
+    <?php the_content(); ?>
+  </section>
+
 <?php } ?>
 
 
