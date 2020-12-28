@@ -46,6 +46,93 @@
 
   <section class="post_main">
     <?php the_content(); ?>
+    <?php
+    // Get current page URL
+    $sb_url = urlencode(get_permalink());
+
+    // Get current page title
+    $sb_title = str_replace( ' ', '%20', get_the_title());
+
+    // Construct sharing URL
+    $twitterURL = 'https://twitter.com/intent/tweet?text='.$sb_title.'&amp;url='.$sb_url.'&amp;via=Esfacildejarde';
+    $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$sb_url;
+    $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$sb_url.'&amp;title='.$sb_title;
+    ?>
+    <ul id="share_content_links">
+      <h4>Compartir</h4>
+      <li>
+        <a href="<?php echo $twitterURL; ?>" target="blank" rel="noopener noreferrer" id="shareTwitter">Twitter</a>
+      </li>
+      <li>
+        <a href="<?php echo $facebookURL; ?>" target="blank" rel="noopener noreferrer" id="shareFacebook">Facebook</a>
+      </li>
+      <li>
+        <a href="<?php echo $linkedInURL; ?>" target="blank" rel="noopener noreferrer" id="shareLinkedIn">Linkedin</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="post_comments">
+
+
+
+      <div style=""><?php comments_template(); ?></div>
+
+
+
+
+
+      <?php
+
+      $fields   = array(
+        'author' => '<p class="comment-form-author"><label for="author">' . __( 'Tu nombre' ) . ' <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required /></p>',
+        'email'  => '<p class="comment-form-email" ><label for="email" >' . __( 'Tu mail  ' ) . ' <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required /></p>',
+      );
+
+      $args = array(
+        'id_form'           => 'commentform',
+        'class_form'        => 'comment-form',
+        'id_submit'         => 'submit',
+        'class_submit'      => 'submit',
+        'name_submit'       => 'submit',
+        'title_reply'       => __( 'deja tu comentario' ),
+        'title_reply_to'    => __( 'respondele a %s' ),
+        'cancel_reply_link' => __( 'Cancelar respuesta' ),
+        'label_submit'      => __( 'Enviar' ),
+        'format'            => 'xhtml',
+
+        'comment_field' =>  '<p class="comment-form-comment"><label for="comment">' . _x( 'Tu comentario', 'noun' ) .
+        '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true">' .
+        '</textarea></p>',
+
+        'must_log_in' => '<p class="must-log-in">' .
+        sprintf(
+          __( 'Para comentar debes <a href="%s">iniciar sesion</a>.' ),
+          wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
+        ) . '</p>',
+
+        'logged_in_as' => '<p class="logged-in-as">' .
+        sprintf(
+          __( 'Has iniciado sesion como: <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Cerrar la sesion?</a>' ),
+          admin_url( 'profile.php' ),
+          $user_identity,
+          wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
+        ) . '</p>',
+
+        // 'comment_notes_before' => '<p class="comment-notes">' .
+        // __( 'Tu e-mail no será publicado.' ) . ( $req ? $required_text : '' ) .
+        // '</p>',
+
+        'comment_notes_before' => '',
+        'comment_notes_after'  => '',
+
+        'fields' => apply_filters( 'comment_form_default_fields', $fields ),
+      );
+      comment_form($args);
+      ?>
+
+
+
   </section>
 
 <?php } ?>
