@@ -77,56 +77,95 @@
   <section class="post_comments">
     <h4 class="post_comments_title">Comentarios de la comunidad</h4>
     <div class="aditional_info_deco"></div>
-      <div style=""><?php comments_template(); ?></div>
-      <?php
-      $fields   = array(
-        'author' => '<input class="comment-form-author comment_form_input" id="author" placeholder="Tu nombre" name="author" type="text" value="" size="30" maxlength="245" required />',
-        'email'  => '<input class="comment-form-email comment_form_input" id="email" placeholder="Tu email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required />',
-      );
-      $args = array(
-        'id_form'           => 'commentform',
-        'class_form'        => 'comment_form_2',
-        'id_submit'         => 'submit',
-        'class_submit'      => 'submit main_form_btn btn',
-        'name_submit'       => 'submit',
-        'title_reply'       => __( '' ),
-        'title_reply_to'    => __( 'respondele a %s' ),
-        'cancel_reply_link' => __( 'Cancelar respuesta' ),
-        'label_submit'      => __( 'Enviar' ),
-        'format'            => 'xhtml',
+    <div style=""><?php comments_template(); ?></div>
+    <?php
+    $fields   = array(
+      'author' => '<input class="comment-form-author comment_form_input" id="author" placeholder="Tu nombre" name="author" type="text" value="" size="30" maxlength="245" required />',
+      'email'  => '<input class="comment-form-email comment_form_input" id="email" placeholder="Tu email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required />',
+    );
+    $args = array(
+      'id_form'           => 'commentform',
+      'class_form'        => 'comment_form_2',
+      'id_submit'         => 'submit',
+      'class_submit'      => 'submit main_form_btn btn',
+      'name_submit'       => 'submit',
+      'title_reply'       => __( '' ),
+      'title_reply_to'    => __( 'respondele a %s' ),
+      'cancel_reply_link' => __( 'Cancelar respuesta' ),
+      'label_submit'      => __( 'Enviar' ),
+      'format'            => 'xhtml',
 
-        'comment_field' =>  '<textarea class="comment_textarea comment_form_input" id="comment" placeholder="Deja un comentario..." name="comment" cols="45" rows="8" aria-required="true">' .
-        '</textarea>',
+      'comment_field' =>  '<textarea class="comment_textarea comment_form_input" id="comment" placeholder="Deja un comentario..." name="comment" cols="45" rows="8" aria-required="true">' .
+      '</textarea>',
 
-        'must_log_in' => '<p class="must-log-in">' .
-        sprintf(
-          __( 'Para comentar debes <a href="%s">iniciar sesion</a>.' ),
-          wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
-        ) . '</p>',
+      'must_log_in' => '<p class="must-log-in">' .
+      sprintf(
+        __( 'Para comentar debes <a href="%s">iniciar sesion</a>.' ),
+        wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
+      ) . '</p>',
 
-        'logged_in_as' => '<p class="logged-in-as">' .
-        sprintf(
-          __( 'Estás comentando como: %2$s. <a href="%3$s" title="Cerrar sesion">Cerrar la sesion?</a>' ),
-          admin_url( 'profile.php' ),
-          $user_identity,
-          wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
-        ) . '</p>',
+      'logged_in_as' => '<p class="logged-in-as">' .
+      sprintf(
+        __( 'Estás comentando como: %2$s. <a href="%3$s" title="Cerrar sesion">Cerrar la sesion?</a>' ),
+        admin_url( 'profile.php' ),
+        $user_identity,
+        wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
+      ) . '</p>',
 
-        // 'comment_notes_before' => '<p class="comment-notes">' .
-        // __( 'Tu e-mail no será publicado.' ) . ( $req ? $required_text : '' ) .
-        // '</p>',
+      // 'comment_notes_before' => '<p class="comment-notes">' .
+      // __( 'Tu e-mail no será publicado.' ) . ( $req ? $required_text : '' ) .
+      // '</p>',
 
-        'comment_notes_before' => '',
-        'comment_notes_after'  => '',
+      'comment_notes_before' => '',
+      'comment_notes_after'  => '',
 
-        'fields' => apply_filters( 'comment_form_default_fields', $fields ),
-      );
-      comment_form($args);
-      ?>
+      'fields' => apply_filters( 'comment_form_default_fields', $fields ),
+    );
+    comment_form($args);
+    ?>
 
   </section>
 
 <?php } ?>
+
+
+
+<section class="sqare_cont related_posts">
+  <h4 class="related_posts_title font_size_1">Relacionados</h4>
+
+
+  <?php
+
+
+  $orig_post = $post;
+  global $post;
+  $tags = wp_get_post_tags($post->ID);
+
+  if ($tags) {
+
+    $tag_ids = array();
+    foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+    $args=array(
+      'tag__in' => $tag_ids,
+      'post__not_in' => array($post->ID),
+      // 'post_type'=>'post',
+      'ignore_sticky_posts'=>1,
+      'posts_per_page' => '4',
+    );
+    $related=new WP_Query($args);
+    while($related->have_posts()){ $related->the_post();
+
+      sqare_card();
+
+    }
+
+    $post = $orig_post;
+    wp_reset_query();
+  }
+
+  ?>
+</section>
+
 
 
 <?php get_footer(); ?>
