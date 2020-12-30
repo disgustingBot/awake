@@ -379,6 +379,9 @@ FIN DE MAPA DE CONTENIDOS */
   --captioned_figure_GTC: 1fr;
   --captioned_figure_GG: 1rem;
 
+  /* ?comment_form_2 */
+  --comment_form_2_GTC: 1fr;
+
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -593,6 +596,9 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?captioned_figure */
     --captioned_figure_GTC: 4fr 1fr;
     --captioned_figure_GG: 1.5rem;
+
+    /* ?comment_form_2 */
+    --comment_form_2_GTC: 1fr 1fr;
 
 
     /* ?FOOTER */
@@ -1477,9 +1483,32 @@ section.flati{
   font-size: var(--font_size_6);
   padding: 1rem 0;
 }
-.comment-form {
+.comment_form_2 {
   padding: 2rem 0;
+  display: grid;
+  grid-template-columns: var(--comment_form_2_GTC);
+  grid-gap: 10px;
 }
+.comment_textarea {
+  min-height: 260px;
+  grid-column: 1/-1;
+}
+.comment_form_input {
+  font-family: 'Lora', serif;
+  border: 1px solid var(--grey6);
+  padding: 10px;
+}
+.acceptance_consent_label {
+  grid-column: 1/-1;
+  font-size: var(--font_size_6);
+  display: flex;
+  align-items: center;
+}
+.acceptance_consent_label input {
+  margin-right: 5px;
+}
+.consent_link {text-decoration: underline;}
+.form-submit {grid-column: 1/-1}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.5) =SHOWCASE:
@@ -1632,8 +1661,6 @@ section.flati{
   height: 60px;
   width: auto;
 }
-
-
 
 
 /* ---------------------------------------------------------------------------
@@ -3373,6 +3400,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   margin-right: 5px;
 }
 
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           8.02) =comment_form:
@@ -3383,7 +3411,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   display: grid;
   grid-template-columns: var(--comment_form_GTC);
   grid-gap: 10px;
-  padding: 1rem var(--lateral);
+  padding: 1rem 0;
 }
 .comment_form .main_textarea {
   height: 200px;
@@ -3393,6 +3421,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   grid-column: unset;
   margin-right: 0;
 }
+
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------

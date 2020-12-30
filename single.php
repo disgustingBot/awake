@@ -80,14 +80,14 @@
       <div style=""><?php comments_template(); ?></div>
       <?php
       $fields   = array(
-        'author' => '<p class="comment-form-author"><label for="author">' . __( 'Tu nombre' ) . ' <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required /></p>',
-        'email'  => '<p class="comment-form-email" ><label for="email" >' . __( 'Tu mail  ' ) . ' <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required /></p>',
+        'author' => '<input class="comment-form-author comment_form_input" id="author" placeholder="Tu nombre" name="author" type="text" value="" size="30" maxlength="245" required />',
+        'email'  => '<input class="comment-form-email comment_form_input" id="email" placeholder="Tu email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required />',
       );
       $args = array(
         'id_form'           => 'commentform',
-        'class_form'        => 'comment-form',
+        'class_form'        => 'comment_form_2',
         'id_submit'         => 'submit',
-        'class_submit'      => 'submit',
+        'class_submit'      => 'submit main_form_btn btn',
         'name_submit'       => 'submit',
         'title_reply'       => __( '' ),
         'title_reply_to'    => __( 'respondele a %s' ),
@@ -95,9 +95,8 @@
         'label_submit'      => __( 'Enviar' ),
         'format'            => 'xhtml',
 
-        'comment_field' =>  '<p class="comment-form-comment"><label for="comment">' . _x( 'Tu comentario', 'noun' ) .
-        '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true">' .
-        '</textarea></p>',
+        'comment_field' =>  '<textarea class="comment_textarea comment_form_input" id="comment" placeholder="Deja un comentario..." name="comment" cols="45" rows="8" aria-required="true">' .
+        '</textarea>',
 
         'must_log_in' => '<p class="must-log-in">' .
         sprintf(

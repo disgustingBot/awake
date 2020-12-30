@@ -304,4 +304,19 @@ function custom_woocommerce_templates( $template ) {
 }
 
 
+// THIS CHANGES THE "REMEMBER ME" TEXT ON THE COMMENT FORM
+add_filter( 'comment_form_default_fields', 'wc_comment_form_change_cookies' );
+function wc_comment_form_change_cookies( $fields ) {
+	$commenter = wp_get_current_commenter();
+
+	$consent   = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
+
+	$fields['cookies'] = '<div class="comment-form-cookies-consent acceptance_consent_label"><input required id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
+					 '<label for="wp-comment-cookies-consent">'.__('Acepto recordar mi nombre y mi email para poder comentar con los mismos datos nuevamente.*', 'textdomain').'</label></div>'.'<div class="comment-form-cookies-consent acceptance_consent_label"><input required id="wp-comment-terms-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"/>' .
+         					 '<label for="wp-comment-terms-consent">'.__('Acepto los <a class="consent_link" href="' . get_site_url() . '/terminos-condiciones">Términos y condiciones</a> generales del sitio, y que mis datos sean tratados con el fin de dar soporte a mi consulta/comentario.*', 'textdomain').'</label></div>';
+	return $fields;
+}
+
+
+
 ?>
