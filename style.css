@@ -43,6 +43,8 @@ Version: 1.2
 6.4.6) =flati:
 6.4.7) =hosi:
 6.4.8) =hedi:
+6.4.9) =main_title:
+6.4.10) =post_comments:
 
 6.5) =SHOWCASE:
 6.5.1) =showcase2:
@@ -50,6 +52,7 @@ Version: 1.2
 6.5.3) =showcase4:
 6.5.4) =showcase5:
 6-5-5) =showcase6:
+
 6.6) =BUTTONS:
 6.6.0) =btn:
 6.6.1) =prenex:
@@ -57,6 +60,7 @@ Version: 1.2
 6.6.3) =white_btn:
 6.6.4) =cart_butt:
 6.7.0) =facebook_feeds:
+6.8.0) =share_content_links:
 
 6.8) =MENUS:
 6.8.1) =nav_menu:
@@ -76,6 +80,9 @@ Version: 1.2
 6.18) =separanda:
 6.19) =pista:
 6.20) =copa:
+6.21) =captioned_figure:
+6.22) =aditional_info:
+6.23) =related_posts:
 
 6.25) =pagination:
 6.26) =pagination_2:
@@ -373,6 +380,13 @@ FIN DE MAPA DE CONTENIDOS */
   /* ?report_404 */
   --report_404_GTC: 1fr;
 
+  /* ?captioned_figure */
+  --captioned_figure_GTC: 1fr;
+  --captioned_figure_GG: 1rem;
+
+  /* ?comment_form_2 */
+  --comment_form_2_GTC: 1fr;
+
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -592,6 +606,13 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?full_width_media */
     --full_page_media_height: 450px;
 
+    /* ?captioned_figure */
+    --captioned_figure_GTC: 4fr 1fr;
+    --captioned_figure_GG: 1.5rem;
+
+    /* ?comment_form_2 */
+    --comment_form_2_GTC: 1fr 1fr;
+
 
     /* ?FOOTER */
   }
@@ -792,17 +813,7 @@ img, video, source{
 .single-product .main  p{font-size:var(--font_size_5); margin:0.5rem 0;}
 
 
-/* .main p,
-.main a,
-.main h1,
-.main h2,
-.main h3,
-.main h4,
-.main h5,
-.main h6,
-.main ul,
-.main ol,
-.main li{margin:unset;padding:unset} */
+
 .main ul,.main ol{list-style:unset}
 
 .font_size_1 {font-size: var(--font_size_1)}
@@ -1432,6 +1443,85 @@ section.flati{
   width:100%;
 }
 
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.4.9) =main_title:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.main_title {
+  text-align: center;
+  padding-top: calc(var(--logo_size) + var(--header_padding_top) + 3rem);
+  padding-bottom: 2.7rem;
+  color: var(--grey6);
+  font-weight: normal;
+}
+
+
+
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.4.10) =post_comments:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.post_comments {
+  padding: 2rem var(--lateral);
+  color: var(--grey6);
+}
+.post_comments_title {
+}
+.post_comments .aditional_info_deco {margin-left: 0;}
+.comment_block {
+  padding: 1rem 1rem 1rem 0;
+  border-bottom: 1px solid var(--grey9);
+}
+.comment_author {
+  margin-bottom: 15px;
+  font-family: 'Lora', serif;
+  font-size: var(--font_size_5);
+}
+.comment_content {
+  margin-bottom: 15px;
+  color: var(--grey7);
+  font-size: var(--font_size_6);
+}
+.logged-in-as {
+  font-size: var(--font_size_6);
+  padding: 1rem 0;
+}
+.comment_form_2 {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: var(--comment_form_2_GTC);
+  grid-gap: 10px;
+}
+.comment_textarea {
+  min-height: 260px;
+  grid-column: 1/-1;
+}
+.comment_form_input {
+  font-family: 'Lora', serif;
+  border: 1px solid var(--grey6);
+  padding: 10px;
+}
+.acceptance_consent_label {
+  grid-column: 1/-1;
+  font-size: var(--font_size_6);
+  display: flex;
+  align-items: center;
+}
+.acceptance_consent_label input {
+  margin-right: 5px;
+}
+.consent_link {text-decoration: underline;}
+.form-submit {grid-column: 1/-1}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.5) =SHOWCASE:
@@ -1587,8 +1677,6 @@ section.flati{
   height: 60px;
   width: auto;
 }
-
-
 
 
 /* ---------------------------------------------------------------------------
@@ -1799,6 +1887,41 @@ section.flati{
   letter-spacing: 0;
   font-weight: 500;
   font-family: 'lato', sans-serif;
+}
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.8.0) =share_content_links:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.share_content_links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: calc(var(--font_size_5) * 0.8);
+}
+
+.share_content_links_title {
+  color: var(--grey6)!important;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5px!important;
+  font-weight: bold!important;
+}
+.share_content_list {
+  list-style: none;
+  padding: 0!important;
+  font-weight: lighter;
+  color: var(--grey7)!important;
+}
+.share_content_bullet {
+  font-size: 5px;
+  color: var(--grey5)!important;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
 }
 
 /* ---------------------------------------------------------------------------
@@ -2535,6 +2658,108 @@ section.flati{
   color: var(--secondary_color);
   text-decoration: underline;
 }
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.21) =captioned_figure:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.captioned_figure {
+  background: var(--greyf5);
+  padding: 0 var(--lateral);
+  display: grid;
+  grid-template-columns: var(--captioned_figure_GTC);
+  grid-gap: var(--captioned_figure_GG);
+  color: var(--grey6);
+}
+.captioned_figure_img {
+  max-height: 500px;
+}
+.captioned_figure_capt {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.captioned_figure_title_container {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  align-self: flex-start;
+  margin: 0 auto 20px 0;
+}
+.captioned_figure_title {
+  text-transform: uppercase;
+}
+.captioned_figure_deco {
+  width: 100%;
+  height: 3px;
+  background: var(--secondary_color);
+  margin-top: 8px;
+}
+.captioned_figure_txt {
+  align-self: flex-end;
+  margin: auto auto 0 0;
+  font-size: calc(var(--font_size_6) * 1.2);
+}
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.22) =aditional_info:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.aditional_info {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem var(--lateral);
+  grid-gap: 1rem;
+  flex-wrap: wrap;
+}
+.aditional_info_item {
+  color: var(--secondary_color);
+  display: flex;
+  align-items: center;
+}
+.aditional_info_icon {
+  height: 25px;
+  width: auto;
+  margin-right: 10px;
+}
+.aditional_info_txt {
+  font-size: var(--font_size_6);
+  text-transform: uppercase;
+}
+.category_comma:last-child {
+  display: none;
+}
+.aditional_info_deco {
+  width: 100px;
+  height: 3px;
+  background: var(--secondary_color);
+  margin: 1rem var(--lateral);
+}
+
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.23) =related_posts:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.related_posts_title {
+  font-weight: normal;
+  color: var(--grey7);
+  grid-column: 1/-1;
+  text-align: center;
+}
+
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.25) =pagination:
@@ -3206,6 +3431,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   margin-right: 5px;
 }
 
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           8.02) =comment_form:
@@ -3216,7 +3442,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   display: grid;
   grid-template-columns: var(--comment_form_GTC);
   grid-gap: 10px;
-  padding: 1rem var(--lateral);
+  padding: 1rem 0;
 }
 .comment_form .main_textarea {
   height: 200px;
@@ -3226,6 +3452,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   grid-column: unset;
   margin-right: 0;
 }
+
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -3264,4 +3491,74 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 .wc-proceed-to-checkout{
   margin:auto;
   width:unset;
+/* SINGLE POST AND PAGE */
+
+.post_main {
+  padding: 0 var(--lateral);
+}
+
+
+hr {margin: 1rem 0}
+
+.post_main a,
+.post_main h1,
+.post_main h2,
+.post_main h3,
+.post_main h4,
+.post_main h5,
+.post_main h6,
+.post_main ol,
+.post_main ul {list-style-type: circle}
+
+.post_main ul ul {list-style-type: square;}
+
+.post_main li {
+  padding-left: 16px;
+}
+
+.post_main a{
+  word-break: break-all;
+}
+
+.post_main p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: var(--grey7);
+  font-weight: lighter;
+  font-size: var(--font_size_5);
+}
+
+.post_main h1 {
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+}
+.post_main h2 {
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+}
+.post_main h3 {
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+.post_main h4 {
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+}
+.post_main h5 {
+  font-size: .83em;
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+  margin-left: 0;
+  margin-right: 0;
 }
