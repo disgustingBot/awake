@@ -153,9 +153,9 @@
         <a href="" class="testim_link">VER MÁS TESTIMONIOS</a>
       </section>
 
-    <section class="main">
-        <?php the_content(); ?>
-    </section>
+    <!-- <section class="main">
+        <?php // the_content(); ?>
+    </section> -->
 
 
 <?php get_footer(); ?>
