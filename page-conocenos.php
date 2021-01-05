@@ -54,7 +54,7 @@
 
         <!-- para hacer un cyclo paginable filtrable y/o buscable -->
         <!-- el cyclo debe estar contenido en una etiqueta que SOLO contenga el cyclo -->
-        <!-- colocal en esa etiqueta data-card y data-cycle -->
+        <!-- colocar en esa etiqueta data-card y data-cycle -->
         <!-- en los argumentos del cyclo va 'cycle' => lo mismo que el cycle de la etiqueta -->
         <!-- agregar la variable a JS con localyze script con el mismo nombre -->
         <!-- colocar la tarjeta en multicards y llamarla con una funcion -->
@@ -67,13 +67,11 @@
             'orderby' => 'meta_value_num',
             'meta_key'=> 'orden',
             'order' => 'ASC',
-            'posts_per_page' => 1,
+            'posts_per_page' => 5,
             'cycle' => 'miembros',
           );
           $miembros=new WP_Query($args);
-          wp_localize_script( 'main', 'miembros', array(
-            'query'=>json_encode($miembros->query_vars),
-          ) );
+          wp_localize_script( 'main', 'miembros', array('query'=>json_encode($miembros->query_vars),) );
           while($miembros->have_posts()){$miembros->the_post();?>
 
             <?php simpla_card(); ?>
