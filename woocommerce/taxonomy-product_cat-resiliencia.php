@@ -25,7 +25,7 @@
 
     <section class="showcase4 tall_img">
 
-        <h3 class="showcase_title alt simple_title">Descubre nuestros Programas de Resiliencia</h3>
+        <h3 class="showcase_title alt simple_title font_size_3">Descubre nuestros Programas de Resiliencia</h3>
 
         <?php while (have_posts()){the_post(); ?>
 

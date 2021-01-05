@@ -17,7 +17,7 @@
         <p class="sqare_author font_size_6">by <?php the_author(); ?></p>
         <div class="sqare_deco" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"></div>
         <p class="sqare_date font_size_6" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"><?php the_time( 'F Y' ); ?></p>
-        <p class="sqare_exerpt font_size_6"><?php echo excerpt(200); ?></p>
+        <p class="sqare_exerpt font_size_5"><?php echo excerpt(200); ?></p>
         <a class="sqare_link font_size_5" href="<?php the_permalink(); ?>">&mdash; Leer más</a>
     </div>
 

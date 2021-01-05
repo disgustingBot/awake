@@ -8,11 +8,11 @@
       <h2 class="block_title font_size_2 brownblack_txt"><?php echo get_post_meta(get_the_ID(), 'A_contacto_subtitulo', true)?></h2>
     </hgroup>
     <form class="main_form" action="sendmail.php">
-      <input class="main_form_input" type="text" placeholder="Nombre*">
-      <input class="main_form_input" type="text" placeholder="Apellidos">
-      <input class="main_form_input" type="email" placeholder="Email*">
-      <input class="main_form_input" type="tel" placeholder="Telf">
-      <textarea class="main_form_input main_textarea" name="" id="" placeholder="Escríbenos*"></textarea>
+      <input class="main_form_input font_size_6" type="text" placeholder="Nombre*">
+      <input class="main_form_input font_size_6" type="text" placeholder="Apellidos">
+      <input class="main_form_input font_size_6" type="email" placeholder="Email*">
+      <input class="main_form_input font_size_6" type="tel" placeholder="Telf">
+      <textarea class="main_form_input font_size_6 main_form_textarea" name="" id="" placeholder="Escríbenos*"></textarea>
       <input class="main_form_btn btn" type="submit" value="Enviar">
     </form>
   </section>
