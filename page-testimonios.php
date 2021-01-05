@@ -78,20 +78,23 @@
     </div> -->
 
   </section>
-  <section class="comment_form">
-    <input class="main_form_input" type="text" placeholder="Nombre">
-    <input class="main_form_input" type="email" placeholder="E-mail">
-    <textarea class="main_form_input main_form_textarea" placeholder="Escríbenos tu testimonio"></textarea>
-    <div class="form_acceptance_container font_size_8">
-      <input id="terms_acceptance" type="checkbox">
-      <label for="terms_acceptance">He leído y acepto la política de privacidad.</label>
-    </div>
-    <input class="btn main_form_btn" type="submit" value="Enviar testimonio">
+  <section class="comment_form_comment">
+    <form class="comment_form" action="">
+      <input class="main_form_input" type="text" placeholder="Nombre*" required>
+      <input class="main_form_input" type="email" placeholder="E-mail*" required>
+      <textarea class="main_form_input main_form_textarea" placeholder="Escríbenos tu testimonio*" required></textarea>
+      <div class="form_acceptance_container font_size_8">
+        <input id="terms_acceptance" type="checkbox" required>
+        <label for="terms_acceptance">He leído y acepto la política de privacidad.</label>
+      </div>
+      <input class="btn main_form_btn" type="submit" value="Enviar testimonio">
+
+    </form>
   </section>
 
   <section class="full_page_media_container">
     <video class="full_page_media" controls="true" alt="Video explicativo">
-      <source type="video/mp4" src="<?php echo get_post_meta($post->ID, 'E_bloque_1_video', true); ?>">
+      <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'E_bloque_1_video', true)); ?>">
     </video>
   </section>
 

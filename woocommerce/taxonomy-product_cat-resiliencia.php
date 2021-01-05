@@ -2,7 +2,7 @@
 
 
 <section class="hero hero_opaque">
-  <img class="hero_img" loading="lazy" src="<?php echo get_img_url_by_slug(get_term_meta( $term->term_id, 'lt_meta_banner', true )); ?>" alt="">
+  <img class="hero_img" loading="lazy" src="<?php echo get_img_url_by_slug(get_term_meta( get_queried_object()->term_id, 'lt_meta_image_atf', true )); ?>" alt="">
   <h1 class="hero_title rowcol1 font_size_2"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_title', true ); ?></h1>
 
   <div class="redDot header_activator"></div>
@@ -12,7 +12,7 @@
 </section>
 
 <section class="flati">
-      <img class="flati_icon" loading="lazy" src="<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_icon', true ); ?>" alt="">
+      <img class="flati_icon" loading="lazy" src="<?php echo get_img_url_by_slug(get_term_meta( get_queried_object()->term_id, 'lt_meta_icon', true )); ?>" alt="">
 
     <!-- <img class="flati_icon" src="" alt=""> -->
     <div class="flati_deco" style="background:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>"></div>

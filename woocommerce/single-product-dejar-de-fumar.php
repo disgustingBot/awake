@@ -29,7 +29,7 @@
 
       <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta( $post->ID, 'A_descripcion_url_video', true )); ?>">
     </video>
-    <h3 class="gertha_title font_size_3" style=" color: <?php echo $category_color; ?> "><?php echo get_post_meta($post->ID, 'A_descripcion_titulo', true); ?></h3>
+    <h3 class="gertha_title alt font_size_3" style=" color: <?php echo $category_color; ?> "><?php echo get_post_meta($post->ID, 'A_descripcion_titulo', true); ?></h3>
   </section>
 
     <section class="showcase6">
@@ -128,7 +128,7 @@
       <h3 class="showcase_title font_size_3 simple_title" style=" color: <?php echo $category_color; ?>">Conceptos que desarrollamos</h3>
 
 
-      <div class="hosi" style=" color: <?php echo $category_color; ?>">
+        <div class="hosi" style=" color: <?php echo $category_color; ?>">
         <?php include get_template_directory().'/assets/myth_message.svg'; ?>
         <p class="hosi_txt font_size_5">Eliminamos mitos y malentendidos<br>asociados con el fumar y la nicotina</p>
       </div>

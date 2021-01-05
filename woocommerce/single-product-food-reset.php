@@ -108,7 +108,7 @@
   </section>
 
   <section class="col_2_block">
-    <h3 class="block_title"><?php echo get_post_meta(get_the_ID(), 'C_segunda_descripcion_titulo', true); ?></h3>
+    <h3 class="block_title font_size_3" style="color: <?php echo $category_color; ?>"><?php echo get_post_meta(get_the_ID(), 'C_segunda_descripcion_titulo', true); ?></h3>
     <div class="col_2_block_col">
       <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'C_segunda_descripcion_texto_1', true); ?></p>
       <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'C_segunda_descripcion_texto_2', true); ?></p>
@@ -120,7 +120,7 @@
   </section>
 
   <section class="separanda alt separanda_backgrounded">
-    <h4 class="separanda_title font_size_3" style="color: <?php echo $category_color; ?>">¿Que incluye el programa?</h4>
+    <h4 class="separanda_title font_size_3" style="color: <?php echo $category_color; ?>">¿Qué incluye el programa?</h4>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/messages.svg'; ?>
       <p class="separanda_text font_size_4" style="color: #706862">

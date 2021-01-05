@@ -89,7 +89,21 @@ add_action('after_setup_theme', 'gp_init');
 
 
 
+function get_img_url_by_slug($slug){
+  return wp_get_attachment_url( get_img_id_by_slug($slug));
+}
 
+function get_img_id_by_slug( $slug ) {
+  $args = array(
+    'post_type' => 'attachment',
+    'name' => sanitize_title($slug),
+    'posts_per_page' => 1,
+    'post_status' => 'inherit',
+  );
+  $_header = get_posts( $args );
+  $header = $_header ? array_pop($_header) : null;
+  return $header ? $header->ID : '';
+}
 
 
 
