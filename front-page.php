@@ -42,7 +42,7 @@
     </svg>
   </div>
   <video class="gertha_img" controls="true" alt="Thanks Taryn! Great video. This is your Instagram: https://www.instagram.com/peanutbuttervisuals/">
-    <source type="video/mp4" src="<?php echo get_post_meta($post->ID, 'E_bloque_1_video', true); ?>">
+    <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'E_bloque_1_video', true)); ?>">
   </video>
 </section>
 
@@ -110,7 +110,7 @@
     </div>
 
 
-    <img class="hero_icon" loading="lazy" src="<?php echo get_post_meta($post->ID, 'icono', true); ?>" alt="">
+    <img class="hero_icon" loading="lazy" src="<?php get_img_url_by_slug(echo get_post_meta($post->ID, 'icono', true)); ?>" alt="">
 
     <div>
       <a href="<?php echo get_permalink(); ?>">

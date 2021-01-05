@@ -13,7 +13,7 @@
   <h4 class="block_title font_size_2"><?php echo get_post_meta(get_the_ID(), 'A_titulo', true); ?></h4>
   <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'A_texto_1', true); ?></p>
   <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'A_texto_2', true); ?></p>
-  <img class="col_1_img" src="<?php echo get_post_meta(get_the_ID(), 'B_firma_img', true); ?>" alt="Firmas de Geoffrey y Rhea" >
+  <img class="col_1_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'B_firma_img', true)); ?>" alt="Firmas de Geoffrey y Rhea" >
 </section>
 
 <section class="tesim_container backgrounded Carousel">

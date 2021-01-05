@@ -24,9 +24,9 @@
       <p class="gertha_txt alt font_size_5"><?php echo get_post_meta($post->ID, 'D_texto_descriptivo_2', true); ?></p>
     </div>
     <video class="gertha_img" controls="true" alt="Thanks Taryn! Great video. This is your Instagram: https://www.instagram.com/peanutbuttervisuals/">
-      <source type="video/mp4" src="<?php echo get_post_meta($post->ID, 'E_url_video_descripcion', true); ?>">
-      </video>
-    </section>
+      <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta( get_the_ID(), 'E_url_video_descripcion', true )); ?>">
+    </video>
+  </section>
 
     <section class="separanda">
       <div class="separanda_item separanda_big" style=" color: <?php echo $category_color; ?> ">
@@ -43,14 +43,14 @@
     </section>
     <section class="showcase2">
       <div class="galu">
-          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_1', true); ?>" alt="">
-          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_2', true); ?>" alt="">
-          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_3', true); ?>" alt="">
-          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_4', true); ?>" alt="">
-          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_5', true); ?>" alt="">
-          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_6', true); ?>" alt="">
-          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_7', true); ?>" alt="">
-          <img class="galu_img" src="<?php echo get_post_meta(get_the_ID(), 'G_imagen_galeria_8', true); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_1', true)); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_2', true)); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_3', true)); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_4', true)); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_5', true)); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_6', true)); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_7', true)); ?>" alt="">
+          <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_8', true)); ?>" alt="">
       </div>
       <div class="pista">
         <h5 class="pista_title">Programa Orientativo</h5>
@@ -154,7 +154,8 @@
 
 
     <section class="copa">
-      <img class="copa_img" src="<?php echo get_post_meta($post->ID, 'J_imagen_modulo_compra', true); ?>" alt="">
+
+      <img class="copa_img" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'J_imagen_modulo_compra', true)); ?>" alt="">
       <?php include 'variable_product_interaction.php'; ?>
 
     </section>

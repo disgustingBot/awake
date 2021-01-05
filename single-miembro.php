@@ -22,7 +22,7 @@
           <h3 class="tory_highlight" style="color:<?php echo get_post_meta($post->ID, 'color_detalles_internos', true); ?>"><?php echo get_post_meta($post->ID, $i . '_highlight', true); ?></h3>
           <p class="tory_root"><?php echo get_post_meta($post->ID, $i . '_root', true); ?></p>
         <?php } ?>
-        <img class="tory_img tory_img_<?php echo $i . $img_alt; ?>" src="<?php echo get_post_meta($post->ID, $i . '_image', true); ?>" alt="">
+        <img class="tory_img tory_img_<?php echo $i . $img_alt; ?>" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, $i . '_image', true)); ?>" alt="">
         <?php if(!$img_alt) { ?>
           <h5 class="tory_subtitle tory_subtitle_<?php echo $i; ?>"><?php echo get_post_meta($post->ID, $i . '_subtitle', true); ?></h5>
           <p class="tory_text tory_text_<?php echo $i; ?>"><?php echo get_post_meta($post->ID, $i . '_text', true); ?></p>
