@@ -37,7 +37,7 @@
       </p>
     </div>
     <div class="aditional_info_item">
-      <p class="aditional_info_txt"><?php echo get_comments_number() ?> comments</p>
+      <p class="aditional_info_txt"><?php comments_number( 'no comments', 'one comment', '% comments' ); ?></p>
     </div>
   </div>
   <div class="aditional_info_deco"></div>

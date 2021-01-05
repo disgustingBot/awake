@@ -1,7 +1,10 @@
 <?php
 //Get only the approved comments
+// echo get_the_ID();
 $args = array(
-    'status' => 'approve'
+    'status' => 'approve',
+    'post_id' => get_the_ID(),
+
 );
 
 // The comment Query
