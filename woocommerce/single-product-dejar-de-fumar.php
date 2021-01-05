@@ -26,10 +26,11 @@
       <p class="gertha_txt alt font_size_5"><?php echo get_post_meta($post->ID, 'A_descripcion_texto_4', true); ?></p>
     </div>
     <video class="gertha_img" controls="true" alt="">
-      <source type="video/mp4" src="<?php echo get_post_meta($post->ID, 'A_descripcion_url_video', true); ?>">
-      </video>
-      <h3 class="gertha_title font_size_3" style=" color: <?php echo $category_color; ?> "><?php echo get_post_meta($post->ID, 'A_descripcion_titulo', true); ?></h3>
-    </section>
+
+      <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta( $post->ID, 'A_descripcion_url_video', true )); ?>">
+    </video>
+    <h3 class="gertha_title font_size_3" style=" color: <?php echo $category_color; ?> "><?php echo get_post_meta($post->ID, 'A_descripcion_titulo', true); ?></h3>
+  </section>
 
     <section class="showcase6">
       <h3 class="showcase_title font_size_3 simple_title" style=" color: <?php echo $category_color; ?> ">Ofrecemos</h3>
@@ -192,7 +193,8 @@
 
 
     <section class="copa">
-      <img class="copa_img" src="<?php echo get_post_meta(get_the_ID(), 'C_imagen_modulo_compra', true); ?>" alt="">
+
+      <img class="copa_img" src="<?php echo get_img_url_by_slug(get_post_meta( get_the_ID(), 'C_imagen_modulo_compra', true )); ?>" alt="">
       <?php include 'variable_product_interaction.php'; ?>
 
     </section>

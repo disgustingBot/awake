@@ -85,11 +85,11 @@
 
   <section class="showcase2">
     <div class="galo">
-      <img class="galo_img" src="<?php echo get_post_meta(get_the_ID(), 'B_imagen_galeria_1', true); ?>" alt="">
-      <img class="galo_img" src="<?php echo get_post_meta(get_the_ID(), 'B_imagen_galeria_2', true); ?>" alt="">
-      <img class="galo_img" src="<?php echo get_post_meta(get_the_ID(), 'B_imagen_galeria_3', true); ?>" alt="">
-      <img class="galo_img" src="<?php echo get_post_meta(get_the_ID(), 'B_imagen_galeria_4', true); ?>" alt="">
-      <img class="galo_img" src="<?php echo get_post_meta(get_the_ID(), 'B_imagen_galeria_5', true); ?>" alt="">
+      <img class="galo_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'B_imagen_galeria_1', true)); ?>" alt="">
+      <img class="galo_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'B_imagen_galeria_2', true)); ?>" alt="">
+      <img class="galo_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'B_imagen_galeria_3', true)); ?>" alt="">
+      <img class="galo_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'B_imagen_galeria_4', true)); ?>" alt="">
+      <img class="galo_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'B_imagen_galeria_5', true)); ?>" alt="">
     </div>
     <div class="pista">
       <h5 class="pista_title alt">¿Qué aprenderás?</h5>
@@ -150,7 +150,8 @@
     </div>
   </section>
   <section class="copa">
-    <img class="copa_img" src="<?php echo get_post_meta($post->ID, 'D_imagen_modulo_compra', true); ?>" alt="">
+
+    <img class="copa_img" src="<?php echo get_img_url_by_slug(get_post_meta( $post->ID, 'D_imagen_modulo_compra', true )); ?>" alt="">
     <?php include 'variable_product_interaction.php'; ?>
 
   </section>
