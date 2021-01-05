@@ -28,7 +28,7 @@
     <video class="gertha_img" controls="true" alt="">
       <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'A_descripcion_url_video', true)); ?>">
     </video>
-    <h3 class="gertha_title font_size_4" style=" color: <?php echo $category_color; ?> ">
+    <h3 class="gertha_title alt font_size_4" style=" color: <?php echo $category_color; ?> ">
       <?php echo get_post_meta($post->ID, 'A_descripcion_titulo', true); ?>
       <br>
       <a class="gertha_link" href="<?php echo get_post_meta($post->ID, 'A_descripcion_link', true); ?>" style=" color: #968778 "><?php echo get_post_meta($post->ID, 'A_descripcion_link_texto', true); ?></a>

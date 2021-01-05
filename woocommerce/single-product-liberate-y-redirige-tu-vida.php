@@ -80,7 +80,7 @@
   </section>
 
   <section class="separanda alt separanda_backgrounded">
-    <h4 class="separanda_title alt font_size_3" style="color: <?php echo $category_color; ?>">¿Qué incluyen las sesiones?</h4>
+    <h4 class="separanda_title alt font_size_3" style="color: <?php echo $category_color; ?>">¿Qué incluye el programa?</h4>
 
     <div class="separanda_subtitle_container">
       <h6 class="separanda_subtitle font_size_5" style="color: <?php echo $category_color; ?>">Primera fase – Libérate</h6>

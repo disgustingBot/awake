@@ -41,8 +41,8 @@
       while(true){
         if(get_post_meta(get_the_ID(), 'B_programa_'.$i.'_text', true)){ ?>
           <div class="pista_group">
-            <p class="pista_txt pista_text font_size_6"><?php echo get_post_meta(get_the_ID(), 'B_programa_'.$i.'_day', true); ?></p>
-            <p class="pista_txt pista_text font_size_6"><?php echo get_post_meta(get_the_ID(), 'B_programa_'.$i.'_time', true); ?></p>
+            <p class="pista_txt pista_text font_size_6"><strong><?php echo get_post_meta(get_the_ID(), 'B_programa_'.$i.'_day', true); ?></strong></p>
+            <p class="pista_txt pista_text font_size_6"><strong><?php echo get_post_meta(get_the_ID(), 'B_programa_'.$i.'_time', true); ?></strong></p>
             <p class="pista_txt pista_time font_size_6"><?php echo get_post_meta(get_the_ID(), 'B_programa_'.$i.'_text', true); ?></p>
           </div>
           <?php

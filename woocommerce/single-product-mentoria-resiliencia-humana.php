@@ -37,69 +37,69 @@
     <div class="showcase6_container">
       <div class="hosi" style="color: white; background: #C0CED3;">
         <?php include get_template_directory().'/assets/destructive_guy.svg'; ?>
-        <p class="hosi_txt font_size_6">
+        <p class="hosi_txt font_size_6" style="color:inherit!important">
           CONDUCTAS<br>DESTRUCTIVAS
         </p>
       </div>
       <div class="hosi" style="color: <?php echo $category_color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/hard_emotions.svg'; ?>
-        <p class="hosi_txt font_size_6">
+        <p class="hosi_txt font_size_6" style="color:inherit!important">
           EMOCIONES<br>DIFÍCILES
         </p>
       </div>
 
       <div class="hosi" style="color: white; background: #C0CED3;">
         <?php include get_template_directory().'/assets/learn_forgiveness.svg'; ?>
-        <p class="hosi_txt font_size_6">
+        <p class="hosi_txt font_size_6" style="color:inherit!important">
           APRENDER<br>A PERDONAR
         </p>
       </div>
 
       <div class="hosi" style="color: <?php echo $category_color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/trauma.svg'; ?>
-        <p class="hosi_txt font_size_6">
+        <p class="hosi_txt font_size_6" style="color:inherit!important">
           TRAUMAS Y<br>ABUSO
         </p>
       </div>
 
       <div class="hosi" style="color: white; background: #C0CED3;">
         <?php include get_template_directory().'/assets/negative_stress.svg'; ?>
-        <p class="hosi_txt font_size_6">
+        <p class="hosi_txt font_size_6" style="color:inherit!important">
           ESTRÉS<br>NEGATIVO
         </p>
       </div>
 
       <div class="hosi" style="color: <?php echo $category_color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/couple_problems.svg'; ?>
-        <p class="hosi_txt font_size_6">
+        <p class="hosi_txt font_size_6" style="color:inherit!important">
           DIFICULTADES<br>DE PAREJA
         </p>
       </div>
 
       <div class="hosi" style="color: white; background: #C0CED3;">
         <?php include get_template_directory().'/assets/panic_attack.svg'; ?>
-        <p class="hosi_txt font_size_6">
+        <p class="hosi_txt font_size_6" style="color:inherit!important">
           ATAQUES<br>DE PÁNICO
         </p>
       </div>
 
       <div class="hosi" style="color: <?php echo $category_color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/adictions.svg'; ?>
-        <p class="hosi_txt font_size_6">
+        <p class="hosi_txt font_size_6" style="color:inherit!important">
           ADICCIONES<br>ALCOHOL, DROGAS
         </p>
       </div>
 
       <div class="hosi" style="color: white; background: #C0CED3;">
         <?php include get_template_directory().'/assets/insomnio.svg'; ?>
-        <p class="hosi_txt font_size_6">
+        <p class="hosi_txt font_size_6" style="color:inherit!important">
           INSOMNIO
         </p>
       </div>
 
       <div class="hosi" style="color: <?php echo $category_color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/anxiety.svg'; ?>
-        <p class="hosi_txt font_size_6">
+        <p class="hosi_txt font_size_6" style="color:inherit!important">
           DEPRESIÓN<br>ANSIEDAD
         </p>
       </div>
