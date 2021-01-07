@@ -412,6 +412,19 @@ if (searchers){ activate_searchers(searchers) }
 
 
 
+// 
+// shareButton = d.querySelector('.log_title');
+// shareButton.addEventListener('click', async () => {
+//   try {
+//     await navigator.share({ title: "Example Page", url: "" });
+//     console.log("Data was shared successfully");
+//   } catch (err) {
+//     alert(err.message)
+//     // console.error("Share failed:", err.message);
+//   }
+// });
+
+
 
 
 
