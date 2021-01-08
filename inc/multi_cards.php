@@ -43,7 +43,7 @@
             </div>
         <?php } ?>
         <?php if($args['title'] != false){ ?>
-            <h6 class="simpla_title font_size_6 row2col1"><?php echo $args['title']; ?></h6>
+            <h6 class="simpla_title font_size_7 row2col1"><?php echo $args['title']; ?></h6>
         <?php } ?>
         <?php if($args['color'] != false){ ?>
             <div class="simpla_deco" style="color:<?php echo $args['color']; ?>"></div>

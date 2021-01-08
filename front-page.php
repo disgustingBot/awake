@@ -32,11 +32,11 @@
 
 <section class="gertha lateral_m">
   <div class="gertha_deco"></div>
-  <h2 class="gertha_title font_size_1"><?php echo get_post_meta($post->ID, 'A_bloque_1_titulo', true); ?></h2>
+  <h2 class="gertha_title font_size_2"><?php echo get_post_meta($post->ID, 'A_bloque_1_titulo', true); ?></h2>
   <div class="gertha_caption">
-    <p class="gertha_txt font_size_5"><?php echo get_post_meta($post->ID, 'B_bloque_1_texto_1', true); ?></p>
-    <p class="gertha_txt font_size_5"><?php echo get_post_meta($post->ID, 'C_bloque_1_texto_2', true); ?></p>
-    <p class="gertha_txt font_size_5"><?php echo get_post_meta($post->ID, 'D_bloque_1_texto_3', true); ?></p>
+    <p class="gertha_txt font_size_6"><?php echo get_post_meta($post->ID, 'B_bloque_1_texto_1', true); ?></p>
+    <p class="gertha_txt font_size_6"><?php echo get_post_meta($post->ID, 'C_bloque_1_texto_2', true); ?></p>
+    <p class="gertha_txt font_size_6"><?php echo get_post_meta($post->ID, 'D_bloque_1_texto_3', true); ?></p>
     <svg class="gertha_signature" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 200">
       <use xlink:href="#signature"></use>
     </svg>
