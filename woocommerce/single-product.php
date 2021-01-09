@@ -6,7 +6,7 @@
 
     <section class="hero">
         <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-        <h1 class="hero_title"><?php the_title(); ?></h1>
+        <h1 class="hero_title font_size_1"><?php the_title(); ?></h1>
         <div class="redDot header_activator"></div>
     </section>
 

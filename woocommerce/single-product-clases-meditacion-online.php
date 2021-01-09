@@ -9,8 +9,8 @@
 
   <section class="hero hero_opaque">
     <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-    <h1 class="hero_title alt"><?php the_title(); ?></h1>
-    <h2 class="hero_txt font_size_6"><?php echo the_content() ?></h2>
+    <h1 class="hero_title alt font_size_1"><?php the_title(); ?></h1>
+    <h2 class="hero_txt font_size_7"><?php echo the_content() ?></h2>
     <svg class="hero_arrow_down" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
       <use xlink:href="#arrow_down"></use>
     </svg>
@@ -19,11 +19,11 @@
 
   <section class="col_2_block">
     <div class="col_2_block_col">
-      <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'A_descripcion_texto_1', true); ?></p>
-      <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'A_descripcion_texto_2', true); ?></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'A_descripcion_texto_1', true); ?></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'A_descripcion_texto_2', true); ?></p>
     </div>
     <div class="col_2_block_col">
-      <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'A_descripcion_texto_3', true); ?></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'A_descripcion_texto_3', true); ?></p>
     </div>
   </section>
 
@@ -35,15 +35,15 @@
       <!-- <img class="gali_img" src="https://picsum.photos/302" alt=""> -->
     </div>
     <div class="pista">
-      <h5 class="pista_title">Sesiones</h5>
+      <h5 class="pista_title font_size_5">Sesiones</h5>
 
       <?php $i = 1;
       while(true){
         if(get_post_meta(get_the_ID(), 'B_programa_'.$i.'_text', true)){ ?>
           <div class="pista_group">
-            <p class="pista_txt pista_text font_size_6"><strong><?php echo get_post_meta(get_the_ID(), 'B_programa_'.$i.'_day', true); ?></strong></p>
-            <p class="pista_txt pista_text font_size_6"><strong><?php echo get_post_meta(get_the_ID(), 'B_programa_'.$i.'_time', true); ?></strong></p>
-            <p class="pista_txt pista_time font_size_6"><?php echo get_post_meta(get_the_ID(), 'B_programa_'.$i.'_text', true); ?></p>
+            <p class="pista_txt pista_text font_size_7"><strong><?php echo get_post_meta(get_the_ID(), 'B_programa_'.$i.'_day', true); ?></strong></p>
+            <p class="pista_txt pista_text font_size_7"><strong><?php echo get_post_meta(get_the_ID(), 'B_programa_'.$i.'_time', true); ?></strong></p>
+            <p class="pista_txt pista_time font_size_7"><?php echo get_post_meta(get_the_ID(), 'B_programa_'.$i.'_text', true); ?></p>
           </div>
           <?php
           $i=$i+1;
@@ -53,10 +53,10 @@
   </section>
 
   <section class="separanda alt">
-    <h4 class="separanda_title font_size_3" style="color: <?php echo $category_color; ?>">¿Qué incluyen las sesiones?</h4>
+    <h4 class="separanda_title font_size_4" style="color: <?php echo $category_color; ?>">¿Qué incluyen las sesiones?</h4>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/meditate.svg'; ?>
-      <p class="separanda_text font_size_4">
+      <p class="separanda_text font_size_6">
         Meditación
         <br>
         y Resiliencia
@@ -67,7 +67,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/stretch.svg'; ?>
-      <p class="separanda_text font_size_4">
+      <p class="separanda_text font_size_6">
         Movimiento
         <br>
         y Yoga
@@ -78,7 +78,7 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/workshops.svg'; ?>
-      <p class="separanda_text font_size_4">Talleres</p>
+      <p class="separanda_text font_size_6">Talleres</p>
     </div>
   </section>
 

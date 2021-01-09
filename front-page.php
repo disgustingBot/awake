@@ -15,7 +15,7 @@
   while($banners->have_posts()){$banners->the_post();?>
     <div class="hero Element">
       <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-      <h1 class="hero_title font_size_1"><?php the_title(); ?></h1>
+      <h3 class="hero_title font_size_1"><?php the_title(); ?></h3>
     </div>
   <?php } wp_reset_query(); ?>
 
@@ -115,13 +115,13 @@
 
     <div>
       <a href="<?php echo get_permalink(); ?>">
-        <h1 class="hero_title font_size_3">
+        <h1 class="hero_title font_size_2">
           <?php the_title(); ?>
         </h1>
       </a>
-      <a class="hero_link font_size_6" href="<?php echo get_permalink(); ?>">PRÓXIMAS FECHAS</a>
+      <a class="hero_link font_size_7" href="<?php echo get_permalink(); ?>">PRÓXIMAS FECHAS</a>
     </div>
-    <div class="hero_txt font_size_6"><?php the_excerpt(); ?></div>
+    <div class="hero_txt font_size_7"><?php the_excerpt(); ?></div>
   </div>
 <?php } wp_reset_query(); ?>
 
@@ -148,8 +148,8 @@
         <svg class="tesim_icon" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 38 34">
           <use xlink:href="#quote_icon"></use>
         </svg>
-        <div class="tesim_txt font_size_5"><?php the_content(); ?></div>
-        <p class="tesim_author font_size_5"><?php the_title(); ?></p>
+        <div class="tesim_txt font_size_6"><?php the_content(); ?></div>
+        <p class="tesim_author font_size_6"><?php the_title(); ?></p>
       </quote>
       <?php $i=$i+1; } wp_reset_query(); ?>
     </div>
