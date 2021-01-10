@@ -76,9 +76,7 @@ function woocommerce_subcats_from_parentcat($category){
       <div class="selectBoxButton" onclick="altClassFromSelector('focus', '#selectBox<?php echo $term->term_id; ?>')">
       <!-- <div class="selectBoxButton"> -->
         <p class="selectBoxPlaceholder"><?php echo $term->name; ?></p>
-        <p class="selectBoxCurrent" id="selectBoxCurrent<?php echo $term->term_id; ?>">
-          <?php if(isset($_GET[$term->slug])){ echo $_GET[$term->slug]; } ?>
-        </p>
+        <p class="selectBoxCurrent" id="selectBoxCurrent<?php echo $term->term_id; ?>"><?php if(isset($_GET[$term->slug])){ echo $_GET[$term->slug]; } ?></p>
       </div>
       <div class="selectBoxList">
         <label for="nul<?php echo $term->term_id; ?>" class="selectBoxOption">
@@ -190,6 +188,9 @@ function subterms_from_parent_term($parent, $taxonomy, $cycle){
 
     <div class="SelectBox<?php if($filtered){ echo ' alt'; } ?>" tabindex="1" id="selectBox<?php echo $term->term_id; ?>">
       <div class="selectBoxButton" onclick="altClassFromSelector('focus', '#selectBox<?php echo $term->term_id; ?>')">
+        <svg class="select_box_icon dropdown_icon" width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M31.7481 0.701755L31.2388 0.232817C30.9017 -0.0776058 30.3566 -0.0776058 30.0194 0.232817L16.004 13.1451L1.98145 0.232817C1.64434 -0.0776058 1.09921 -0.0776058 0.762097 0.232817L0.252837 0.701755C-0.0842789 1.01218 -0.0842789 1.51414 0.252837 1.82456L15.3872 15.7672C15.7243 16.0776 16.2694 16.0776 16.6065 15.7672L31.7409 1.82456C32.0852 1.51414 32.0852 1.01218 31.7481 0.701755Z" fill="currentColor"/>
+        </svg>
       <!-- <div class="selectBoxButton"> -->
         <p class="selectBoxPlaceholder"><?php echo $term->name; ?></p>
         <p class="selectBoxCurrent" id="selectBoxCurrent<?php echo $term->term_id; ?>">
