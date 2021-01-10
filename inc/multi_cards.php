@@ -4,7 +4,13 @@
     if(!isset($args['link']   )){ $args['link']    = get_the_permalink(); }
     if(!isset($args['image']  )){ $args['image']   = get_the_post_thumbnail_url(); }
     if(!isset($args['excerpt'])){ $args['excerpt'] = get_the_excerpt(); }
-    if(!isset($args['color']  )){ $args['color']   = get_post_meta(get_the_ID(), 'color', true); }
+    if(!isset($args['color']  )){
+      if (get_post_meta(get_the_ID(), 'color', true)){
+        $args['color']   = get_post_meta(get_the_ID(), 'color', true);
+      } else {
+        $args['color']   = get_random_color();
+      }
+    }
     ?>
 
     <div class="sqare">
@@ -85,7 +91,13 @@
     if(!isset($args['link']   )){ $args['link']    = get_the_permalink(); }
     if(!isset($args['image']  )){ $args['image']   = get_the_post_thumbnail_url(); }
     if(!isset($args['excerpt'])){ $args['excerpt'] = get_the_excerpt(); }
-    if(!isset($args['color']  )){ $args['color']   = get_post_meta(get_the_ID(), 'color', true); }
+    if(!isset($args['color']  )){
+      if (get_post_meta(get_the_ID(), 'color', true)){
+        $args['color']   = get_post_meta(get_the_ID(), 'color', true);
+      } else {
+        $args['color']   = get_random_color();
+      }
+    }
     ?>
     <?php global $woocommerce, $product, $post;$is_out_of_stock = false; ?>
     <?php if( !$product->is_on_backorder() AND !$product->is_in_stock() ){ $is_out_of_stock = true; } ?>
@@ -234,6 +246,7 @@
           <!-- id="myAddToCart" -->
           <button
               class="btn hedi_btn font_size_8 My_add_to_cart_button"
+              style="background:<?php echo $args['color']; ?>"
               onclick="my_add_to_cart_function(this)"
               data-product-id="<?php echo get_the_id(); ?>"
               data-product-type="<?php echo $product->get_type(); ?>"

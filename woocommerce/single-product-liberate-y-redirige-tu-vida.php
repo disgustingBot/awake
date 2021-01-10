@@ -175,7 +175,7 @@
 
     <banner class="banner_1" style=" background: <?php echo $category_color; ?> ">
       <h4 class="banner_title font_size_3"><?php echo get_post_meta(get_the_ID(), 'D_titulo_banner', true); ?></h4>
-      <a href="<?php echo get_post_meta(get_the_ID(), 'D_link_boton_banner', true); ?>" class="btn white_btn font_size_6" style=" background: <?php echo $category_color; ?> "><?php echo get_post_meta(get_the_ID(), 'D_texto_boton_banner', true); ?></a>
+      <a href="<?php echo site_url() . '/contacto'; ?>" class="btn white_btn font_size_6" style=" background: <?php echo $category_color; ?> "><?php echo get_post_meta(get_the_ID(), 'D_texto_boton_banner', true); ?></a>
     </banner>
 
 
