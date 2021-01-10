@@ -46,20 +46,20 @@ function lt_customize_register( $wp_customize ) {
 
 
 
-    
+
     //select sanitization function
     function theme_slug_sanitize_select( $input, $setting ){
         //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
         $input = sanitize_key($input);
-        //get the list of possible select options 
+        //get the list of possible select options
         $choices = $setting->manager->get_control( $setting->id )->choices;
         //return input if valid or return default option
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
     }
 
 
 
-    
+
     $wp_customize->add_section( 'theme_font_settings', array(
         'title' => __( 'Theme Font Settings', 'awake' ),
         'priority' => 5,
@@ -110,7 +110,7 @@ function lt_customize_register( $wp_customize ) {
     );
 
     foreach ( $font_sizes as $size ) {
-        
+
         //add setting to your section
         $wp_customize->add_setting(
             $size['slug'].'_number',
@@ -126,7 +126,7 @@ function lt_customize_register( $wp_customize ) {
             array(
                 'label' => $size['label_number'],
                 'section' => 'theme_font_settings',
-                'type' => 'number'
+                'type' => 'text'
             )
         );
 

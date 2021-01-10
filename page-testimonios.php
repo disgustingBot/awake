@@ -2,7 +2,7 @@
 
 <section class="hero hero_opaque">
   <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-  <h1 class="hero_title"><?php echo the_content() ?></h1>
+  <h1 class="hero_title font_size_1"><?php echo the_content() ?></h1>
   <svg class="hero_arrow_down" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
     <use xlink:href="#arrow_down"></use>
   </svg>
@@ -11,8 +11,8 @@
 
 <section class="col_1_block alt">
   <h4 class="block_title font_size_2"><?php echo get_post_meta(get_the_ID(), 'A_titulo', true); ?></h4>
-  <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'A_texto_1', true); ?></p>
-  <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'A_texto_2', true); ?></p>
+  <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'A_texto_1', true); ?></p>
+  <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'A_texto_2', true); ?></p>
   <img class="col_1_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'B_firma_img', true)); ?>" alt="Firmas de Geoffrey y Rhea" >
 </section>
 
@@ -34,8 +34,8 @@
         <svg class="tesim_icon" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 38 34">
           <use xlink:href="#quote_icon"></use>
         </svg>
-        <div class="tesim_txt font_size_5"><?php the_content(); ?></div>
-        <p class="tesim_author font_size_5"><?php the_title(); ?></p>
+        <div class="tesim_txt font_size_6"><?php the_content(); ?></div>
+        <p class="tesim_author font_size_6"><?php the_title(); ?></p>
       </quote>
       <?php $i=$i+1; } wp_reset_query(); ?>
     </div>
@@ -80,14 +80,14 @@
   </section>
   <section class="comment_form_comment">
     <form class="comment_form" action="">
-      <input class="main_form_input" type="text" placeholder="Nombre*" required>
-      <input class="main_form_input" type="email" placeholder="E-mail*" required>
-      <textarea class="main_form_input main_form_textarea" placeholder="Escríbenos tu testimonio*" required></textarea>
+      <input class="main_form_input font_size_8" type="text" placeholder="Nombre*" required>
+      <input class="main_form_input font_size_8" type="email" placeholder="E-mail*" required>
+      <textarea class="main_form_input font_size_8 main_form_textarea" placeholder="Escríbenos tu testimonio*" required></textarea>
       <div class="form_acceptance_container font_size_8">
         <input id="terms_acceptance" type="checkbox" required>
-        <label for="terms_acceptance">He leído y acepto la política de privacidad.</label>
+        <label class="font_size_8" for="terms_acceptance">He leído y acepto la política de privacidad.</label>
       </div>
-      <input class="btn main_form_btn" type="submit" value="Enviar testimonio">
+      <input class="btn main_form_btn font_size_8" type="submit" value="Enviar testimonio">
 
     </form>
   </section>

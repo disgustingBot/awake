@@ -230,6 +230,8 @@ FIN DE MAPA DE CONTENIDOS */
 
   /* ?HEADER */
   --header_padding_top:10px;
+  --menu_item_width: max-content;
+  --menu_item_margin: auto;
 
   /* ?nav_menu */
   --nav_menu_height: calc(var(--vh, 1vh) * 100);
@@ -482,6 +484,8 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?HEADER */
     --header_padding_top:3rem;
+    --menu_item_width: ;
+    --menu_item_margin: ;
 
 
     /* ?nav_menu */
@@ -982,7 +986,8 @@ img, video, source{
 --------------------------------------------------------------------------- */
 /* .blog .logo_img, */
 :not(.observed) > .logo > .logo_img,
-.mobile_menu_active .logo .logo_img{color:black}
+:not(.observed) > .nav_menu,
+.mobile_menu_active .logo .logo_img{color:var(--brownblack)}
 .mobile_menu_active .logo .logo_img{transition:.4s}
 
 .logo{
@@ -993,7 +998,6 @@ img, video, source{
   position: absolute;
   /* margin: .5rem; */
 }
-.logo:hover .logo_img{filter: drop-shadow( 0 0 4px rgba(0, 0, 0, 1))}
 .observed .logo_img{color:white}
 .logo_img{
   width: var(--logo_size);
@@ -1135,7 +1139,7 @@ img, video, source{
   color: var(--grey7);
 }
 .gertha_txt.alt {
-  font-weight: normal;
+  font-weight: lighter;
 }
 .gertha_signature {
   width: 300px;
@@ -1259,7 +1263,7 @@ img, video, source{
   display:grid;
   grid-gap:.5rem;
   margin-bottom: auto;
-  color: var(--grey6);
+  color: var(--brownblack);
 }
 .sqare_amg {
   display:flex;
@@ -1335,7 +1339,8 @@ section.flati{
   font-weight: 500;
 }
 .flati_txt{
-  color: var(--grey9);
+  color: var(--grey7);
+  font-weight: lighter;
 }
 
 /* ---------------------------------------------------------------------------
@@ -1365,7 +1370,7 @@ section.flati{
 }
 .hosi_txt {
   text-align: center;
-  color: #706862;
+  color: var(--brownblack);
 }
 
 
@@ -1960,7 +1965,7 @@ section.flati{
                           6.8.1) =nav_menu:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-:not(.observed) > .nav_menu{color:black}
+:not(.observed) > .nav_menu{color:var(--brownblack)}
 /* .blog .nav_menu */
 .nav_menu {
   background:transparent;
@@ -1985,7 +1990,7 @@ section.flati{
 
 .mobile_menu_active .nav_menu {
   transition: background .3s, clip-path .4s .1s, color .5s;
-  color:black;
+  color:var(--brownblack);
   background:white;
   clip-path:circle(calc(100vmax * 1.42) at calc(100vw - 16px - 2rem) calc(2rem));
 }
@@ -2005,6 +2010,8 @@ section.flati{
 }
 .nav_bar .menu-item{
   position:relative;
+  width: var(--menu_item_width);
+  margin: var(--menu_item_margin);
 }
 .nav_bar .menu-item::before {
   position: absolute;
@@ -2124,12 +2131,15 @@ section.flati{
 }
 .phil_caption {
   grid-column:span 2;
-  color: var(--grey6);
+  color: var(--brownblack);
 }
 .phil_select {
   background: transparent;
   padding:.5rem;
   color:var(--grey5);
+}
+.phil_search_container {
+  position: relative;
 }
 .phil_search {
   background: transparent;
@@ -2141,6 +2151,12 @@ section.flati{
   max-height: 45px;
   margin: auto 0;
   border: 1px solid var(--grey8);
+  min-height: 35px;
+  color:var(--brownblack);
+  text-transform: capitalize;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  width: 100%;
 }
 
 /* ---------------------------------------------------------------------------
@@ -2150,7 +2166,7 @@ section.flati{
 --------------------------------------------------------------------------- */
 .mivi .prenex{color:black}
 .mivi{
-  background:var(--greyf5);
+  background:var(--greyf5);z
   padding:5rem var(--lateral);
   display:grid;
   grid-gap:4rem;
@@ -2634,7 +2650,6 @@ section.flati{
 }
 .copa_title{
   grid-column:1/-1;
-  font-size: var(--font_size_4);
   color: var(--grey7);
   margin-bottom: 1.6rem;
 }
@@ -2679,10 +2694,12 @@ section.flati{
 .copa_mas{
   grid-column: 1/-1;
   margin-top: 1.6rem;
+  font-size: var(--font_size_6);
 }
 .copa_mas_link {
   color: var(--secondary_color);
   text-decoration: underline;
+  font-size: inherit;
 }
 
 
@@ -2944,12 +2961,10 @@ section.flati{
   font-family: 'Lato', sans-serif;
   font-weight: normal;
   height: min-content;
-  font-size: calc(var(--font_size_5) * 1.2);
 }
 .tory_root{
   padding-left:var(--tory_root_padding_left);
   padding-right:var(--lateral);
-  font-size:var(--font_size_5);
   grid-column:var(--tory_text_GC);
   font-weight: bold;
 }
@@ -3025,7 +3040,6 @@ section.flati{
   --selectBoxHeight:40px;
 }
 .selectBoxButton{
-  color:#333;
   cursor: pointer;
   display:grid;
   grid-row:1;
@@ -3039,8 +3053,6 @@ section.flati{
 }
 
 .selectBoxPlaceholder{
-  /* font-size: 16px!important; */
-  text-transform: uppercase;
   height:1rem;
   line-height:1rem;
   left:16px;
@@ -3048,6 +3060,7 @@ section.flati{
   top:calc(50% - .5rem);
   transition:.3s;
   transform-origin:left;
+  font-weight: var(--font_size_7);
 }
 
 .selectBoxCurrent{
@@ -3130,7 +3143,19 @@ section.flati{
 .selectBoxInput {
   display: none;
 }
-
+.select_box_icon {
+  position: absolute;
+  color: var(--brownblack);
+  pointer-events: none;
+}
+.search_icon {
+  top: 8px;
+  right: 10px;
+}
+.dropdown_icon {
+  top: 12px;
+  right: 10px;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -3183,6 +3208,7 @@ section.flati{
 .block_txt {
   margin-bottom: 1rem;
   color: var(--grey6);
+  font-weight: lighter;
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -3299,7 +3325,7 @@ section.flati{
   line-height: 12px;
 }
 .piqui_item{
-  font-size: var(--font_size_7);
+  font-size: calc(var(--font_size_8) * 0.8);
   color: var(--grey9);
 }
 form.piqui {grid-gap: var(--form_piqui_grid_gap)}

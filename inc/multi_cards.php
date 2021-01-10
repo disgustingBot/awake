@@ -19,12 +19,12 @@
                 <img class="sqare_img" loading="lazy" src="<?php echo $args['image']; ?>" alt="">
             </a>
         <?php } ?>
-        <h4 class="sqare_title font_size_4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-        <p class="sqare_author font_size_6">by <?php the_author(); ?></p>
-        <div class="sqare_deco" style="color:<?php echo $args['color']; ?>"></div>
-        <p class="sqare_date font_size_6" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"><?php the_time( 'F Y' ); ?></p>
-        <p class="sqare_exerpt font_size_5"><?php echo excerpt(200); ?></p>
-        <a class="sqare_link font_size_5" href="<?php the_permalink(); ?>">&mdash; Leer más</a>
+        <h4 class="sqare_title font_size_6"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+        <p class="sqare_author font_size_8">by <?php the_author(); ?></p>
+        <div class="sqare_deco" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"></div>
+        <p class="sqare_date font_size_7" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"><?php the_time( 'F Y' ); ?></p>
+        <p class="sqare_exerpt font_size_8"><?php echo excerpt(200); ?></p>
+        <a class="sqare_link font_size_8" href="<?php the_permalink(); ?>">&mdash; Leer más</a>
     </div>
 
 <?php } ?>
@@ -49,7 +49,7 @@
             </div>
         <?php } ?>
         <?php if($args['title'] != false){ ?>
-            <h6 class="simpla_title font_size_6 row2col1"><?php echo $args['title']; ?></h6>
+            <h6 class="simpla_title font_size_7 row2col1"><?php echo $args['title']; ?></h6>
         <?php } ?>
         <?php if($args['color'] != false){ ?>
             <div class="simpla_deco" style="color:<?php echo $args['color']; ?>"></div>
@@ -70,8 +70,8 @@
 
 
           <div class="col_testimonial">
-            <p class="col_testimonial_title font_size_5"><?php echo $args['title']; ?></p>
-            <div class="col_testimonial_content font_size_5">
+            <p class="col_testimonial_title font_size_7"><?php echo $args['title']; ?></p>
+            <div class="col_testimonial_content font_size_7">
               <?php echo $args['content']; ?>
             </div>
           </div>
@@ -109,7 +109,7 @@
             </a>
         <?php } ?>
         <?php if($args['title'] != false){ ?>
-            <h6 class="hedi_title font_size_5 rowcol1">
+            <h6 class="hedi_title font_size_6 rowcol1">
               <a href="<?php echo $args['link']; ?>"><?php echo $args['title']; ?></a>
             </h6>
         <?php } ?>
@@ -117,9 +117,9 @@
             <!-- <div class="hedi_deco" style="color:<?php echo $args['color']; ?>"></div> -->
         <?php } ?>
         <?php if($args['excerpt'] != false){ ?>
-            <div class="hedi_txt font_size_7"><?php echo $args['excerpt']; ?></div>
+            <div class="hedi_txt font_size_8"><?php echo $args['excerpt']; ?></div>
         <?php } ?>
-        <a class="hedi_enlace font_size_7" href="<?php echo $args['link']; ?>" style="color:<?php echo $args['color']; ?>">Ver Programa</a>
+        <a class="hedi_enlace font_size_8" href="<?php echo $args['link']; ?>">Ver Programa</a>
 
 
 

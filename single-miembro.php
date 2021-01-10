@@ -19,13 +19,13 @@
       <section class="tory tory_<?php echo $i; ?>">
         <?php if($i == 1){ ?>
           <h1 class="tory_title font_size_4"><?php the_title(); ?></h1>
-          <h3 class="tory_highlight" style="color:<?php echo get_post_meta($post->ID, 'color_detalles_internos', true); ?>"><?php echo get_post_meta($post->ID, $i . '_highlight', true); ?></h3>
-          <p class="tory_root"><?php echo get_post_meta($post->ID, $i . '_root', true); ?></p>
+          <h3 class="tory_highlight font_size_5" style="color:<?php echo get_post_meta($post->ID, 'color_detalles_internos', true); ?>"><?php echo get_post_meta($post->ID, $i . '_highlight', true); ?></h3>
+          <p class="tory_root font_size_6"><?php echo get_post_meta($post->ID, $i . '_root', true); ?></p>
         <?php } ?>
         <img class="tory_img tory_img_<?php echo $i . $img_alt; ?>" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, $i . '_image', true)); ?>" alt="">
         <?php if(!$img_alt) { ?>
-          <h5 class="tory_subtitle tory_subtitle_<?php echo $i; ?>"><?php echo get_post_meta($post->ID, $i . '_subtitle', true); ?></h5>
-          <p class="tory_text tory_text_<?php echo $i; ?>"><?php echo get_post_meta($post->ID, $i . '_text', true); ?></p>
+          <h5 class="tory_subtitle font_size_6 tory_subtitle_<?php echo $i; ?>"><?php echo get_post_meta($post->ID, $i . '_subtitle', true); ?></h5>
+          <p class="tory_text font_size_6 tory_text_<?php echo $i; ?>"><?php echo get_post_meta($post->ID, $i . '_text', true); ?></p>
         <?php } ?>
       </section>
     <?php $i=$i+1;} ?>

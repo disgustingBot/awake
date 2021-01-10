@@ -9,8 +9,8 @@
 
   <section class="hero hero_opaque">
     <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-    <h1 class="hero_title alt"><?php the_title(); ?></h1>
-    <h2 class="hero_txt font_size_6"><?php echo the_content() ?></h2>
+    <h1 class="hero_title alt font_size_1"><?php the_title(); ?></h1>
+    <h2 class="hero_txt font_size_7"><?php echo the_content() ?></h2>
     <svg class="hero_arrow_down" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
       <use xlink:href="#arrow_down"></use>
     </svg>
@@ -20,10 +20,10 @@
   <section class="gertha lateral_m">
     <div class="gertha_deco alt"></div>
     <div class="gertha_caption">
-      <p class="gertha_txt alt font_size_5"><?php echo get_post_meta($post->ID, 'A_descripcion_texto_1', true); ?></p>
-      <p class="gertha_txt alt font_size_5"><?php echo get_post_meta($post->ID, 'A_descripcion_texto_2', true); ?></p>
-      <p class="gertha_txt alt font_size_5"><?php echo get_post_meta($post->ID, 'A_descripcion_texto_3', true); ?></p>
-      <p class="gertha_txt alt font_size_5"><?php echo get_post_meta($post->ID, 'A_descripcion_texto_4', true); ?></p>
+      <p class="gertha_txt alt font_size_6"><?php echo get_post_meta($post->ID, 'A_descripcion_texto_1', true); ?></p>
+      <p class="gertha_txt alt font_size_6"><?php echo get_post_meta($post->ID, 'A_descripcion_texto_2', true); ?></p>
+      <p class="gertha_txt alt font_size_6"><?php echo get_post_meta($post->ID, 'A_descripcion_texto_3', true); ?></p>
+      <p class="gertha_txt alt font_size_6"><?php echo get_post_meta($post->ID, 'A_descripcion_texto_4', true); ?></p>
     </div>
     <video class="gertha_img" controls="true" alt="">
       <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'A_descripcion_url_video', true)); ?>">
@@ -36,11 +36,11 @@
   </section>
 
   <section class="showcase6">
-    <h3 class="showcase_title font_size_3 simple_title" style=" color: <?php echo $category_color; ?> ">Ofrecemos</h3>
+    <h3 class="showcase_title font_size_4 simple_title" style=" color: <?php echo $category_color; ?> ">Ofrecemos</h3>
     <div class="showcase6_container">
       <div class="hosi" style=" color: white; background: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/lock.svg'; ?>
-        <p class="hosi_txt font_size_6" style="color:white">
+        <p class="hosi_txt font_size_7" style="color:white">
           DISCRECIÓN<br>
           Y PRIVACIDAD
         </p>
@@ -48,7 +48,7 @@
 
       <div class="hosi" style=" color: <?php echo $category_color; ?>; background: #f4f4f4;">
         <?php include get_template_directory().'/assets/clock.svg'; ?>
-        <p class="hosi_txt font_size_6" style=" color: <?php echo $category_color; ?> ">
+        <p class="hosi_txt font_size_7" style=" color: <?php echo $category_color; ?> ">
           RAPIDEZ Y<br>
           EFECTIVIDAD
         </p>
@@ -56,7 +56,7 @@
 
       <div class="hosi" style=" background: <?php echo $category_color; ?>; color: white;">
         <?php include get_template_directory().'/assets/develop_thoughts.svg'; ?>
-        <p class="hosi_txt font_size_6" style="color:white">
+        <p class="hosi_txt font_size_7" style="color:white">
           SIN SUFRIR NI<br>
           ECHARLO DE MENOS
         </p>
@@ -64,7 +64,7 @@
 
       <div class="hosi" style=" color: <?php echo $category_color; ?>; background: #f4f4f4">
         <?php include get_template_directory().'/assets/building.svg'; ?>
-        <p class="hosi_txt font_size_6" style=" color: <?php echo $category_color; ?>!important ">
+        <p class="hosi_txt font_size_7" style=" color: <?php echo $category_color; ?>!important ">
           SIN NECESIDAD<br>
           INGRESO CENTRO DE<br>
           DESINTOXICACIÓN
@@ -73,7 +73,7 @@
 
       <div class="hosi wide_hosi" style=" background: <?php echo $category_color; ?>;color: white; ">
         <?php include get_template_directory().'/assets/key_attitude.svg'; ?>
-        <p class="hosi_txt font_size_6" style="color: white;">
+        <p class="hosi_txt font_size_7" style="color: white;">
           RECUPERAR<br>
           TU VIDA Y SENTIRTE<br>
           LIBRE Y FELIZ
@@ -84,16 +84,16 @@
   </section>
 
   <section class="separanda alt separanda_backgrounded">
-    <h4 class="separanda_title alt font_size_3" style="color: <?php echo $category_color; ?>">¿Qué incluyen las sesiones?</h4>
+    <h4 class="separanda_title alt font_size_4" style="color: <?php echo $category_color; ?>">¿Qué incluyen las sesiones?</h4>
 
     <div class="separanda_subtitle_container">
-      <h6 class="separanda_subtitle font_size_5" style="color: <?php echo $category_color; ?>">Primera fase – Libérate</h6>
+      <h6 class="separanda_subtitle font_size_6" style="color: <?php echo $category_color; ?>">Primera fase – Libérate</h6>
       <div class="separanda_deco" style="background: <?php echo $category_color; ?>"></div>
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/videoconference.svg'; ?>
-      <p class="separanda_text font_size_5"  style="color: #706862">
-        Orientación<br>
+      <p class="separanda_text font_size_6"  style="color: #706862">
+        <strong>Orientación</strong><br>
         presencial o<br>
         videoconferencia
       </p>
@@ -103,8 +103,8 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/eye.svg'; ?>
-      <p class="separanda_text font_size_5"  style="color: #706862">
-        Deberes:<br>
+      <p class="separanda_text font_size_6"  style="color: #706862">
+        <strong>Deberes:</strong><br>
         Una/dos<br>
         semanas
       </p>
@@ -114,21 +114,21 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/old_clock.svg'; ?>
-      <p class="separanda_text font_size_5"  style="color: #706862">
-        Jornada<br>
-        “Vive sin alcohol”<br>
+      <p class="separanda_text font_size_6"  style="color: #706862">
+        <strong>Jornada<br>
+        “Vive sin alcohol”</strong><br>
         6-7 horas
       </p>
     </div>
     <div class="separanda_subtitle_container">
-      <h6 class="separanda_subtitle font_size_5" style="color: <?php echo $category_color; ?>">Segunda Fase – Redirige tu vida</h6>
+      <h6 class="separanda_subtitle font_size_6" style="color: <?php echo $category_color; ?>">Segunda Fase – Redirige tu vida</h6>
       <div class="separanda_deco" style="background: <?php echo $category_color; ?>"></div>
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/farm.svg'; ?>
-      <p class="separanda_text font_size_5"  style="color: #706862">
-        Curso<br>
-        Residencial<br>
+      <p class="separanda_text font_size_6"  style="color: #706862">
+        <strong>Curso<br>
+        Residencial</strong><br>
         3 días
       </p>
     </div>
@@ -137,9 +137,9 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/calendar.svg'; ?>
-      <p class="separanda_text font_size_5"  style="color: #706862">
-        formación<br>
-        a distancia<br>
+      <p class="separanda_text font_size_6"  style="color: #706862">
+        <strong>formación<br>
+        a distancia</strong><br>
         8 semanas
       </p>
     </div>
@@ -148,20 +148,20 @@
     </div>
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/magazine.svg'; ?>
-      <p class="separanda_text font_size_5"  style="color: #706862">
-        Documentación<br>
-        de apoyo y libro
+      <p class="separanda_text font_size_6"  style="color: #706862">
+        <strong>Documentación<br>
+        de apoyo y libro</strong>
       </p>
     </div>
   </section>
 
   <section class="col_2_block">
     <div class="col_2_block_col">
-      <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'C_segunda_descripcion_texto_1', true); ?></p>
-      <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'C_segunda_descripcion_texto_2', true); ?></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'C_segunda_descripcion_texto_1', true); ?></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'C_segunda_descripcion_texto_2', true); ?></p>
     </div>
     <div class="col_2_block_col">
-      <p class="block_txt font_size_5"><?php echo get_post_meta(get_the_ID(), 'C_segunda_descripcion_texto_3', true); ?></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'C_segunda_descripcion_texto_3', true); ?></p>
     </div>
   </section>
 
@@ -175,11 +175,11 @@
     <?php } ?>
 
     <banner class="banner_1" style=" background: <?php echo $category_color; ?> ">
-      <h4 class="banner_title font_size_3">
+      <h4 class="banner_title font_size_4">
         ¿Quieres ayudar a alguien a dejar de beber alcohol?
         <br>
         Escuchamos tu situación particular</h4>
-      <a href="#" class="btn white_btn font_size_6" style=" background: <?php echo $category_color; ?> ">CONTÁCTENOS SIN COMPROMISO</a>
+      <a href="#" class="btn white_btn font_size_7" style=" background: <?php echo $category_color; ?> ">CONTÁCTENOS SIN COMPROMISO</a>
     </banner>
 
           <section class="col_4_block">
@@ -196,7 +196,7 @@
               $my_title = 'Últimas entradas';
             }
             ?>
-            <h4 class="block_title font_size_3" style="color: <?php echo $category_color; ?>"><?php _e($my_title, 'awake') ?></h4>
+            <h4 class="block_title font_size_4" style="color: <?php echo $category_color; ?>"><?php _e($my_title, 'awake') ?></h4>
             <?php // echo get_post_meta(get_the_ID(), 'related_posts_tag', true); ?>
             <?php
             $related = new WP_Query( $args );

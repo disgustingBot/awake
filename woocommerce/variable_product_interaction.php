@@ -1,6 +1,6 @@
 
 <div class="copa_interaction_container Variable_product_interaction">
-  <h6 class="copa_title">Retiro en Cantabria 3 días<br><?php the_title(); ?></h6>
+  <h5 class="copa_title font_size_4"><?php the_title(); ?></h5>
 
       <?php
       $is_out_of_stock = false;
