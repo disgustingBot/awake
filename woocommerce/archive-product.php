@@ -24,9 +24,17 @@
 
 
 <section class="hedi_container" data-card="hedi_card" data-cycle="filters">
-  <?php while(have_posts()){the_post(); ?>
-    <?php hedi_card(); ?>
-  <?php } ?>
+  <?php
+  while(have_posts()){the_post();
+
+    $product_category = get_the_terms( $post->ID, 'product_cat' )[0];
+    $category_color = get_term_meta( $product_category->term_id, 'lt_meta_color', true );
+    $args = array(
+      'color' => $category_color
+    );
+    hedi_card($args);
+  }
+  ?>
   <?php echo ajax_paginator_2($wp_query); ?>
 </section>
 

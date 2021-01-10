@@ -169,7 +169,11 @@ add_action( 'init', 'register_menus' );
 
 
 
-
+function get_random_color(){
+  $colors = ['#85AFCA', '#EDC06D', '#98C9AC', '#E9AD94'];
+  // echo array_rand ( $colors );
+  return $colors[array_rand ( $colors )];
+}
 
 
 

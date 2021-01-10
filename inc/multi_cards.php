@@ -4,7 +4,13 @@
     if(!isset($args['link']   )){ $args['link']    = get_the_permalink(); }
     if(!isset($args['image']  )){ $args['image']   = get_the_post_thumbnail_url(); }
     if(!isset($args['excerpt'])){ $args['excerpt'] = get_the_excerpt(); }
-    if(!isset($args['color']  )){ $args['color']   = get_post_meta(get_the_ID(), 'color', true); }
+    if(!isset($args['color']  )){
+      if (get_post_meta(get_the_ID(), 'color', true)){
+        $args['color']   = get_post_meta(get_the_ID(), 'color', true);
+      } else {
+        $args['color']   = get_random_color();
+      }
+    }
     ?>
 
     <div class="sqare">
@@ -15,7 +21,7 @@
         <?php } ?>
         <h4 class="sqare_title font_size_4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
         <p class="sqare_author font_size_6">by <?php the_author(); ?></p>
-        <div class="sqare_deco" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"></div>
+        <div class="sqare_deco" style="color:<?php echo $args['color']; ?>"></div>
         <p class="sqare_date font_size_6" style="color:<?php echo get_post_meta(get_the_ID(), 'color', true); ?>"><?php the_time( 'F Y' ); ?></p>
         <p class="sqare_exerpt font_size_5"><?php echo excerpt(200); ?></p>
         <a class="sqare_link font_size_5" href="<?php the_permalink(); ?>">&mdash; Leer más</a>
@@ -85,7 +91,13 @@
     if(!isset($args['link']   )){ $args['link']    = get_the_permalink(); }
     if(!isset($args['image']  )){ $args['image']   = get_the_post_thumbnail_url(); }
     if(!isset($args['excerpt'])){ $args['excerpt'] = get_the_excerpt(); }
-    if(!isset($args['color']  )){ $args['color']   = get_post_meta(get_the_ID(), 'color', true); }
+    if(!isset($args['color']  )){
+      if (get_post_meta(get_the_ID(), 'color', true)){
+        $args['color']   = get_post_meta(get_the_ID(), 'color', true);
+      } else {
+        $args['color']   = get_random_color();
+      }
+    }
     ?>
     <?php global $woocommerce, $product, $post;$is_out_of_stock = false; ?>
     <?php if( !$product->is_on_backorder() AND !$product->is_in_stock() ){ $is_out_of_stock = true; } ?>
@@ -107,7 +119,7 @@
         <?php if($args['excerpt'] != false){ ?>
             <div class="hedi_txt font_size_7"><?php echo $args['excerpt']; ?></div>
         <?php } ?>
-        <a class="hedi_enlace font_size_7" href="<?php echo $args['link']; ?>">Ver Programa</a>
+        <a class="hedi_enlace font_size_7" href="<?php echo $args['link']; ?>" style="color:<?php echo $args['color']; ?>">Ver Programa</a>
 
 
 
@@ -234,6 +246,7 @@
           <!-- id="myAddToCart" -->
           <button
               class="btn hedi_btn font_size_8 My_add_to_cart_button"
+              style="background:<?php echo $args['color']; ?>"
               onclick="my_add_to_cart_function(this)"
               data-product-id="<?php echo get_the_id(); ?>"
               data-product-type="<?php echo $product->get_type(); ?>"

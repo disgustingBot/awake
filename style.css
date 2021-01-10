@@ -1426,7 +1426,11 @@ section.flati{
   align-items:center;
   padding: .5rem .9rem;
   width: 100%;
-  background: var(--secondary_color);
+  background: var(-webkit-grey: 9px;
+  -moz-grey: 9px;
+  -ms-grey: 9px;
+  -o-grey: 9px;
+  grey: 9px;);
   text-align: center;
   /* grid-column: var(--copa_label_GC); */
   /* margin-bottom: var(--copa_label_margin_bottom); */
