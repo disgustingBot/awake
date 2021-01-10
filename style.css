@@ -1263,7 +1263,7 @@ img, video, source{
   display:grid;
   grid-gap:.5rem;
   margin-bottom: auto;
-  color: var(--grey6);
+  color: var(--brownblack);
 }
 .sqare_amg {
   display:flex;
@@ -2127,12 +2127,15 @@ section.flati{
 }
 .phil_caption {
   grid-column:span 2;
-  color: var(--grey6);
+  color: var(--brownblack);
 }
 .phil_select {
   background: transparent;
   padding:.5rem;
   color:var(--grey5);
+}
+.phil_search_container {
+  position: relative;
 }
 .phil_search {
   background: transparent;
@@ -2144,6 +2147,12 @@ section.flati{
   max-height: 45px;
   margin: auto 0;
   border: 1px solid var(--grey8);
+  min-height: 35px;
+  color:var(--brownblack);
+  text-transform: capitalize;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  width: 100%;
 }
 
 /* ---------------------------------------------------------------------------
@@ -2153,7 +2162,7 @@ section.flati{
 --------------------------------------------------------------------------- */
 .mivi .prenex{color:black}
 .mivi{
-  background:var(--greyf5);
+  background:var(--greyf5);z
   padding:5rem var(--lateral);
   display:grid;
   grid-gap:4rem;
@@ -3027,7 +3036,6 @@ section.flati{
   --selectBoxHeight:40px;
 }
 .selectBoxButton{
-  color:#333;
   cursor: pointer;
   display:grid;
   grid-row:1;
@@ -3041,8 +3049,6 @@ section.flati{
 }
 
 .selectBoxPlaceholder{
-  /* font-size: 16px!important; */
-  text-transform: uppercase;
   height:1rem;
   line-height:1rem;
   left:16px;
@@ -3050,6 +3056,7 @@ section.flati{
   top:calc(50% - .5rem);
   transition:.3s;
   transform-origin:left;
+  font-weight: var(--font_size_7);
 }
 
 .selectBoxCurrent{
@@ -3132,7 +3139,19 @@ section.flati{
 .selectBoxInput {
   display: none;
 }
-
+.select_box_icon {
+  position: absolute;
+  color: var(--brownblack);
+  pointer-events: none;
+}
+.search_icon {
+  top: 8px;
+  right: 10px;
+}
+.dropdown_icon {
+  top: 12px;
+  right: 10px;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
