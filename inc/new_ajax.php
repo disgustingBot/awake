@@ -154,7 +154,7 @@ function ajax_paginator_2( $query ){
 	if( empty( $current_page ) || $current_page == 0) $current_page = 1;
 
 	// you can play with this parameter - how much links to display in pagination
-	$links_in_the_middle = 4;
+	$links_in_the_middle = 5;
 	$links_in_the_middle_minus_1 = $links_in_the_middle-1;
 
 	// the code below is required to display the pagination properly for large amount of pages
@@ -174,39 +174,44 @@ function ajax_paginator_2( $query ){
 	$pagination = '<nav class="pagination" role="navigation">';
 
 	// when to display "..." and the first page before it
-	if ($first_link_in_the_middle >= 3 && $links_in_the_middle < $max_page) {
-		$pagination.= '<a class="pagination_link" data-pagination="1">1</a>';
+	// if ($first_link_in_the_middle >= 3 && $links_in_the_middle < $max_page) {
+		// $pagination.= '<a class="pagination_link" data-pagination="1">1</a>';
 
-		if( $first_link_in_the_middle != 2 )
-			$pagination .= '<span class="page-numbers extend">...</span>';
-	}
+		// if( $first_link_in_the_middle != 2 )
+			// $pagination .= '<span class="page-numbers extend">...</span>';
+	// }
 
 	// arrow left (previous page)
-	if ($current_page != 1)
-		$pagination.= '<a class="pagination_link prev" data-pagination="prev">prev</a>';
+	if ($current_page != 1) {
+		$pagination.= '<a class="pagination_link prev" data-pagination="prev"><</a>';
+
+	}else {
+		$pagination.= '<p class="pagination_end">—</p>';
+	}
 
 
 	// loop page links in the middle between "..." and "..."
 	for($i = $first_link_in_the_middle; $i <= $last_link_in_the_middle; $i++) {
 		if($i == $current_page) {
-			$pagination.= '<span class="paginationCurrent">'.$i.'</span>';
+			$pagination.= '<span class="pagination_current">'.$i.'</span>';
 		} else {
 			$pagination .= '<a class="pagination_link" data-pagination="'.$i.'">'.$i.'</a>';
 		}
 	}
 
 	// arrow right (next page)
-	if ($current_page != $last_link_in_the_middle )
-		$pagination.= '<a class="pagination_link next" data-pagination="next">next</a>';
-
-
+	if ($current_page != $last_link_in_the_middle ) {
+		$pagination.= '<a class="pagination_link next" data-pagination="next">></a>';
+	}else {
+		$pagination.= '<p class="pagination_end" >—</p>';
+	}
 	// when to display "..." and the last page after it
 	if ( $last_link_in_the_middle < $max_page ) {
 
-		if( $last_link_in_the_middle != ($max_page-1) )
-			$pagination .= '<span class="page-numbers extend">...</span>';
+		// if( $last_link_in_the_middle != ($max_page-1) )
+			// $pagination .= '<span class="page-numbers extend">...</span>';
 
-		$pagination .= '<a class="pagination_link" data-pagination="'. $max_page .'">'. $max_page .'</a>';
+		// $pagination .= '<a class="pagination_link" data-pagination="'. $max_page .'">'. $max_page .'</a>';
 	}
 
 	// end HTML
