@@ -77,6 +77,7 @@ Version: 1.2
 6.17.4) =gale:
 6.17.5) =galo:
 6.17.6) =galu:
+6.17.7) =sub_galu:
 6.18) =separanda:
 6.19) =pista:
 6.20) =copa:
@@ -93,7 +94,10 @@ Version: 1.2
 
 6.47) =tory:
 
+6.48 =tripartito:
+
 6.58) =selectBox:
+
 
 6.69) =redDot:
 6.70) =col_2_block:
@@ -390,6 +394,8 @@ FIN DE MAPA DE CONTENIDOS */
   /* ?comment_form_2 */
   --comment_form_2_GTC: 1fr;
 
+  /* ?sub_galu */
+  --sub_galu_img_height: 110px;
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -459,6 +465,9 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?report_404 */
     --report_404_GTC: 1fr 1fr;
+
+    /* ?sub_galu */
+    --sub_galu_img_height: 140px;
 
 
     /* ?FOOTER */
@@ -699,6 +708,9 @@ FIN DE MAPA DE CONTENIDOS */
     /* =col_2_media */
     --main_form_GTC: repeat(4, 1fr);
 
+    /* ?sub_galu */
+    --sub_galu_img_height: 160px;
+
   }
 }
 
@@ -733,6 +745,9 @@ FIN DE MAPA DE CONTENIDOS */
     --full_page_media_height: 550px;
 
     --simpla_img_in_a_tall_context_height: 85vh;
+
+    /* ?sub_galu */
+    --sub_galu_img_height: 180px;
 
 
     /* ?FOOTER */
@@ -902,7 +917,6 @@ img, video, source{
   max-width: 1366px;
   margin: 0 auto;
   padding-top: 7rem;
-
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -1582,6 +1596,10 @@ section.flati{
   padding:2rem var(--lateral);
   grid-template-columns: var(--showcase2_GTC);
 }
+.showcase2.white_bg{
+  background: white;
+  padding: 4rem var(--lateral);
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.5.2) =showcase3:
@@ -1646,9 +1664,23 @@ section.flati{
   grid-template-columns:var(--grid_2_4_GTC);
   /* margin: 3rem 0; */
 }
-
-.tall_showcase4 {
+.tall_showcase4{
   padding: 4rem calc(var(--lateral) * .5) 6rem calc(var(--lateral) * .5);
+}
+.showcase4.colored_img {
+  padding: 2rem var(--lateral);
+  background: var(--greyf5);
+}
+.showcase4.colored_img .simpla_amg{
+  min-height: 120px;
+}
+.showcase4.colored_img .simpla_deco{
+  position: static;
+  margin: 0 auto!important;
+  transform: none;
+}
+.showcase4.colored_img .simpla_txt {
+  font-size: var(--font_size_8);
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -2166,10 +2198,15 @@ section.flati{
 --------------------------------------------------------------------------- */
 .mivi .prenex{color:black}
 .mivi{
-  background:var(--greyf5);z
+  background:var(--greyf5);
   padding:5rem var(--lateral);
   display:grid;
   grid-gap:4rem;
+}
+.mivi.white_bg {background: white;}
+.mivi.alt{
+  padding: 2rem var(--lateral) 5rem var(--lateral);
+  grid-gap: 2rem;
 }
 .mivi_intro{
   display:grid;
@@ -2513,6 +2550,27 @@ section.flati{
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
+                          6.17.7) =sub_galu:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+
+.sub_galu{
+  display:flex;
+  flex-wrap: wrap;
+  height: min-content;
+}
+.sub_galu_img{height: var(--sub_galu_img_height)!important;}
+
+.sub_galu_img:nth-child(1), .sub_galu_img:nth-child(4) {width: 60%}
+.sub_galu_img:nth-child(2), .sub_galu_img:nth-child(3) {width: 38%}
+.sub_galu_img:nth-child(1) {padding: 0 5px 5px 0;}
+.sub_galu_img:nth-child(2) {padding: 0 0 5px 5px;}
+.sub_galu_img:nth-child(3) {padding: 5px 5px 0 0;}
+.sub_galu_img:nth-child(4) {padding: 5px 0 0 5px;}
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
                           6.18) =separanda:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
@@ -2614,6 +2672,7 @@ section.flati{
 .pista_caption{
   font-size:16px;
 }
+.pista_group.alt .pista_text{font-weight: normal!important}
 
 
 
@@ -3041,6 +3100,35 @@ section.flati{
   height: auto;
 }
 
+
+
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.48 =tripartito:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.tripartito {
+  display: grid;
+  margin: 2rem var(--lateral) 4rem var(--lateral);
+  padding: 2rem 5rem;
+  position: relative;
+}
+.tripartito_img {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -80%);
+}
+.tripartito .block_title {
+  font-weight: bold;
+  margin: 0!important;
+}
+
+
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.58) =selectBox:
@@ -3238,6 +3326,9 @@ section.flati{
   color: var(--secondary_color);
   margin-bottom: 1rem;
   text-align: center;
+}
+.block_title_deco {
+  grid-column: 1/-1;
 }
 .content_link {
   color: var(--secondary_color);

@@ -40,14 +40,15 @@
     if(!isset($args['image']  )){ $args['image']   = get_the_post_thumbnail_url(); }
     if(!isset($args['excerpt'])){ $args['excerpt'] = get_the_excerpt(); }
     if(!isset($args['color']  )){ $args['color']   = get_post_meta(get_the_ID(), 'color', true); }
+    if(!isset($args['order']  )){ $args['order']   = get_post_meta(get_the_ID(), 'order', true); }
     ?>
 
-    <a class="simpla" href="<?php echo $args['link']; ?>">
-        <?php if($args['image'] != false){ ?>
-            <div class="simpla_amg">
+    <a class="simpla" href="<?php echo $args['link']; ?>" style="order: <?php echo $args['order']; ?>">
+            <div class="simpla_amg" style="background:<?php echo $args['color']; ?>">
+              <?php if($args['image'] != false){ ?>
                 <img class="simpla_img" loading="lazy" src="<?php echo $args['image']; ?>" alt="">
+              <?php } ?>
             </div>
-        <?php } ?>
         <?php if($args['title'] != false){ ?>
             <h6 class="simpla_title font_size_7 row2col1"><?php echo $args['title']; ?></h6>
         <?php } ?>
