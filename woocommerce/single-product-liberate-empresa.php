@@ -35,13 +35,16 @@
   </section>
 
   <section class="showcase6">
-    <h3 class="showcase_title font_size_4 simple_title" style="color: <?php echo $category_color; ?>">Dirigido a cualquier persona que quiera cuidar<br>de su mente, desarrollar habilidades, actitudes y<br>percepciones individuales para lidiar con:</h3>
+    <h3 class="showcase_title font_size_4 simple_title" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">Ofrecemos</h3>
     <div class="showcase6_container">
       <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
-        <p class="hosi_title" style="color:white">60-70%</p>
+        <?php include get_template_directory().'/assets/other_clock.svg'; ?>
+
         <p class="hosi_txt font_size_7" style="color:white">
-          <strong>EFECTIVIDAD:</strong><br>
-          de éxito después<br>
+          <strong>EFECTIVIDAD:</strong>
+          <br>
+          de éxito después
+          <br>
           de un año
         </p>
       </div>
@@ -84,18 +87,18 @@
       </div>
 
       <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
-        <?php include get_template_directory().'/assets/prevent_diseases.svg'; ?>
+        <?php include get_template_directory().'/assets/classroom.svg'; ?>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
-          <strong>GARANTÍA:</strong>
+          <strong>SIN <NECESIDAD></NECESIDAD></strong>
+          de acudir a reuniones
           <br>
-          devolución
+          el resto de la vida
           <br>
-          total del dinero
         </p>
       </div>
 
       <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
-        <p class="hosi_title" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">6H</p>
+        <?php include get_template_directory().'/assets/building.svg'; ?>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>RAPIDEZ:</strong>
           <br>
@@ -149,7 +152,6 @@
         </p>
       </div>
     </div>
-    <p class="hosi_clarification block_title" style=" color: <?php echo $category_color; ?>"><strong>*Este porcentaje de éxito ha sido avalado externamente a lo largo de los últimos 25 años por servicios médicos y departamentos de recursos humanos de más de 700 empresas en españa.</strong></p>
   </section>
 
     <section class="separanda_backgrounded">
@@ -167,30 +169,34 @@
           <?php include get_template_directory().'/assets/plus.svg'; ?>
         </div>
         <div class="separanda_item" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php include get_template_directory().'/assets/classroom.svg'; ?>
+          <?php include get_template_directory().'/assets/eye.svg'; ?>
           <p class="separanda_text font_size_5" style="color: #706862">
-            1 sesión
+            Campaña
             <br>
-            de 6 horas
+            Concienciación
           </p>
         </div>
         <div class="separanda_item alt separanda_plus separanda_hidden_plus" style=" color: <?php echo $category_color; ?>">
           <?php include get_template_directory().'/assets/plus.svg'; ?>
         </div>
         <div class="separanda_item" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php include get_template_directory().'/assets/calendar.svg'; ?>
+          <?php include get_template_directory().'/assets/old_clock.svg'; ?>
           <p class="separanda_text font_size_5" style="color: #706862">
-            Sesiones
+            Libérate y Redirige
             <br>
-            de refuerzo
+            tu vida
           </p>
         </div>
         <div class="separanda_item alt separanda_plus" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
           <?php include get_template_directory().'/assets/plus.svg'; ?>
         </div>
         <div class="separanda_item" style=" color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php include get_template_directory().'/assets/weekly_news.svg'; ?>
-          <p class="separanda_text font_size_5" style="color: #706862">Boletines<br>semanales</p>
+          <?php include get_template_directory().'/assets/magazine.svg'; ?>
+          <p class="separanda_text font_size_5" style="color: #706862">
+            Documentación
+            <br>
+            de apoyo y libro
+        </p>
         </div>
       </div>
     </section>
@@ -199,14 +205,9 @@
       <h4 class="banner_title font_size_2">
         <?php echo get_post_meta(get_the_ID(), 'E_banner_titulo', true); ?>
       </h4>
-      <div class="double_cta_banner">
-        <a href="<?php echo get_post_meta(get_the_ID(), 'E_banner_boton_1_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php echo get_post_meta(get_the_ID(), 'E_banner_boton_1_texto', true); ?>
-        </a>
-        <a href="<?php echo get_post_meta(get_the_ID(), 'E_banner_boton_2_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php echo get_post_meta(get_the_ID(), 'E_banner_boton_2_texto', true); ?>
-        </a>
-      </div>
+      <a href="<?php echo get_post_meta(get_the_ID(), 'E_banner_boton_1_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+        <?php echo get_post_meta(get_the_ID(), 'E_banner_boton_1_texto', true); ?>
+      </a>
     </banner>
 
 
