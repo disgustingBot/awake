@@ -1386,7 +1386,11 @@ section.flati{
   text-align: center;
   color: var(--brownblack);
 }
-
+.hosi_clarification {
+  font-size: 13px;
+  margin: 1rem 0;
+  text-align: left;
+}
 
 
 /* ---------------------------------------------------------------------------
@@ -3563,6 +3567,14 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 .banner_title {
   text-align: center;
   color: white;
+}
+.double_cta_banner{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.double_cta_banner .white_btn{
+  margin: auto 1rem;
 }
 
 /* ---------------------------------------------------------------------------

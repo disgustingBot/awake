@@ -21,192 +21,197 @@
 
   <section class="col_2_block">
     <div class="col_2_block_col">
-      <p class="block_txt font_size_6"></p>
-      <p class="block_txt font_size_6"></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta($post->ID, 'D_descripcion_texto_1', true); ?></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta($post->ID, 'D_descripcion_texto_2', true); ?></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta($post->ID, 'D_descripcion_texto_3', true); ?></p>
     </div>
     <div class="col_2_block_col">
-      <p class="block_txt font_size_6"></p>
-      <p class="block_txt font_size_6"></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta($post->ID, 'D_descripcion_texto_4', true); ?></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta($post->ID, 'D_descripcion_texto_5', true); ?></p>
+      <p class="block_txt font_size_6"><?php echo get_post_meta($post->ID, 'D_descripcion_texto_6', true); ?></p>
     </div>
-    <div class="block_title_deco">
-      <div class="flati_deco" style="background:"></div>
-      <h3 class="block_title font_size_3" style="color:"> </h3>
-    </div>
+    <h3 class="block_title font_size_3" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>"><?php echo get_post_meta($post->ID, 'D_descripcion_titulo', true); ?></h3>
   </section>
 
-    <section class="showcase6">
-      <h3 class="showcase_title font_size_4 simple_title" style=" color: <?php echo $category_color; ?> ">Ofrecemos</h3>
-      <div class="showcase6_container">
-        <div class="hosi" style=" background: <?php echo $category_color; ?> ">
-          <p class="hosi_title" style="color:white">60-70%</p>
-          <p class="hosi_txt font_size_7" style="color:white">
-            EFECTIVIDAD:<br>
-            de éxito después<br>
-            de un año
-          </p>
-        </div>
-
-        <div class="hosi" style=" color: <?php echo $category_color; ?>; background: #f4f4f4;">
-          <p class="hosi_title" style=" color: <?php echo $category_color; ?>;">6H</p>
-          <p class="hosi_txt font_size_7" style=" color: <?php echo $category_color; ?> ">
-            RAPIDEZ<br>
-            En una sola<br>
-            mañana o tarde
-          </p>
-        </div>
-
-        <div class="hosi wide_hosi" style=" background: <?php echo $category_color; ?>; color: white;">
-          <?php include get_template_directory().'/assets/side_effect.svg'; ?>
-          <p class="hosi_txt font_size_7" style="color:white">
-            SIN EFECTOS<br>
-            SECUNDARIOS:<br>
-            sin medicamentos
-          </p>
-        </div>
-
-        <div class="hosi" style=" color: <?php echo $category_color; ?>; background: #f4f4f4">
-          <?php include get_template_directory().'/assets/satisfaction.svg'; ?>
-          <p class="hosi_txt font_size_7" style=" color: <?php echo $category_color; ?>!important ">
-            SATISFACCIÓN:<br>
-            Convertirte en no<br>
-            fumador y feliz de serlo
-          </p>
-        </div>
-
-        <div class="hosi" style=" background: <?php echo $category_color; ?>;color: white; ">
-          <?php include get_template_directory().'/assets/warranty.svg'; ?>
-          <p class="hosi_txt font_size_7" style="color: white;">
-            GARANTÍA:<br>
-            Devolucin <br>
-            total del dinero
-          </p>
-        </div>
-
+  <section class="showcase6">
+    <h3 class="showcase_title font_size_4 simple_title" style="color: <?php echo $category_color; ?>">Dirigido a cualquier persona que quiera cuidar<br>de su mente, desarrollar habilidades, actitudes y<br>percepciones individuales para lidiar con:</h3>
+    <div class="showcase6_container">
+      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
+        <p class="hosi_title" style="color:white">60-70%</p>
+        <p class="hosi_txt font_size_7" style="color:white">
+          <strong>EFECTIVIDAD:</strong><br>
+          de éxito después<br>
+          de un año
+        </p>
       </div>
-    </section>
+      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
+        <p class="hosi_title" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">+25</p>
+        <p class="hosi_txt font_size_7" style="color:inherit!important">
+          <strong>AÑOS:</strong>
+          <br>
+          de experiencia y
+          <br>
+          700 empresas
+        </p>
+      </div>
+
+      <div class="hosi smaller_svg" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
+        <style>
+        .hosi.smaller_svg svg {
+          width: 60px;
+        }
+        </style>
+        <?php include get_template_directory().'/assets/side_effect.svg'; ?>
+        <p class="hosi_txt font_size_7" style="color:white">
+          SIN EFECTOS
+          <br>
+          SECUNDARIOS:
+          <br>
+          sin medicamentos
+        </p>
+      </div>
+
+      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
+        <?php include get_template_directory().'/assets/satisfaction.svg'; ?>
+        <p class="hosi_txt font_size_7" style="color:inherit!important">
+          <strong>SATISFACCIÓN:</strong>
+          <br>
+          dejar de fumar por
+          <br>
+          convicción
+        </p>
+      </div>
+
+      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
+        <?php include get_template_directory().'/assets/prevent_diseases.svg'; ?>
+        <p class="hosi_txt font_size_7" style="color:inherit!important">
+          <strong>GARANTÍA:</strong>
+          <br>
+          devolución
+          <br>
+          total del dinero
+        </p>
+      </div>
+
+      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
+        <p class="hosi_title" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">6H</p>
+        <p class="hosi_txt font_size_7" style="color:inherit!important">
+          <strong>RAPIDEZ:</strong>
+          <br>
+          en una sola
+          <br>
+          mañana o tarde
+        </p>
+      </div>
+
+      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
+        <?php include get_template_directory().'/assets/calendar_2.svg'; ?>
+        <p class="hosi_txt font_size_7" style="color:inherit!important">
+          SENCILLO:
+          <br>
+          fácil de lanzar e
+          <br>
+          implantar en empresa
+        </p>
+      </div>
+
+      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
+        <?php include get_template_directory().'/assets/relationship_thick.svg'; ?>
+        <p class="hosi_txt font_size_7" style="color:inherit!important">
+          <strong>ASESORAMIENTO</strong>
+          <br>
+          acompañamos
+          <br>
+          en todos los pasos
+        </p>
+      </div>
+
+      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
+        <?php include get_template_directory().'/assets/gears.svg'; ?>
+        <p class="hosi_txt font_size_7" style="color:inherit!important">
+          <strong>RENDIMIENTO:</strong>
+          <br>
+          mejora del rendimiento
+          <br>
+          de la empresa
+        </p>
+      </div>
+
+      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
+        <?php include get_template_directory().'/assets/stable_jobs.svg'; ?>
+        <p class="hosi_txt font_size_7" style="color:inherit!important">
+          <strong>ADAPTABILIDAD</strong>
+          <br>
+          programas adatados
+          <br>
+          a necesidades
+        </p>
+      </div>
+    </div>
+    <p class="hosi_clarification block_title" style=" color: <?php echo $category_color; ?>"><strong>*Este porcentaje de éxito ha sido avalado externamente a lo largo de los últimos 25 años por servicios médicos y departamentos de recursos humanos de más de 700 empresas en españa.</strong></p>
+  </section>
 
     <section class="separanda_backgrounded">
       <div class="separanda separanda_backgrounded">
-        <h4 class="separanda_title font_size_4" style=" color: <?php echo $category_color; ?>">¿Que incluye el programa?</h4>
-        <div class="separanda_item" style=" color: <?php echo $category_color; ?>">
-          <?php include get_template_directory().'/assets/classroom.svg'; ?>
-          <p class="separanda_text font_size_6" style="color: #706862">1 sesión<br>de 6 horas</p>
+        <h4 class="separanda_title font_size_4" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">¿Que incluye el programa?</h4>
+        <div class="separanda_item" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/strategy_map.svg'; ?>
+          <p class="separanda_text font_size_5" style="color: #706862">
+            Diseño
+            <br>
+            de la política
+        </p>
         </div>
-        <div class="separanda_item alt separanda_plus" style=" color: <?php echo $category_color; ?>">
+        <div class="separanda_item alt separanda_plus" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
           <?php include get_template_directory().'/assets/plus.svg'; ?>
         </div>
-        <div class="separanda_item" style=" color: <?php echo $category_color; ?>">
-          <?php include get_template_directory().'/assets/calendar.svg'; ?>
-          <p class="separanda_text font_size_6" style="color: #706862">3 sesiones de<br>refuerzo de 3 horas</p>
+        <div class="separanda_item" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/classroom.svg'; ?>
+          <p class="separanda_text font_size_5" style="color: #706862">
+            1 sesión
+            <br>
+            de 6 horas
+          </p>
         </div>
         <div class="separanda_item alt separanda_plus separanda_hidden_plus" style=" color: <?php echo $category_color; ?>">
           <?php include get_template_directory().'/assets/plus.svg'; ?>
         </div>
-        <div class="separanda_item" style=" color: <?php echo $category_color; ?>">
-          <?php include get_template_directory().'/assets/video_info.svg'; ?>
-          <p class="separanda_text font_size_6" style="color: #706862">Información<br>adicional</p>
+        <div class="separanda_item" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/calendar.svg'; ?>
+          <p class="separanda_text font_size_5" style="color: #706862">
+            Sesiones
+            <br>
+            de refuerzo
+          </p>
         </div>
-        <div class="separanda_item alt separanda_plus" style=" color: <?php echo $category_color; ?>">
+        <div class="separanda_item alt separanda_plus" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
           <?php include get_template_directory().'/assets/plus.svg'; ?>
         </div>
-        <div class="separanda_item" style=" color: <?php echo $category_color; ?>">
+        <div class="separanda_item" style=" color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
           <?php include get_template_directory().'/assets/weekly_news.svg'; ?>
-          <p class="separanda_text font_size_6" style="color: #706862">Boletines<br>semanales</p>
+          <p class="separanda_text font_size_5" style="color: #706862">Boletines<br>semanales</p>
         </div>
       </div>
     </section>
 
-    <section class="col_2_block">
-      <div class="col_2_block_col">
-        <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'B_segunda_descripcion_texto_1', true); ?></p>
-        <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'B_segunda_descripcion_texto_2', true); ?></p>
+    <banner class="banner_1" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+      <h4 class="banner_title font_size_2">
+        <?php echo get_post_meta(get_the_ID(), 'E_banner_titulo', true); ?>
+      </h4>
+      <div class="double_cta_banner">
+        <a href="<?php echo get_post_meta(get_the_ID(), 'E_banner_boton_1_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php echo get_post_meta(get_the_ID(), 'E_banner_boton_1_texto', true); ?>
+        </a>
+        <a href="<?php echo get_post_meta(get_the_ID(), 'E_banner_boton_2_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php echo get_post_meta(get_the_ID(), 'E_banner_boton_2_texto', true); ?>
+        </a>
       </div>
-      <div class="col_2_block_col">
-        <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'B_segunda_descripcion_texto_3', true); ?></p>
-        <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'B_segunda_descripcion_texto_4', true); ?></p>
-      </div>
-    </section>
-    <section class="showcase3">
-      <h3 class="showcase_title font_size_4 simple_title" style=" color: <?php echo $category_color; ?>">Conceptos que desarrollamos</h3>
+    </banner>
 
 
-        <div class="hosi" style=" color: <?php echo $category_color; ?>">
-        <?php include get_template_directory().'/assets/myth_message.svg'; ?>
-        <p class="hosi_txt font_size_7">Eliminamos mitos y malentendidos<br>asociados con el fumar y la nicotina</p>
-      </div>
-
-      <div class="hosi" style=" color: <?php echo $category_color; ?>">
-        <?php include get_template_directory().'/assets/explore.svg'; ?>
-        <p class="hosi_txt font_size_7">
-          Exploramos los temores que<br>nos han llevado a aplazar la decisión
-        </p>
-      </div>
-
-      <div class="hosi" style=" color: <?php echo $category_color; ?>">
-        <?php include get_template_directory().'/assets/anxiety.svg'; ?>
-        <p class="hosi_txt font_size_7">
-          Explicamos qué es el mono físico<br>y cómo superarlo sin problema
-        </p>
-      </div>
-
-      <div class="hosi" style=" color: <?php echo $category_color; ?>">
-        <?php include get_template_directory().'/assets/develop_thoughts.svg'; ?>
-        <p class="hosi_txt font_size_7">
-          Aclaramos por qué hemos<br>creído que es un placer o una muletilla
-        </p>
-      </div>
-
-      <div class="hosi" style=" color: <?php echo $category_color; ?>">
-        <?php include get_template_directory().'/assets/dream_drugs.svg'; ?>
-        <p class="hosi_txt font_size_7">
-          Profundizamos por qué asociamos fumar<br>a prácticamente todas las situaciones
-        </p>
-      </div>
-
-      <div class="hosi" style=" color: <?php echo $category_color; ?>">
-        <?php include get_template_directory().'/assets/nosmoking_map.svg'; ?>
-        <p class="hosi_txt font_size_7">
-          Explicamos cómo responder<br>cuando nos acordamos del fumar
-        </p>
-      </div>
-
-      <div class="hosi" style=" color: <?php echo $category_color; ?>">
-        <?php include get_template_directory().'/assets/healthy_feelings.svg'; ?>
-        <p class="hosi_txt font_size_7">
-          Facilitamos herramientas para afrontar<br>el estrés y otras emociones negativas
-        </p>
-      </div>
-
-      <div class="hosi" style=" color: <?php echo $category_color; ?>">
-        <?php include get_template_directory().'/assets/right_choice.svg'; ?>
-        <p class="hosi_txt font_size_7">
-          Descubrimos consejos<br>para evitar engordar
-        </p>
-      </div>
-
-      <div class="hosi" style=" color: <?php echo $category_color; ?>">
-        <?php include get_template_directory().'/assets/redirect_life.svg'; ?>
-        <p class="hosi_txt font_size_7">
-          Te ayudamos a tomar<br>la decisión de liberarte
-        </p>
-      </div>
-    </section>
+  <?php  } ?>
 
 
-
-    <section class="copa">
-
-      <img class="copa_img" src="<?php echo get_img_url_by_slug(get_post_meta( get_the_ID(), 'C_imagen_modulo_compra', true )); ?>" alt="">
-      <?php include 'variable_product_interaction.php'; ?>
-
-    </section>
-
-  <?php } ?>
-
-  <banner class="banner_1" style=" background: <?php echo $category_color; ?> ">
-    <h4 class="banner_title font_size_4"><?php echo get_post_meta(get_the_ID(), 'D_titulo_banner', true); ?></h4>
-    <a href="<?php echo get_post_meta(get_the_ID(), 'D_link_boton_banner', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo $category_color; ?> "><?php echo get_post_meta(get_the_ID(), 'D_texto_boton_banner', true); ?></a>
-  </banner>
 
 
 
@@ -224,7 +229,7 @@
             $my_title = 'Últimas entradas';
           }
           ?>
-          <h4 class="block_title font_size_4" style="color: <?php echo $category_color; ?>"><?php _e($my_title, 'awake') ?></h4>
+          <h4 class="block_title font_size_4" style="color: <?php echo $category_color; ?>">Puede interesarte</h4>
           <?php // echo get_post_meta(get_the_ID(), 'related_posts_tag', true); ?>
           <?php
           $related = new WP_Query( $args );
