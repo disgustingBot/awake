@@ -34,122 +34,34 @@
     <h3 class="block_title font_size_3" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>"><?php echo get_post_meta($post->ID, 'D_descripcion_titulo', true); ?></h3>
   </section>
 
-  <section class="showcase6">
-    <h3 class="showcase_title font_size_4 simple_title" style="color: <?php echo $category_color; ?>">Dirigido a cualquier persona que quiera cuidar<br>de su mente, desarrollar habilidades, actitudes y<br>percepciones individuales para lidiar con:</h3>
-    <div class="showcase6_container">
-      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
-        <p class="hosi_title" style="color:white">60-70%</p>
-        <p class="hosi_txt font_size_7" style="color:white">
-          <strong>EFECTIVIDAD:</strong><br>
-          de éxito después<br>
-          de un año
-        </p>
-      </div>
-      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
-        <p class="hosi_title" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">+25</p>
-        <p class="hosi_txt font_size_7" style="color:inherit!important">
-          <strong>AÑOS:</strong>
-          <br>
-          de experiencia y
-          <br>
-          700 empresas
-        </p>
-      </div>
-
-      <div class="hosi smaller_svg" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
-        <style>
-        .hosi.smaller_svg svg {
-          width: 60px;
-        }
-        </style>
-        <?php include get_template_directory().'/assets/side_effect.svg'; ?>
-        <p class="hosi_txt font_size_7" style="color:white">
-          SIN EFECTOS
-          <br>
-          SECUNDARIOS:
-          <br>
-          sin medicamentos
-        </p>
-      </div>
-
-      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
-        <?php include get_template_directory().'/assets/satisfaction.svg'; ?>
-        <p class="hosi_txt font_size_7" style="color:inherit!important">
-          <strong>SATISFACCIÓN:</strong>
-          <br>
-          dejar de fumar por
-          <br>
-          convicción
-        </p>
-      </div>
-
-      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
-        <?php include get_template_directory().'/assets/prevent_diseases.svg'; ?>
-        <p class="hosi_txt font_size_7" style="color:inherit!important">
-          <strong>GARANTÍA:</strong>
-          <br>
-          devolución
-          <br>
-          total del dinero
-        </p>
-      </div>
-
-      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
-        <p class="hosi_title" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">6H</p>
-        <p class="hosi_txt font_size_7" style="color:inherit!important">
-          <strong>RAPIDEZ:</strong>
-          <br>
-          en una sola
-          <br>
-          mañana o tarde
-        </p>
-      </div>
-
-      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
-        <?php include get_template_directory().'/assets/calendar_2.svg'; ?>
-        <p class="hosi_txt font_size_7" style="color:inherit!important">
-          SENCILLO:
-          <br>
-          fácil de lanzar e
-          <br>
-          implantar en empresa
-        </p>
-      </div>
-
-      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
-        <?php include get_template_directory().'/assets/relationship_thick.svg'; ?>
-        <p class="hosi_txt font_size_7" style="color:inherit!important">
-          <strong>ASESORAMIENTO</strong>
-          <br>
-          acompañamos
-          <br>
-          en todos los pasos
-        </p>
-      </div>
-
-      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
-        <?php include get_template_directory().'/assets/gears.svg'; ?>
-        <p class="hosi_txt font_size_7" style="color:inherit!important">
-          <strong>RENDIMIENTO:</strong>
-          <br>
-          mejora del rendimiento
-          <br>
-          de la empresa
-        </p>
-      </div>
-
-      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
-        <?php include get_template_directory().'/assets/stable_jobs.svg'; ?>
-        <p class="hosi_txt font_size_7" style="color:inherit!important">
-          <strong>ADAPTABILIDAD</strong>
-          <br>
-          programas adatados
-          <br>
-          a necesidades
-        </p>
-      </div>
+  <section class="showcase2">
+    <div class="galu">
+      <?php $i = 1;
+      while(get_post_meta(get_the_ID(), 'E_imagen_programa_'.$i, true)) {
+      ?>
+      <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'E_imagen_programa_'.$i, true)); ?>" alt="">
+      <?php
+      $i +=1;
+      } ?>
     </div>
-    <p class="hosi_clarification block_title" style=" color: <?php echo $category_color; ?>"><strong>*Este porcentaje de éxito ha sido avalado externamente a lo largo de los últimos 25 años por servicios médicos y departamentos de recursos humanos de más de 700 empresas en españa.</strong></p>
+    <div class="pista">
+      <h5 class="pista_title font_size_5"><?php echo get_post_meta($post->ID, 'E_programa_titulo', true); ?></h5>
+
+      <?php $i = 1;
+      while(true){
+        if(get_post_meta(get_the_ID(), 'E_programa_'.$i.'_text', true)){ ?>
+          <div class="pista_group">
+            <p class="pista_txt pista_time font_size_7"><?php echo get_post_meta(get_the_ID(), 'E_programa_'.$i.'_time', true); ?></p>
+            <p class="pista_txt pista_text font_size_7"><strong><?php echo get_post_meta(get_the_ID(), 'E_programa_'.$i.'_text', true); ?></strong></p>
+          </div>
+          <?php
+          $i=$i+1;
+        } else { break; }
+      } ?>
+      <div class="pista_deco"></div>
+      <p class="pista_caption">El retiro consta de unas 20 horas formativas, dejando el sábado por la tarde libre. (No se sirve cena la noche del sábado).
+      </p>
+    </div>
   </section>
 
     <section class="separanda_backgrounded">
