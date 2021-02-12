@@ -8,11 +8,12 @@
       <h2 class="block_title font_size_2 brownblack_txt"><?php echo get_post_meta(get_the_ID(), 'A_contacto_subtitulo', true)?></h2>
     </hgroup>
     <form class="main_form" action="sendmail.php">
-      <input class="main_form_input font_size_8" type="text" placeholder="Nombre*">
+      <input class="main_form_input font_size_8" type="text" placeholder="Nombre*" required>
       <input class="main_form_input font_size_8" type="text" placeholder="Apellidos">
-      <input class="main_form_input font_size_8" type="email" placeholder="Email*">
+      <input class="main_form_input font_size_8" type="email" placeholder="Email*" required>
       <input class="main_form_input font_size_8" type="tel" placeholder="Telf">
-      <select class="main_form_input font_size_8" name="" id="">
+      <input class="main_form_input col_2_form_input font_size_8" type="text" placeholder="Nombre Empresa*" required>
+      <select class="main_form_input font_size_8" name="" id="" required>
 
         <?php
         $args = array(

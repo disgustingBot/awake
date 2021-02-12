@@ -3606,6 +3606,10 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   font-family: inherit;
   font-style: inherit;
 }
+.main_form_input option {
+  max-width: 200px;
+  overflow-x: hidden;
+}
 .main_form_textarea {
   grid-column: 1/-1;
   height: 380px;
@@ -3630,7 +3634,9 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 .form_acceptance_container input {
   margin-right: 5px;
 }
-
+.col_2_form_input {
+  grid-column: span 2;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
