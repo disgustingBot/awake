@@ -51,110 +51,131 @@
       while(true){
         if(get_post_meta(get_the_ID(), 'E_programa_'.$i.'_text', true)){ ?>
           <div class="pista_group">
-            <p class="pista_txt pista_time font_size_7"><?php echo get_post_meta(get_the_ID(), 'E_programa_'.$i.'_time', true); ?></p>
-            <p class="pista_txt pista_text font_size_7"><strong><?php echo get_post_meta(get_the_ID(), 'E_programa_'.$i.'_text', true); ?></strong></p>
+            <p class="pista_light_txt font_size_7"><?php echo get_post_meta(get_the_ID(), 'E_programa_'.$i.'_text', true); ?></p>
           </div>
           <?php
           $i=$i+1;
         } else { break; }
       } ?>
-      <div class="pista_deco"></div>
-      <p class="pista_caption">El retiro consta de unas 20 horas formativas, dejando el sábado por la tarde libre. (No se sirve cena la noche del sábado).
-      </p>
     </div>
   </section>
-
-    <section class="separanda_backgrounded">
-      <div class="separanda separanda_backgrounded">
-        <h4 class="separanda_title font_size_4" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">¿Que incluye el programa?</h4>
-        <div class="separanda_item" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php include get_template_directory().'/assets/strategy_map.svg'; ?>
-          <p class="separanda_text font_size_5" style="color: #706862">
-            Diseño
-            <br>
-            de la política
-        </p>
-        </div>
-        <div class="separanda_item alt separanda_plus" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php include get_template_directory().'/assets/plus.svg'; ?>
-        </div>
-        <div class="separanda_item" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php include get_template_directory().'/assets/classroom.svg'; ?>
-          <p class="separanda_text font_size_5" style="color: #706862">
-            1 sesión
-            <br>
-            de 6 horas
-          </p>
-        </div>
-        <div class="separanda_item alt separanda_plus separanda_hidden_plus" style=" color: <?php echo $category_color; ?>">
-          <?php include get_template_directory().'/assets/plus.svg'; ?>
-        </div>
-        <div class="separanda_item" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php include get_template_directory().'/assets/calendar.svg'; ?>
-          <p class="separanda_text font_size_5" style="color: #706862">
-            Sesiones
-            <br>
-            de refuerzo
-          </p>
-        </div>
-        <div class="separanda_item alt separanda_plus" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php include get_template_directory().'/assets/plus.svg'; ?>
-        </div>
-        <div class="separanda_item" style=" color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php include get_template_directory().'/assets/weekly_news.svg'; ?>
-          <p class="separanda_text font_size_5" style="color: #706862">Boletines<br>semanales</p>
-        </div>
-      </div>
-    </section>
-
-    <banner class="banner_1" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-      <h4 class="banner_title font_size_2">
-        <?php echo get_post_meta(get_the_ID(), 'E_banner_titulo', true); ?>
-      </h4>
-      <div class="double_cta_banner">
-        <a href="<?php echo get_post_meta(get_the_ID(), 'E_banner_boton_1_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php echo get_post_meta(get_the_ID(), 'E_banner_boton_1_texto', true); ?>
-        </a>
-        <a href="<?php echo get_post_meta(get_the_ID(), 'E_banner_boton_2_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
-          <?php echo get_post_meta(get_the_ID(), 'E_banner_boton_2_texto', true); ?>
-        </a>
-      </div>
-    </banner>
 
 
   <?php  } ?>
 
+  <section class="showcase3">
+      <h3 class="showcase_title font_size_4 simple_title" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">Herramientas que te servirán para...</h3>
 
 
+      <div class="hosi" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/shield.svg'; ?>
+          <p class="hosi_txt font_size_6">Reducir estrés y ansiedad.</p>
+      </div>
+
+      <div class="hosi" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/emotional_intelligence.svg'; ?>
+          <p class="hosi_txt font_size_6">
+              Aumentar la inteligencia emocional.
+          </p>
+      </div>
+
+      <div class="hosi" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/sleepy_moon.svg'; ?>
+          <p class="hosi_txt font_size_6">
+              Mejorar la calidad del sueño
+          </p>
+      </div>
+
+      <div class="hosi" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/desk.svg'; ?>
+          <p class="hosi_txt font_size_6">
+            Prevención accidentes, disminución de
+            <br>
+            las bajas y aumento de los presentimos
+          </p>
+      </div>
+
+      <div class="hosi" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/listening_ear.svg'; ?>
+          <p class="hosi_txt font_size_6">
+            Mejorar la concentración,
+            <br>
+            la escucha activa y la creatividad
+          </p>
+      </div>
+      <div class="hosi" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/happy_brain.svg'; ?>
+          <p class="hosi_txt font_size_6">
+            Aumentar la paz interior
+            <br>
+            y la ecuanimidad
+          </p>
+      </div>
+
+      <div class="hosi" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/give_heart.svg'; ?>
+          <p class="hosi_txt font_size_6">
+            Aprender a vivir cómodamente
+            <br>
+            ante la adversidad y el cambio
+          </p>
+      </div>
+
+      <div class="hosi" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/relationship.svg'; ?>
+          <p class="hosi_txt font_size_6">
+              Mejorar las relaciones
+              <br>
+              interpersonales.
+          </p>
+      </div>
+      <div class="hosi" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+          <?php include get_template_directory().'/assets/perceptive_brain.svg'; ?>
+          <p class="hosi_txt font_size_6">
+            Aumentar la resistencia
+            <br>
+            a la depresión
+          </p>
+      </div>
+  </section>
+
+  <banner class="banner_1" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+    <h4 class="banner_title font_size_2">
+      <?php echo get_post_meta(get_the_ID(), 'F_banner_titulo', true); ?>
+    </h4>
+    <a href="<?php echo get_post_meta(get_the_ID(), 'F_banner_boton_1_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+      <?php echo get_post_meta(get_the_ID(), 'F_banner_boton_1_texto', true); ?>
+    </a>
+  </banner>
 
 
-        <section class="col_4_block">
-          <?php
-          $args = array(
-            'post_type' => 'post',
-            'posts_per_page' => 4,
-          );
-          $tag = get_post_meta(get_the_ID(), 'related_posts_tag', true);
-          if ( $tag ) {
-            $my_title = 'Puede interesarte';
-            $args['tag'] = $tag;
-          } else {
-            $my_title = 'Últimas entradas';
-          }
-          ?>
-          <h4 class="block_title font_size_4" style="color: <?php echo $category_color; ?>">Puede interesarte</h4>
-          <?php // echo get_post_meta(get_the_ID(), 'related_posts_tag', true); ?>
-          <?php
-          $related = new WP_Query( $args );
-        ?>
-        <?php while ( $related->have_posts() ) : $related->the_post(); ?>
+  <section class="col_4_block">
+    <?php
+    $args = array(
+      'post_type' => 'post',
+      'posts_per_page' => 4,
+    );
+    $tag = get_post_meta(get_the_ID(), 'related_posts_tag', true);
+    if ( $tag ) {
+      $my_title = 'Puede interesarte';
+      $args['tag'] = $tag;
+    } else {
+      $my_title = 'Últimas entradas';
+    }
+    ?>
+    <h4 class="block_title font_size_4" style="color: <?php echo $category_color; ?>">Puede interesarte</h4>
+    <?php // echo get_post_meta(get_the_ID(), 'related_posts_tag', true); ?>
+    <?php
+    $related = new WP_Query( $args );
+    ?>
+    <?php while ( $related->have_posts() ) : $related->the_post(); ?>
 
-          <?php sqare_card(); ?>
+      <?php sqare_card(); ?>
 
-        <?php endwhile; wp_reset_query(); ?>
+    <?php endwhile; wp_reset_query(); ?>
 
-        <a  class="block_link font_size_7" href="<?php echo get_site_url() ?>/blog">VER MÁS NOTICIAS</a>
-      </section>
+    <a  class="block_link font_size_7" href="<?php echo get_site_url() ?>/blog">VER MÁS NOTICIAS</a>
+  </section>
 
 
 
