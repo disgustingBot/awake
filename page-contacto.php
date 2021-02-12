@@ -8,10 +8,40 @@
       <h2 class="block_title font_size_2 brownblack_txt"><?php echo get_post_meta(get_the_ID(), 'A_contacto_subtitulo', true)?></h2>
     </hgroup>
     <form class="main_form" action="sendmail.php">
-      <input class="main_form_input font_size_8" type="text" placeholder="Nombre*">
+      <input class="main_form_input font_size_8" type="text" placeholder="Nombre*" required>
       <input class="main_form_input font_size_8" type="text" placeholder="Apellidos">
-      <input class="main_form_input font_size_8" type="email" placeholder="Email*">
+      <input class="main_form_input font_size_8" type="email" placeholder="Email*" required>
       <input class="main_form_input font_size_8" type="tel" placeholder="Telf">
+      <input class="main_form_input col_2_form_input font_size_8" type="text" placeholder="Nombre Empresa*" required>
+      <select class="main_form_input font_size_8" name="" id="" required>
+
+        <?php
+        $args = array(
+          'post_type' => 'product',
+          'posts_per_page' => -1,
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'product_cat',
+              'field' => 'slug',
+              'terms'=> array('programas', 'empresas'),
+            )
+          ),
+        );
+         $programas = new WP_Query($args);
+
+         if ($programas -> have_posts()) {
+           while ($programas -> have_posts()) {$programas -> the_post();
+           ?>
+             <option value=""><?php the_title() ?></option>
+           <?php }  wp_reset_query();
+         } ?>
+
+
+
+
+
+
+      </select>
       <textarea class="main_form_input font_size_8 main_form_textarea" name="" id="" placeholder="Escríbenos*"></textarea>
       <input class="main_form_btn btn" type="submit" value="Enviar">
     </form>
