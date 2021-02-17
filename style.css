@@ -2166,7 +2166,7 @@ section.flati{
 --------------------------------------------------------------------------- */
 .mivi .prenex{color:black}
 .mivi{
-  background:var(--greyf5);z
+  background:var(--greyf5);
   padding:5rem var(--lateral);
   display:grid;
   grid-gap:4rem;

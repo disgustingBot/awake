@@ -15,14 +15,14 @@
     --secondary_color:<?php echo get_option( 'secondary_color', '' ); ?>;
 
     /* --font_size_1:<?php // echo get_option( 'font_size_1_number', '' ) . get_option( 'font_size_1_unit', '' ); ?>; */
-    --font_size_1:<?php echo get_option( 'font_size_1_number', '' ) * 0.8; ?>;
-    --font_size_2:<?php echo get_option( 'font_size_2_number', '' ) * 0.8; ?>;
-    --font_size_3:<?php echo get_option( 'font_size_3_number', '' ) * 0.8; ?>;
-    --font_size_4:<?php echo get_option( 'font_size_4_number', '' ) * 0.8; ?>;
-    --font_size_5:<?php echo get_option( 'font_size_5_number', '' ) * 0.8; ?>;
-    --font_size_6:<?php echo get_option( 'font_size_6_number', '' ) * 0.8; ?>;
-    --font_size_7:<?php echo get_option( 'font_size_7_number', '' ) * 1.2; ?>;
-    --font_size_8:<?php echo get_option( 'font_size_8_number', '' ) * 1.2; ?>;
+    --font_size_1:calc(<?php echo get_option( 'font_size_1_number', '' ); ?> * 0.8);
+    --font_size_2:calc(<?php echo get_option( 'font_size_2_number', '' ); ?> * 0.8);
+    --font_size_3:calc(<?php echo get_option( 'font_size_3_number', '' ); ?> * 0.8);
+    --font_size_4:calc(<?php echo get_option( 'font_size_4_number', '' ); ?> * 0.8);
+    --font_size_5:calc(<?php echo get_option( 'font_size_5_number', '' ); ?> * 0.8);
+    --font_size_6:calc(<?php echo get_option( 'font_size_6_number', '' ); ?> * 0.8);
+    --font_size_7:calc(<?php echo get_option( 'font_size_7_number', '' ); ?> * 0.8);
+    --font_size_8:calc(<?php echo get_option( 'font_size_8_number', '' ); ?> * 0.8);
 
   }
 
