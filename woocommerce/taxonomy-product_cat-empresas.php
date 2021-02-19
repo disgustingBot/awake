@@ -57,10 +57,10 @@
 
 <section class="showcase2 white_bg">
   <div class="sub_galu">
-    <img class="sub_galu_img" src="https://picsum.photos/id/237/200/300" alt="">
-    <img class="sub_galu_img" src="https://picsum.photos/id/237/200/301" alt="">
-    <img class="sub_galu_img" src="https://picsum.photos/id/237/200/302" alt="">
-    <img class="sub_galu_img" src="https://picsum.photos/id/237/200/303" alt="">
+    <img class="sub_galu_img" src="http://despertar.host.trespiweb.com/wp-content/uploads/2021/02/img_empresa_1.jpg" alt="">
+    <img class="sub_galu_img" src="http://despertar.host.trespiweb.com/wp-content/uploads/2021/02/img_empresa_2.jpg" alt="">
+    <img class="sub_galu_img" src="http://despertar.host.trespiweb.com/wp-content/uploads/2021/02/img_empresa_3.jpg" alt="">
+    <img class="sub_galu_img" src="http://despertar.host.trespiweb.com/wp-content/uploads/2021/02/img_empresa_4.jpg" alt="">
     <!-- <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_5', true)); ?>" alt=""> -->
     <!-- <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_6', true)); ?>" alt=""> -->
     <!-- <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_7', true)); ?>" alt=""> -->
@@ -91,7 +91,7 @@
 
   <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
     <?php include get_template_directory().'/assets/quit_overthinking_thick.svg'; ?>
-    <p class="hosi_txt font_size_7">
+    <p class="hosi_txt font_size_6">
       Reducir el estrés
       <br>
       innecesario y la ansiedad
@@ -100,7 +100,7 @@
 
   <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
     <?php include get_template_directory().'/assets/emotional_intelligence.svg'; ?>
-    <p class="hosi_txt font_size_7">
+    <p class="hosi_txt font_size_6">
       Aumentar la
       <br>
       inteligencia emocional
@@ -109,7 +109,7 @@
 
   <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
     <?php include get_template_directory().'/assets/gears.svg'; ?>
-    <p class="hosi_txt font_size_7">
+    <p class="hosi_txt font_size_6">
       El desarrollo
       <br>
       personal y lideradgo
@@ -118,7 +118,7 @@
 
   <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
     <?php include get_template_directory().'/assets/increase_focus.svg'; ?>
-    <p class="hosi_txt font_size_7">
+    <p class="hosi_txt font_size_6">
       Aumentar la concentración
       <br>
       y motivación
@@ -127,7 +127,7 @@
 
   <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
     <?php include get_template_directory().'/assets/improve_productivity.svg'; ?>
-    <p class="hosi_txt font_size_7">
+    <p class="hosi_txt font_size_6">
       Mejorar la productividad
       <br>
       y rentabilidad de la empresa
@@ -136,7 +136,7 @@
 
   <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
     <?php include get_template_directory().'/assets/prevent_diseases.svg'; ?>
-    <p class="hosi_txt font_size_7">
+    <p class="hosi_txt font_size_6">
       La prevención
       <br>
       de enfermedades
@@ -145,7 +145,7 @@
 
   <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
     <?php include get_template_directory().'/assets/calendar_2.svg'; ?>
-    <p class="hosi_txt font_size_7">
+    <p class="hosi_txt font_size_6">
       Reducir  el absentismo
       <br>
       Aumentar el  presentismo laboral
@@ -154,7 +154,7 @@
 
   <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
     <?php include get_template_directory().'/assets/relationship_thick.svg'; ?>
-    <p class="hosi_txt font_size_7">
+    <p class="hosi_txt font_size_6">
       Mejorar las relaciones,
       <br>
       la  energía y la vitalidad
@@ -163,7 +163,7 @@
 
   <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
     <?php include get_template_directory().'/assets/stable_jobs.svg'; ?>
-    <p class="hosi_txt font_size_7">
+    <p class="hosi_txt font_size_6">
       Promover  una menor
       <br>
       rotación de personal
