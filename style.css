@@ -2636,7 +2636,13 @@ section.flati{
   margin: auto 0;
   grid-template-columns: var(--separanda_alt_GTC);
 }
-
+.separanda_item img {
+  width: 80px;
+  height: auto;
+}
+.separanda.alt2 .separanda_text {
+  margin-left: 5px;
+}
 
 
 /* ---------------------------------------------------------------------------
