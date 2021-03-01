@@ -33,7 +33,7 @@
   <?php
   while(have_posts()){the_post();
 
-    $product_category = get_the_terms( $post->ID, 'product_cat' )[0];
+    $product_category = get_the_terms( get_the_ID(), 'product_cat' )[0];
     $category_color = get_term_meta( $product_category->term_id, 'lt_meta_color', true );
     $args = array(
       'color' => $category_color
