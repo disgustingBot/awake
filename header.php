@@ -23,7 +23,6 @@
     --font_size_6:calc(<?php echo get_option( 'font_size_6_number', '' ); ?> * 0.8);
     --font_size_7:calc(<?php echo get_option( 'font_size_7_number', '' ); ?> * 0.8);
     --font_size_8:calc(<?php echo get_option( 'font_size_8_number', '' ); ?> * 0.8);
-
   }
 
   @media screen and (min-width: 768px) {
@@ -36,7 +35,6 @@
       --font_size_6:<?php echo get_option( 'font_size_6_number', '' ); ?>;
       --font_size_7:<?php echo get_option( 'font_size_7_number', '' ); ?>;
       --font_size_8:<?php echo get_option( 'font_size_8_number', '' ); ?>;
-
     }
   }
 
@@ -48,8 +46,6 @@
 <body <?php body_class(); ?>>
 	<view id="load" class="load"><div class="circle"></div></view>
   <?php include 'assets/all_icons.php'; ?>
-  <!-- <h1><?php echo get_option( 'font_size_1_number', '' ) * 0.8; ?></h1>
-  <h1><?php echo get_option( 'font_size_2_number', '' ) * 0.8; ?></h1> -->
   <header class="header Obse" id="header" data-observe=".hero">
     <a class="logo rowcol1" href="<?php echo get_site_url(); ?>">
       <svg class="logo_img" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 101 104">
@@ -66,8 +62,7 @@
         'menu_class' => 'nav_bar nav_bar_left',
       );
       wp_nav_menu($args);
-      ?>
-      <?php
+
       $args = array(
         'theme_location' => 'header_right',
         'depth' => 0,
