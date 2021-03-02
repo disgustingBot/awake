@@ -233,7 +233,7 @@
             if ($product->get_price_html()) {
               echo $product->get_price_html();
             } else {
-              _e('noy tiene precio', 'awake');
+              _e('no tiene precio', 'awake');
             }
             ?>
           </p>

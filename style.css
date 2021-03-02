@@ -1443,17 +1443,13 @@ section.flati{
   grid-gap:.3rem;
 }
 .hedi_label{
-  color: white;
+  color: white!important;
   /* font-size: 16px; */
   display: grid;
   align-items:center;
   padding: .5rem .9rem;
   width: 100%;
-  background: var(-webkit-grey: 9px;
-  -moz-grey: 9px;
-  -ms-grey: 9px;
-  -o-grey: 9px;
-  grey: 9px;);
+  background: var(--grey5);
   text-align: center;
   /* grid-column: var(--copa_label_GC); */
   /* margin-bottom: var(--copa_label_margin_bottom); */
@@ -1785,17 +1781,21 @@ section.flati{
   cursor: pointer;
   background:none;
   border:none;
+  font-size: 3rem;
   color:white;
   transform-origin: center;
   outline: none;
-  --prenex_top:-2px;
+  /* --prenex_top:-2px; */
 }
 .prenex_prev{margin-right:auto}
 .prenex_next{margin-left:auto}
-/* .prenex_next{transform:rotate(180deg)} */
+.prenex_svg{
+  padding:1rem;
+  height:auto;
+  width: 3.5rem;
+}
 
-/* .mega .prenex{--prenex_top:80px;} */
-.mega .prenex{--prenex_top:var(--prenex_mega_top);}
+/* .mega .prenex{--prenex_top:var(--prenex_mega_top);}
 .prenex.dark::before,.prenex.dark::after{background:var(--grey5)}
 .prenex::before,
 .prenex::after{
@@ -1819,7 +1819,7 @@ section.flati{
   top:calc(var(--prenex_top) + 1px);
 }
 .prenex_next::before{top:calc(var(--prenex_top) - 1px)}
-.prenex_next::after,.prenex_next::before{transform-origin:right center;}
+.prenex_next::after,.prenex_next::before{transform-origin:right center;} */
 
 
 
