@@ -33,10 +33,17 @@
   <?php
   while(have_posts()){the_post();
 
-    $product_category = get_the_terms( get_the_ID(), 'product_cat' )[0];
-    $category_color = get_term_meta( $product_category->term_id, 'lt_meta_color', true );
+    // $product_category = get_the_terms( get_the_ID(), 'product_cat' )[0];
+    $product_categories = get_the_terms( get_the_ID(), 'product_cat' );
+    foreach ($product_categories as $key => $value) {
+      if ($value->slug == 'empresas') {
+        $color = get_post_meta(get_the_ID(), 'color', true);
+      } else {
+        $color = get_term_meta( $product_categories[0]->term_id, 'lt_meta_color', true );
+      }
+    }
     $args = array(
-      'color' => $category_color
+      'color' => $color,
     );
     hedi_card($args);
   }
