@@ -398,8 +398,14 @@ FIN DE MAPA DE CONTENIDOS */
   --sub_galu_img_height: 110px;
 
 
+  /* ?Banner */
+  --double_cta_banner_flex_dir: column;
+  --double_btn_margin: 1rem auto!important;
+
+
   /* ?prenex */
   --prenex_svg_margin_top:12rem;
+
 }
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -716,6 +722,10 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?sub_galu */
     --sub_galu_img_height: 160px;
+
+    /* ?Banner */
+    --double_cta_banner_flex_dir: row;
+    --double_btn_margin: auto 1rem!important;
 
   }
 }
@@ -3567,11 +3577,17 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   display: flex;
   flex-wrap:wrap;
   justify-content: center;
+  flex-direction: var(--double_cta_banner_flex_dir);
 }
+
+.double_cta_banner .btn {margin: var(--double_btn_margin)}
+
+
 .double_cta_banner .white_btn{
   margin:auto 1rem;
   margin-top:2rem;
 }
+
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
