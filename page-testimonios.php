@@ -56,10 +56,11 @@
     wp_localize_script( 'main', 'testimonio', array(
       'query'=>json_encode($testimonials->query_vars),
     ) );
-    while($testimonials->have_posts()){$testimonials->the_post();?>
-      <?php col_testimonial_card(); ?>
-    <?php } wp_reset_query(); ?>
-    <?php echo ajax_paginator_2($testimonials); ?>
+    while($testimonials->have_posts()){$testimonials->the_post();
+      col_testimonial_card();
+    } wp_reset_query();
+    echo ajax_paginator_2($testimonials);
+    ?>
 
     <!-- <div class="pagination_2">
       <p class="pagination_numbers">

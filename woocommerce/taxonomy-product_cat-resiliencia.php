@@ -27,11 +27,14 @@
 
         <h3 class="showcase_title alt simple_title font_size_2">Descubre nuestros Programas de Resiliencia</h3>
 
-        <?php while (have_posts()){the_post(); ?>
-
-            <?php simpla_card(); ?>
-
-        <?php } wp_reset_query(); ?>
+        <?php
+        while (have_posts()){the_post();
+          $arg = array(
+            'image' => get_post_meta(get_the_ID(), 'tall_img', true),
+          );
+          simpla_card($arg);
+        } wp_reset_query();
+        ?>
 
     </section>
 

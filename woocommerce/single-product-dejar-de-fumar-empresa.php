@@ -5,10 +5,11 @@
   <?php
   $product_category = get_the_terms( $post->ID, 'product_cat' )[0];
   $category_color = get_term_meta( $product_category->term_id, 'lt_meta_color', true );
+  $color = get_post_meta($post->ID, 'color', true);
   ?>
 
   <section class="hero">
-    <div class="hero_img" style="background:<?php echo get_post_meta($post->ID, 'A_color', true); ?>"></div>
+    <div class="hero_img" style="background:<?php echo $color; ?>"></div>
     <h1 class="hero_title alt font_size_1"><?php the_title(); ?></h1>
     <h2 class="hero_txt font_size_7"><?php echo get_post_meta($post->ID, 'C_descripcion_portada', true); ?></h2>
     <div class="redDot header_activator"></div>
@@ -31,13 +32,13 @@
       <p class="block_txt font_size_6"><?php echo get_post_meta($post->ID, 'D_descripcion_texto_5', true); ?></p>
       <p class="block_txt font_size_6"><?php echo get_post_meta($post->ID, 'D_descripcion_texto_6', true); ?></p>
     </div>
-    <h3 class="block_title font_size_3" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>"><?php echo get_post_meta($post->ID, 'D_descripcion_titulo', true); ?></h3>
+    <h3 class="block_title font_size_3" style="color:<?php echo $color; ?>"><?php echo get_post_meta($post->ID, 'D_descripcion_titulo', true); ?></h3>
   </section>
 
-  <section class="showcase6">
+  <section class="showcase6" style="padding-top:0">
     <h3 class="showcase_title font_size_4 simple_title" style="color: <?php echo $category_color; ?>">Dirigido a cualquier persona que quiera cuidar<br>de su mente, desarrollar habilidades, actitudes y<br>percepciones individuales para lidiar con:</h3>
     <div class="showcase6_container">
-      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
+      <div class="hosi" style="color: white; background: <?php echo $color; ?>;">
         <p class="hosi_title" style="color:white">60-70%</p>
         <p class="hosi_txt font_size_7" style="color:white">
           <strong>EFECTIVIDAD:</strong><br>
@@ -45,8 +46,8 @@
           de un año
         </p>
       </div>
-      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
-        <p class="hosi_title" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">+25</p>
+      <div class="hosi" style="color: <?php echo $color; ?>; background: #F3F3F3;">
+        <p class="hosi_title" style="color:<?php echo $color; ?>">+25</p>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>AÑOS:</strong>
           <br>
@@ -56,7 +57,7 @@
         </p>
       </div>
 
-      <div class="hosi smaller_svg" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
+      <div class="hosi smaller_svg" style="color: white; background: <?php echo $color; ?>;">
         <style>
         .hosi.smaller_svg svg {
           width: 60px;
@@ -72,7 +73,7 @@
         </p>
       </div>
 
-      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
+      <div class="hosi" style="color: <?php echo $color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/satisfaction.svg'; ?>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>SATISFACCIÓN:</strong>
@@ -83,7 +84,7 @@
         </p>
       </div>
 
-      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
+      <div class="hosi" style="color: white; background: <?php echo $color; ?>;">
         <?php include get_template_directory().'/assets/prevent_diseases.svg'; ?>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>GARANTÍA:</strong>
@@ -94,8 +95,8 @@
         </p>
       </div>
 
-      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
-        <p class="hosi_title" style="color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">6H</p>
+      <div class="hosi" style="color: <?php echo $color; ?>; background: #F3F3F3;">
+        <p class="hosi_title" style="color:<?php echo $color; ?>">6H</p>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>RAPIDEZ:</strong>
           <br>
@@ -105,7 +106,7 @@
         </p>
       </div>
 
-      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
+      <div class="hosi" style="color: white; background: <?php echo $color; ?>;">
         <?php include get_template_directory().'/assets/calendar_2.svg'; ?>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           SENCILLO:
@@ -116,7 +117,7 @@
         </p>
       </div>
 
-      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
+      <div class="hosi" style="color: <?php echo $color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/relationship_thick.svg'; ?>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>ASESORAMIENTO</strong>
@@ -127,7 +128,7 @@
         </p>
       </div>
 
-      <div class="hosi" style="color: white; background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>;">
+      <div class="hosi" style="color: white; background: <?php echo $color; ?>;">
         <?php include get_template_directory().'/assets/gears.svg'; ?>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>RENDIMIENTO:</strong>
@@ -138,7 +139,7 @@
         </p>
       </div>
 
-      <div class="hosi" style="color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>; background: #F3F3F3;">
+      <div class="hosi" style="color: <?php echo $color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/stable_jobs.svg'; ?>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>ADAPTABILIDAD</strong>
@@ -154,8 +155,8 @@
 
     <section class="separanda_backgrounded">
       <div class="separanda separanda_backgrounded">
-        <h4 class="separanda_title font_size_4" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">¿Que incluye el programa?</h4>
-        <div class="separanda_item" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+        <h4 class="separanda_title font_size_4" style=" color: <?php echo $color; ?>">¿Que incluye el programa?</h4>
+        <div class="separanda_item" style=" color: <?php echo $color; ?>">
           <?php include get_template_directory().'/assets/strategy_map.svg'; ?>
           <p class="separanda_text font_size_5" style="color: #706862">
             Diseño
@@ -163,10 +164,10 @@
             de la política
         </p>
         </div>
-        <div class="separanda_item alt separanda_plus" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+        <div class="separanda_item alt separanda_plus" style=" color: <?php echo $color; ?>">
           <?php include get_template_directory().'/assets/plus.svg'; ?>
         </div>
-        <div class="separanda_item" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+        <div class="separanda_item" style=" color: <?php echo $color; ?>">
           <?php include get_template_directory().'/assets/classroom.svg'; ?>
           <p class="separanda_text font_size_5" style="color: #706862">
             1 sesión
@@ -174,10 +175,10 @@
             de 6 horas
           </p>
         </div>
-        <div class="separanda_item alt separanda_plus separanda_hidden_plus" style=" color: <?php echo $category_color; ?>">
+        <div class="separanda_item alt separanda_plus separanda_hidden_plus" style=" color: <?php echo $color; ?>">
           <?php include get_template_directory().'/assets/plus.svg'; ?>
         </div>
-        <div class="separanda_item" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+        <div class="separanda_item" style=" color: <?php echo $color; ?>">
           <?php include get_template_directory().'/assets/calendar.svg'; ?>
           <p class="separanda_text font_size_5" style="color: #706862">
             Sesiones
@@ -185,25 +186,25 @@
             de refuerzo
           </p>
         </div>
-        <div class="separanda_item alt separanda_plus" style=" color: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+        <div class="separanda_item alt separanda_plus" style=" color: <?php echo $color; ?>">
           <?php include get_template_directory().'/assets/plus.svg'; ?>
         </div>
-        <div class="separanda_item" style=" color:<?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+        <div class="separanda_item" style=" color:<?php echo $color; ?>">
           <?php include get_template_directory().'/assets/weekly_news.svg'; ?>
           <p class="separanda_text font_size_5" style="color: #706862">Boletines<br>semanales</p>
         </div>
       </div>
     </section>
 
-    <banner class="banner_1" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+    <banner class="banner_1" style=" background: <?php echo $color; ?>">
       <h4 class="banner_title font_size_2">
         <?php echo get_post_meta(get_the_ID(), 'E_banner_titulo', true); ?>
       </h4>
       <div class="double_cta_banner">
-        <a href="<?php echo get_post_meta(get_the_ID(), 'E_banner_boton_1_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+        <a href="<?php echo get_post_meta(get_the_ID(), 'E_banner_boton_1_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo $color; ?>">
           <?php echo get_post_meta(get_the_ID(), 'E_banner_boton_1_texto', true); ?>
         </a>
-        <a href="<?php echo get_post_meta(get_the_ID(), 'E_banner_boton_2_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo get_post_meta($post->ID, 'A_color', true); ?>">
+        <a href="<?php echo get_post_meta(get_the_ID(), 'E_banner_boton_2_link', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo $color; ?>">
           <?php echo get_post_meta(get_the_ID(), 'E_banner_boton_2_texto', true); ?>
         </a>
       </div>

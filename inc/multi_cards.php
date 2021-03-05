@@ -37,7 +37,7 @@
 <?php function simpla_card ($args = array()) {
     if(!isset($args['title']  )){ $args['title']   = get_the_title(); }
     if(!isset($args['link']   )){ $args['link']    = get_the_permalink(); }
-    if(!isset($args['image']  )){ $args['image']   = get_the_post_thumbnail_url(); }
+    if(!isset($args['image']) || $args['image'] == ''){ $args['image']   = get_the_post_thumbnail_url(); }
     if(!isset($args['excerpt'])){ $args['excerpt'] = get_the_excerpt(); }
     if(!isset($args['color']  )){ $args['color']   = get_post_meta(get_the_ID(), 'color', true); }
     if(!isset($args['order']  )){ $args['order']   = get_post_meta(get_the_ID(), 'order', true); }
@@ -104,11 +104,11 @@
     <?php if( !$product->is_on_backorder() AND !$product->is_in_stock() ){ $is_out_of_stock = true; } ?>
 
     <div class="hedi">
+      <a class="hedi_amg rowcol1" href="<?php echo $args['link']; ?>" style="background:<?php echo $args['color']; ?>">
         <?php if($args['image'] != false){ ?>
-            <a class="hedi_amg rowcol1" href="<?php echo $args['link']; ?>">
-                <img class="hedi_img" loading="lazy" src="<?php echo $args['image']; ?>" alt="">
-            </a>
+          <img class="hedi_img" loading="lazy" src="<?php echo $args['image']; ?>" alt="">
         <?php } ?>
+      </a>
         <?php if($args['title'] != false){ ?>
             <h6 class="hedi_title font_size_6 rowcol1">
               <a href="<?php echo $args['link']; ?>"><?php echo $args['title']; ?></a>
@@ -233,7 +233,7 @@
             if ($product->get_price_html()) {
               echo $product->get_price_html();
             } else {
-              _e('noy tiene precio', 'awake');
+              _e('no tiene precio', 'awake');
             }
             ?>
           </p>
