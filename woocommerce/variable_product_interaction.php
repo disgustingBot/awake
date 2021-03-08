@@ -21,7 +21,7 @@
   <?php
     // $product = wc_get_product();
     if ( $product->is_type( 'variable' ) AND !$is_out_of_stock ) { ?>
-      <p class="hedi_label font_size_8">FECHAS</p>
+      <p class="hedi_label font_size_8" style="background:<?= $category_color; ?>">FECHAS</p>
 
       <?php
       $variations = $product->get_available_variations();
@@ -55,6 +55,9 @@
 
         <div class="SelectBox copa_select_container" tabindex="1" id="selectBox<?php echo $slug; ?>">
           <div class="selectBoxButton" onclick="altClassFromSelector('focus', '#selectBox<?php echo $slug; ?>')">
+            <svg class="select_box_icon dropdown_icon" width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M31.7481 0.701755L31.2388 0.232817C30.9017 -0.0776058 30.3566 -0.0776058 30.0194 0.232817L16.004 13.1451L1.98145 0.232817C1.64434 -0.0776058 1.09921 -0.0776058 0.762097 0.232817L0.252837 0.701755C-0.0842789 1.01218 -0.0842789 1.51414 0.252837 1.82456L15.3872 15.7672C15.7243 16.0776 16.2694 16.0776 16.6065 15.7672L31.7409 1.82456C32.0852 1.51414 32.0852 1.01218 31.7481 0.701755Z" fill="currentColor"/>
+            </svg>
             <p class="selectBoxPlaceholder font_size_8"><?php _e('elige una opcion', 'lt_domain'); ?></p>
             <!-- <p class="selectBoxPlaceholder"><?php echo $name; ?></p> -->
             <p class="selectBoxCurrent font_size_7" id="selectBoxCurrent<?php echo $name; ?>"></p>
@@ -108,7 +111,7 @@
 
 
   <!-- <p class="copa_price">475,00€</p> -->
-  <p class="copa_price" id="singleSidePrice"><?php echo $product->get_price_html(); ?></p>
+  <p class="copa_price" id="singleSidePrice" style="color:<?= $category_color; ?>"><?php echo $product->get_price_html(); ?></p>
 
   <div class="cuantos Cuantos">
       <button class="cuantosBtn cuantosMins">-</button>
