@@ -94,6 +94,8 @@ const altClassFromSelector = ( clase, selector, mainClass = false )=>{
 // SELECT BOX CONTROLER
 // TODO: mejorar eso a clases y POO
 const selectBoxControler=(a, selectBoxId, current)=>{ //c.log(a)
+  console.log(selectBoxId);
+  console.log(d.querySelector(selectBoxId));
 	if(!!a){d.querySelector(selectBoxId).classList.add('alt')}
 	else   {d.querySelector(selectBoxId).classList.remove('alt')}
 
@@ -412,7 +414,7 @@ if (searchers){ activate_searchers(searchers) }
 
 
 
-// 
+//
 // shareButton = d.querySelector('.log_title');
 // shareButton.addEventListener('click', async () => {
 //   try {

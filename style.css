@@ -2169,6 +2169,7 @@ section.flati{
   background: transparent;
   padding:.5rem;
 }
+.SelectBox,
 .phil .SelectBox,
 .phil_input {
   font-size: var(--font_size_7);
@@ -2182,13 +2183,17 @@ section.flati{
   font-style: italic;
   width: 100%;
 }
+.copa_select_container.SelectBox{
+  font-family: 'Lato', sans-serif;
+  font-style: unset;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.15) =mivi:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.mivi .prenex{color:black}
+.mivi .prenex{color:var(--grey4)}
 .mivi{
   background:var(--greyf5);
   padding:5rem var(--lateral);
@@ -2708,6 +2713,8 @@ section.flati{
   grid-column:1/-1;
   color: var(--grey7);
   margin-bottom: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
 }
 .copa_label{
   color:white;
@@ -2745,6 +2752,10 @@ section.flati{
 .copa_price{
   text-align: center;
   padding:.3rem;
+  border-top   :2px solid currentColor;
+  border-bottom:2px solid currentColor;
+}
+.copa_price *{
   color: var(--grey5);
 }
 .copa_mas{
