@@ -6,7 +6,7 @@
   <!-- <select class="phil_select phil_input font_size_7" name="" id="">
     <option value="">Categorias</option>
   </select> -->
-  <?php subterms_from_parent_term('programas', 'product_cat', 'filters'); ?>
+  <?php subterms_from_parent_term('categorias', 'product_cat', 'filters'); ?>
   <?php // woocommerce_subcats_from_parentcat('programas'); ?>
 
   <div class="phil_search_container">
@@ -35,12 +35,14 @@
 
     // $product_category = get_the_terms( get_the_ID(), 'product_cat' )[0];
     $product_categories = get_the_terms( get_the_ID(), 'product_cat' );
-    foreach ($product_categories as $key => $value) {
-      if ($value->slug == 'empresas') {
-        $color = get_post_meta(get_the_ID(), 'color', true);
-      } else {
-        $color = get_term_meta( $product_categories[0]->term_id, 'lt_meta_color', true );
-      }
+    $is_empresa = false;
+    foreach ($product_categories as $category) {
+      if ($category->slug == 'empresas') { $is_empresa = true; }
+    }
+    if ($is_empresa) {
+      $color = get_post_meta(get_the_ID(), 'color', true);
+    } else {
+      $color = get_term_meta( $product_categories[0]->term_id, 'lt_meta_color', true );
     }
     $args = array(
       'color' => $color,

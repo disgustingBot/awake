@@ -147,22 +147,20 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
 
 
   // ADD TO CART CONTROLLER
-  $('#myAddToCart').on('click',()=>{
-		// c.log('add to cart')
-    let addToCart = d.querySelector('#myAddToCart');
+  $('.My_add_to_cart_button').on('click',(event)=>{
+    let addToCart = event.target;
 		var product_id = addToCart.dataset.productId;
-    var quantity = addToCart.dataset.quantity;
+    var quantity = document.querySelector('.CuantosQantity_' + product_id).value;
     var buy = addToCart.dataset.buy;
 
     if(addToCart.dataset.productType == 'variable'){
       var variationId = addToCart.dataset.variationId;
       var variation = addToCart.dataset.variation;
       if (!variationId) {
-        alert('Select a size in order to add to cart')
+        alert('Select a variation in order to add to cart')
         return;
       }
       console.log(variationId)
-
     }
 		var data = {
 			"action" : "woocommerce_add_variation_to_cart",
@@ -173,7 +171,7 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
 				"Size" : variation,
 			},
     };
-    console.log(data)
+    // console.log(data)
     $.ajax({
       url : misha_loadmore_params.ajaxurl,
       data : data,
@@ -182,9 +180,9 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
         respuesta = JSON.parse(respuesta);
         c.log(respuesta);
         cant = respuesta.count
-        d.querySelector('.cartButtonCant').innerText = cant;
-				// c.log('soy el nene');
-        // d.querySelector('.cartButtonCant').innerText = respuesta/10;
+        if(d.querySelector('.cartButtonCant')){
+          d.querySelector('.cartButtonCant').innerText = cant;
+        }
       }
     });
   })
