@@ -30,10 +30,21 @@
 
         <?php
         while (have_posts()){the_post();
-          $arg = array(
-            'image' => get_post_meta(get_the_ID(), 'tall_img', true),
-          );
-          simpla_card($arg);
+          $product_category = get_the_terms( get_the_ID(), 'product_cat' );
+
+          $is_programa = false;
+          $is_empresa = false;
+          foreach ($product_category as $category) {
+            $is_programa = $category->slug == 'programas' ? true : $is_programa;
+            $is_empresa = $category->slug == 'empresas' ? true : $is_empresa;
+          }
+
+          if ($is_programa and !$is_empresa) {
+            $arg = array(
+              'image' => get_post_meta(get_the_ID(), 'tall_img', true),
+            );
+            simpla_card($arg);
+          }
         } wp_reset_query();
         ?>
 
@@ -124,42 +135,7 @@
         </section>
 
 
-
-
-    <section class="tesim_container Carousel">
-      <h3 class="testim_title font_size_3">Testimonios</h3>
-
-      <div class="tesim_cont Element row2col1">
-        <?php
-        $i = 0;
-        $args = array(
-          'post_type'=>'testimonial',
-        );
-        $testimonials=new WP_Query($args);
-        while($testimonials->have_posts()){$testimonials->the_post();?>
-          <?php if ( !($i & 1) AND $i ) { ?>
-          </div>
-          <div class="tesim_cont Element row2col1">
-          <?php } ?>
-          <quote class="tesim">
-            <svg class="tesim_icon" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 38 34">
-              <use xlink:href="#quote_icon"></use>
-            </svg>
-            <div class="tesim_txt font_size_6"><?php the_content(); ?></div>
-            <p class="tesim_author font_size_6"><?php the_title(); ?></p>
-          </quote>
-          <?php $i=$i+1; } wp_reset_query(); ?>
-        </div>
-
-
-        <button class="prenex prenex_prev row2col1 dark" id="prevButton"></button>
-        <button class="prenex prenex_next row2col1 dark" id="nextButton"></button>
-        <a href="" class="testim_link">VER MÁS TESTIMONIOS</a>
-      </section>
-
-    <!-- <section class="main">
-        <?php // the_content(); ?>
-    </section> -->
+        <?php include get_stylesheet_directory() . '/bloque_testimonios.php'; ?>
 
 
 <?php get_footer(); ?>

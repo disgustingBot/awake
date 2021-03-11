@@ -101,6 +101,7 @@ Version: 1.2
 
 6.69) =redDot:
 6.70) =col_2_block:
+6.74) =col_3_block:
 6.75) =col_4_block:
 6.76) =col_1_block:
 6.77) =col_2_media:
@@ -228,6 +229,7 @@ FIN DE MAPA DE CONTENIDOS */
 
   --num_1_2_4:1;
   --num_1_2_3:1;
+  --hedi_1_2_3:1;
   --grid_1_2_4_GTC: 1fr;
   --grid_1_2_GTC:   1fr;
   --grid_2_4_GTC: 1fr 1fr;
@@ -438,6 +440,7 @@ FIN DE MAPA DE CONTENIDOS */
   :root {
     --num_1_2_4:2;
     --num_1_2_3:2;
+    --hedi_1_2_3:2;
     --grid_1_2_4_GTC: 1fr 1fr;
     /* ?HEADER */
 
@@ -740,6 +743,7 @@ FIN DE MAPA DE CONTENIDOS */
     --lateral:6rem;
     --sizeR: calc(var(--sizeRd) * 1px);
 
+    --hedi_1_2_3:3;
     /* ?HEADER */
 
     /* ?gertha */
@@ -1213,6 +1217,8 @@ img, video, source{
   /* margin-bottom:auto; */
   position: relative;
 }
+.term-empresas .simpla_amg{transform:scaleY(.7)}
+.simpla_amg,
 .simpla_img{
   /* height:calc((100vw - 16px - var(--lateral) * 2 - 4rem) / 5); */
   height:calc((100vw - 16px - var(--lateral) * 2 - (var(--num_1_2_4) - 1) * .5rem) / var(--num_1_2_4));
@@ -1423,7 +1429,7 @@ section.flati{
   --hedi_cont_padding:1rem;
   grid-gap:var(--hedi_cont_padding);
   /* grid-template-columns:1fr 1fr 1fr; */
-  grid-template-columns:repeat(var(--num_1_2_3), 1fr);
+  grid-template-columns:repeat(var(--hedi_1_2_3), 1fr);
   padding: 1rem var(--lateral);
 }
 .hedi{
@@ -1436,7 +1442,7 @@ section.flati{
 .hedi_amg,
 .hedi_img{
   display:block;
-  height:calc(0.85 * (100vw - 16px - var(--lateral) * 2 - (var(--num_1_2_3) - 1) * var(--hedi_cont_padding) - var(--num_1_2_3) * var(--hedi_padding) * 2) / var(--num_1_2_3))!important;
+  height:calc(0.85 * (100vw - 16px - var(--lateral) * 2 - (var(--hedi_1_2_3) - 1) * var(--hedi_cont_padding) - var(--hedi_1_2_3) * var(--hedi_padding) * 2) / var(--hedi_1_2_3))!important;
 }
 .hedi_title{
   color:white;
@@ -2318,7 +2324,7 @@ section.flati{
   position: relative;
   display: grid;
   color: var(--grey9);
-  height: var(--testim_container_height);
+  /* height: var(--testim_container_height); */
 }
 .tesim_container.backgrounded {
   background: var(--greyf6);
@@ -2714,6 +2720,7 @@ section.flati{
 .copa_interaction_container .btn, .copa_interaction_container .cuantos  {
   margin: var(--copa_cuantos_btn_margin);
 }
+.copa_interaction_container .btn:hover{color:black}
 .copa_interaction_container .btn {
   color: white;
   grid-column: var(--addtocart_GC);
@@ -2779,6 +2786,10 @@ section.flati{
   font-size: inherit;
 }
 
+
+.copa_short{
+  grid-column:2;
+}
 
 
 /* ---------------------------------------------------------------------------
@@ -3174,6 +3185,7 @@ section.flati{
   overflow: hidden;
 }
 
+.copa_interaction_container .selectBoxPlaceholder{text-transform:uppercase}
 .selectBoxPlaceholder{
   height:1rem;
   line-height:1rem;
@@ -3339,6 +3351,7 @@ section.flati{
 .block_title_container .block_title {
   margin-bottom: 0;
 }
+.term-empresas .col_2_block .block_title{text-align:center}
 .col_2_block .block_title{text-align:left}
 .block_title {
   grid-column: 1/-1;
@@ -3358,6 +3371,18 @@ section.flati{
   color: var(--grey6);
   font-weight: lighter;
 }
+/* ---------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                          6.74) =col_3_block:
+------------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.col_3_block{
+  display: grid;
+  padding: 2rem var(--lateral);
+  grid-gap: 1rem;
+  grid-template-columns: repeat(var(--num_1_2_3), 1fr);
+}
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.75) =col_4_block:
@@ -3572,12 +3597,12 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
                           7.10) =banner_1
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-
+/* .term-empresas .banner_1{display:grid;grid-gap:2rem;} */
 .banner_1 {
   padding: 5rem var(--lateral);
-  display: flex;
+  display: grid;
   flex-direction: column;
-  /* grid-gap: 2rem; */
+  grid-gap: 2rem;
 }
 .banner_title {
   text-align: center;
@@ -3596,7 +3621,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 
 .double_cta_banner .white_btn{
   margin:auto 1rem;
-  margin-top:2rem;
+  /* margin-top:2rem; */
 }
 
 

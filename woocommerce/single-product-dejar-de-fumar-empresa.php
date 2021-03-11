@@ -3,8 +3,13 @@
 <?php while(have_posts()){the_post(); ?>
 
   <?php
-  $product_category = get_the_terms( $post->ID, 'product_cat' )[0];
-  $category_color = get_term_meta( $product_category->term_id, 'lt_meta_color', true );
+
+  $product_category = get_the_terms( $post->ID, 'product_cat' );
+  foreach ($product_category as $category) {
+    if ($category->slug != 'programas') {
+      $category_color = get_term_meta( $category->term_id, 'lt_meta_color', true );
+    }
+  }
   $color = get_post_meta($post->ID, 'color', true);
   ?>
 

@@ -2,10 +2,16 @@
 
 <?php while(have_posts()){the_post(); ?>
 
-  <?php
-  $product_category = get_the_terms( $post->ID, 'product_cat' )[0];
-  $category_color = get_term_meta( $product_category->term_id, 'lt_meta_color', true );
-  ?>
+    <?php
+
+    $product_category = get_the_terms( $post->ID, 'product_cat' );
+    foreach ($product_category as $category) {
+      if ($category->slug != 'programas') {
+        $category_color = get_term_meta( $category->term_id, 'lt_meta_color', true );
+      }
+    }
+
+    ?>
 
   <section class="hero hero_opaque">
     <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">

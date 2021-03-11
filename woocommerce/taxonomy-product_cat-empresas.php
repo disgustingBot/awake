@@ -58,14 +58,10 @@
 
 <section class="showcase2 white_bg">
   <div class="sub_galu">
-    <img class="sub_galu_img" src="http://despertar.host.trespiweb.com/wp-content/uploads/2021/02/img_empresa_1.jpg" alt="">
-    <img class="sub_galu_img" src="http://despertar.host.trespiweb.com/wp-content/uploads/2021/02/img_empresa_2.jpg" alt="">
-    <img class="sub_galu_img" src="http://despertar.host.trespiweb.com/wp-content/uploads/2021/02/img_empresa_3.jpg" alt="">
-    <img class="sub_galu_img" src="http://despertar.host.trespiweb.com/wp-content/uploads/2021/02/img_empresa_4.jpg" alt="">
-    <!-- <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_5', true)); ?>" alt=""> -->
-    <!-- <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_6', true)); ?>" alt=""> -->
-    <!-- <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_7', true)); ?>" alt=""> -->
-    <!-- <img class="galu_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'G_imagen_galeria_8', true)); ?>" alt=""> -->
+    <img class="sub_galu_img" src="<?php echo site_url(); ?>/wp-content/uploads/2021/02/img_empresa_1.jpg" alt="">
+    <img class="sub_galu_img" src="<?php echo site_url(); ?>/wp-content/uploads/2021/02/img_empresa_2.jpg" alt="">
+    <img class="sub_galu_img" src="<?php echo site_url(); ?>/wp-content/uploads/2021/02/img_empresa_3.jpg" alt="">
+    <img class="sub_galu_img" src="<?php echo site_url(); ?>/wp-content/uploads/2021/02/img_empresa_4.jpg" alt="">
   </div>
   <div class="pista">
     <h5 class="pista_title font_size_5">¿Qué ofrecemos?</h5>
@@ -201,8 +197,12 @@
         <img class="mivi_icon" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
         <?php $i=$i+1; } wp_reset_query(); ?>
       </div>
-      <button class="prenex prenex_prev rowcol1 dark" id="prevButton"></button>
-      <button class="prenex prenex_next rowcol1 dark" id="nextButton"></button>
+        <button class="prenex prenex_prev rowcol1 dark" id="prevButton">
+          <svg class="prenex_svg" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M25.1 247.5l117.8-116c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L64.7 256l102.2 100.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L25 264.5c-4.6-4.7-4.6-12.3.1-17z"></path></svg>
+        </button>
+        <button class="prenex prenex_next rowcol1 dark" id="nextButton">
+          <svg class="prenex_svg" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z"></path></svg>
+        </button>
     </div>
   </section>
 
@@ -215,42 +215,12 @@
     <a href="#" class="btn white_btn font_size_7" style=" background: transparent ">CONTÁCTENOS</a>
   </banner>
 
-  <section class="tesim_container Carousel">
-    <h3 class="testim_title font_size_3">¿Qué dicen de nosotros?</h3>
+  <?php include get_stylesheet_directory() . '/bloque_testimonios.php'; ?>
 
-    <div class="tesim_cont Element row2col1">
-      <?php
-      $i = 0;
-      $args = array(
-        'post_type'=>'testimonial',
-      );
-      $testimonials=new WP_Query($args);
-      while($testimonials->have_posts()){$testimonials->the_post();?>
-        <?php if ( !($i & 1) AND $i ) { ?>
-        </div>
-        <div class="tesim_cont Element row2col1">
-        <?php } ?>
-        <quote class="tesim">
-          <svg class="tesim_icon" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 38 34">
-            <use xlink:href="#quote_icon"></use>
-          </svg>
-          <div class="tesim_txt font_size_6"><?php the_content(); ?></div>
-          <p class="tesim_author font_size_6"><?php the_title(); ?></p>
-        </quote>
-        <?php $i=$i+1; } wp_reset_query(); ?>
-      </div>
-
-
-      <button class="prenex prenex_prev row2col1 dark" id="prevButton"></button>
-      <button class="prenex prenex_next row2col1 dark" id="nextButton"></button>
-    </section>
-    <section class="tripartito" style="border-top: <?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?> solid 2px;border-bottom:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?> solid 2px">
-      <img class="tripartito_img" src="<?php echo get_template_directory_uri().'/assets/fundacion_tripartita.jpg' ?>" alt="">
-      <h4 class="block_title font_size_6" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">· FORMACIONES BONIFICADAS POR LA FUNDACIÓN TRIPARTITA (FUNDAE) ·</h4>
-    </section>
-
-
-
+  <section class="tripartito" style="border-top: <?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?> solid 2px;border-bottom:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?> solid 2px">
+    <img class="tripartito_img" src="<?php echo get_template_directory_uri().'/assets/fundacion_tripartita.jpg' ?>" alt="">
+    <h4 class="block_title font_size_6" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">· FORMACIONES BONIFICADAS POR LA FUNDACIÓN TRIPARTITA (FUNDAE) ·</h4>
+  </section>
 
 
 
