@@ -43,8 +43,8 @@
         while(true){
           if(get_post_meta(get_the_ID(), 'C_programa_'.$i.'_text', true)){ ?>
             <div class="pista_group">
-              <p class="pista_txt pista_time font_size_7"><?php echo get_post_meta(get_the_ID(), 'C_programa_'.$i.'_text', true); ?></p>
               <p class="pista_txt pista_text font_size_7"><strong><?php echo get_post_meta(get_the_ID(), 'C_programa_'.$i.'_title', true); ?></strong></p>
+              <p class="pista_txt pista_time font_size_7"><?php echo get_post_meta(get_the_ID(), 'C_programa_'.$i.'_text', true); ?></p>
             </div>
             <?php
             $i=$i+1;
