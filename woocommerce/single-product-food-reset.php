@@ -55,7 +55,7 @@
         <p class="hosi_txt font_size_7" style=" color: <?php echo $category_color; ?> ">
           TRAZAR UN PLAN<br>
           para llegar de<br>
-          manera eciente
+          manera eficiente
         </p>
       </div>
 
