@@ -44,8 +44,10 @@
         <div class="hosi" style=" background: <?php echo $category_color; ?> ">
           <p class="hosi_title" style="color:white">60-70%</p>
           <p class="hosi_txt font_size_7" style="color:white">
-            EFECTIVIDAD:<br>
-            de éxito después<br>
+            DE ÉXITO:
+            <br>
+            después
+            <br>
             de un año
           </p>
         </div>
@@ -71,9 +73,9 @@
         <div class="hosi" style=" color: <?php echo $category_color; ?>; background: #f4f4f4">
           <?php include get_template_directory().'/assets/satisfaction.svg'; ?>
           <p class="hosi_txt font_size_7" style=" color: <?php echo $category_color; ?>!important ">
-            SATISFACCIÓN:<br>
-            Convertirte en no<br>
-            fumador y feliz de serlo
+            LIBERTAD:
+            <br>
+            Feliz de recuperarla
           </p>
         </div>
 
@@ -81,7 +83,7 @@
           <?php include get_template_directory().'/assets/warranty.svg'; ?>
           <p class="hosi_txt font_size_7" style="color: white;">
             GARANTÍA:<br>
-            Devolucin <br>
+            Devolución <br>
             total del dinero
           </p>
         </div>

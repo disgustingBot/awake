@@ -95,9 +95,9 @@
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/videoconference.svg'; ?>
       <p class="separanda_text font_size_6"  style="color: #706862">
-        <strong>Orientación<br></strong>
-        presencial o<br>
-        videoconferencia
+        <strong>Orientación</strong>
+        <br>
+        por videoconferencia
       </p>
     </div>
     <div class="separanda_item alt separanda_plus" style="color: <?php echo $category_color; ?>">
@@ -106,9 +106,9 @@
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/eye.svg'; ?>
       <p class="separanda_text font_size_6"  style="color: #706862">
-        <strong>Deberes:</strong><br>
-        Una/dos<br>
-        semanas
+        <strong>Deberes:</strong>
+        <br>
+        7-14 días
       </p>
     </div>
     <div class="separanda_item alt separanda_plus" style="color: <?php echo $category_color; ?>">
@@ -140,7 +140,7 @@
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/calendar.svg'; ?>
       <p class="separanda_text font_size_6"  style="color: #706862">
-        <strong>formación<br>
+        <strong>Formación<br>
         a distancia<br></strong>
         8 semanas
       </p>

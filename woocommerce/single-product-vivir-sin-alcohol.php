@@ -110,8 +110,10 @@
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/eye.svg'; ?>
       <p class="separanda_text font_size_6"  style="color: #706862">
-        <strong>Deberes:</strong><br>
-        Una/dos<br>
+        <strong>Deberes</strong>
+        <br>
+        Una/dos
+        <br>
         semanas
       </p>
     </div>
@@ -144,7 +146,7 @@
     <div class="separanda_item alt" style="color: <?php echo $category_color; ?>">
       <?php include get_template_directory().'/assets/calendar.svg'; ?>
       <p class="separanda_text font_size_6"  style="color: #706862">
-        <strong>formación<br>
+        <strong>Formación<br>
         a distancia</strong><br>
         8 semanas
       </p>

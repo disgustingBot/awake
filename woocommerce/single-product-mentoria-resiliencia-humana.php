@@ -38,7 +38,7 @@
   </section>
 
   <section class="showcase6">
-    <h3 class="showcase_title font_size_4 simple_title" style="color: <?php echo $category_color; ?>">Dirigido a cualquier persona que quiera cuidar<br>de su mente, desarrollar habilidades, actitudes y<br>percepciones individuales para lidiar con:</h3>
+    <h3 class="showcase_title font_size_4 simple_title" style="color: <?php echo $category_color; ?>">Dirigido a cualquier persona que quiera cuidar<br>de su mente, desarrollar habilidades, actitudes y<br>percepciones individuales más útiles para:</h3>
     <div class="showcase6_container">
       <div class="hosi" style="color: white; background: #C0CED3;">
         <?php include get_template_directory().'/assets/destructive_guy.svg'; ?>
@@ -91,7 +91,7 @@
       <div class="hosi" style="color: <?php echo $category_color; ?>; background: #F3F3F3;">
         <?php include get_template_directory().'/assets/adictions.svg'; ?>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
-          ADICCIONES<br>ALCOHOL, DROGAS
+          PENSAMIENTOS OBSESIVOS
         </p>
       </div>
 
@@ -125,7 +125,7 @@
 
   <section class="separanda_backgrounded">
     <div class="separanda separanda_backgrounded">
-      <h4 class="separanda_title font_size_4" style="color: <?php echo $category_color; ?>">¿Que incluye el programa?</h4>
+      <h4 class="separanda_title font_size_4" style="color: <?php echo $category_color; ?>">¿Qué incluye el programa?</h4>
       <div class="separanda_item" style="color: <?php echo $category_color; ?>">
         <?php include get_template_directory().'/assets/distance_training.svg'; ?>
         <p class="separanda_text font_size_6">5 sesiones por<br>video-llamada</p>
