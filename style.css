@@ -1521,6 +1521,7 @@ section.flati{
 
 .main_title {
   text-align: center;
+  padding-left: 0 var(--lateral);
   padding-top: calc(var(--logo_size) + var(--header_padding_top) + 3rem);
   padding-bottom: 2.7rem;
   color: var(--grey6);
