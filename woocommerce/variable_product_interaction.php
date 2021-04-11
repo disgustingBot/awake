@@ -30,8 +30,7 @@
       }
     }
     if(count($myAttributes)==0){
-      echo '<p class="font_size_7">no hay fechas</p>';
-
+      echo '<p class="font_size_7">No hay opciones disponibles, regresa luego</p>';
     }
     $first = true;
     foreach ($myAttributes as $key => $value) {
@@ -39,12 +38,12 @@
 
       $slug = preg_replace("/attribute_/i", "", $key);
       $name = ucfirst($slug);
-      // echo "<p class='hedi_label font_size_8' style='background:$category_color;'>$name</p>";
+      echo "<div class='copa_select_blob'>";
+      echo "<p class='hedi_label font_size_8' style='background:$category_color;'>$name</p>";
 
       $options = [];
       foreach ($value as $i => $var) {
         if ($i != '-') {
-          // code...
           $options[] = array(
             'slug' => sanitize_title($i),
             'name' => $i,
@@ -63,10 +62,9 @@
       );
 
       selectBox($config, $options);
+      echo "</div>";
     }
   } ?>
-
-
 
 
   <!-- <p class="copa_price">475,00€</p> -->

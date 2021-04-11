@@ -2734,6 +2734,12 @@ section.flati{
   font-family: 'Lato', sans-serif;
   font-weight: 600;
 }
+.copa_select_blob{
+  display:grid;
+  grid-gap:1rem;
+  grid-template-columns:1fr 2fr;
+  grid-column: 1/-1;
+}
 .copa_label{
   color:white;
   font-size:16px;
@@ -2745,7 +2751,7 @@ section.flati{
   margin-bottom: var(--copa_label_margin_bottom);
 }
 .copa_select_container {
-  grid-column: span 2;
+  /* grid-column: span 2; */
   position: relative;
 }
 .copa_select{
