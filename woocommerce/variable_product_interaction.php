@@ -5,6 +5,7 @@
   $is_out_of_stock = false;
   if( !$product->is_on_backorder() AND !$product->is_in_stock() ){ $is_out_of_stock = true; }
 
+  wp_register_script( 'variations', get_stylesheet_directory_uri() . '/js/variations.js', array('jquery'), 1.0, true );
   if ( $product->is_type( 'variable' ) AND !$is_out_of_stock ) {
 
     $variations = $product->get_available_variations();
@@ -13,9 +14,7 @@
     // WE WILL USE THIS ARRAY LATER
 
     // send my variation data to JS
-    wp_register_script( 'variations', get_stylesheet_directory_uri() . '/js/variations.js', array('jquery'), 1.0, true );
     wp_localize_script( 'variations', 'variations', array('data' => json_encode( $variations )) );
-    wp_enqueue_script( 'variations' );
 
 
     $myAttributes = array();
@@ -114,3 +113,7 @@
 
   <p class="copa_mas">Más información <a class="copa_mas_link" href="<?php echo get_site_url() . '/contacto'; ?>">CLICA AQUÍ</a></p>
 </div>
+
+<?php
+wp_enqueue_script( 'variations' );
+?>

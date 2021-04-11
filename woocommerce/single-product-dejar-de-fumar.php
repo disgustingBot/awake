@@ -202,34 +202,24 @@
 
     <section class="copa">
 
-      <!-- <img class="copa_img" src="<?php echo get_img_url_by_slug(get_post_meta( get_the_ID(), 'C_imagen_modulo_compra', true )); ?>" alt=""> -->
       <aside class="copa_description" style="border-color: <?php echo $category_color; ?>">
-        <div class="copa_description_row">
-          <h4 class="copa_description_title" style="color: <?php echo $category_color; ?>">Modalidades:</h4>
-          <h5 class="copa_description_subtitle">
-          <?php echo get_post_meta(get_the_ID(), 'X_modalidad_1_titulo', true); ?>
-          </h5>
-          <p class="copa_description_text">
-            <strong>¿Qué incluye?</strong>
-          </p>
-          <ul class="copa_description_list">
-            <li class="copa_description_list_item"><?php echo get_post_meta(get_the_ID(), 'X_modalidad_1_item_1', true); ?></li>
-            <li class="copa_description_list_item"><?php echo get_post_meta(get_the_ID(), 'X_modalidad_1_item_2', true); ?></li>
-            <li class="copa_description_list_item"><?php echo get_post_meta(get_the_ID(), 'X_modalidad_1_item_3', true); ?></li>
-          </ul>
-          <p class="copa_description_price"><?php echo get_post_meta(get_the_ID(), 'X_modalidad_1_precio', true); ?></p>
-        </div>
-        <div class="copa_description_row">
-          <h5 class="copa_description_subtitle"><?php echo get_post_meta(get_the_ID(), 'X_modalidad_2_titulo', true); ?></h5>
-          <p class="copa_description_text">
-            <strong>¿Qué incluye?</strong>
-          </p>
-          <ul class="copa_description_list">
-            <li class="copa_description_list_item"><?php echo get_post_meta(get_the_ID(), 'X_modalidad_2_item_1', true); ?></li>
-            <li class="copa_description_list_item"><?php echo get_post_meta(get_the_ID(), 'X_modalidad_2_item_2', true); ?></li>
-          </ul>
-          <p class="copa_description_price"><?php echo get_post_meta(get_the_ID(), 'X_modalidad_2_precio', true); ?></p>
-        </div>
+        <h4 class="copa_description_title" style="color: <?php echo $category_color; ?>">Modalidades:</h4>
+        <?php $i = 1;
+        while(get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_titulo', true)){ ?>
+          <div class="copa_description_row">
+            <h5 class="copa_description_subtitle"><?= get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_titulo', true); ?></h5>
+            <p class="copa_description_text">
+              <strong>¿Qué incluye?</strong>
+            </p>
+            <ul class="copa_description_list">
+              <?php $j = 1;
+              while(get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_item_'.$j, true)){ ?>
+                <li class="copa_description_list_item"><?= get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_item_'.$j, true); ?></li>
+              <?php $j=$j+1; } ?>
+            </ul>
+            <p class="copa_description_price"><?= get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_precio', true); ?></p>
+          </div>
+        <?php $i=$i+1; } ?>
       </aside>
       <?php include 'variable_product_interaction.php'; ?>
 

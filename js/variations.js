@@ -1,5 +1,9 @@
-let my_variations = JSON.parse(variations.data)
-console.log(my_variations);
+
+let my_variations = false;
+if (typeof variations !== 'undefined') {
+  my_variations = JSON.parse(variations.data)
+}
+
 
 
 
@@ -7,23 +11,25 @@ class VariationManager {
   current_search = [];
 
   constructor(variations){
-    this.all_variations = variations;
     this.container = document.querySelector('.copa_interaction_container')
-    // this.selectBoxes = [...this.container.querySelectorAll('.SelectBox')];
-    this.selectBoxes = [...this.container.querySelectorAll('.copa_select_blob')];
-    this.__active_selectBoxes = [];
     this.add_to_cart_button = this.container.querySelector('.Add_to_cart')
-
-    this.__deactivate_add_to_cart_button();
-
-    let inputs = [...this.container.querySelectorAll('input')]
-    inputs.map( input => {
-      input.onchange = _ =>{ this.search() }
-    });
     this.add_to_cart_button.onclick = _ => {this.add_to_cart()}
+    this.all_variations = variations;
 
-    for (var i = this.selectBoxes.length - 1; i > 0; i--) {
-      this.__hide_and_clear_selectBox(this.selectBoxes[i]);
+    if(variations){
+      this.selectBoxes = [...this.container.querySelectorAll('.copa_select_blob')];
+      this.__active_selectBoxes = [];
+      this.__deactivate_add_to_cart_button();
+
+
+      let inputs = [...this.container.querySelectorAll('input')]
+      inputs.map( input => {
+        input.onchange = _ =>{ this.search() }
+      });
+
+      for (var i = this.selectBoxes.length - 1; i > 0; i--) {
+        this.__hide_and_clear_selectBox(this.selectBoxes[i]);
+      }
     }
   }
 
@@ -158,11 +164,14 @@ class VariationManager {
 
 
   add_to_cart(){
+    var formData = new FormData();
 
-    // console.log(this.current_search[0]);
-    let attributes = this.current_search[0].attributes;
-    for (const key in attributes) {
-      attributes[key] = (attributes[key] == '') ? '-' : attributes[key];
+    if (this.all_variations) {
+      let attributes = this.current_search[0].attributes;
+      for (const key in attributes) {
+        attributes[key] = (attributes[key] == '') ? '-' : attributes[key];
+      }
+      formData.append( 'variation', JSON.stringify(attributes));
     }
 
 
@@ -180,13 +189,11 @@ class VariationManager {
       return;
     }
 
-    var formData = new FormData();
     formData.append( 'action', 'woocommerce_add_variation_to_cart' );
     formData.append( 'product_id', product_id );
     formData.append( 'variation_id', variation_id );
     formData.append( 'quantity', quantity );
 
-    formData.append( 'variation', JSON.stringify(attributes));
 
     ajax2(formData).then( respuesta => {
       // c.log(respuesta);
