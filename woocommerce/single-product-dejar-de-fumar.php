@@ -208,15 +208,6 @@
         while(get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_titulo', true)){ ?>
           <div class="copa_description_row">
             <h5 class="copa_description_subtitle"><?= get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_titulo', true); ?></h5>
-            <p class="copa_description_text">
-              <strong>¿Qué incluye?</strong>
-            </p>
-            <ul class="copa_description_list">
-              <?php $j = 1;
-              while(get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_item_'.$j, true)){ ?>
-                <li class="copa_description_list_item"><?= get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_item_'.$j, true); ?></li>
-              <?php $j=$j+1; } ?>
-            </ul>
             <p class="copa_description_price"><?= get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_precio', true); ?></p>
           </div>
         <?php $i=$i+1; } ?>
