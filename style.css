@@ -668,6 +668,7 @@ FIN DE MAPA DE CONTENIDOS */
 
     --grid_1_2_GTC:   1fr 1fr;
 
+    --hedi_1_2_3:3;
 
 
 
@@ -747,7 +748,6 @@ FIN DE MAPA DE CONTENIDOS */
     --lateral:6rem;
     --sizeR: calc(var(--sizeRd) * 1px);
 
-    --hedi_1_2_3:3;
     /* ?HEADER */
 
     /* ?gertha */
@@ -1426,7 +1426,6 @@ section.flati{
                           6.4.8) =hedi:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-/* "hedi" por hedionda */
 
 .hedi_container{
   display:grid;
@@ -1462,7 +1461,8 @@ section.flati{
 .hedi_enlace{
   text-transform:uppercase;
   text-align: center;
-  color:lightblue;
+  color:#5577FF;
+  font-size: var(--font_size_7)
   text-decoration: underline;
 }
 .hedi_interaction_container{

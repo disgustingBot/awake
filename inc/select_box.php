@@ -42,9 +42,8 @@ function selectBox($config, $options = array()){
 	// check for selected items on the option list
 	$start = array('name'=>'','selected'=>False);
 	$selected = array_reduce($options,function($accu, $opt){
-		if ($accu['selected'] != False) return $accu;
 		if (isset($opt['selected']) and $opt['selected'] == True) return $opt;
-		return False;
+		return $accu;
 	},$start);
 
 	// var_dump($selected);
