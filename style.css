@@ -368,6 +368,8 @@ FIN DE MAPA DE CONTENIDOS */
   --addtocart_GC: 1/-1;
   --addtocart_width: 100%;
 
+  --copa_description_padding: 1rem .0rem;
+
   /* ?col_4_block */
   --col_4_block_GTC: 1fr;
 
@@ -620,6 +622,8 @@ FIN DE MAPA DE CONTENIDOS */
     --copa_cuantos_btn_margin: unset;
     --addtocart_GC: 1/-1;
     --addtocart_width: ;
+
+    --copa_description_padding: 1rem 2rem;
 
 
 
@@ -2792,12 +2796,35 @@ section.flati{
   text-decoration: underline;
   font-size: inherit;
 }
-
-
 .copa_short{
   grid-column:2;
 }
 
+.copa_description{
+  border-width: 4px 0 4px 0;
+  border-style: solid;
+  padding: var(--copa_description_padding);
+  color: var(--grey7);
+  display: grid;
+  grid-gap: 1rem;
+}
+.copa_description_title{
+  font-size: var(--font_size_3);
+  margin-bottom: calc(1rem - 5px);
+}
+.copa_description_subtitle,.copa_description_text,.copa_description_price{
+  margin: 5px 0;
+}
+.copa_description_text, .copa_description_subtitle{
+  font-size: var(--font_size_6);
+}
+.copa_description_list{
+  list-style: disc;
+  padding-left: 20px;
+}
+.copa_description_list_item, .copa_description_price{
+  font-size: var(--font_size_6);
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
