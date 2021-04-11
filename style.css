@@ -2834,7 +2834,9 @@ section.flati{
 .copa_description_list_item, .copa_description_price{
   font-size: var(--font_size_6);
 }
-
+.copa_variation_string{
+  grid-column: 1/-1;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.21) =captioned_figure:
@@ -3222,7 +3224,7 @@ section.flati{
   position: relative;
   transition:.4s;
   width:100%;
-  /* height:40px; */
+  min-height:40px;
   z-index:4;
   overflow: hidden;
 }

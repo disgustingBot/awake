@@ -58,6 +58,7 @@
         'label' => 'Seleccionar',
         'class' => 'copa_select_container',
         'empty' => 'Vaciar',
+        'slug'  => sanitize_title($name)
       );
 
       selectBox($config, $options);
@@ -67,8 +68,7 @@
 
 
   <!-- <p class="copa_price">475,00€</p> -->
-  <?php
-  $price = ( $product->is_type( 'variable' ) ) ? "-" : $product->get_price_html(); ?>
+  <?php $price = ( $product->is_type( 'variable' ) ) ? "-" : $product->get_price_html(); ?>
   <p class="copa_price" id="singleSidePrice" style="color:<?= $category_color; ?>"><?= $price ?></p>
 
   <div class="cuantos Cuantos">
@@ -112,11 +112,8 @@
   }
   ?>
   </button>
-  <?php
-  if ( $product->is_type( 'variable' ) ) {
-    echo '<p id="Variable_string">Este titulo</p>';
-  }
-  ?>
+
+  <?= ( $product->is_type( 'variable' ) ) ? '<p class="copa_variation_string" id="Variation_string"></p>' : ''; ?>
 
   <p class="copa_mas">Más información <a class="copa_mas_link" href="<?php echo get_site_url() . '/contacto'; ?>">CLICA AQUÍ</a></p>
 </div>

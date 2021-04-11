@@ -3,6 +3,7 @@ let my_variations = false;
 if (typeof variations !== 'undefined') {
   my_variations = JSON.parse(variations.data)
 }
+// console.log(my_variations);
 
 
 
@@ -116,6 +117,8 @@ class VariationManager {
 
     let variation_string = this.__get_variation_string();
 
+    document.querySelector('#Variation_string').innerText = variation_string;
+
     button.dataset.variationId = variation.variation_id
     button.dataset.variation = variation_string
     button.innerText = "Añadir a la cesta";
@@ -129,6 +132,7 @@ class VariationManager {
 
 
   __deactivate_add_to_cart_button(){
+    document.querySelector('#Variation_string').innerText = '';
     let button       = this.add_to_cart_button;
     button.dataset.variationId = '';
     button.dataset.variation = '';
