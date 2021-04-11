@@ -1,7 +1,3 @@
-
-
-
-
 let my_variations = JSON.parse(variations.data)
 console.log(my_variations);
 
@@ -13,7 +9,8 @@ class VariationManager {
   constructor(variations){
     this.all_variations = variations;
     this.container = document.querySelector('.copa_interaction_container')
-    this.selectBoxes = [...this.container.querySelectorAll('.SelectBox')];
+    // this.selectBoxes = [...this.container.querySelectorAll('.SelectBox')];
+    this.selectBoxes = [...this.container.querySelectorAll('.copa_select_blob')];
     this.__active_selectBoxes = [];
     this.add_to_cart_button = this.container.querySelector('.Add_to_cart')
 
@@ -33,11 +30,14 @@ class VariationManager {
 
   search(){
     this.__internal_search()
+
     // si no hay ninguna opcion disponible vaciar selectBoxes uno a uno
     // del ultimo al primero hasta que haya mas de 0 opciones
     let no_option_found = this.current_search.length == 0;
     if (no_option_found) {
-      this.__hide_and_clear_last_active_selectBox();
+      let last_active = this.__get_last_active_selectBox()
+      this.__show_all_options(last_active);
+      this.__hide_and_clear_selectBox(last_active);
       this.search();
     }
     // si hay una sola opcion activar boton de añadir al carrito
@@ -46,29 +46,30 @@ class VariationManager {
     if( unique_option_found ){
       this.__hide_and_clear_inactive_selectBoxes();
       this.__activate_add_to_cart_button();
+      this.__show_price();
     } else {
       this.__deactivate_add_to_cart_button();
     }
     // si hay mas de una opcion, mostrar el siguiente selectBox
     let more_options_found = this.current_search.length > 1;
     if (more_options_found) {
-      this.__show_next_selectBox()
+      let next_selectBox = this.__get_next_selectBox()
+      this.__hide_unwanted_options(next_selectBox);
+      this.__show_selectBox(next_selectBox)
     }
   }
 
 
-  __show_next_selectBox(){
-    let select_to_show = this.selectBoxes.reduce((a, selectBox) => (
+  __get_next_selectBox(){
+    let next_selectBox = this.selectBoxes.reduce((a, selectBox) => (
       a ? a : (!this.__active_selectBoxes.includes(selectBox) ? selectBox : false)
     ), false)
-    this.__show_selectBox(select_to_show)
+    return next_selectBox;
   }
-
-  __hide_and_clear_last_active_selectBox(){
+  __get_last_active_selectBox(){
     let last = this.__active_selectBoxes.length - 1
-    this.__hide_and_clear_selectBox(this.__active_selectBoxes[last]);
+    return this.__active_selectBoxes[last]
   }
-
   __hide_and_clear_inactive_selectBoxes(){
     let inactive_selectBoxes = this.selectBoxes.filter(x => x.querySelector('.selectBoxInput:checked').value == 0)
     inactive_selectBoxes.map(x => this.__hide_and_clear_selectBox(x))
@@ -80,6 +81,7 @@ class VariationManager {
   __hide_selectBox(selectBox){ selectBox.style.display = 'none' }
   __clear_selectBox(selectBox){ selectBox.querySelector('input').click() }
   __show_selectBox(selectBox){ selectBox.style.display = 'grid' }
+
 
 
 
@@ -97,31 +99,60 @@ class VariationManager {
     })
   }
 
-  __activate_add_to_cart_button(){
-    // console.log(this.current_search);
-    // let button = this.container.querySelector('.My_add_to_cart_button');
-    let button       = this.add_to_cart_button;
+
+  __get_variation_string(){
     let variation = this.current_search[0];
-    // console.log(variation.attributes);
-    let test = Object.values(variation.attributes).map(x => (x == '') ? '-' : x)
-    let variation_string = test.join(' ')
-    // let variation_string = Object.values(variation.attributes).join(' ')
-    // console.log(variation_string);
+    return Object.values(variation.attributes).map(x => (x == '') ? '-' : x).join(' ');
+  }
+  __activate_add_to_cart_button(){
+    let button    = this.add_to_cart_button;
+    let variation = this.current_search[0];
+
+    let variation_string = this.__get_variation_string();
 
     button.dataset.variationId = variation.variation_id
     button.dataset.variation = variation_string
     button.innerText = "Añadir a la cesta";
     button.disabled = false;
   }
+  __show_price(){
+    let price_tag = this.container.querySelector('#singleSidePrice')
+    price_tag.innerHTML = this.current_search[0].price_html;
+  }
+
+
 
   __deactivate_add_to_cart_button(){
-    // let button = this.container.querySelector('.My_add_to_cart_button');
     let button       = this.add_to_cart_button;
     button.dataset.variationId = '';
     button.dataset.variation = '';
     button.innerText = "Elige una opcion unica";
     button.disabled = true;
   }
+
+
+
+  // TODO: poner esto en silversea para ahorrar 10 lineas de JS
+	__hide_unwanted_options(selectBox){
+    let options = [...selectBox.querySelectorAll('.selectBoxOption')];
+    // let options = [...this.container.querySelectorAll('.selectBoxOption')];
+		options.map( option =>{
+			let input = option.querySelector('.selectBoxInput');
+			if (input.value != 0){
+        let key   = input.dataset.key;
+        let value = input.value;
+
+        let found = this.current_search.reduce((a, c) => a || c.attributes[key] == value, false)
+        option.style.display = found ? 'block' : 'none';
+			}
+		})
+	}
+	__show_all_options(selectBox){
+    let options = [...selectBox.querySelectorAll('.selectBoxOption')];
+		options.forEach( option =>{
+      option.style.display = 'block';
+		})
+	}
 
 
 
