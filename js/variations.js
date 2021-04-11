@@ -117,7 +117,10 @@ class VariationManager {
 
     let variation_string = this.__get_variation_string();
 
-    document.querySelector('#Variation_string').innerText = variation_string;
+
+    let var_string = document.querySelector('#Variation_string');
+    var_string.innerText = variation_string;
+    var_string.style.display = 'block';
 
     button.dataset.variationId = variation.variation_id
     button.dataset.variation = variation_string
@@ -132,7 +135,10 @@ class VariationManager {
 
 
   __deactivate_add_to_cart_button(){
-    document.querySelector('#Variation_string').innerText = '';
+    let var_string = document.querySelector('#Variation_string');
+    var_string.innerText = '';
+    var_string.style.display = 'none';
+
     let button       = this.add_to_cart_button;
     button.dataset.variationId = '';
     button.dataset.variation = '';
