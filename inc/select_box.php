@@ -40,16 +40,16 @@ function selectBox($config, $options = array()){
 	);
 
 	// check for selected items on the option list
-	$selected = array('name'=>'','selected'=>False);
+	$start = array('name'=>'','selected'=>False);
 	$selected = array_reduce($options,function($accu, $opt){
-		if ($accu != False) return $accu;
+		if ($accu['selected'] != False) return $accu;
 		if (isset($opt['selected']) and $opt['selected'] == True) return $opt;
 		return False;
-	},False);
+	},$start);
 
 	// var_dump($selected);
 	?>
-	<div class="SelectBox <?php if ( isset($selected['selected']) AND $selected['selected'] ){echo 'alt';} ?> <?= $config['class']; ?>" tabindex="1" id="selectBox<?= $config['slug']; ?>">
+	<div class="SelectBox <?php if ( $selected['selected'] ){echo 'alt';} ?> <?= $config['class']; ?>" tabindex="1" id="selectBox<?= $config['slug']; ?>">
 		<div class="selectBoxButton" onclick="altClassFromSelector('focus', '#selectBox<?= $config['slug']; ?>')">
 			<svg class="select_box_icon dropdown_icon" width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M31.7481 0.701755L31.2388 0.232817C30.9017 -0.0776058 30.3566 -0.0776058 30.0194 0.232817L16.004 13.1451L1.98145 0.232817C1.64434 -0.0776058 1.09921 -0.0776058 0.762097 0.232817L0.252837 0.701755C-0.0842789 1.01218 -0.0842789 1.51414 0.252837 1.82456L15.3872 15.7672C15.7243 16.0776 16.2694 16.0776 16.6065 15.7672L31.7409 1.82456C32.0852 1.51414 32.0852 1.01218 31.7481 0.701755Z" fill="currentColor"/>
@@ -66,7 +66,7 @@ function selectBox($config, $options = array()){
 					name="<?= $config['slug']; ?>"
 					onclick="selectBoxControler('','#selectBox<?= $config['slug']; ?>','#selectBoxCurrent<?= $config['slug']; ?>')"
 					value="0"
-					<?php if(!isset($_GET[$config['slug']])){ ?>
+					<?php if(!$selected['selected']){ ?>
 						checked
 					<?php } ?>
 				>
