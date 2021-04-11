@@ -2720,6 +2720,8 @@ section.flati{
   grid-template-rows: var(--copa_interaction_container_GTR);
   grid-row-gap: 1.5rem;
   grid-column-gap: 1rem;
+  height: min-content;
+  margin: auto;
 }
 .copa_interaction_container >* {
   height: 2rem;
@@ -2797,7 +2799,7 @@ section.flati{
 }
 .copa_mas{
   grid-column: 1/-1;
-  margin-top: 1.6rem;
+  /* margin-top: 1.6rem; */
   font-size: var(--font_size_6);
 }
 .copa_mas_link {
@@ -2819,7 +2821,6 @@ section.flati{
 }
 .copa_description_title{
   font-size: var(--font_size_3);
-  margin-bottom: calc(1rem - 5px);
 }
 .copa_description_subtitle,.copa_description_text,.copa_description_price{
   margin: 5px 0;
