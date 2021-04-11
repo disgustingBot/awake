@@ -38,7 +38,7 @@
       $slug = preg_replace("/attribute_/i", "", $key);
       $name = ucfirst($slug);
       echo "<div class='copa_select_blob'>";
-      echo "<p class='hedi_label font_size_8' style='background:$category_color;'>$name</p>";
+      echo "<p class='hedi_label font_size_6' style='background:$category_color;'>$name</p>";
 
       $options = [];
       foreach ($value as $i => $var) {
@@ -55,7 +55,7 @@
         }
       }
       $config = array(
-        'label' => $name,
+        'label' => 'Seleccionar',
         'class' => 'copa_select_container',
         'empty' => 'Vaciar',
       );
@@ -67,7 +67,9 @@
 
 
   <!-- <p class="copa_price">475,00€</p> -->
-  <p class="copa_price" id="singleSidePrice" style="color:<?= $category_color; ?>"><?php echo $product->get_price_html(); ?></p>
+  <?php
+  $price = ( $product->is_type( 'variable' ) ) ? "-" : $product->get_price_html(); ?>
+  <p class="copa_price" id="singleSidePrice" style="color:<?= $category_color; ?>"><?= $price ?></p>
 
   <div class="cuantos Cuantos">
     <button class="cuantosBtn cuantosMins">-</button>
@@ -110,6 +112,11 @@
   }
   ?>
   </button>
+  <?php
+  if ( $product->is_type( 'variable' ) ) {
+    echo '<p>Este titulo</p>';
+  }
+  ?>
 
   <p class="copa_mas">Más información <a class="copa_mas_link" href="<?php echo get_site_url() . '/contacto'; ?>">CLICA AQUÍ</a></p>
 </div>

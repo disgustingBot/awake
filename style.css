@@ -858,7 +858,7 @@ img, video, source{
 .single-product .main h4{font-size:1.2rem;margin:1.5rem 0;letter-spacing:.1rem;}
 .single-product .main h5{font-size:1.1rem;margin:1.5rem 0;letter-spacing:.1rem;}
 .single-product .main h6{font-size:1.0rem;margin:1.5rem 0;letter-spacing:.1rem;}
-.single-product .main  p{font-size:var(--font_size_5); margin:0.5rem 0;}
+.single-product .main  p{font-size:var(--font_size_6); margin:0.5rem 0;}
 
 
 
@@ -2190,6 +2190,7 @@ section.flati{
   background: transparent;
   padding:.5rem;
 }
+
 .SelectBox,
 .phil .SelectBox,
 .phil_input {
@@ -2204,9 +2205,11 @@ section.flati{
   font-style: italic;
   width: 100%;
 }
+.SelectBox {max-height: unset}
 .copa_select_container.SelectBox{
   font-family: 'Lato', sans-serif;
   font-style: unset;
+  margin: 0;
 }
 
 /* ---------------------------------------------------------------------------
@@ -3216,11 +3219,10 @@ section.flati{
   display:grid;
   grid-row:1;
   grid-column:1;
-  height: var(--selectBoxHeight);
   position: relative;
   transition:.4s;
   width:100%;
-  height:40px;
+  /* height:40px; */
   z-index:4;
   overflow: hidden;
 }
