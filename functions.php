@@ -6,6 +6,8 @@ require_once 'inc/ajax.php';
 require_once 'inc/new_ajax.php';
 require_once 'inc/customize.php';
 
+include __DIR__ . '/inc/select_box.php';
+
 if(!is_admin()){
   require_once 'inc/multi_cards.php';
 }
@@ -54,8 +56,10 @@ function lattte_setup(){
   wp_localize_script( 'main', 'filters', array(
     'query' => json_encode( $wp_query->query_vars ), // everything about your loop is here
   ) );
-
   wp_enqueue_script( 'main' );
+
+
+
 }
 add_action('wp_enqueue_scripts', 'lattte_setup');
 
@@ -210,35 +214,48 @@ function woocommerce_add_variation_to_cart() {
   $product_id        = apply_filters( 'woocommerce_add_to_cart_product_id', absint( $_POST['product_id'] ) );
   $quantity          = empty( $_POST['quantity'] ) ? 1 : wc_stock_amount( $_POST['quantity'] );
   $variation_id      = isset( $_POST['variation_id'] ) ? absint( $_POST['variation_id'] ) : '';
-  $variations        =  ! empty( $_POST['variation'] ) ? (array) $_POST['variation'] : '';
+  // $variations        =  ! empty( $_POST['variation'] ) ? (array) $_POST['variation'] : '';
+  // $variations1        = $_POST['variation'];
+  // $variations2        = stripslashes($_POST['variation']);
+  $variations        = (array) json_decode(stripslashes($_POST['variation']));
 
   $passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variations, $cart_item_data );
 	// echo WC()->cart->get_cart_contents_count();
 
-	$respuesta['variations'] = $variations;
+  $respuesta['quant1'] = $_POST['quantity'];
+  $respuesta['quant2'] = $quantity;
 
-    if ( $passed_validation && WC()->cart->add_to_cart( $product_id, $quantity, $variation_id, $variations ) ) {
+  $respuesta['variations'] = $variations;
 
-        do_action( 'woocommerce_ajax_added_to_cart', $product_id );
+  if ( $passed_validation ) {
 
-        if ( get_option( 'woocommerce_cart_redirect_after_add' ) == 'yes' ) {
-            wc_add_to_cart_message( $product_id );
-        }
+    if(WC()->cart->add_to_cart( $product_id, $quantity, $variation_id, $variations )){
 
-        // Return fragments
-        // WC_AJAX::get_refreshed_fragments();
-				// echo WC()->cart->get_cart_contents_count();
+      do_action( 'woocommerce_ajax_added_to_cart', $product_id );
 
+      if ( get_option( 'woocommerce_cart_redirect_after_add' ) == 'yes' ) {
+        wc_add_to_cart_message( $product_id );
+      }
+
+      // Return fragments
+      // WC_AJAX::get_refreshed_fragments();
+      // echo WC()->cart->get_cart_contents_count();
     } else {
+      $respuesta['error'] = 'add to cart';
+
+    }
+
+
+  } else {
 
         // If there was an error adding to the cart, redirect to the product page to show any errors
         // $data = array(
         //     'error' => true,
         //     'product_url' => apply_filters( 'woocommerce_cart_redirect_after_error', get_permalink( $product_id ), $product_id )
         // );
-				//
+        //
         // wp_send_json( $data );
-
+    $respuesta['error'] = 'validation';
 	}
 
 	// echo WC()->cart->get_cart_contents_count();
@@ -266,76 +283,6 @@ function woocommerce_add_variation_to_cart() {
 
 
 
-
-
-
-/*
-=selectBox
-
-This function generates a selectBox object
-
-PARAMETROS:
-$name => el nombre visible o "label" del select
-$options => un vector del tipo:
-array(
-  'option_1_slug' => 'option_1_text',
-  'option_2_slug' => 'option_2_text',
-  'option_3_slug' => 'option_3_text',
-)
-$empty_label => el nombre visible de la opcion de vaciar el select
-$slug => el nombre invisible del select (para CSS) se concatena a selectBox, ejemplo:
-$slug = 'MiSelect' resulta en la clase -> 'selectBoxMiSelect'
-*/
-function selectBox($name, $options = array(), $empty_label = 'Vaciar', $slug = false){
-	if(!$slug){ $slug = sanitize_title($name); }
-	?>
-	<div class="SelectBox selectBox<?php echo $slug; ?>" tabindex="1" id="selectBox<?php echo $slug; ?>">
-		<div class="selectBoxButton" onclick="altClassFromSelector('focus', '#selectBox<?php echo $slug; ?>')">
-			<p class="selectBoxPlaceholder"><?php echo $name; ?></p>
-			<p class="selectBoxCurrent" id="selectBoxCurrent<?php echo $slug; ?>"></p>
-		</div>
-		<div class="selectBoxList focus">
-			<label for="nul<?php echo $slug; ?>" class="selectBoxOption" id="selectBoxOptionNul"><?= $empty_label; ?>
-				<input
-					class="selectBoxInput"
-					id="nul<?php echo $slug; ?>"
-					type="radio"
-					name="<?php echo $slug; ?>"
-					onclick="selectBoxControler('','#selectBox<?php echo $slug; ?>','#selectBoxCurrent<?php echo $slug; ?>')"
-					value="0"
-					<?php if(!isset($_GET[$slug])){ ?>
-						checked
-					<?php } ?>
-				>
-				<!-- <span class="checkmark"></span> -->
-				<p class="colrOptP"></p>
-			</label>
-
-
-			<?php foreach ($options as $opt_slug => $opt_name) {
-				$opt_name = preg_replace('/\s+/', ' ', trim($opt_name)); ?>
-
-				<label for="<?php echo $slug; ?>_<?php echo $opt_slug; ?>" class="selectBoxOption">
-					<input
-						class="selectBoxInput <?php echo $opt_slug; ?>"
-						type="radio"
-						id="<?php echo $slug; ?>_<?php echo $opt_slug; ?>"
-						name="<?php echo $slug; ?>"
-						onclick="selectBoxControler('<?php echo $opt_name; ?>', '#selectBox<?php echo $slug; ?>', '#selectBoxCurrent<?php echo $slug; ?>')"
-						value="<?php echo $opt_slug; ?>"
-						<?php if(isset($_GET[$slug]) && $_GET[$slug] == $opt_slug){ ?>
-							checked
-						<?php } ?>
-					>
-					<!-- <span class="checkmark"></span> -->
-					<p class="colrOptP"><?php echo $opt_name; ?></p>
-				</label>
-
-
-			<?php } ?>
-		</div>
-	</div>
-<?php }
 
 
 

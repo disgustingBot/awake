@@ -146,46 +146,46 @@ jQuery(function($){ // use jQuery code inside this to avoid "$ is not defined" e
 
 
 
-  // ADD TO CART CONTROLLER
-  $('.My_add_to_cart_button').on('click',(event)=>{
-    let addToCart = event.target;
-		var product_id = addToCart.dataset.productId;
-    var quantity = document.querySelector('.CuantosQantity_' + product_id).value;
-    var buy = addToCart.dataset.buy;
-
-    if(addToCart.dataset.productType == 'variable'){
-      var variationId = addToCart.dataset.variationId;
-      var variation = addToCart.dataset.variation;
-      if (!variationId) {
-        alert('Select a variation in order to add to cart')
-        return;
-      }
-      console.log(variationId)
-    }
-		var data = {
-			"action" : "woocommerce_add_variation_to_cart",
-			"product_id" : product_id,
-			"variation_id" : variationId,
-			"quantity" : quantity,
-			"variation" : {
-				"Size" : variation,
-			},
-    };
-    // console.log(data)
-    $.ajax({
-      url : misha_loadmore_params.ajaxurl,
-      data : data,
-      type : 'POST',
-      success : respuesta => {
-        respuesta = JSON.parse(respuesta);
-        c.log(respuesta);
-        cant = respuesta.count
-        if(d.querySelector('.cartButtonCant')){
-          d.querySelector('.cartButtonCant').innerText = cant;
-        }
-      }
-    });
-  })
+  // // ADD TO CART CONTROLLER
+  // $('.My_add_to_cart_button').on('click',(event)=>{
+  //   let addToCart = event.target;
+	// 	var product_id = addToCart.dataset.productId;
+  //   var quantity = document.querySelector('.CuantosQantity_' + product_id).value;
+  //   var buy = addToCart.dataset.buy;
+  //
+  //   if(addToCart.dataset.productType == 'variable'){
+  //     var variationId = addToCart.dataset.variationId;
+  //     var variation = addToCart.dataset.variation;
+  //     if (!variationId) {
+  //       alert('Select a variation in order to add to cart')
+  //       return;
+  //     }
+  //     // console.log(variationId)
+  //   }
+	// 	var data = {
+	// 		"action" : "woocommerce_add_variation_to_cart",
+	// 		"product_id" : product_id,
+	// 		"variation_id" : variationId,
+	// 		"quantity" : quantity,
+	// 		"variation" : {
+	// 			"Size" : variation,
+	// 		},
+  //   };
+  //   console.log(data)
+  //   $.ajax({
+  //     url : misha_loadmore_params.ajaxurl,
+  //     data : data,
+  //     type : 'POST',
+  //     success : respuesta => {
+  //       respuesta = JSON.parse(respuesta);
+  //       c.log(respuesta);
+  //       cant = respuesta.count
+  //       if(d.querySelector('.cartButtonCant')){
+  //         d.querySelector('.cartButtonCant').innerText = cant;
+  //       }
+  //     }
+  //   });
+  // })
 
 
   $( document.body ).on( 'added_to_cart removed_from_cart', ()=>{

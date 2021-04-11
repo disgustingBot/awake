@@ -49,8 +49,8 @@
     );
     hedi_card($args);
   }
+  echo ajax_paginator_2($wp_query);
   ?>
-  <?php echo ajax_paginator_2($wp_query); ?>
 </section>
 
 
