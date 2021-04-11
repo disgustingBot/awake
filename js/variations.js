@@ -197,7 +197,9 @@ class VariationManager {
 
     ajax2(formData).then( respuesta => {
       // c.log(respuesta);
-      d.querySelector('.cart_butt_number').innerText = respuesta.count;
+      // console.log(redirect.to);
+      window.location.href = redirect.to;
+      // d.querySelector('.cart_butt_number').innerText = respuesta.count;
     });
 
 

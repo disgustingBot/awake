@@ -32,11 +32,23 @@
       if ($programas -> have_posts()) {
         while ($programas -> have_posts()) {$programas -> the_post();
           global $post;
-          $options[$post->post_name] = $post->post_title;
+          // $options[$post->post_name] = $post->post_title;
+          $options[] = array(
+            'slug' => $post->post_name,
+            'name' => $post->post_title,
+            'value' => $post->post_title,
+          );
         }  wp_reset_query();
       }
       // var_dump($options);
-      selectBox('Que programa te interesa?', $options, 'Vaciar', 'Programas');
+      $config = array(
+        'label' => 'Que programa te interesa?',
+        'class' => 'selectBoxProgramas',
+        'empty' => 'Vaciar',
+      );
+
+      selectBox($config, $options);
+      // selectBox('Que programa te interesa?', $options, 'Vaciar', 'Programas');
       ?>
       <!-- </select> -->
       <textarea class="main_form_input font_size_8 main_form_textarea" name="" id="" placeholder="Escríbenos*"></textarea>
