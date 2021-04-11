@@ -2726,6 +2726,12 @@ section.flati{
   margin: var(--copa_cuantos_btn_margin);
 }
 .copa_interaction_container .btn:hover{color:black}
+.copa_interaction_container .btn[disabled]{
+  color:white;
+  background:var(--grey3)!important;
+  outline: none;
+  cursor:default;
+}
 .copa_interaction_container .btn {
   color: white;
   grid-column: var(--addtocart_GC);

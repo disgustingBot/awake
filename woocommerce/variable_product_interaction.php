@@ -115,5 +115,6 @@
 </div>
 
 <?php
+wp_localize_script( 'variations', 'redirect', array('to' => site_url() . '/cart') );
 wp_enqueue_script( 'variations' );
 ?>

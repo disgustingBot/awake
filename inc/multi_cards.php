@@ -1,5 +1,5 @@
-
-<?php function sqare_card () {
+<?php
+function sqare_card () {
     if(!isset($args['title']  )){ $args['title']   = get_the_title(); }
     if(!isset($args['link']   )){ $args['link']    = get_the_permalink(); }
     if(!isset($args['image']  )){ $args['image']   = get_the_post_thumbnail_url(); }
@@ -27,14 +27,15 @@
         <a class="sqare_link font_size_8" href="<?php the_permalink(); ?>">&mdash; Leer más</a>
     </div>
 
-<?php } ?>
+<?php }
 
 
 
 
 
 
-<?php function simpla_card ($args = array()) {
+
+function simpla_card ($args = array()) {
     if(!isset($args['title']  )){ $args['title']   = get_the_title(); }
     if(!isset($args['link']   )){ $args['link']    = get_the_permalink(); }
     if(!isset($args['image']) || $args['image'] == ''){ $args['image']   = get_the_post_thumbnail_url(); }
@@ -60,34 +61,32 @@
         <?php } ?>
     </a>
 
-<?php } ?>
-
-
-
-<?php function col_testimonial_card ($args = array()) {
-    if(!isset($args['title']  )){ $args['title']   = get_the_title(); }
-    if(!isset($args['content'])){ $args['content'] = get_the_content(); }
-    ?>
-
-
-          <div class="col_testimonial">
-            <p class="col_testimonial_title font_size_7"><?php echo $args['title']; ?></p>
-            <div class="col_testimonial_content font_size_7">
-              <?php echo $args['content']; ?>
-            </div>
-          </div>
-
-<?php } ?>
+<?php }
 
 
 
 
 
 
+function col_testimonial_card ($args = array()) {
+  if(!isset($args['title']  )){ $args['title']   = get_the_title(); }
+  if(!isset($args['content'])){ $args['content'] = get_the_content(); }
+  ?>
+  <div class="col_testimonial">
+    <p class="col_testimonial_title font_size_7"><?php echo $args['title']; ?></p>
+    <div class="col_testimonial_content font_size_7">
+      <?php echo $args['content']; ?>
+    </div>
+  </div>
+<?php
+}
 
 
 
-<?php function hedi_card ($args = array()) {
+
+
+
+function hedi_card ($args = array()) {
     if(!isset($args['title']  )){ $args['title']   = get_the_title(); }
     if(!isset($args['link']   )){ $args['link']    = get_the_permalink(); }
     if(!isset($args['image']  )){ $args['image']   = get_the_post_thumbnail_url(); }
@@ -99,9 +98,8 @@
         $args['color']   = get_random_color();
       }
     }
-    ?>
-    <?php global $woocommerce, $product, $post;$is_out_of_stock = false; ?>
-    <?php if( !$product->is_on_backorder() AND !$product->is_in_stock() ){ $is_out_of_stock = true; } ?>
+    global $woocommerce, $product, $post;$is_out_of_stock = false;
+    if( !$product->is_on_backorder() AND !$product->is_in_stock() ){ $is_out_of_stock = true; } ?>
 
     <div class="hedi">
       <a class="hedi_amg rowcol1" href="<?php echo $args['link']; ?>" style="background:<?php echo $args['color']; ?>">
@@ -120,7 +118,7 @@
         <?php if($args['excerpt'] != false){ ?>
             <div class="hedi_txt font_size_8"><?php echo $args['excerpt']; ?></div>
         <?php } ?>
-        <a class="hedi_enlace font_size_8" href="<?php echo $args['link']; ?>">Ver Programa</a>
+        <a class="hedi_enlace font_size_8" href="<?php echo $args['link']; ?>">Ver más</a>
 
 
 
@@ -128,7 +126,7 @@
 
 
 
-        <div class="hedi_interaction_container Variable_product_interaction">
+        <!-- <div class="hedi_interaction_container Variable_product_interaction">
 
           <?php
       			if ( $product->is_type( 'variable' ) AND !$is_out_of_stock ) { ?>
@@ -153,7 +151,6 @@
 
               $first = true;
               foreach ($myAttributes as $key => $value) {
-                // var_dump(get_the_ID());
                 $slug = preg_replace("/attribute_/i", "", $key) . '_' . get_the_ID();
                 $name = ucfirst($slug);
                 ?>
@@ -223,7 +220,6 @@
             <button class="cuantosBtn cuantosPlus">+</button>
           </div>
 
-          <!-- id="myAddToCart" -->
           <button
             class="btn hedi_btn font_size_8 My_add_to_cart_button"
             style="background:<?php echo $args['color']; ?>"
@@ -260,7 +256,7 @@
           }
           ?>
           </button>
-        </div>
+        </div> -->
     </div>
 
 <?php } ?>
