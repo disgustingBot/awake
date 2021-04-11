@@ -114,7 +114,7 @@
   </button>
   <?php
   if ( $product->is_type( 'variable' ) ) {
-    echo '<p>Este titulo</p>';
+    echo '<p id="Variable_string">Este titulo</p>';
   }
   ?>
 
