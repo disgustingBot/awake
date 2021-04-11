@@ -49,13 +49,13 @@ function selectBox($config, $options = array()){
 
 	// var_dump($selected);
 	?>
-	<div class="SelectBox <?php if ($selected['selected']) {echo 'alt';} ?> <?= $config['class']; ?>" tabindex="1" id="selectBox<?= $config['slug']; ?>">
+	<div class="SelectBox <?php if ( isset($selected['selected']) AND $selected['selected'] ){echo 'alt';} ?> <?= $config['class']; ?>" tabindex="1" id="selectBox<?= $config['slug']; ?>">
 		<div class="selectBoxButton" onclick="altClassFromSelector('focus', '#selectBox<?= $config['slug']; ?>')">
 			<p class="selectBoxPlaceholder"><?= $config['label']; ?></p>
 			<p class="selectBoxCurrent" id="selectBoxCurrent<?= $config['slug']; ?>"><?php if(isset($selected['name'])) echo $selected['name']; ?></p>
 		</div>
 		<div class="selectBoxList focus">
-			<label for="nul_<?= $config['slug']; ?>" class="selectBoxOption" id="selectBoxOptionNul"><?= $config['empty']; ?>
+			<label for="nul_<?= $config['slug']; ?>" class="selectBoxOption" id="selectBoxOptionNul">
 				<input
 					class="selectBoxInput"
 					id="nul_<?= $config['slug']; ?>"
@@ -68,7 +68,7 @@ function selectBox($config, $options = array()){
 					<?php } ?>
 				>
 				<!-- <span class="checkmark"></span> -->
-				<p class="colrOptP"></p>
+				<p class="colrOptP"><?= $config['empty']; ?></p>
 			</label>
 
 
