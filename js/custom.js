@@ -93,9 +93,7 @@ const altClassFromSelector = ( clase, selector, mainClass = false )=>{
 
 // SELECT BOX CONTROLER
 // TODO: mejorar eso a clases y POO
-const selectBoxControler=(a, selectBoxId, current)=>{ //c.log(a)
-  console.log(selectBoxId);
-  console.log(d.querySelector(selectBoxId));
+const selectBoxControler=(a, selectBoxId, current)=>{ // console.log(a)
 	if(!!a){d.querySelector(selectBoxId).classList.add('alt')}
 	else   {d.querySelector(selectBoxId).classList.remove('alt')}
 
@@ -182,73 +180,13 @@ function reportWindowSize() {
 
 
 
-const activate_variable_product_interactions = ()=>{
-
-  const vpis = [...d.querySelectorAll('.Variable_product_interaction')]
-  // c.log(vpis)
-  // const attributes = [...d.querySelectorAll('.single-product .selectBoxInput')]
-  vpis.forEach( (vpi, i) =>{
-    // c.log('vpi')
-    vpi.querySelectorAll('.selectBoxInput').forEach( y =>{
-      y.addEventListener('change', z => {
-
-        let ids = z.target.dataset.ids;
-        // c.log(ids)
-        // c.log(z.target.value != 0)
-
-        if(z.target.value!=0){
-          vpi.querySelector('.My_add_to_cart_button').dataset.variationId = ids
-          vpi.querySelector('.My_add_to_cart_button').dataset.variation = z.target.value
-          vpi.querySelector('.My_add_to_cart_button').innerText = "Añadir a la cesta";
-        } else {
-          vpi.querySelector('.My_add_to_cart_button').dataset.variationId = ''
-          vpi.querySelector('.My_add_to_cart_button').dataset.variation = ''
-          vpi.querySelector('.My_add_to_cart_button').innerText = "Selecciona una Fecha";
-        }
-      })
-    })
-  })
-}
-activate_variable_product_interactions();
 
 
 
 
 
 
-const my_add_to_cart_function = (button)=>{
-  let parent       = button.parentElement;
-  let product_id   = button.dataset.productId;
-  let variation_id = button.dataset.variationId;
-  let variation    = button.dataset.variation;
-  let quantity     = parent.querySelector('.cuantosQantity').value
 
-  if(!variation_id){
-    alert('selecciona una Fecha')
-    return;
-  }
-
-  // c.log(button.parentElement)
-  // c.log('product id: ', product_id)
-  // c.log('variation id: ', variation_id)
-  // c.log('variation: ', variation)
-  // c.log('quantity: ', quantity);
-
-  var formData = new FormData();
-  formData.append( 'action', 'woocommerce_add_variation_to_cart' );
-  formData.append( 'product_id', product_id );
-  formData.append( 'variation_id', variation_id );
-  formData.append( 'quantity', quantity );
-  formData.append( 'variation', {
-    "Fecha" : variation,
-  });
-
-  ajax2(formData).then( respuesta => {
-    // c.log(respuesta.count);
-    d.querySelector('.cart_butt_number').innerText = respuesta.count;
-  });
-
-}
 
 
 

@@ -4,84 +4,67 @@
   <?php
   $is_out_of_stock = false;
   if( !$product->is_on_backorder() AND !$product->is_in_stock() ){ $is_out_of_stock = true; }
-  ?>
 
-  <?php
-    // $product = wc_get_product();
-    if ( $product->is_type( 'variable' ) AND !$is_out_of_stock ) { ?>
-      <p class="hedi_label font_size_8" style="background:<?= $category_color; ?>">FECHAS</p>
+  if ( $product->is_type( 'variable' ) AND !$is_out_of_stock ) {
 
-      <?php
-      $variations = $product->get_available_variations();
+    $variations = $product->get_available_variations();
 
-      // THIS BLOCK DEFINES THE ARRAY: "$myAttributes"
-      // WE WILL USE THIS ARRAY LATER
-      $myAttributes = array();
-      foreach ($variations as $key => $value) {
-        foreach ($value['attributes'] as $j => $var) {
-          if ( ! array_key_exists ( $j, $myAttributes ) ) {
-            $myAttributes[$j] = array($var => array($value['variation_id']));
-          } else {
-            $myAttributes[$j][$var][] = $value['variation_id'];
-          }
+    // THIS BLOCK DEFINES THE ARRAY: "$myAttributes"
+    // WE WILL USE THIS ARRAY LATER
+
+    // send my variation data to JS
+    wp_register_script( 'variations', get_stylesheet_directory_uri() . '/js/variations.js', array('jquery'), 1.0, true );
+    wp_localize_script( 'variations', 'variations', array('data' => json_encode( $variations )) );
+    wp_enqueue_script( 'variations' );
+
+
+    $myAttributes = array();
+
+    foreach ($variations as $variation) {
+      foreach ($variation['attributes'] as $key => $value) {
+        if ( ! array_key_exists ( $key, $myAttributes ) ) {
+          $myAttributes[$key] = array($value => array($variation['variation_id']));
+        } else {
+          $myAttributes[$key][$value][] = $variation['variation_id'];
         }
       }
-      if(count($myAttributes)==0){
-        echo '<p class="font_size_7">no hay fechas</p>';
+    }
+    if(count($myAttributes)==0){
+      echo '<p class="font_size_7">no hay fechas</p>';
 
+    }
+    $first = true;
+    foreach ($myAttributes as $key => $value) {
+
+
+      $slug = preg_replace("/attribute_/i", "", $key);
+      $name = ucfirst($slug);
+      // echo "<p class='hedi_label font_size_8' style='background:$category_color;'>$name</p>";
+
+      $options = [];
+      foreach ($value as $i => $var) {
+        if ($i != '-') {
+          // code...
+          $options[] = array(
+            'slug' => sanitize_title($i),
+            'name' => $i,
+            'value' => $i,
+            'data' => array(
+              'ids' => implode(", ", $var),
+              'key' => $key,
+            ),
+          );
+        }
       }
-      $first = true;
-      foreach ($myAttributes as $key => $value) {
-        $slug = preg_replace("/attribute_/i", "", $key);
-        $name = ucfirst($slug);
-        ?>
+      $config = array(
+        'label' => $name,
+        'class' => 'copa_select_container',
+        'empty' => 'Vaciar',
+      );
 
-        <div class="SelectBox copa_select_container" tabindex="1" id="selectBox<?php echo $slug; ?>">
-          <div class="selectBoxButton" onclick="altClassFromSelector('focus', '#selectBox<?php echo $slug; ?>')">
-            <svg class="select_box_icon dropdown_icon" width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M31.7481 0.701755L31.2388 0.232817C30.9017 -0.0776058 30.3566 -0.0776058 30.0194 0.232817L16.004 13.1451L1.98145 0.232817C1.64434 -0.0776058 1.09921 -0.0776058 0.762097 0.232817L0.252837 0.701755C-0.0842789 1.01218 -0.0842789 1.51414 0.252837 1.82456L15.3872 15.7672C15.7243 16.0776 16.2694 16.0776 16.6065 15.7672L31.7409 1.82456C32.0852 1.51414 32.0852 1.01218 31.7481 0.701755Z" fill="currentColor"/>
-            </svg>
-            <p class="selectBoxPlaceholder font_size_7"><?php _e('elige una opcion', 'lt_domain'); ?></p>
-            <p class="selectBoxCurrent font_size_7" id="selectBoxCurrent<?php echo $name; ?>"></p>
-          </div>
-          <div class="selectBoxList">
-            <label for="nul<?php echo $name; ?>" class="selectBoxOption">
-              <input
-                class="selectBoxInput"
-                id="nul<?php echo $name; ?>"
-                type="radio"
-                data-ids=""
-                name="filter_<?php echo $slug; ?>"
-                onclick="selectBoxControler('','#selectBox<?php echo $slug; ?>','#selectBoxCurrent<?php echo $name; ?>')"
-                value="0"
-                checked
-              >
-              <p class="colrOptP"></p>
-            </label>
-            <?php foreach ($value as $i => $var) { ?>
-              <label for="<?php echo $i; ?>" class="selectBoxOption<?php if(!$first){echo ' hidden';} ?>">
-                <input
-                  class="selectBoxInput"
-                  id="<?php echo $i; ?>"
-                  data-ids="<?php
-                    foreach ($var as $j => $x) {
-                      echo $x;
-                      if($j<count($var)-1){ echo ', '; }
-                    }
-                  ?>"
-                  type="radio"
-                  name="filter_<?php echo $slug; ?>"
-                  onclick="selectBoxControler('<?php echo $i; ?>', '#selectBox<?php echo $slug; ?>', '#selectBoxCurrent<?php echo $name; ?>')"
-                  value="<?php echo $i; ?>"
-                >
-                <p class="colrOptP"><?php echo $i; ?></p>
-              </label>
-            <?php } ?>
-          </div>
-        </div>
-      <?php $first = false; ?>
-      <?php } ?>
-    <?php } ?>
+      selectBox($config, $options);
+    }
+  } ?>
 
 
 
@@ -96,7 +79,7 @@
   </div>
 
   <button
-    class="btn My_add_to_cart_button"
+    class="btn Add_to_cart"
     style="background:<?= $category_color; ?>"
     id="myAddToCart"
     data-product-id="<?php echo get_the_id(); ?>"
