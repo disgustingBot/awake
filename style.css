@@ -2838,6 +2838,9 @@ section.flati{
 .copa_variation_string{
   grid-column: 1/-1;
 }
+.product_copa .copa_interaction_container .copa_title {display: none!important;}
+.product_copa .copa_title {text-align: center;}
+
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.21) =captioned_figure:

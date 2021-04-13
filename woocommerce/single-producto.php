@@ -1,6 +1,7 @@
 
-  <section class="copa" style="margin-top:150px">
-    <img class="copa_img" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'E_imagen_modulo_compra', true)); ?>" alt="">
+  <section class="copa product_copa" style="margin-top:150px">
+    <h1 class="copa_title font_size_2"><?php the_title(); ?></h1>
+    <img class="copa_img" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="">
     <?php include 'variable_product_interaction.php'; ?>
   </section>
 
