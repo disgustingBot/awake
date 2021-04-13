@@ -18,6 +18,9 @@ class VariationManager {
     this.all_variations = variations;
 
     if(variations){
+      this.price = variations
+      console.log('precio: ', this.all_variations[0].display_price);
+
       this.selectBoxes = [...this.container.querySelectorAll('.copa_select_blob')];
       this.__active_selectBoxes = [];
       this.__deactivate_add_to_cart_button();
@@ -56,6 +59,7 @@ class VariationManager {
       this.__show_price();
     } else {
       this.__deactivate_add_to_cart_button();
+      this.__hide_price();
     }
     // si hay mas de una opcion, mostrar el siguiente selectBox
     let more_options_found = this.current_search.length > 1;
@@ -129,7 +133,11 @@ class VariationManager {
   }
   __show_price(){
     let price_tag = this.container.querySelector('#singleSidePrice')
-    price_tag.innerHTML = this.current_search[0].price_html;
+    price_tag.innerHTML = this.current_search[0].display_price + '€';
+  }
+  __hide_price(){
+    let price_tag = this.container.querySelector('#singleSidePrice')
+    price_tag.innerHTML = '-';
   }
 
 
