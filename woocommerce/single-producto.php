@@ -24,7 +24,6 @@
   } else {
     $my_title = 'Otros productos';
   }
-  var_dump($category_color);
   ?>
   <h4 class="block_title font_size_3" style="color: <?php echo $category_color; ?>"><?php _e($my_title, 'awake') ?></h4>
   <?php
