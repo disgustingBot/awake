@@ -7,7 +7,7 @@
         <h3 class="font_size_3">Síguenos en Instagram</h3>
         <h5 class="feed_link font_size_7"><a href="https://www.instagram.com/esfacilsisabescomo/?hl=es" target="_blank">@esfacilsisabescomo</a></h5>
       </hgroup>
-      <?php echo do_shortcode('[instagram-feed]') ?>
+      <?php echo do_shortcode('[wdi_feed id="1"]') ?>
     </section>
     <div class="piqui">
       <h5 class="piqui_title font_size_8">Contacto</h5>
@@ -21,22 +21,32 @@
     <div class="piqui">
       <h5 class="piqui_title font_size_8">Info</h5>
       <p class="piqui_deco">-</p>
-      <p class="piqui_item">Términos y condiciones</p>
-      <p class="piqui_item">Politica de Privacidad</p>
-      <p class="piqui_item">Como llegar a la finca Las Bardas</p>
+      <?php
+      $args = array(
+        'theme_location' => 'footer_nav',
+        'depth' => 0,
+        'container'	=> false,
+        'fallback_cb' => false,
+        'menu_class' => 'piqui footer_nav',
+      );
+      wp_nav_menu($args);
+      ?>
     </div>
-    <form class="piqui">
+    <!-- <form class="piqui">
       <h5 class="piqui_title font_size_8">Newsletter</h5>
       <p class="piqui_deco">-</p>
       <input class="piqui_input" type="text" value="" placeholder="Nombre">
       <input class="piqui_input" type="text" value="" placeholder="Email">
       <div class="piqui_acceptance">
         <input class="piqui_acceptance_input" type="checkbox" name="acceptance">
-        <label class="piqui_acceptance_label" for="acceptance">He leido y acepto la <a class="piqui_acceptance_link" href="<?php get_site_url('aviso-legal') ?>">Política de privacidad</a>
+        <label class="piqui_acceptance_label" for="acceptance">He leido y acepto la <a class="piqui_acceptance_link" href="<?php get_site_url('politica-de-privacidad') ?>"> <u>Política de privacidad</u></a>
         </label>
       </div>
       <input class="piqui_send" type="submit" value="SEND">
-    </form>
+    </form> -->
+
+    <?php echo do_shortcode('[sibwp_form id=3]'); ?>
+
     <div class="piqui">
       <h5 class="piqui_title font_size_8">Follow</h5>
       <p class="piqui_deco">-</p>
