@@ -3546,7 +3546,7 @@ section.flati{
   height: min-content;
   line-height: 12px;
 }
-.piqui_item{
+.piqui_item, .piqui .menu-item{
   font-size: calc(var(--font_size_8) * 0.8);
   color: var(--grey9);
 }
@@ -3560,13 +3560,13 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   width: var(--piqui_input_width);
   margin: var(--piqui_input_margin);
   border-radius: 1px;
+  width: 100%;
 }
 .piqui_acceptance {
   display: flex;
   align-items: center;
   font-size: var(--font_size_8);
   margin: var(--piqui_input_margin);
-  margin-top: 5px;
 }
 .piqui_acceptance_input {
   background: var(--grey9);
@@ -3574,6 +3574,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   height: 13px;
   margin-right: 5px;
   border: none;
+  text-align: left;
 }
 .piqui_acceptance_label{
   color: var(--grey9);
@@ -3581,8 +3582,9 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 }
 .piqui_acceptance_link{
   color: var(--grey9);
+  text-align: left;
 }
-.piqui_send {
+.piqui_send{
   background: none;
   border: none;
   color: var(--grey9);
@@ -3593,10 +3595,16 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   padding: 10px;
   transition: .25s;
 }
-.piqui_send:hover {
+.piqui_send:hover{
   color: var(--grey1);
   text-decoration: underline;
 }
+/* Cosas del form de sendingblue */
+.sib-alert-message{
+  font-size: var(--font_size_8);
+  color: var(--grey9);
+}
+.sib_loader img{max-width: 50px;}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.99) =footer:
@@ -3882,4 +3890,18 @@ hr {margin: 1rem 0}
   margin-bottom: 1.67em;
   margin-left: 0;
   margin-right: 0;
+}
+
+
+/* Instagram feed fixes */
+.wdi_feed_users{background-color: var(--greyf5)!important;}
+.wdi_feed_thumbnail_1 .wdi_photo_wrap_inner {
+  border: none!important;
+  background-color: var(--greyf5)!important;
+}
+.wdi_feed_thumbnail_1 .wdi_feed_container {
+  border-bottom:none!important;
+}
+.wdi_feed_thumbnail_1 .wdi_photo_img{
+  background-color: var(--greyf5)!important;
 }
