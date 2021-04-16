@@ -33,6 +33,7 @@
                 $i = 0;
                 $args = array(
                     'post_type'=>'empresa',
+                    'posts_per_page' => -1,
                 );
                 $empresas=new WP_Query($args);
                 while($empresas->have_posts()){$empresas->the_post();?>

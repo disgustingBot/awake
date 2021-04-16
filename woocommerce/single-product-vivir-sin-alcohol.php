@@ -31,9 +31,12 @@
       <p class="gertha_txt alt font_size_6"><?php echo get_post_meta($post->ID, 'A_descripcion_texto_3', true); ?></p>
       <p class="gertha_txt alt font_size_6"><?php echo get_post_meta($post->ID, 'A_descripcion_texto_4', true); ?></p>
     </div>
-    <video class="gertha_img" controls="true" alt="">
+    <div class="gertha_img">
+      <?php echo get_post_meta($post->ID, 'A_iframe_video', true); ?>
+    </div>
+    <!-- <video class="gertha_img" controls="true" alt="">
       <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'A_descripcion_url_video', true)); ?>">
-    </video>
+    </video> -->
     <h3 class="gertha_title alt font_size_4" style=" color: <?php echo $category_color; ?> ">
       <?php echo get_post_meta($post->ID, 'A_descripcion_titulo', true); ?>
       <br>
@@ -203,11 +206,8 @@
     <?php } ?>
 
     <banner class="banner_1" style=" background: <?php echo $category_color; ?> ">
-      <h4 class="banner_title font_size_4">
-        ¿Quieres ayudar a alguien a dejar de beber alcohol?
-        <br>
-        Escuchamos tu situación particular</h4>
-      <a href="#" class="btn white_btn font_size_7" style=" background: <?php echo $category_color; ?> ">CONTÁCTENOS SIN COMPROMISO</a>
+      <h4 class="banner_title font_size_4"><?= get_post_meta(get_the_ID(), 'D_banner_titulo', true); ?></h4>
+      <a href="<?= get_post_meta(get_the_ID(), 'D_banner_boton_url', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo $category_color; ?> "><?= get_post_meta(get_the_ID(), 'D_banner_boton_texto', true); ?></a>
     </banner>
 
           <section class="col_4_block">

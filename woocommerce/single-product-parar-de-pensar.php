@@ -29,9 +29,9 @@
       <p class="gertha_txt alt font_size_6"><?php echo get_post_meta($post->ID, 'C_texto_descriptivo_1', true); ?></p>
       <p class="gertha_txt alt font_size_6"><?php echo get_post_meta($post->ID, 'D_texto_descriptivo_2', true); ?></p>
     </div>
-    <video class="gertha_img" controls="true" alt="Thanks Taryn! Great video. This is your Instagram: https://www.instagram.com/peanutbuttervisuals/">
-      <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta( get_the_ID(), 'E_url_video_descripcion', true )); ?>">
-    </video>
+    <div class="gertha_img">
+      <?php echo get_post_meta($post->ID, 'E_iframe_video', true); ?>
+    </div>
   </section>
 
     <section class="separanda">

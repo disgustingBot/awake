@@ -1204,11 +1204,12 @@ img, video, source{
   margin-left: 50%;
   transform: translateX(-50%);
 }
-.gertha_img{
-  margin: 0 auto auto auto;
-  min-height: 400px;
-}
 .gertha_img:focus {outline-color: var(--grey9)}
+.gertha_img iframe{
+  width: 100%;
+  height: 100%;
+  height: 400px;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.4.3) =simpla:
@@ -3808,6 +3809,9 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 .post_main {
   padding: 0 var(--lateral);
   color: var(--grey7);
+}
+.page_template{
+  padding-top: calc(var(--logo_size) + 3rem);
 }
 
 
