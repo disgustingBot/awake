@@ -6,7 +6,7 @@
 
 
 <?php while(have_posts()){the_post(); ?>
-    <section class="post_main">
+    <section class="post_main page_template">
         <?php the_content(); ?>
     </section>
 <?php } ?>

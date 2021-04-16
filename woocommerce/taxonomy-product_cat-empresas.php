@@ -213,7 +213,7 @@
       <br>
       como un guante, en sus Campañas de Promoción de la Salud
     </h4>
-    <a href="#" class="btn white_btn font_size_7" style=" background: transparent ">CONTÁCTENOS</a>
+    <a href="<?php echo get_site_url() . '/contacto' ?>" class="btn white_btn font_size_7" style=" background: transparent ">CONTÁCTENOS</a>
   </banner>
 
   <?php include get_stylesheet_directory() . '/bloque_testimonios.php'; ?>

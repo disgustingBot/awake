@@ -40,10 +40,10 @@
     <div class="piqui">
       <h5 class="piqui_title font_size_8">Follow</h5>
       <p class="piqui_deco">-</p>
-      <p class="piqui_item">Instagram</p>
-      <p class="piqui_item">Facebook</p>
-      <p class="piqui_item">Linkedin</p>
-      <p class="piqui_item">YouTube</p>
+      <a href="https://www.instagram.com/esfacilsisabescomo/" target="_blank" class="piqui_item">Instagram</a>
+      <a href="https://www.facebook.com/rheaygeoffrey/" target="_blank" class="piqui_item">Facebook</a>
+      <a href="https://www.linkedin.com/company/18441366/admin/" target="_blank" class="piqui_item">Linkedin</a>
+      <a href="https://www.youtube.com/channel/UC1wC9YlN95TMRkOpwyWaSQQ/featured" target="_blank" class="piqui_item">YouTube</a>
     </div>
 
     <a class="logo" href="<?php echo get_site_url(); ?>">
