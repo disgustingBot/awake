@@ -1,36 +1,16 @@
-<?php get_header(); ?>
-
-
 <?php
 
-// $term = get_term_by('slug', 'categorias', 'category');
-// // $term = get_term(26, 'category');
-// // var_dump($term);
-//
-//   $args = array(
-//     'hierarchical' => 1,
-//     'show_option_none' => '',
-//     'hide_empty' => 0,
-//     'parent' => $term->term_id,
-//     'taxonomy' => 'category',
-//   );
-//   $subcats = get_categories($args);
-//
-//
-//   var_dump($subcats);
+get_header();
+global $wp_query;
 
- ?>
- <?php global $wp_query; ?>
+?>
 
 
- <!-- <section class="phil" data-cycle-container="test"> -->
  <section class="phil" data-cycle-container="filters">
   <p class="phil_caption font_size_7">Descubre nuestros posts semanales sobre resiliencia humana, meditacion y mindfulness, adiccion y trauma, nutricion y un estilo de vida saludable.</p>
-  <?php subterms_from_parent_term('categorias', 'category', 'filters'); ?>
-  <!-- <select class="phil_select phil_input font_size_7" name="" id="">
-    <option value="">Categorias</option>
-  </select> -->
   <?php
+  subterms_from_parent_term('categorias', 'category', 'filters');
+
   $search_value = '';
   if (isset($_GET['filters'])) {
     $fil_pa_sea = json_decode( stripslashes($_GET['filters']), true );
