@@ -149,6 +149,7 @@ function excerpt($charNumber){
 function register_menus() {
   register_nav_menu('header_left',__( 'Header Left' ));
   register_nav_menu('header_right',__( 'Header Right' ));
+  register_nav_menu('footer_nav',__( 'Footer' ));
   // register_nav_menu('navBarMobile',__( 'Header Mobile' ));
   // register_nav_menu('contactMenu',__( 'Contact Menu' ));
   // add_post_type_support( 'page', 'excerpt' );

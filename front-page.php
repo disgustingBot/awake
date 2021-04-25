@@ -45,10 +45,9 @@
       <use xlink:href="#signature"></use>
     </svg>
   </div>
-
-  <video class="gertha_img" controls="true" alt="Thanks Taryn! Great video. This is your Instagram: https://www.instagram.com/peanutbuttervisuals/">
-    <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'E_bloque_1_video', true)); ?>">
-  </video>
+  <div class="gertha_img">
+    <?php echo get_post_meta($post->ID, 'E_iframe_video', true); ?>
+  </div>
 </section>
 
 

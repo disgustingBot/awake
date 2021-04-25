@@ -38,5 +38,5 @@
       <button class="prenex prenex_next row2col1" id="nextButton">
         <svg class="prenex_svg" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z"></path></svg>
       </button>
-    <a href="" class="testim_link">VER MÁS TESTIMONIOS</a>
+    <a href="<?php echo get_site_url() . '/contacto' ?>" class="testim_link">VER MÁS TESTIMONIOS</a>
   </section>
