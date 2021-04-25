@@ -65,7 +65,7 @@ function woocommerce_subcats_from_parentcat($category){
     $args = array(
       'hierarchical' => 1,
       'show_option_none' => '',
-      'hide_empty' => 0,
+      // 'hide_empty' => 1,
       'parent' => $term->term_id,
       'taxonomy' => 'product_cat'
     );
@@ -177,7 +177,7 @@ function subterms_from_parent_term($parent, $taxonomy, $cycle){
     $args = array(
       'hierarchical' => 1,
       'show_option_none' => '',
-      'hide_empty' => 0,
+      // 'hide_empty' => 0,
       'parent' => $term->term_id,
       'taxonomy' => $taxonomy,
     );
