@@ -65,7 +65,8 @@
       </li>
       <span class="share_content_bullet">•</span>
       <li class="share_content_list">
-        <a href="<?php echo $twitterURL; ?>" target="blank" rel="noopener noreferrer" id="shareTwitter">Twitter</a>
+        <!-- <a href="<?php echo $twitterURL; ?>" target="blank" rel="noopener noreferrer" id="shareTwitter">Twitter</a> -->
+        <a href="https://www.instagram.com/esfacilsisabescomo/?hl=es" id="dontShareInstagram">Instagram</a>
       </li>
       <span class="share_content_bullet">•</span>
       <li class="share_content_list">
