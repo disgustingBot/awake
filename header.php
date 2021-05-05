@@ -40,6 +40,9 @@
 
 
   </style>
+  <!-- Google ReCaptcha -->
+  <?php $site = '6Lc_FccaAAAAAI3tlaOosytKvo86fA7kl4wtdCg0'; ?>
+  <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $site; ?>"></script>
 
   <?php wp_head(); ?>
 </head>

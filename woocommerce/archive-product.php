@@ -47,7 +47,9 @@
     $args = array(
       'color' => $color,
     );
-    hedi_card($args);
+    if (!$is_empresa) {
+      hedi_card($args);
+    }
   }
   echo ajax_paginator_2($wp_query);
   ?>

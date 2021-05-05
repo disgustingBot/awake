@@ -30,6 +30,12 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
 
+const send_contact_mail = async ()=>{
+	let token = await grecaptcha.execute('6Lc_FccaAAAAAI3tlaOosytKvo86fA7kl4wtdCg0', {action: 'submit'});
+	token_input = document.querySelector('.token');
+	token_input.setAttribute('value', token)
+	document.querySelector('.main_form').submit();
+}
 
 
 
