@@ -7,7 +7,11 @@
       <h1 class="block_title font_size_2 brownblack_txt"><?php echo get_post_meta(get_the_ID(), 'A_contacto_titulo', true)?></h1>
       <h2 class="block_title font_size_2 brownblack_txt"><?php echo get_post_meta(get_the_ID(), 'A_contacto_subtitulo', true)?></h2>
     </hgroup>
-    <form class="main_form" action="sendmail.php">
+    <form class="main_form" action="<?= esc_url( admin_url('admin-post.php') ); ?>" method="POST" id="cmForm">
+      <input type="hidden" name="action"   value="tp_form_handler">
+      <input type="hidden" name="link"     value="<?= home_url( $wp->request ); ?>">
+      <input type="text"   name="a00"      value="" placeholder="jeje" hidden>
+
       <input class="main_form_input font_size_8" type="text" placeholder="Nombre*" required>
       <input class="main_form_input font_size_8" type="text" placeholder="Apellidos">
       <input class="main_form_input font_size_8" type="email" placeholder="Email*" required>
@@ -52,7 +56,9 @@
       ?>
       <!-- </select> -->
       <textarea class="main_form_input font_size_8 main_form_textarea" name="" id="" placeholder="Escríbenos*"></textarea>
-      <input class="main_form_btn btn" type="submit" value="Enviar">
+      <input class="token" type="hidden" name="token" value="">
+      <!-- <input class="main_form_btn btn" type="submit" value="Enviar"> -->
+      <div class="btn main_form_btn" onclick="send_contact_mail()" value="Submit">Enviar</div>
     </form>
   </section>
   <div class="col_2_media">
