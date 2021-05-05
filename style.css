@@ -3905,3 +3905,23 @@ hr {margin: 1rem 0}
 .wdi_feed_thumbnail_1 .wdi_photo_img{
   background-color: var(--greyf5)!important;
 }
+/* WOOCOMMERCE STUFF */
+
+.woocommerce-input-wrapper .input-text{
+	border: 2px solid #B5B4B2;
+  height: 37px;
+  padding: 10px;
+  border-radius: 1px;
+  font-family: inherit;
+  font-style: inherit;
+}
+.select2-selection__rendered {
+	font-size: 15px;
+  font-weight: normal;
+}
+.payment_method_paypal img{
+	object-fit: contain;
+}
+.place-order .button {
+	background-color: var(--brownblack)!important;
+}
