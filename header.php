@@ -48,6 +48,17 @@
 </head>
 <body <?php body_class(); ?>>
 	<view id="load" class="load"><div class="circle"></div></view>
+
+
+  	<div class="alert" id="alert">
+  		<button class="btn_close" onclick="altClassFromSelector('visible', '.alert')">
+  			<div class="btn_close_bar"></div>
+  			<div class="btn_close_bar"></div>
+  		</button>
+  		<h4 class="alert_title">alert title</h4>
+  		<p class="alert_txt">alert text</p>
+  	</div>
+
   <?php include 'assets/all_icons.php'; ?>
   <header class="header Obse" id="header" data-observe=".hero">
     <a class="logo rowcol1" href="<?php echo get_site_url(); ?>">

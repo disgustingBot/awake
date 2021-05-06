@@ -67,5 +67,14 @@
     <p>&#60;&#47;&#62; with <3 by <a href="https://lattedev.com/" target="_blank" class="latteLink">Latte</a></p>
   </sign>
   <?php wp_footer(); ?>
+
+      <?php
+      // var_dump($_GET);
+      if ( isset($_GET['status']) && $_GET['status'] == 'sent' ) {
+        echo "<script async defer type='text/javascript'>
+          notify('".__('Mensaje enviado', 'tp_domain')."', '".__('Muchas gracias, nos pondremos en contacto contigo pronto', 'tp_domain')."')
+        </script>";
+      }
+      ?>
 </body>
 </html>

@@ -12,11 +12,11 @@
       <input type="hidden" name="link"     value="<?= home_url( $wp->request ); ?>">
       <input type="text"   name="a00"      value="" placeholder="jeje" hidden>
 
-      <input class="main_form_input font_size_8" type="text" placeholder="Nombre*" required>
-      <input class="main_form_input font_size_8" type="text" placeholder="Apellidos">
-      <input class="main_form_input font_size_8" type="email" placeholder="Email*" required>
-      <input class="main_form_input font_size_8" type="tel" placeholder="Telf">
-      <input class="main_form_input col_2_form_input font_size_8" type="text" placeholder="Nombre Empresa*" required>
+      <input class="main_form_input font_size_8" name="Nombre" type="text" placeholder="Nombre*" required>
+      <input class="main_form_input font_size_8" name="Apellido" type="text" placeholder="Apellidos">
+      <input class="main_form_input font_size_8" name="E-mail" type="email" placeholder="Email*" required>
+      <input class="main_form_input font_size_8" name="Teléfono" type="tel" placeholder="Telf">
+      <input class="main_form_input col_2_form_input font_size_8" name="nombre_empresa" type="text" placeholder="Nombre Empresa*" required>
       <!-- <select class="main_form_input font_size_8" name="" id="" required> -->
       <?php
       $args = array(
@@ -55,7 +55,7 @@
       // selectBox('Que programa te interesa?', $options, 'Vaciar', 'Programas');
       ?>
       <!-- </select> -->
-      <textarea class="main_form_input font_size_8 main_form_textarea" name="" id="" placeholder="Escríbenos*"></textarea>
+      <textarea class="main_form_input font_size_8 main_form_textarea" name="Mensaje" id="" placeholder="Escríbenos*"></textarea>
       <input class="token" type="hidden" name="token" value="">
       <!-- <input class="main_form_btn btn" type="submit" value="Enviar"> -->
       <div class="btn main_form_btn" onclick="send_contact_mail()" value="Submit">Enviar</div>
