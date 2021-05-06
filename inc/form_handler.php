@@ -13,7 +13,7 @@ function tp_form_handler() {
 	if($_POST['a00'] != ""){
 		$link = add_query_arg( array('no' => 'go',), $link );
 	} else {
-
+		$subject = 'Nuevo mensaje';
 		$message='';
 
 		$ignore_this_keys = array('a00', 'action', 'link', 'status', 'submit', 'g-recaptcha-response', 'token');

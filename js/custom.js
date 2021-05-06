@@ -199,8 +199,16 @@ function reportWindowSize() {
 
 
 
+const notify = (title, message)=>{
+    let sign = d.querySelector('#alert');
+    sign.querySelector('.alert_title').innerText = title;
+    sign.querySelector('.alert_txt').innerText = message;
+    sign.classList.add('visible');
+}
 
 
+
+// notify('mensaje de prueba', 'HOLAAAAAAAA')
 
 
 
