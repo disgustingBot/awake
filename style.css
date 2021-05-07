@@ -1534,6 +1534,7 @@ section.flati{
   padding-bottom: 2.7rem;
   color: var(--grey6);
   font-weight: normal;
+  margin: 0 var(--lateral);
 }
 
 
