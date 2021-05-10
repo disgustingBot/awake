@@ -92,9 +92,9 @@
     <section class="barda">
         <h5 class="barda_title font_size_2"><?php echo get_post_meta(get_the_ID(), 'J_titulo_seccion_5', true)?></h5>
 
-          <video class="barda_media" controls="true" alt="Thanks Taryn! Great video. This is your Instagram: https://www.instagram.com/peanutbuttervisuals/">
-            <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'N_video_seccion_5', true)); ?>">
-          </video>
+          <div class="barda_media">
+            <?php echo get_post_meta($post->ID, 'N_iframe_video', true); ?>
+          </div>
         <!-- <img class="barda_media" src="<?php // echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'N_video_seccion_5', true))?>" alt=""> -->
         <p class="barda_quote font_size_4"><?php echo get_post_meta(get_the_ID(), 'K_texto_azul_seccion_5', true)?></p>
         <p class="barda_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'L_texto_seccion_5', true)?></p>
