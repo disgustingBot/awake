@@ -1208,7 +1208,7 @@ img, video, source{
   transform: translateX(-50%);
 }
 .gertha_img:focus {outline-color: var(--grey9)}
-.gertha_img iframe{
+.gertha_img iframe, .barda_media iframe{
   width: 100%;
   height: 100%;
   height: 400px;
@@ -1534,6 +1534,7 @@ section.flati{
   padding-bottom: 2.7rem;
   color: var(--grey6);
   font-weight: normal;
+  margin: 0 var(--lateral);
 }
 
 
@@ -3605,6 +3606,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   margin: var(--piqui_input_margin);
   border-radius: 1px;
   width: 100%;
+  max-width: 250px;
 }
 .piqui_acceptance {
   display: flex;
@@ -3623,6 +3625,12 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 .piqui_acceptance_label{
   color: var(--grey9);
   display: flex;
+  font-size: var(--font_size_8);
+  text-align: left;
+  margin: auto;
+}
+.piqui_acceptance_label input {
+  margin-right: 5px;
 }
 .piqui_acceptance_link{
   color: var(--grey9);

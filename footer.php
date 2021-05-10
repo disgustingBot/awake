@@ -45,7 +45,9 @@
       <input class="piqui_send" type="submit" value="SEND">
     </form> -->
 
-    <?php echo do_shortcode('[sibwp_form id=3]'); ?>
+
+    <?php echo do_shortcode('[sibwp_form id=1]'); ?>
+
 
     <div class="piqui">
       <h5 class="piqui_title font_size_8">Follow</h5>
