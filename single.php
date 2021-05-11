@@ -3,7 +3,7 @@
 <?php while(have_posts()){the_post(); ?>
 
   <!-- colocar aqui el bloque del encabezado -->
-  <h1 class="main_title font_size_2"><?php the_title() ?></h1>
+  <h1 class="main_title font_size_3"><?php the_title() ?></h1>
   <figure class="captioned_figure">
     <img class="captioned_figure_img" src="<?php echo get_the_post_thumbnail_url() ?>" alt="Foto destacada de la publicación" class="captioned_figure_img">
     <figcaption class="captioned_figure_capt">
