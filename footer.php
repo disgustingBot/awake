@@ -32,18 +32,23 @@
       wp_nav_menu($args);
       ?>
     </div>
-    <!-- <form class="piqui">
+
+    <!-- COPIA DEL FORMULARIO DE SENDINGBLUE -->
+    <!-- <div class="piqui">
       <h5 class="piqui_title font_size_8">Newsletter</h5>
-      <p class="piqui_deco">-</p>
-      <input class="piqui_input" type="text" value="" placeholder="Nombre">
-      <input class="piqui_input" type="text" value="" placeholder="Email">
-      <div class="piqui_acceptance">
-        <input class="piqui_acceptance_input" type="checkbox" name="acceptance">
-        <label class="piqui_acceptance_label" for="acceptance">He leido y acepto la <a class="piqui_acceptance_link" href="<?php get_site_url('politica-de-privacidad') ?>"> <u>Política de privacidad</u></a>
-        </label>
+      <p class="sib-email-area">
+        <input type="email" class="piqui_input sib-email-area" name="email" placeholder="Email" required="required">
+      </p>
+      <p class="sib-NAME-area">
+        <input class="piqui_input" type="text" placeholder="Nombre" class="sib-NAME-area" name="NAME" >
+      </p>
+      <div class="piqui_acceptance_label">
+        <input class="piqui_acceptance_label" type="checkbox" name="terms" required="required"><a href="esfacilsisabescomo.com/politica-de-privacidad/">He leido y acepto la Política de privacidad</a>
       </div>
-      <input class="piqui_send" type="submit" value="SEND">
-    </form> -->
+      <p>
+        <input class="piqui_send" type="submit" class="sib-default-btn" value="SEND">
+      </p>
+    </div> -->
 
 
     <?php echo do_shortcode('[sibwp_form id=1]'); ?>
