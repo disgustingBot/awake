@@ -15,7 +15,7 @@
 
   <section class="hero hero_opaque">
     <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-    <h1 class="hero_title alt font_size_1"><?php the_title(); ?></h1>
+    <h1 class="hero_title alt"><?php the_title(); ?></h1>
     <h2 class="hero_txt font_size_7"><?php echo the_content() ?></h2>
     <svg class="hero_arrow_down" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
       <use xlink:href="#arrow_down"></use>

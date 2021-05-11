@@ -817,7 +817,11 @@ FIN DE MAPA DE CONTENIDOS */
                            3) =TIPOGRAFIAS:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-body{font-family: 'Lato', sans-serif;}
+body{
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  line-height: 1.4;
+}
 h1, h2, h3, h4, h5 {
   font-family: 'Lora', serif;
   letter-spacing: 1px;
@@ -1104,7 +1108,7 @@ img, video, source{
   margin: auto auto 0 auto;
 }
 .hero_link{
-  text-transform: testim_titleppercase;
+  text-transform: uppercase;
   border: 1px solid white;
   color:white;
   margin:auto;
@@ -1492,8 +1496,8 @@ section.flati{
 }
 .hedi .cuantosQnt{width:100%;}
 .hedi .btn{
-  grid-column: span 2;
-  width:100%;
+  text-decoration: none;
+  width: 100%;
 }
 
 
@@ -1786,7 +1790,7 @@ section.flati{
 .prenex_svg{
   padding:1rem;
   height:auto;
-  width: 3.5rem;
+  width: 3rem;
   margin-top:var(--prenex_svg_margin_top)
 }
 
@@ -1823,7 +1827,7 @@ section.flati{
   right: 0;
   bottom:0;
   margin: auto;
-  height: 4px;
+  height: 2px;
   width: 100%;
   border-radius: 3px;
   background: var(--greyf);
@@ -2061,12 +2065,11 @@ section.flati{
 }
 .nav_menu .sub-menu{
   position:var(--sub_menu_position);
-  padding:.5rem 0;
   transition:.3s;
   transform-origin: top;
   transform:var(--sub_menu_transform);
   display:grid;
-  top: .5rem;
+  top: 1rem;
   width: max-content;
 
 }.nav_menu .menu-item:hover .sub-menu{
@@ -2290,13 +2293,30 @@ section.flati{
   padding:0 5rem;
   grid-gap:2.5rem;
 }
+.empresas_slide .prenex_svg {
+  color: #9a9591!important;
+  width: 2.8rem;
+  height: auto;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.16) =tesim:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-.tesim_container .prenex{color:black}
+.tesim_container .prenex{
+  color:var(--brownblack);
+}
+.page-id-19221 .tesim_container{
+  padding-bottom: 0!important;
+}
+.page-id-19221 .testim_title{
+  display: none;
+}
+.tesim_container .prenex .prenex_svg{
+  width: 2.8rem;
+  height: auto;
+}
 .tesim_container{
   padding: 3rem 0;
   text-align: center;
@@ -2337,6 +2357,7 @@ section.flati{
   width: 100%;
   font-family: 'lora', serif;
   font-style: italic;
+  line-height: 1.4;
 }
 .tesim_txt p{
   width: 100%;
@@ -2366,7 +2387,6 @@ section.flati{
   border: none;
 }
 .col_testimonial {
-  border-bottom: solid 2px var(--grey9);
   padding: 2rem 0;
 }
 .col_testimonial_title {
@@ -2653,7 +2673,7 @@ section.flati{
 .pista_caption{
   font-size:16px;
 }
-.pista_group.alt .pista_text{font-weight: normal!important}
+.pista_group.alt .pista_text{font-weight: lighter!important}
 .pista_light_txt{font-weight: lighter}
 
 /* ---------------------------------------------------------------------------
@@ -2755,7 +2775,6 @@ section.flati{
   font-size: var(--font_size_6);
 }
 .copa_mas_link {
-  color: var(--secondary_color);
   text-decoration: underline;
   font-size: inherit;
 }
@@ -2771,20 +2790,20 @@ section.flati{
   grid-gap: 1rem;
 }
 .copa_description_title{
-  font-size: var(--font_size_3);
+  font-size: var(--font_size_5);
 }
 .copa_description_subtitle,.copa_description_text,.copa_description_price{
   margin: 5px 0;
 }
 .copa_description_text, .copa_description_subtitle{
-  font-size: var(--font_size_6);
+  font-size: var(--font_size_7);
 }
 .copa_description_list{
   list-style: disc;
   padding-left: 20px;
 }
 .copa_description_list_item, .copa_description_price{
-  font-size: var(--font_size_6);
+  font-size: var(--font_size_7);
 }
 .copa_variation_string{
   grid-column: 1/-1;
@@ -2903,6 +2922,21 @@ section.flati{
   grid-gap: 1rem;
   margin: auto;
   font-family: 'Lora', serif;
+  position: relative;
+}
+.pagination::after, .pagination::before{
+  content: ' ';
+  position: absolute;
+  top: calc(50% - 1px);
+  width: calc((100vw - var(--lateral) * 2 - 100% - 8rem) / 2);
+  height: 2px;
+  background: var(--brownblack);
+}
+.pagination::after{
+  left: calc(100% + 4rem);
+}
+.pagination::before{
+  right: calc(100% + 4rem);
 }
 .pagination_link{
   cursor: pointer;
@@ -3080,7 +3114,7 @@ section.flati{
   grid-row:span 1!important;
   grid-column:1!important;
 }
-.tory:nth-child(2n + 1) .tory_img{
+.tory:nth-child(2n) .tory_img{
   grid-row:span 2;
   grid-column:1;
 }
@@ -3092,7 +3126,7 @@ section.flati{
   padding-bottom:0;
 }
 .tory_1 .tory_subtitle{padding-top:0}
-.tory:nth-child(2n + 1) .tory_subtitle{
+.tory:nth-child(2n) .tory_subtitle{
   grid-column:var(--tory_text_GC);
   padding-left:var(--tory_root_padding_left);
   padding-right:var(--lateral);
@@ -3107,7 +3141,7 @@ section.flati{
   grid-row:var(--tory_1_text_GR);
   padding-top:0;
 }
-.tory:nth-child(2n + 1) .tory_text{
+.tory:nth-child(2n) .tory_text{
   grid-column:var(--tory_text_GC);
   padding-left:var(--tory_root_padding_left);
   padding-right:var(--lateral);
@@ -3294,8 +3328,12 @@ section.flati{
   display: grid;
   grid-template-columns: var(--col_2_block_GTC);
   padding: 3.5rem var(--lateral);
-  grid-gap: 2rem;
+  grid-column-gap: 2rem;
   position: relative;
+  grid-row-gap: 1rem;
+}
+.fumar_col_2_block{
+  padding-bottom: 0;
 }
 .block_title_container {
   padding: 3rem 0;
@@ -3304,7 +3342,10 @@ section.flati{
   margin-bottom: 0;
 }
 .term-empresas .col_2_block .block_title{text-align:center}
-.col_2_block .block_title{text-align:left}
+.col_2_block .block_title{
+  text-align:left;
+  font-weight: normal;
+}
 .block_title {
   grid-column: 1/-1;
   color: var(--secondary_color);
@@ -3408,7 +3449,6 @@ section.flati{
   color: var(--grey9);
   font-size: 18px;
   margin-bottom: 4px;
-  letter-spacing: 2px;
 }
 
 /* ---------------------------------------------------------------------------
@@ -3450,7 +3490,7 @@ section.flati{
   line-height: 12px;
 }
 .piqui_item, .piqui .menu-item{
-  font-size: calc(var(--font_size_8) * 0.8);
+  font-size:var(--font_size_8);
   color: var(--grey9);
 }
 form.piqui {grid-gap: var(--form_piqui_grid_gap)}
