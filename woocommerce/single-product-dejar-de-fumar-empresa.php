@@ -41,7 +41,7 @@
   </section>
 
   <section class="showcase6" style="padding-top:0">
-    <h3 class="showcase_title font_size_4 simple_title" style="color: <?php echo $category_color; ?>">Dirigido a cualquier persona que quiera cuidar<br>de su mente, desarrollar habilidades, actitudes y<br>percepciones individuales para lidiar con:</h3>
+    <h3 class="showcase_title font_size_4 simple_title" style="color: <?php echo $color; ?>"><?php echo get_post_meta($post->ID, 'D2_caracteristicas_programa_titulo', true); ?></h3>
     <div class="showcase6_container">
       <div class="hosi" style="color: white; background: <?php echo $color; ?>;">
         <p class="hosi_title" style="color:white">60-70%</p>
