@@ -1756,7 +1756,10 @@ section.flati{
   background:white;
   color:var(--secondary_color)
 }
-.btn{
+.btn,
+.woocommerce-checkout.page-id-56 input,
+.woocommerce-checkout.page-id-56 .button
+{
   background:var(--secondary_color);
   border:none;
   text-transform: uppercase;
@@ -1766,7 +1769,23 @@ section.flati{
   color:white;
   transition:.4s;
 }
-
+.woocommerce-checkout.page-id-56 .button{
+  background: var(--brownblack);
+}
+.woocommerce-checkout.page-id-56 .button,
+.woocommerce-checkout.page-id-56 input{
+  font-size: var(--font_size_7);
+  margin: 0 1rem;
+}
+.woocommerce-checkout.page-id-56 form{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.woocommerce-checkout.page-id-56{
+  text-align: center;
+}
 
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
