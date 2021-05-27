@@ -3,7 +3,7 @@
 
 <section class="hero hero_opaque">
   <div class="hero_img" style="background:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>"></div>
-  <h1 class="hero_title alt font_size_1"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_title', true ); ?></h1>
+  <h1 class="hero_title alt"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_title', true ); ?></h1>
   <h2 class="hero_txt font_size_7"><?php echo category_description() ?></h2>
   <div class="redDot header_activator"></div>
   <svg class="hero_arrow_down" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
@@ -168,7 +168,7 @@
   </div>
 </section>
 
-<section class="mivi white_bg alt">
+<section class="mivi empresas_slide white_bg alt">
   <div class="block_title_deco">
     <h4 class="block_title font_size_4" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">
       Contamos con la confianza de más

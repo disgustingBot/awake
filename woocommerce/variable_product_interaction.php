@@ -1,6 +1,6 @@
 
 <div class="copa_interaction_container Variable_product_interaction">
-  <h5 class="copa_title font_size_4"><?php the_title(); ?></h5>
+  <h5 class="copa_title font_size_4" style="font-family: 'Lora', serif;"><?php the_title(); ?></h5>
   <?php
   $is_out_of_stock = false;
   if( !$product->is_on_backorder() AND !$product->is_in_stock() ){ $is_out_of_stock = true; }
@@ -115,7 +115,7 @@
 
   <?= ( $product->is_type( 'variable' ) ) ? '<p class="copa_variation_string" id="Variation_string"></p>' : ''; ?>
 
-  <p class="copa_mas">Más información <a class="copa_mas_link" href="<?php echo get_site_url() . '/contacto'; ?>">CLICA AQUÍ</a></p>
+  <p class="copa_mas">Más información <a style=" color: <?php echo $category_color; ?> " class="copa_mas_link" href="<?php echo get_site_url() . '/contacto'; ?>">CLICA AQUÍ</a></p>
 </div>
 
 <?php

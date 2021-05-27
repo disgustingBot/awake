@@ -118,7 +118,7 @@ function hedi_card ($args = array()) {
         <?php if($args['excerpt'] != false){ ?>
             <div class="hedi_txt font_size_8"><?php echo $args['excerpt']; ?></div>
         <?php } ?>
-        <a class="hedi_enlace font_size_8" href="<?php echo $args['link']; ?>">Ver más</a>
+        <a class="hedi_enlace font_size_8 btn" href="<?php echo $args['link']; ?>" style="background:<?php echo $args['color']; ?>">Ver más</a>
 
 
 

@@ -4,7 +4,7 @@
 <section class="hero hero_opaque">
 
   <img class="hero_img" loading="lazy" src="<?php echo get_img_url_by_slug(get_term_meta( get_queried_object()->term_id, 'lt_meta_image_atf', true )); ?>" alt="">
-  <h1 class="hero_title rowcol1 font_size_1"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_title', true ); ?></h1>
+  <h1 class="hero_title rowcol1"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_title', true ); ?></h1>
 
   <div class="redDot header_activator"></div>
   <svg class="mega_arrow_down rowcol1" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">

@@ -34,7 +34,7 @@
       <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'A_descripcion_texto_4', true); ?></p>
       <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'A_descripcion_texto_5', true); ?></p>
     </div>
-    <p class="block_title font_size_4" style="color: <?php echo $category_color; ?>"><?php echo get_post_meta(get_the_ID(), 'A_descripcion_titulo_inferior', true); ?></p>
+    <p class="block_title font_size_4" style="color: <?php echo $category_color; ?>;margin: auto;"><?php echo get_post_meta(get_the_ID(), 'A_descripcion_titulo_inferior', true); ?></p>
   </section>
 
   <section class="showcase6">

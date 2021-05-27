@@ -15,7 +15,7 @@
 
   <section class="hero">
     <div class="hero_img" style="background:<?php echo $color; ?>"></div>
-    <h1 class="hero_title alt font_size_1"><?php the_title(); ?></h1>
+    <h1 class="hero_title alt"><?php the_title(); ?></h1>
     <h2 class="hero_txt font_size_7"><?php echo get_post_meta($post->ID, 'C_descripcion_portada', true); ?></h2>
     <div class="redDot header_activator"></div>
     <svg class="hero_arrow_down" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
@@ -37,11 +37,11 @@
       <p class="block_txt font_size_6"><?php echo get_post_meta($post->ID, 'D_descripcion_texto_5', true); ?></p>
       <p class="block_txt font_size_6"><?php echo get_post_meta($post->ID, 'D_descripcion_texto_6', true); ?></p>
     </div>
-    <h3 class="block_title font_size_3" style="color:<?php echo $color; ?>"><?php echo get_post_meta($post->ID, 'D_descripcion_titulo', true); ?></h3>
+    <h3 class="block_title font_size_3" style="color:<?php echo $color; ?>;margin: auto;"><?php echo get_post_meta($post->ID, 'D_descripcion_titulo', true); ?></h3>
   </section>
 
   <section class="showcase6" style="padding-top:0">
-    <h3 class="showcase_title font_size_4 simple_title" style="color: <?php echo $category_color; ?>">Dirigido a cualquier persona que quiera cuidar<br>de su mente, desarrollar habilidades, actitudes y<br>percepciones individuales para lidiar con:</h3>
+    <h3 class="showcase_title font_size_4 simple_title" style="color: <?php echo $color; ?>"><?php echo get_post_meta($post->ID, 'D2_caracteristicas_programa_titulo', true); ?></h3>
     <div class="showcase6_container">
       <div class="hosi" style="color: white; background: <?php echo $color; ?>;">
         <p class="hosi_title" style="color:white">60-70%</p>
