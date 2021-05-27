@@ -3182,7 +3182,7 @@ section.flati{
   grid-row:span 1!important;
   grid-column:1!important;
 }
-.tory:nth-child(2n + 1) .tory_img{
+.tory:nth-child(2n) .tory_img{
   grid-row:span 2;
   grid-column:1;
 }
@@ -3194,7 +3194,8 @@ section.flati{
   padding-bottom:0;
 }
 .tory_1 .tory_subtitle{padding-top:0}
-.tory:nth-child(2n + 1) .tory_subtitle{
+
+.tory:nth-child(2n) .tory_subtitle{
   grid-column:var(--tory_text_GC);
   padding-left:var(--tory_root_padding_left);
   padding-right:var(--lateral);
@@ -3210,7 +3211,7 @@ section.flati{
   grid-row:var(--tory_1_text_GR);
   padding-top:0;
 }
-.tory:nth-child(2n + 1) .tory_text{
+.tory:nth-child(2n) .tory_text{
   /* grid-column:3; */
   grid-column:var(--tory_text_GC);
   /* padding-left:0; */

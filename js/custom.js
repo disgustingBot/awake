@@ -37,6 +37,13 @@ const send_contact_mail = async ()=>{
 	document.querySelector('.main_form').submit();
 }
 
+const send_comment_xD = async ()=>{
+	let token = await grecaptcha.execute('6Lc_FccaAAAAAI3tlaOosytKvo86fA7kl4wtdCg0', {action: 'submit'});
+	token_input = document.querySelector('.token');
+	token_input.setAttribute('value', token)
+  console.log(document.querySelector('#commentform'));
+	document.querySelector('#commentform').submit.click();
+}
 
 
 

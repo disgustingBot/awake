@@ -81,6 +81,7 @@
     <div style=""><?php comments_template(); ?></div>
     <?php
     $fields   = array(
+      // 'token'  => '<input class="token" type="hidden" name="token" value="">',
       'author' => '<input class="comment-form-author comment_form_input" id="author" placeholder="Tu nombre" name="author" type="text" value="" size="30" maxlength="245" required />',
       'email'  => '<input class="comment-form-email comment_form_input" id="email" placeholder="Tu email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required />',
     );
@@ -96,8 +97,10 @@
       'label_submit'      => __( 'Enviar' ),
       'format'            => 'xhtml',
 
-      'comment_field' =>  '<textarea class="comment_textarea comment_form_input" id="comment" placeholder="Deja un comentario..." name="comment" cols="45" rows="8" aria-required="true">' .
-      '</textarea>',
+      'comment_field' =>  '<textarea class="comment_textarea comment_form_input" placeholder="Deja un comentario..." name="comment" cols="45" rows="8" aria-required="true"></textarea>'.
+      '<input type="hidden" name="link"     value="'.home_url( $wp->request ).'">'.
+      '<input type="hidden" name="action"   value="tp_comment_handler">'.
+      '<input type="text"   name="a00"      value="" placeholder="jeje" hidden>',
 
       'must_log_in' => '<p class="must-log-in">' .
       sprintf(
@@ -121,6 +124,7 @@
       'comment_notes_after'  => '',
 
       'fields' => apply_filters( 'comment_form_default_fields', $fields ),
+      'action'   => esc_url( admin_url('admin-post.php') ),
     );
     comment_form($args);
     ?>
