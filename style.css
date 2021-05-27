@@ -3145,6 +3145,7 @@ section.flati{
   padding-bottom:0;
 }
 .tory_1 .tory_subtitle{padding-top:0}
+
 .tory:nth-child(2n) .tory_subtitle{
   grid-column:var(--tory_text_GC);
   padding-left:var(--tory_root_padding_left);
@@ -3161,6 +3162,7 @@ section.flati{
   padding-top:0;
 }
 .tory:nth-child(2n) .tory_text{
+  
   grid-column:var(--tory_text_GC);
   padding-left:var(--tory_root_padding_left);
   padding-right:var(--lateral);
