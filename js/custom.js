@@ -494,7 +494,6 @@ const fil_pa_sea = (cycle_container, filter, page, keyword)=>{
   var formData = new FormData();
   formData.append( 'action', 'lt_pagination_2' );
   formData.append( 'query', query );
-  // formData.append( 'page', page );
   formData.append( 'card', card );
   ajax3(formData).then( respuesta => {
     // console.log(respuesta)
