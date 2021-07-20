@@ -350,6 +350,8 @@ FIN DE MAPA DE CONTENIDOS */
   /* ?phil */
   --phil_GTC:  1fr;
   --phil_2_GTC:1fr;
+  --phil_caption_GC: ;
+  --phil_margin_top: calc(120px + 2rem);
 
   /* ?FOOTER */
   --footer_grid_gap: 2rem 1rem;
@@ -487,6 +489,9 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?sub_galu */
     --sub_galu_img_height: 140px;
 
+    /* ?phil */
+
+
 
     /* ?FOOTER */
   }
@@ -612,6 +617,8 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?phil */
     --phil_GTC: repeat(4,1fr);
     --phil_2_GTC:1fr 1fr 1fr;
+    --phil_caption_GC: span 2;
+    --phil_margin_top: calc(120px + 4rem);
 
     /* ?showcase6 */
     --showcase6_container_GTC: repeat(5, 1fr);
@@ -1787,6 +1794,12 @@ section.flati{
   text-align: center;
 }
 
+.btn.phil_btn{
+  grid-column: 1/-1;
+  margin: auto;
+  font-size: 16px;
+  text-transform: none;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.6.1) =prenex:
@@ -2166,12 +2179,15 @@ section.flati{
   display:grid;
   grid-gap: 1.5rem;
   grid-template-columns: var(--phil_GTC);
-  margin-top:calc(120px + 4rem);
+  margin-top: var(--phil_margin_top);
   padding:2rem var(--lateral);
   align-items: center;
 }
+.phil.button_phil{
+  padding: 1rem var(--lateral) 2rem var(--lateral);
+}
 .phil_caption {
-  grid-column:span 2;
+  grid-column: var(--phil_caption_GC);
   font-family: 'Lora', serif;
   color: var(--brownblack);
 }
