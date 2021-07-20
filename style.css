@@ -353,6 +353,12 @@ FIN DE MAPA DE CONTENIDOS */
   --phil_caption_GC: ;
   --phil_margin_top: calc(120px + 2rem);
 
+  --search_icon_top: 6px;
+  --search_icon_width: 16px;
+
+  --dropdown_icon_top: 13px;
+  --dropdown_icon_width: 18px;
+
   /* ?FOOTER */
   --footer_grid_gap: 2rem 1rem;
 
@@ -620,6 +626,11 @@ FIN DE MAPA DE CONTENIDOS */
     --phil_caption_GC: span 2;
     --phil_margin_top: calc(120px + 4rem);
 
+    --search_icon_top: 10px;
+    --search_icon_width: 20px;
+    --dropdown_icon_top: 13px;
+    --dropdown_icon_width: 20px;
+
     /* ?showcase6 */
     --showcase6_container_GTC: repeat(5, 1fr);
 
@@ -804,6 +815,13 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?testim */
     --testim_container_height: 70vh;
+
+    /* ?phil */
+
+    --search_icon_top: 10px;
+    --search_icon_width: 25px;
+    --dropdown_icon_top: 13px;
+    --dropdown_icon_width: 27px;
 
 
     /* ?FOOTER */
@@ -3330,12 +3348,14 @@ section.flati{
   pointer-events: none;
 }
 .search_icon {
-  top: 8px;
+  top: var(--search_icon_top);
   right: 10px;
+  width: var(--search_icon_width);
 }
 .dropdown_icon {
-  top: 12px;
+  top: var(--dropdown_icon_top);
   right: 10px;
+  width: var(--dropdown_icon_width);
 }
 
 /* ---------------------------------------------------------------------------
