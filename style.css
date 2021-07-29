@@ -3625,6 +3625,7 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
   padding:2rem var(--lateral) 3rem var(--lateral);
   text-align: center;
   font-family: 'Lora', serif;
+  position: relative;
 }
 .footer .logo{
   grid-column:1/-1;

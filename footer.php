@@ -69,6 +69,12 @@
       </svg>
     </a>
 
+    <?php if (is_user_logged_in()) { ?>
+
+<?php }else { ?>
+<div style="width: 100%; height: 38px; z-index: 1; position: absolute; background: var(--greyf5); bottom: -37px; left: 0;"></div>
+<?php } ?>
+
   </footer>
   <sign class="signature">
     <p>&#60;&#47;&#62; with <3 by <a href="https://lattedev.com/" target="_blank" class="latteLink">Latte</a></p>
