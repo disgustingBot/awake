@@ -957,7 +957,8 @@ img, video, source{
 
 .load{
   background: var(--color2);
-  display: grid;
+  display: none;
+  /* display: grid; */
   height:  calc(var(--vh, 1vh) * 100);
   width:  100vw;
   position: fixed;

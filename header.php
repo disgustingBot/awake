@@ -47,7 +47,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<view id="load" class="load"><div class="circle"></div></view>
+	<view id="load" class="load" style="display:none"><div class="circle"></div></view>
 
 
   	<div class="alert" id="alert">
