@@ -7,7 +7,6 @@
         <h3 class="font_size_3">Síguenos en Instagram</h3>
         <h5 class="feed_link font_size_7"><a href="https://www.instagram.com/esfacilsisabescomo/?hl=es" target="_blank">@esfacilsisabescomo</a></h5>
       </hgroup>
-      <?php echo do_shortcode('[wdi_feed id="1"]') ?>
     </section>
     <div class="piqui">
       <h5 class="piqui_title font_size_8">Contacto</h5>
