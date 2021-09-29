@@ -1,7 +1,7 @@
 
 
   <footer class="footer" id="footer">
-    <section class="facebook_sells_your_personal_data">
+    <section class="footer_insta">
       <hgroup class="feed_title">
         <!-- <div class="redDot test" id="shareButton"></div> -->
         <h3 class="font_size_3">Síguenos en Instagram</h3>
