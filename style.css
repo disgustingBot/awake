@@ -3971,3 +3971,21 @@ hr {margin: 1rem 0}
 .grecaptcha-badge{
   display: none;
 }
+
+/* Thank you page for double Opt-in process confirmed */
+
+.thanks_body{
+  display: flex;
+  min-width: 100%;
+  min-height: 100vh;
+}
+.thanks_container{
+  height: min-content;
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.thanks_container>*{
+  margin: 16px auto auto auto;
+}
