@@ -64,7 +64,7 @@
         <input id="terms_acceptance" type="checkbox" required>
         <label class="font_size_8" for="terms_acceptance">He leído y acepto la política de privacidad.</label>
       </div>
-      <input class="btn main_form_btn font_size_8" type="submit" value="Enviar testimonio">
+      <input class="btn main_form_btn font_size_7" type="submit" value="Enviar testimonio">
 
     </form>
   </section>
