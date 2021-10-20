@@ -10,15 +10,34 @@
 </section>
 
 <section class="col_1_block alt">
-  <h4 class="block_title font_size_2"><?php echo get_post_meta(get_the_ID(), 'A_titulo', true); ?></h4>
-  <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'A_texto_1', true); ?></p>
-  <p class="block_txt font_size_6"><?php echo get_post_meta(get_the_ID(), 'A_texto_2', true); ?></p>
+  <h4 class="block_title font_size_4"><?php echo get_post_meta(get_the_ID(), 'A_titulo', true); ?></h4>
+  <p class="block_txt font_size_7"><?php echo get_post_meta(get_the_ID(), 'A_texto_1', true); ?></p>
+  <p class="block_txt font_size_7"><?php echo get_post_meta(get_the_ID(), 'A_texto_2', true); ?></p>
   <img class="col_1_img" src="<?php echo get_img_url_by_slug(get_post_meta(get_the_ID(), 'B_firma_img', true)); ?>" alt="Firmas de Geoffrey y Rhea" >
 </section>
 
-<?php include get_stylesheet_directory() . '/bloque_testimonios.php'; ?>
+  <div class="testim_page_container">
+    <?php include get_stylesheet_directory() . '/bloque_testimonios.php'; ?>
+  </div>
 
   <section class="col_testimonials_container" data-card="col_testimonial_card" data-cycle="testimonio">
+
+    <div class="testimonial_filter">
+      <svg class="testimonial_filter_icon"width="284" height="195" viewBox="0 0 284 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#healthy_hands"></use>
+      </svg>
+      <div class="testimonial_filter_title_cont">
+        <p class="testimonial_filter_title font_size_3">Vuestras palabras...</p>
+        <div class="testimonial_filter_stripe"></div>
+      </div>
+      <div class="testimonial_keypad">
+        <button class="testimonial_keypad_btn active">TODOS LOS TESTIMONIOS</button>
+        <button class="testimonial_keypad_btn">DEJAR DE FUMAR</button>
+        <button class="testimonial_keypad_btn">DEJAR EL ALCOHOL</button>
+        <button class="testimonial_keypad_btn">RESILIENCIA</button>
+      </div>
+    </div>
+
 
     <?php
     $args = array(

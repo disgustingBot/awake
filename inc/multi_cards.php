@@ -74,6 +74,7 @@ function col_testimonial_card ($args = array()) {
   ?>
   <div class="col_testimonial">
     <p class="col_testimonial_title font_size_7"><?php echo $args['title']; ?></p>
+    <div class="col_testimonial_card_line"></div>
     <div class="col_testimonial_content font_size_7">
       <?php echo $args['content']; ?>
     </div>
