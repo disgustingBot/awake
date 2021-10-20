@@ -709,7 +709,7 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?testim */
     --testim_container_height: calc(var(--vh, 1vh) * 100);
-    --testim_padding: 0 2rem;
+    --testim_padding: 0 1rem;
 
 
     /* ?mivi */
@@ -2358,14 +2358,17 @@ section.flati{
                           6.16) =tesim:
 ------------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
+.testim_page_container .testim_link{
+  display: none;
+}
+.testim_page_container .testim_title{
+  display: none;
+}
+.testim_page_container .tesim_container{
+  padding: 1rem 0;
+}
 .tesim_container .prenex{
   color:var(--brownblack);
-}
-.page-id-19221 .tesim_container{
-  padding-bottom: 0!important;
-}
-.page-id-19221 .testim_title{
-  display: none;
 }
 .tesim_container .prenex .prenex_svg{
   width: 2.8rem;
@@ -2381,7 +2384,9 @@ section.flati{
 .tesim_container.backgrounded {
   background: var(--greyf6);
 }
-.tesim_cont.inactive{opacity:0}
+.tesim_cont.inactive{
+  display: none;
+}
 .tesim_cont{
   width: calc(100% - 5rem);
   margin: 2.5rem;
@@ -2390,22 +2395,26 @@ section.flati{
   grid-gap:1rem;
   opacity:1;
   transition:.3s;
-  padding: 0 2rem;
 }
 .tesim_author {
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .tesim_container .tesim:nth-child(1) .tesim_icon, .tesim_container .tesim:nth-child(1) .tesim_author {color: #98C9AC}
 .tesim_container .tesim:nth-child(2) .tesim_icon, .tesim_container .tesim:nth-child(2) .tesim_author{color: #EDC06D}
 .tesim{
   display:grid;
-  grid-gap:.5rem;
+  grid-gap: 1.5rem;
+  grid-auto-rows: min-content;
   text-align: center;
   padding: var(--testim_padding);
 }
 .tesim_icon{
   height: 35px;
-  margin: auto auto 1rem auto;
+  margin: auto;
+  align-self: flex-start;
 }
 .tesim_txt{
   width: 100%;
@@ -2441,16 +2450,67 @@ section.flati{
   border: none;
 }
 .col_testimonial {
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 .col_testimonial_title {
   color: var(--secondary_color);
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 .col_testimonial_content {
   color: var(--grey5);
 }
-
+.col_testimonial_card_line{
+  width: 100%;
+  height: 1px;
+  background-color: var(--secondary_color);
+  margin-bottom: 1rem;
+}
+.testimonial_filter{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.testimonial_filter_icon{
+  color: var(--secondary_color);
+  opacity: 0.1;
+  width: 240px;
+  height: auto;
+  grid-column: 1/-1;
+  grid-row: 1;
+  margin: auto;
+}
+.testimonial_filter_title_cont{
+  grid-column: 1/-1;
+  grid-row: 1;
+  text-align: center;
+}
+.testimonial_filter_title{
+  color: var(--secondary_color);
+  font-weight: bold;
+  font-family: 'Lora', serif;
+}
+.testimonial_filter_stripe{
+  width: 100px;
+  height: 2px;
+  background: var(--secondary_color);
+  margin: 1rem auto auto auto;
+}
+.testimonial_keypad{
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1/-1;
+  flex-wrap: wrap;
+}
+.testimonial_keypad_btn{
+  padding: 10px;
+  min-width: 200px;
+  border: solid 1px var(--grey9);
+  background-color: white;
+  color: var(--secondary_color);
+}
+.testimonial_keypad_btn.active{
+  color: white;
+  background-color: var(--secondary_color);
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.17) =GALLERIES:
@@ -3470,17 +3530,18 @@ section.flati{
   padding: 2rem var(--lateral);
 }
 .col_1_block.alt {
-  margin-top: 3rem;
+  margin-top: 1rem;
   text-align: center;
+  padding: 1rem var(--lateral);
 }
 .col_1_block .block_title {
   margin-bottom: 2rem;
 }
-.col_1_block.alt .block_title {
+.col_1_block.alt .block_title{
     color: var(--grey8);
 }
 .col_1_img {
-  width: 250px;
+  width: 200px;
   margin: 2rem auto auto auto;
 }
 /* ---------------------------------------------------------------------------
@@ -3609,10 +3670,20 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 }
 /* Cosas del form de sendingblue */
 .sib-alert-message{
+  color: var(--grey4)!important;
+  font-family: 'lora', serif;
+  font-style: italic;
   font-size: var(--font_size_8);
-  color: var(--grey9);
+  line-height: 1.4;
 }
-.sib_loader img{max-width: 50px;}
+.sib_loader{
+  width: 25px;
+  margin: auto;
+}
+.sib_captcha{
+  display: flex;
+  justify-content: center;
+}
 /* ---------------------------------------------------------------------------
 ------------------------------------------------------------------------------
                           6.99) =footer:
