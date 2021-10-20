@@ -274,6 +274,7 @@ FIN DE MAPA DE CONTENIDOS */
   /* ?testim */
   --testim_container_height: auto;
   --testim_padding: 2rem 0;
+  --testimonial_keypad_MW: 90%;
 
   /* ?hero */
   --hero_title_padding: .5rem;
@@ -495,6 +496,9 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?sub_galu */
     --sub_galu_img_height: 140px;
 
+    /* ?testim */
+    --testimonial_keypad_MW: 50%;
+
     /* ?phil */
 
 
@@ -558,6 +562,7 @@ FIN DE MAPA DE CONTENIDOS */
     --chiri_cambia_columna:unset;
 
     /* ?testim */
+    --testimonial_keypad_MW: 150px;
 
     /* ?piqui */
     --piqui_input_width: unset;
@@ -710,6 +715,7 @@ FIN DE MAPA DE CONTENIDOS */
     /* ?testim */
     --testim_container_height: calc(var(--vh, 1vh) * 100);
     --testim_padding: 0 1rem;
+    --testimonial_keypad_MW: 200px;
 
 
     /* ?mivi */
@@ -2444,7 +2450,7 @@ section.flati{
 .col_testimonials_container {
   display: flex;
   flex-direction: column;
-  padding: 2rem var(--lateral);
+  padding: 1rem var(--lateral);
 }
 .col_testimonial.noborder {
   border: none;
@@ -2502,10 +2508,11 @@ section.flati{
 }
 .testimonial_keypad_btn{
   padding: 10px;
-  min-width: 200px;
+  min-width: var(--testimonial_keypad_MW);
   border: solid 1px var(--grey9);
   background-color: white;
   color: var(--secondary_color);
+  cursor: pointer;
 }
 .testimonial_keypad_btn.active{
   color: white;
@@ -3577,7 +3584,7 @@ section.flati{
 --------------------------------------------------------------------------- */
 
 .full_page_media_container {
-  padding: 4rem var(--lateral);
+  padding: 1rem var(--lateral) 4rem var(--lateral);
 }
 .full_page_media {
   width: 100%;
@@ -3832,10 +3839,16 @@ form.piqui {grid-gap: var(--form_piqui_grid_gap)}
 }
 .main_form_btn.btn {
   width: 100%;
-  background: var(--brownblack);
+  background: #98c9ac;
   text-transform: capitalize;
   text-align: center;
   order:10;
+  color: white;
+}
+.main_form_btn.btn:hover{
+  color: var(--grey3);
+  outline: none;
+  background: #c9fcde;
 }
 .form_acceptance_container {
   color: var(--grey6);
