@@ -136,7 +136,10 @@
   </button>
 </section>
 
-<?php include get_stylesheet_directory() . '/bloque_testimonios.php'; ?>
+<?php
+include get_stylesheet_directory() . '/bloque_testimonios.php';
+get_testimonios_block(['adicciones']);
+?>
 
   <?php while(have_posts()){the_post(); ?>
     <section class="main">

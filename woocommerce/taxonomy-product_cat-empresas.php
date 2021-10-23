@@ -216,7 +216,10 @@
     <a href="<?php echo get_site_url() . '/contacto' ?>" class="btn white_btn font_size_7" style=" background: transparent ">CONTÁCTENOS</a>
   </banner>
 
-  <?php include get_stylesheet_directory() . '/bloque_testimonios.php'; ?>
+  <?php
+  include get_stylesheet_directory() . '/bloque_testimonios.php';
+  get_testimonios_block();
+  ?>
 
   <section class="tripartito" style="border-top: <?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?> solid 2px;border-bottom:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?> solid 2px">
     <img class="tripartito_img" src="<?php echo get_template_directory_uri().'/assets/fundacion_tripartita.jpg' ?>" alt="">

@@ -17,7 +17,10 @@
 </section>
 
   <div class="testim_page_container">
-    <?php include get_stylesheet_directory() . '/bloque_testimonios.php'; ?>
+    <?php
+    include get_stylesheet_directory() . '/bloque_testimonios.php';
+    get_testimonios_block('adicciones');
+    ?>
   </div>
 
   <section class="col_testimonials_container" data-card="col_testimonial_card" data-cycle="testimonio">

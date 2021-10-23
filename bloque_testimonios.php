@@ -1,4 +1,6 @@
 
+<?php function get_testimonios_block($terms = False){ ?>
+
 <section class="tesim_container Carousel">
   <h3 class="testim_title font_size_3">Testimonios</h3>
 
@@ -7,7 +9,7 @@
     $i = 0;
     $args = array(
       'post_type'=>'testimonial',
-      'meta_query' => array(
+      'meta_query' = array(
         array(
           'key'     => 'featured',
           'value'   => 'yes',
@@ -15,6 +17,16 @@
         ),
       ),
     );
+    if ($terms != False){
+      $args['tax_query'] = array( 'relation' => 'OR',);
+      foreach ($terms as $term) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'categoría',
+            'field'    => 'slug',
+            'terms'    => $term,
+        );
+      }
+    }
     $testimonials=new WP_Query($args);
     while($testimonials->have_posts()){$testimonials->the_post();?>
       <?php if ( !($i & 1) AND $i ) { ?>
@@ -40,3 +52,4 @@
       </button>
     <a href="<?php echo get_site_url() . '/testimonios' ?>" class="testim_link">VER MÁS TESTIMONIOS</a>
   </section>
+<?php } ?>
