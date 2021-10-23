@@ -198,8 +198,10 @@
     </section>
 
 
+    <?php include get_stylesheet_directory() . '/bloque_testimonios.php'; ?>
 
-    <section class="copa">
+
+    <section class="copa alt">
 
       <aside class="copa_description" style="border-color: <?php echo $category_color; ?>">
         <h4 class="copa_description_title" style="color: <?php echo $category_color; ?>">Modalidades:</h4>

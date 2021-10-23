@@ -158,8 +158,12 @@
     </section>
 
 
+    <?php include get_stylesheet_directory() . '/bloque_testimonios.php'; ?>
 
-    <section class="copa">
+
+
+
+    <section class="copa alt">
 
       <!-- <img class="copa_img" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'J_imagen_modulo_compra', true)); ?>" alt=""> -->
 
