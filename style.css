@@ -2809,6 +2809,9 @@ section.flati{
   padding: 4rem calc(var(--lateral) * .7);
   grid-gap:2.5rem;
 }
+.copa.alt{
+  padding: 0 calc(var(--lateral) * .7);
+}
 .copa_interaction_container {
   display: grid;
   grid-template-columns: var(--copa_interaction_container_GTC);
