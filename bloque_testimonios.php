@@ -1,4 +1,3 @@
-
 <?php function get_testimonios_block($terms = False){ ?>
 
 <section class="tesim_container Carousel">
@@ -9,7 +8,7 @@
     $i = 0;
     $args = array(
       'post_type'=>'testimonial',
-      'meta_query' = array(
+      'meta_query' => array(
         array(
           'key'     => 'featured',
           'value'   => 'yes',
