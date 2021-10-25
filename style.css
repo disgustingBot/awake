@@ -275,6 +275,7 @@ FIN DE MAPA DE CONTENIDOS */
   --testim_container_height: auto;
   --testim_padding: 2rem 0;
   --testimonial_keypad_MW: 90%;
+  --testimonial_keypad_btn_M: auto;
 
   /* ?hero */
   --hero_title_padding: .5rem;
@@ -498,6 +499,7 @@ FIN DE MAPA DE CONTENIDOS */
 
     /* ?testim */
     --testimonial_keypad_MW: 50%;
+    --testimonial_keypad_btn_M: unset;
 
     /* ?phil */
 
@@ -2513,6 +2515,9 @@ section.flati{
   background-color: white;
   color: var(--secondary_color);
   cursor: pointer;
+  margin: var(--testimonial_keypad_btn_M);
+  text-align: center;
+  font-weight: bold;
 }
 .testimonial_keypad_btn.active{
   color: white;

@@ -34,10 +34,10 @@
         <div class="testimonial_filter_stripe"></div>
       </div>
       <div class="testimonial_keypad">
-        <a href="<?php echo get_site_url() . '/testimonios/#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn active">TODOS LOS TESTIMONIOS</a>
-        <a href="<?php echo get_site_url() . '/testimonios/?cat=dejar-de-fumar#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn">DEJAR DE FUMAR</a>
-        <a href="<?php echo get_site_url() . '/testimonios/?cat=dejar-el-alcohol#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn">DEJAR EL ALCOHOL</a>
-        <a href="<?php echo get_site_url() . '/testimonios/?cat=resiliencia#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn">RESILIENCIA</a>
+        <a href="<?php echo get_site_url() . '/testimonios/#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn active font_size_7">TODOS LOS TESTIMONIOS</a>
+        <a href="<?php echo get_site_url() . '/testimonios/?cat=dejar-de-fumar#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn font_size_7">DEJAR DE FUMAR</a>
+        <a href="<?php echo get_site_url() . '/testimonios/?cat=dejar-el-alcohol#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn font_size_7">DEJAR EL ALCOHOL</a>
+        <a href="<?php echo get_site_url() . '/testimonios/?cat=resiliencia#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn font_size_7">RESILIENCIA</a>
       </div>
     </div>
 
