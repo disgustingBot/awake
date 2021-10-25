@@ -198,7 +198,10 @@
     </section>
 
 
-    <?php include get_stylesheet_directory() . '/bloque_testimonios.php'; ?>
+    <?php
+    include get_stylesheet_directory() . '/bloque_testimonios.php';
+    get_testimonios_block();
+    ?>
 
 
     <section class="copa alt">

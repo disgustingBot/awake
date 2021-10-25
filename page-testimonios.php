@@ -29,15 +29,15 @@
       <svg class="testimonial_filter_icon"width="284" height="195" viewBox="0 0 284 195" fill="none" xmlns="http://www.w3.org/2000/svg">
         <use xlink:href="#healthy_hands"></use>
       </svg>
-      <div class="testimonial_filter_title_cont">
+      <div id="testimonios_filtrables"  class="testimonial_filter_title_cont">
         <p class="testimonial_filter_title font_size_3">Vuestras palabras...</p>
         <div class="testimonial_filter_stripe"></div>
       </div>
       <div class="testimonial_keypad">
-        <button class="testimonial_keypad_btn active">TODOS LOS TESTIMONIOS</button>
-        <button class="testimonial_keypad_btn">DEJAR DE FUMAR</button>
-        <button class="testimonial_keypad_btn">DEJAR EL ALCOHOL</button>
-        <button class="testimonial_keypad_btn">RESILIENCIA</button>
+        <a href="<?php echo get_site_url() . '/testimonios/#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn active">TODOS LOS TESTIMONIOS</a>
+        <a href="<?php echo get_site_url() . '/testimonios/?cat=dejar-de-fumar#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn">DEJAR DE FUMAR</a>
+        <a href="<?php echo get_site_url() . '/testimonios/?cat=dejar-el-alcohol#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn">DEJAR EL ALCOHOL</a>
+        <a href="<?php echo get_site_url() . '/testimonios/?cat=resiliencia#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn">RESILIENCIA</a>
       </div>
     </div>
 
@@ -47,6 +47,15 @@
       'post_type'=>'testimonial',
       'posts_per_page' => 6,
     );
+    if (isset($_GET['cat'])){
+         $args['tax_query'] = [
+           array(
+               'taxonomy' => 'categoría',
+               'field'    => 'slug',
+               'terms'    => $_GET['cat'],
+           )
+         ];
+      }
     $testimonials=new WP_Query($args);
     wp_localize_script( 'main', 'testimonio', array(
       'query'=>json_encode($testimonials->query_vars),
