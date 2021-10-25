@@ -137,7 +137,7 @@
 
         <?php
         include get_stylesheet_directory() . '/bloque_testimonios.php';
-        get_testimonios_block(['adicciones', 'test']);
+        get_testimonios_block(['dejar-de-fumar', 'dejar-el-alcohol']);
         ?>
 
 
