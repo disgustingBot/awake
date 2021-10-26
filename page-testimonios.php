@@ -29,15 +29,15 @@
       <svg class="testimonial_filter_icon"width="284" height="195" viewBox="0 0 284 195" fill="none" xmlns="http://www.w3.org/2000/svg">
         <use xlink:href="#healthy_hands"></use>
       </svg>
-      <div id="testimonios_filtrables"  class="testimonial_filter_title_cont">
+      <div id="testimonios"  class="testimonial_filter_title_cont">
         <p class="testimonial_filter_title font_size_3">Vuestras palabras...</p>
         <div class="testimonial_filter_stripe"></div>
       </div>
       <div class="testimonial_keypad">
-        <a href="<?php echo get_site_url() . '/testimonios/#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn active font_size_7">TODOS LOS TESTIMONIOS</a>
-        <a href="<?php echo get_site_url() . '/testimonios/?cat=dejar-de-fumar#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn font_size_7">DEJAR DE FUMAR</a>
-        <a href="<?php echo get_site_url() . '/testimonios/?cat=dejar-el-alcohol#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn font_size_7">DEJAR EL ALCOHOL</a>
-        <a href="<?php echo get_site_url() . '/testimonios/?cat=resiliencia#testimonios_filtrables' ; ?>" class="testimonial_keypad_btn font_size_7">RESILIENCIA</a>
+        <a href="<?php echo get_site_url() . '/testimonios/#testimonios' ; ?>" class="testimonial_keypad_btn <?= (!isset($_GET['cat'])) ?'active': '' ?> font_size_7">TODOS LOS TESTIMONIOS</a>
+        <a href="<?php echo get_site_url() . '/testimonios/?cat=dejar-de-fumar#testimonios' ; ?>" class="testimonial_keypad_btn <?= (isset($_GET['cat']) and $_GET['cat'] == 'dejar-de-fumar') ?'active': '' ?> font_size_7">DEJAR DE FUMAR</a>
+        <a href="<?php echo get_site_url() . '/testimonios/?cat=dejar-el-alcohol#testimonios' ; ?>" class="testimonial_keypad_btn <?= (isset($_GET['cat']) and $_GET['cat'] == 'dejar-el-alcohol') ?'active': '' ?> font_size_7">DEJAR EL ALCOHOL</a>
+        <a href="<?php echo get_site_url() . '/testimonios/?cat=resiliencia#testimonios' ; ?>" class="testimonial_keypad_btn <?= (isset($_GET['cat']) and $_GET['cat'] == 'resiliencia') ?'active': '' ?> font_size_7">RESILIENCIA</a>
       </div>
     </div>
 
