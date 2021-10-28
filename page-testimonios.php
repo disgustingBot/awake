@@ -82,9 +82,10 @@
   </section>
 
   <section class="full_page_media_container">
-    <video class="full_page_media" controls="true" alt="Video explicativo">
-      <source type="video/mp4" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'E_bloque_1_video', true)); ?>">
-    </video>
+    <!-- <video class="full_page_media" controls="true" alt="Video explicativo">
+      <?php // echo get_post_meta($post->ID, 'E_bloque_1_video', true); ?>
+    </video> -->
+      <?php echo get_post_meta($post->ID, 'E_bloque_1_video', true); ?>
   </section>
 
 
