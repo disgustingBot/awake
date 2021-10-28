@@ -3594,7 +3594,7 @@ section.flati{
 .full_page_media_container {
   padding: 1rem var(--lateral) 4rem var(--lateral);
 }
-.full_page_media {
+.full_page_media, .full_page_media_container iframe {
   width: 100%;
   height: var(--full_page_media_height);
 }
