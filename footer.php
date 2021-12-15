@@ -4,7 +4,7 @@
     <section class="footer_insta">
       <hgroup class="feed_title">
         <!-- <div class="redDot test" id="shareButton"></div> -->
-        <h3 class="font_size_3">Síguenos en Instagram</h3>
+        <p class="font_size_3">Síguenos en Instagram</p>
         <h5 class="feed_link font_size_7"><a href="https://www.instagram.com/esfacilsisabescomo/?hl=es" target="_blank">@esfacilsisabescomo</a></h5>
       </hgroup>
     </section>

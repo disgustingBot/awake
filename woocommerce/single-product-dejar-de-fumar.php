@@ -38,7 +38,7 @@
   </section>
 
     <section class="showcase6">
-      <h3 class="showcase_title font_size_4 simple_title" style=" color: <?php echo $category_color; ?> ">Ofrecemos</h3>
+      <p class="showcase_title font_size_4 simple_title" style=" color: <?php echo $category_color; ?> ">Ofrecemos</p>
       <div class="showcase6_container">
         <div class="hosi" style=" background: <?php echo $category_color; ?> ">
           <p class="hosi_title" style="color:white">60-70%</p>
@@ -92,7 +92,7 @@
 
     <section class="separanda_backgrounded">
       <div class="separanda separanda_backgrounded">
-        <h4 class="separanda_title font_size_4" style=" color: <?php echo $category_color; ?>">¿Que incluye el programa?</h4>
+        <h4 class="separanda_title font_size_4" style=" color: <?php echo $category_color; ?>">Programa como dejar de fumar</h4>
         <div class="separanda_item" style=" color: <?php echo $category_color; ?>">
           <?php include get_template_directory().'/assets/classroom.svg'; ?>
           <p class="separanda_text font_size_6" style="color: #706862">1 sesión<br>de 6 horas</p>
@@ -132,7 +132,7 @@
       </div>
     </section>
     <section class="showcase3">
-      <h3 class="showcase_title font_size_4 simple_title" style=" color: <?php echo $category_color; ?>">Conceptos que desarrollamos</h3>
+      <p class="showcase_title font_size_4 simple_title" style=" color: <?php echo $category_color; ?>">Conceptos que desarrollamos</p>
 
 
         <div class="hosi" style=" color: <?php echo $category_color; ?>">
@@ -207,11 +207,11 @@
     <section class="copa alt">
 
       <aside class="copa_description" style="border-color: <?php echo $category_color; ?>">
-        <h4 class="copa_description_title" style="color: <?php echo $category_color; ?>">Modalidades:</h4>
+        <p class="copa_description_title" style="color: <?php echo $category_color; ?>">Modalidades:</p>
         <?php $i = 1;
         while(get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_titulo', true)){ ?>
           <div class="copa_description_row">
-            <h5 class="copa_description_subtitle"><?= get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_titulo', true); ?></h5>
+            <p class="copa_description_subtitle"><?= get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_titulo', true); ?></p>
             <p class="copa_description_price"><?= get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_precio', true); ?></p>
           </div>
         <?php $i=$i+1; } ?>
@@ -223,7 +223,7 @@
   <?php } ?>
 
   <banner class="banner_1" style=" background: <?php echo $category_color; ?> ">
-    <h4 class="banner_title font_size_4"><?php echo get_post_meta(get_the_ID(), 'D_titulo_banner', true); ?></h4>
+    <p class="banner_title font_size_4"><?php echo get_post_meta(get_the_ID(), 'D_titulo_banner', true); ?></p>
     <a href="<?php echo get_post_meta(get_the_ID(), 'D_link_boton_banner', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo $category_color; ?> "><?php echo get_post_meta(get_the_ID(), 'D_texto_boton_banner', true); ?></a>
   </banner>
 
@@ -243,7 +243,7 @@
             $my_title = 'Últimas entradas';
           }
           ?>
-          <h4 class="block_title font_size_4" style="color: <?php echo $category_color; ?>"><?php _e($my_title, 'awake') ?></h4>
+          <p class="block_title font_size_4" style="color: <?php echo $category_color; ?>"><?php _e($my_title, 'awake') ?></p>
           <?php // echo get_post_meta(get_the_ID(), 'related_posts_tag', true); ?>
           <?php
           $related = new WP_Query( $args );

@@ -1,7 +1,7 @@
 <?php function get_testimonios_block($terms = False){ ?>
 
 <section class="tesim_container Carousel">
-  <h3 class="testim_title font_size_3">Testimonios</h3>
+  <p class="testim_title font_size_3">Testimonios</p>
 
   <div class="tesim_cont Element row2col1">
     <?php
