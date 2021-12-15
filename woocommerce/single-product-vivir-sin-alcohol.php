@@ -45,7 +45,7 @@
   </section>
 
   <section class="showcase6">
-    <h3 class="showcase_title font_size_4 simple_title" style=" color: <?php echo $category_color; ?> ">Ofrecemos</h3>
+    <p class="showcase_title font_size_4 simple_title" style=" color: <?php echo $category_color; ?> ">Ofrecemos</p>
     <div class="showcase6_container">
       <div class="hosi" style=" color: white; background: <?php echo $category_color; ?> ">
         <?php include get_template_directory().'/assets/lock.svg'; ?>
@@ -93,7 +93,7 @@
   </section>
 
   <section class="separanda alt separanda_backgrounded">
-    <h4 class="separanda_title alt font_size_4" style="color: <?php echo $category_color; ?>">¿Qué incluyen las sesiones?</h4>
+    <h4 class="separanda_title alt font_size_4" style="color: <?php echo $category_color; ?>">Programa como dejar el alcohol</h4>
 
     <div class="separanda_subtitle_container">
       <h6 class="separanda_subtitle font_size_6" style="color: <?php echo $category_color; ?>">Primera fase – Libérate</h6>
@@ -185,7 +185,7 @@
         <!-- <img class="copa_img" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'C_imagen_modulo_compra', true)); ?>" alt=""> -->
 
         <aside class="copa_description" style="border-color: <?php echo $category_color; ?>">
-          <h4 class="copa_description_title" style="color: <?php echo $category_color; ?>">Modalidades:</h4>
+          <p class="copa_description_title" style="color: <?php echo $category_color; ?>">Modalidades:</p>
           <?php $i = 1;
           while(get_post_meta(get_the_ID(), 'X_modalidad_'.$i.'_titulo', true)){ ?>
             <div class="copa_description_row">
@@ -209,7 +209,7 @@
     <?php } ?>
 
     <banner class="banner_1" style=" background: <?php echo $category_color; ?> ">
-      <h4 class="banner_title font_size_4"><?= get_post_meta(get_the_ID(), 'D_banner_titulo', true); ?></h4>
+      <p class="banner_title font_size_4"><?= get_post_meta(get_the_ID(), 'D_banner_titulo', true); ?></p>
       <a href="<?= get_post_meta(get_the_ID(), 'D_banner_boton_url', true); ?>" class="btn white_btn font_size_7" style=" background: <?php echo $category_color; ?> "><?= get_post_meta(get_the_ID(), 'D_banner_boton_texto', true); ?></a>
     </banner>
 
@@ -227,7 +227,7 @@
               $my_title = 'Últimas entradas';
             }
             ?>
-            <h4 class="block_title font_size_4" style="color: <?php echo $category_color; ?>"><?php _e($my_title, 'awake') ?></h4>
+            <p class="block_title font_size_4" style="color: <?php echo $category_color; ?>"><?php _e($my_title, 'awake') ?></p>
             <?php // echo get_post_meta(get_the_ID(), 'related_posts_tag', true); ?>
             <?php
             $related = new WP_Query( $args );

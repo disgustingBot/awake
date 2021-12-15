@@ -20,10 +20,10 @@
             <p class="mivi_excerpt font_size_6"><?php echo get_post_meta(get_the_ID(), 'D_texto_2_seccion_2', true)?></p>
         </div>
         <div class="mivi_why">
-            <h3 class="mivi_select option1 font_size_6" onclick="altClassFromSelector('option2', '.mivi_why')"><?php echo get_post_meta(get_the_ID(), 'E_titulo_1_seccion_3', true)?></h3>
+            <p class="mivi_select option1 font_size_6" onclick="altClassFromSelector('option2', '.mivi_why')"><?php echo get_post_meta(get_the_ID(), 'E_titulo_1_seccion_3', true)?></p>
             <p class="mivi_explain option1 font_size_7"><?php echo get_post_meta(get_the_ID(), 'F_texto_1_seccion_3', true)?></p>
 
-            <h3 class="mivi_select option2 font_size_6" onclick="altClassFromSelector('option2', '.mivi_why')"><?php echo get_post_meta(get_the_ID(), 'G_titulo_2_seccion_3', true)?></h3>
+            <p class="mivi_select option2 font_size_6" onclick="altClassFromSelector('option2', '.mivi_why')"><?php echo get_post_meta(get_the_ID(), 'G_titulo_2_seccion_3', true)?></p>
             <p class="mivi_explain option2 font_size_7"><?php echo get_post_meta(get_the_ID(), 'H_texto_2_seccion_3', true)?></p>
         </div>
         <div class="mivi_icons Carousel">
@@ -56,7 +56,7 @@
 
 
     <section class="conocenos_team_cards">
-        <h3 class="showcase_title font_size_3"><?php echo get_post_meta(get_the_ID(), 'I_titulo_seccion_4', true)?></h3>
+        <p class="showcase_title font_size_3"><?php echo get_post_meta(get_the_ID(), 'I_titulo_seccion_4', true)?></p>
 
         <!-- para hacer un cyclo paginable filtrable y/o buscable -->
         <!-- el cyclo debe estar contenido en una etiqueta que SOLO contenga el cyclo -->
@@ -90,7 +90,7 @@
 
 
     <section class="barda">
-        <h5 class="barda_title font_size_2"><?php echo get_post_meta(get_the_ID(), 'J_titulo_seccion_5', true)?></h5>
+        <p class="barda_title font_size_2"><?php echo get_post_meta(get_the_ID(), 'J_titulo_seccion_5', true)?></p>
 
           <div class="barda_media">
             <?php echo get_post_meta($post->ID, 'N_iframe_video', true); ?>

@@ -17,7 +17,7 @@
 
     <!-- <img class="flati_icon" src="" alt=""> -->
     <div class="flati_deco" style="background:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>"></div>
-    <h5 class="flati_title font_size_4" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_description_title', true ); ?></h5>
+    <h2 class="flati_title font_size_4" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_description_title', true ); ?></h2>
     <p class="flati_txt font_size_6"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_description', true ); ?></p>
 </section>
 
@@ -26,7 +26,7 @@
 
     <section class="showcase4 tall_img">
 
-        <h3 class="showcase_title alt simple_title font_size_2">Descubre nuestros programas<br>para liberarte de las adicciones </h3>
+        <h3 class="showcase_title alt simple_title font_size_2">Como Dejar Una Adicción: <br>Descubre Nuestros Programas</h3>
 
         <?php
         while (have_posts()){the_post();
@@ -53,7 +53,7 @@
 
 
         <section class="showcase3">
-            <h3 class="showcase_title font_size_4 simple_title" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">Enseñanzas que te permitirán...</h3>
+            <p class="showcase_title font_size_4 simple_title" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">Enseñanzas que te permitirán...</p>
 
 
             <div class="hosi" style="color:<?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_color', true ); ?>">

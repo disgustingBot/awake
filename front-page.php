@@ -1,10 +1,6 @@
 <?php get_header(); ?>
 
 
-<!-- <h1>Font Size 1: <?php //var_dump((int)get_option( 'font_size_1_number', '' )); ?></h1> -->
-<!-- <h1>Color 1: <?php echo get_option( 'primary_color', '' ); ?></h1> -->
-<!-- <h1>Font Size 2: <?php echo get_option( 'font_size_2_number', '' ); ?></h1> -->
-
 <section class="mega Carousel">
 
   <?php
@@ -15,15 +11,15 @@
   while($banners->have_posts()){$banners->the_post();?>
     <div class="hero Element">
       <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-      <h3 class="hero_title font_size_1"><?php the_title(); ?></h3>
+      <h1 class="hero_title font_size_1"><?php the_title(); ?></h1>
     </div>
   <?php } wp_reset_query(); ?>
 
 
-  <button style="display:none;" class="prenex prenex_prev rowcol1" id="prevButton">
+  <button class="prenex prenex_prev rowcol1" id="prevButton">
     <svg class="prenex_svg" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M25.1 247.5l117.8-116c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L64.7 256l102.2 100.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L25 264.5c-4.6-4.7-4.6-12.3.1-17z"></path></svg>
   </button>
-  <button style="display:none;" class="prenex prenex_next rowcol1" id="nextButton">
+  <button class="prenex prenex_next rowcol1" id="nextButton">
     <svg class="prenex_svg" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z"></path></svg>
   </button>
   <svg class="mega_arrow_down rowcol1" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
@@ -54,7 +50,7 @@
 
 
 <section class="showcase4">
-  <h3 class="showcase_title showcase_title_front_page font_size_3">¿En qué podemos ayudarte?</h3>
+  <h2 class="showcase_title showcase_title_front_page font_size_3">Dejar acciones y mucho más</h2>
 
 
   <?php
@@ -118,9 +114,9 @@
 
     <div>
       <a href="<?php echo get_permalink(); ?>">
-        <h1 class="hero_title font_size_2">
+        <h3 class="hero_title font_size_2">
           <?php the_title(); ?>
-        </h1>
+        </h3>
       </a>
       <a class="hero_link font_size_7" href="<?php echo get_permalink(); ?>">PRÓXIMAS FECHAS</a>
     </div>
