@@ -7,11 +7,12 @@
   $args = array(
     'post_type'=>'banner',
   );
-  $banners=new WP_Query($args);
+  $banners = new WP_Query($args);
   while($banners->have_posts()){$banners->the_post();?>
     <div class="hero Element">
       <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-      <h1 class="hero_title font_size_1"><?php the_title(); ?></h1>
+      <?php $tag = has_term('h1', 'etiqueta') ? 'h1' : 'p'; ?>
+      <<?=$tag?> class="hero_title font_size_1"><?php the_title(); ?></<?=$tag?>>
     </div>
   <?php } wp_reset_query(); ?>
 

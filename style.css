@@ -1089,6 +1089,7 @@ img, video, source{
 .hero.inactive{
   opacity:0;
   pointer-events: none;
+  z-index: 0;
 }
 .hero{
   display:grid;
@@ -1106,6 +1107,7 @@ img, video, source{
   transition:.3s;
   overflow-y: hidden;
   position: relative;
+  z-index: 1;
 }
 .hero_opaque {
   background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3));
@@ -1135,6 +1137,7 @@ img, video, source{
   object-position: top;
 }
 .hero_title{
+  font-family: 'Lora', serif;
   color:white;
   padding: var(--hero_title_padding) var(--lateral);
 }
@@ -1843,6 +1846,7 @@ section.flati{
   color:white;
   transform-origin: center;
   outline: none;
+  z-index: 2;
 }
 .prenex_prev{margin-right:auto}
 .prenex_next{margin-left:auto}
