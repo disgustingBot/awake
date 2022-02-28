@@ -1,21 +1,42 @@
 <?php get_header(); ?>
 
 
+
+
+
+
+
 <section class="mega Carousel">
 
   <?php
-  $args = array(
-    'post_type'=>'banner',
-  );
-  $banners = new WP_Query($args);
-  while($banners->have_posts()){$banners->the_post();?>
-    <div class="hero Element">
-      <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
-      <?php $tag = has_term('h1', 'etiqueta') ? 'h1' : 'p'; ?>
-      <<?=$tag?> class="hero_title font_size_1"><?php the_title(); ?></<?=$tag?>>
-    </div>
-  <?php } wp_reset_query(); ?>
 
+  $args = array(
+    'post_type'=>'product',
+    'posts_per_page'=>4,
+    'product_tag' => 'banner',
+  );
+  $blogPosts=new WP_Query($args);
+
+  $i=0;
+  while($blogPosts->have_posts()){$blogPosts->the_post(); ?>
+    <?php global $product; ?>
+    <div class="hero Element<?= '' ? !$i : ' inactive' ?>">
+    <div class="hero_img_filter" style="background-image:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'imagen_portada', true)); ?>');"></div>
+
+
+    <img class="hero_icon" loading="lazy" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'icono', true)); ?>" alt="" style="opacity:0;">
+
+    <div>
+      <a href="<?php echo get_permalink(); ?>">
+        <h3 class="hero_title font_size_2">
+          <?php the_title(); ?>
+        </h3>
+      </a>
+      <a class="hero_link font_size_7" href="<?php echo get_permalink(); ?>">PRÓXIMAS FECHAS</a>
+    </div>
+    <div class="hero_txt font_size_7"><?php the_excerpt(); ?></div>
+  </div>
+<?php $i++; } wp_reset_query(); ?>
 
   <button class="prenex prenex_prev rowcol1" id="prevButton">
     <svg class="prenex_svg" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M25.1 247.5l117.8-116c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L64.7 256l102.2 100.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L25 264.5c-4.6-4.7-4.6-12.3.1-17z"></path></svg>
@@ -23,10 +44,11 @@
   <button class="prenex prenex_next rowcol1" id="nextButton">
     <svg class="prenex_svg" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z"></path></svg>
   </button>
-  <svg class="mega_arrow_down rowcol1" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
-    <use xlink:href="#arrow_down"></use>
-  </svg>
 </section>
+
+
+
+
 
 
 
@@ -51,7 +73,8 @@
 
 
 <section class="showcase4">
-  <h2 class="showcase_title showcase_title_front_page font_size_3">Dejar acciones y mucho más</h2>
+  <!-- <h2 class="showcase_title showcase_title_front_page font_size_3">Dejar adicciones y mucho más</h2> -->
+  <h2 class="showcase_title showcase_title_front_page font_size_3"><?php echo get_post_meta($post->ID, 'F_titulo_bloque_2', true); ?></h2>
 
 
   <?php
@@ -92,38 +115,26 @@
 
 
 
+
+
+
+
 <section class="mega Carousel">
 
   <?php
-
   $args = array(
-    'post_type'=>'product',
-    'posts_per_page'=>4,
-    'product_tag' => 'banner',
+    'post_type'=>'banner',
   );
-  $blogPosts=new WP_Query($args); ?>
-
-  <?php while($blogPosts->have_posts()){$blogPosts->the_post(); ?>
-    <?php global $product; ?>
-    <div class="hero Element">
-    <div class="hero_img_filter" style="background-image:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'imagen_portada', true)); ?>');">
-
+  $i=0;
+  $banners = new WP_Query($args);
+  while($banners->have_posts()){$banners->the_post();?>
+    <div class="hero Element<?= '' ? !$i : ' inactive' ?>">
+      <img class="hero_img" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
+      <?php $tag = has_term('h1', 'etiqueta') ? 'h1' : 'p'; ?>
+      <<?=$tag?> class="hero_title font_size_1"><?php the_title(); ?></<?=$tag?>>
     </div>
+  <?php $i++; } wp_reset_query(); ?>
 
-
-    <img class="hero_icon" loading="lazy" src="<?php echo get_img_url_by_slug(get_post_meta($post->ID, 'icono', true)); ?>" alt="">
-
-    <div>
-      <a href="<?php echo get_permalink(); ?>">
-        <h3 class="hero_title font_size_2">
-          <?php the_title(); ?>
-        </h3>
-      </a>
-      <a class="hero_link font_size_7" href="<?php echo get_permalink(); ?>">PRÓXIMAS FECHAS</a>
-    </div>
-    <div class="hero_txt font_size_7"><?php the_excerpt(); ?></div>
-  </div>
-<?php } wp_reset_query(); ?>
 
   <button class="prenex prenex_prev rowcol1" id="prevButton">
     <svg class="prenex_svg" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M25.1 247.5l117.8-116c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L64.7 256l102.2 100.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L25 264.5c-4.6-4.7-4.6-12.3.1-17z"></path></svg>
@@ -131,7 +142,23 @@
   <button class="prenex prenex_next rowcol1" id="nextButton">
     <svg class="prenex_svg" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z"></path></svg>
   </button>
+  <svg class="mega_arrow_down rowcol1" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 74 100">
+    <use xlink:href="#arrow_down"></use>
+  </svg>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <?php
 include get_stylesheet_directory() . '/bloque_testimonios.php';

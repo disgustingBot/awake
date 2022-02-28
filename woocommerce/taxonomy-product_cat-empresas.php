@@ -193,7 +193,7 @@
       while($empresas->have_posts()){$empresas->the_post();?>
         <?php if ( ($i % 4 == 0) AND $i ) { ?>
         </div>
-        <div class="mivi_slide Element rowcol1">
+        <div class="mivi_slide Element rowcol1 inactive">
         <?php } ?>
         <img class="mivi_icon" loading="lazy" src="<?php the_post_thumbnail_url(); ?>" alt="">
         <?php $i=$i+1; } wp_reset_query(); ?>

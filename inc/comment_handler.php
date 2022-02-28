@@ -15,8 +15,8 @@ function captcha_display() {
 
 
 
-// add_action(        'admin_post_tp_comment_handler', 'tp_comment_handler');
-// add_action( 'admin_post_nopriv_tp_comment_handler', 'tp_comment_handler');
+add_action(        'admin_post_tp_comment_handler', 'tp_comment_handler');
+add_action( 'admin_post_nopriv_tp_comment_handler', 'tp_comment_handler');
 function tp_comment_handler() {
 	$debugMode = false;
 	$respuesta = array();

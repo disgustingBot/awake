@@ -30,7 +30,7 @@
     while($testimonials->have_posts()){$testimonials->the_post();?>
       <?php if ( !($i & 1) AND $i ) { ?>
       </div>
-      <div class="tesim_cont Element row2col1">
+      <div class="tesim_cont Element row2col1 inactive">
       <?php } ?>
       <quote class="tesim">
         <svg class="tesim_icon" aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 38 34">
