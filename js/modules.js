@@ -251,6 +251,9 @@ carouselController = {
 				carouselController.carousels.unshift(new Carousel(carousel))
 			});
 		}
+		// if(){
+		//
+		// }
 	}
 }
 
@@ -261,28 +264,35 @@ class Carousel {
 		this.title = gallery.id;
 
 		if(this.elements.length>1){
+						console.log('ELEMENTS:', this.elements);
             gallery.querySelector('#nextButton').onclick = () =>{this.plusDivs(+1)}
             gallery.querySelector('#prevButton').onclick = () =>{this.plusDivs(-1)}
             this.showDivs(this.j);
-            setTimeout(this.carousel, 8000);
+            setTimeout(()=>{this.carousel()}, 5000);
         }
 
 	}
 
     showDivs(n){
+			console.log('showDivs');
+			console.log(this.elements);
 
         if(n>this.elements.length){this.j=1}
         if(n<1){this.j=this.elements.length}
         for(i=0;i<this.elements.length;i++){this.elements[i].classList.add("inactive")}
         this.elements[this.j-1].classList.remove("inactive");
 
+					console.log(' end showDivs');
+					console.log(this.elements);
     }
     carousel(){this.j++;
+			console.log('hi');
+			console.log(this.elements);
         if (this.elements) {
             for(i=0;i<this.elements.length;i++){this.elements[i].classList.add("inactive")}
             if(this.j>this.elements.length){this.j=1}
             this.elements[this.j-1].classList.remove("inactive");
-            setTimeout(this.carousel, 8000); // Change image every N/1000 seconds
+						setTimeout(()=>{this.carousel()}, 5000);
         }
 
     }

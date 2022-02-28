@@ -2,7 +2,6 @@
 
 require_once 'inc/custom_posts.php';
 require_once 'inc/form_handler.php';
-require_once 'inc/comment_handler.php';
 require_once 'inc/ajax.php';
 require_once 'inc/new_ajax.php';
 require_once 'inc/customize.php';
@@ -215,18 +214,11 @@ function woocommerce_add_variation_to_cart() {
 
   $product_id        = apply_filters( 'woocommerce_add_to_cart_product_id', absint( $_POST['product_id'] ) );
   $quantity          = empty( $_POST['quantity'] ) ? 1 : wc_stock_amount( $_POST['quantity'] );
-  $variation_id      = ( $_POST['variation_id'] == $_POST['product_id'] ) ? 0 : absint( $_POST['variation_id'] );
-  // $variation_id      = isset( $_POST['variation_id'] ) ? absint( $_POST['variation_id'] ) : '';
+  $variation_id      = isset( $_POST['variation_id'] ) ? absint( $_POST['variation_id'] ) : '';
   // $variations        =  ! empty( $_POST['variation'] ) ? (array) $_POST['variation'] : '';
   // $variations1        = $_POST['variation'];
   // $variations2        = stripslashes($_POST['variation']);
   $variations        = (array) json_decode(stripslashes($_POST['variation']));
-
-  // if ($variation_id == $product_id) {
-  //   // code...
-  //   $variation_id = 0;
-  // }
-
 
   $passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variations, $cart_item_data );
 	// echo WC()->cart->get_cart_contents_count();
@@ -251,11 +243,6 @@ function woocommerce_add_variation_to_cart() {
       // echo WC()->cart->get_cart_contents_count();
     } else {
       $respuesta['error'] = 'add to cart';
-
-      $respuesta['product_id'] = $product_id;
-      $respuesta['quantity'] = $quantity;
-      $respuesta['variation_id'] = $variation_id;
-      $respuesta['variations'] = $variations;
 
     }
 

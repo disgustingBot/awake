@@ -41,30 +41,31 @@
       </div>
     </div>
 
+    <div class="nothin_to_see_here" data-card="col_testimonial_card" data-cycle="testimonio" style="display:grid">
 
-    <?php
-    $args = array(
-      'post_type'=>'testimonial',
-      'posts_per_page' => 6,
-    );
-    if (isset($_GET['cat'])){
-         $args['tax_query'] = [
-           array(
-               'taxonomy' => 'categoría',
-               'field'    => 'slug',
-               'terms'    => $_GET['cat'],
-           )
-         ];
+      <?php
+      $args = array(
+        'post_type'=>'testimonial',
+        'posts_per_page' => 6,
+        'cycle' => 'testimonio',
+      );
+      if (isset($_GET['cat'])){
+        $args['tax_query'] = [
+          array(
+            'taxonomy' => 'categoría',
+            'field'    => 'slug',
+            'terms'    => $_GET['cat'],
+          )
+        ];
       }
-    $testimonials=new WP_Query($args);
-    wp_localize_script( 'main', 'testimonio', array(
-      'query'=>json_encode($testimonials->query_vars),
-    ) );
-    while($testimonials->have_posts()){$testimonials->the_post();
-      col_testimonial_card();
-    } wp_reset_query();
-    echo ajax_paginator_2($testimonials);
-    ?>
+      $testimonials=new WP_Query($args);
+      wp_localize_script( 'main', 'testimonio', array( 'query'=>json_encode($testimonials->query_vars), ) );
+      while($testimonials->have_posts()){$testimonials->the_post();
+        col_testimonial_card();
+      } wp_reset_query();
+      echo ajax_paginator_2($testimonials);
+      ?>
+    </div>
 
   </section>
   <section class="comment_form_comment">

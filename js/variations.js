@@ -3,7 +3,7 @@ let my_variations = false;
 if (typeof variations !== 'undefined') {
   my_variations = JSON.parse(variations.data)
 }
-console.log(my_variations);
+// console.log(my_variations);
 
 
 
