@@ -1,6 +1,15 @@
 
 <div class="copa_interaction_container Variable_product_interaction">
   <h5 class="copa_title font_size_4" style="font-family: 'Lora', serif;"><?php the_title(); ?></h5>
+
+  <?php
+
+    $post_id = get_the_ID();
+    if ($post_id == 19162) {
+        echo '<p class="copa_title font_size_4" style="font-family: Lora, serif; margin-bottom: 0px!important">Próximas fechas:</p>';
+    }
+   ?>
+
   <?php
   $is_out_of_stock = false;
   if( !$product->is_on_backorder() AND !$product->is_in_stock() ){ $is_out_of_stock = true; }
