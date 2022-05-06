@@ -55,7 +55,7 @@
         </p>
       </div>
       <div class="hosi" style="color: <?php echo $color; ?>; background: #F3F3F3;">
-        <p class="hosi_title" style="color:<?php echo $color; ?>">+25</p>
+        <p class="hosi_title" style="color:<?php echo $color; ?>">+26</p>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>AÑOS:</strong>
           <br>
@@ -96,7 +96,7 @@
         <?php include get_template_directory().'/assets/classroom.svg'; ?>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>SIN <NECESIDAD></NECESIDAD></strong>
-          de acudir a reuniones
+          acudir a reuniones
           <br>
           el resto de la vida
           <br>
@@ -152,7 +152,7 @@
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>ADAPTABILIDAD</strong>
           <br>
-          programas adatados
+          programas adaptados
           <br>
           a necesidades
         </p>
