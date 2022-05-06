@@ -26,7 +26,7 @@
 
     <section class="showcase4 tall_img">
 
-        <h3 class="showcase_title alt simple_title font_size_2">Como Dejar Una Adicción: <br>Descubre Nuestros Programas</h3>
+        <h3 class="showcase_title alt simple_title font_size_2"><?php echo get_term_meta( get_queried_object()->term_id, 'lt_meta_titulo_2', true ); ?></h3>
 
         <?php
         while (have_posts()){the_post();
