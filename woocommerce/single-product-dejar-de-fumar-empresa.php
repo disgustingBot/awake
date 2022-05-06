@@ -52,7 +52,7 @@
         </p>
       </div>
       <div class="hosi" style="color: <?php echo $color; ?>; background: #F3F3F3;">
-        <p class="hosi_title" style="color:<?php echo $color; ?>">+25</p>
+        <p class="hosi_title" style="color:<?php echo $color; ?>">+26</p>
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>AÑOS:</strong>
           <br>
@@ -96,7 +96,7 @@
           <br>
           devolución
           <br>
-          total del dinero
+          del dinero al empleado
         </p>
       </div>
 
@@ -149,13 +149,13 @@
         <p class="hosi_txt font_size_7" style="color:inherit!important">
           <strong>ADAPTABILIDAD</strong>
           <br>
-          programas adatados
+          programas adaptados
           <br>
           a necesidades
         </p>
       </div>
     </div>
-    <p class="hosi_clarification block_title" style=" color: <?php echo $category_color; ?>"><strong>*Este porcentaje de éxito ha sido avalado externamente a lo largo de los últimos 25 años por servicios médicos y departamentos de recursos humanos de más de 700 empresas en españa.</strong></p>
+    <p class="hosi_clarification block_title" style=" color: <?php echo $category_color; ?>"><strong>*Este porcentaje de éxito ha sido avalado externamente a lo largo de los últimos 26 años por servicios médicos y departamentos de recursos humanos de más de 700 empresas en españa.</strong></p>
   </section>
 
     <section class="separanda_backgrounded">
